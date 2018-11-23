@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/echarts.common.min.js"></script>
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>自动化测试报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2018-11-21 11:20:28</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:01.013437</p>
+<p class='attribute'><strong>状态:</strong> 通过 5</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='passClass'>
+        <td>test_s6.TestCase</td>
+        <td>5</td>
+        <td>5</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c1',5)">详情</a></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_forecast_1</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <pre>
+        pt1.1: **************************Start测试用例：验证3-10天天气预报【北京】*********************************
+请求方式:get,   请求地址：https://free-api.heweather.com/s6/weather/forecast
+测试输入:{'location': 'CN101010100', 'key': 'eef5b6add91e46f896a9f119968847a7'},   期望输出：[('HeWeather6.daily_forecast', 'list_list_key', 'date,sr,ss,mr,ms,tmp_max,tmp_min,cond_code_d,cond_code_n,cond_txt_d,cond_txt_n,wind_deg,wind_dir,wind_sc,wind_spd,hum,pcpn,pop,pres,uv_index,vis'), ('HeWeather6', 'list_key', 'basic,update,status'), ('HeWeather6.basic', 'list_dict_key', 'cid,location,parent_city,admin_area,cnty,lat,lon,tz'), ('HeWeather6.update', 'list_dict_key', 'loc,utc'), ('HeWeather6.status', 'list_dict', 'ok'), ('HeWeather6.basic.location', 'list_dict', '北京')]
+测试实际返回值：
+{'HeWeather6': [{'basic': {'cid': 'CN101010100', 'location': '北京', 'parent_city': '北京', 'admin_area': '北京', 'cnty': '中国', 'lat': '39.90498734', 'lon': '116.4052887', 'tz': '+8.00'}, 'update': {'loc': '2018-11-21 10:46', 'utc': '2018-11-21 02:46'}, 'status': 'ok', 'daily_forecast': [{'cond_code_d': '100', 'cond_code_n': '100', 'cond_txt_d': '晴', 'cond_txt_n': '晴', 'date': '2018-11-21', 'hum': '27', 'mr': '16:02', 'ms': '04:26', 'pcpn': '0.0', 'pop': '0', 'pres': '1030', 'sr': '07:07', 'ss': '16:53', 'tmp_max': '9', 'tmp_min': '-3', 'uv_index': '5', 'vis': '20', 'wind_deg': '4', 'wind_dir': '北风', 'wind_sc': '1-2', 'wind_spd': '1'}, {'cond_code_d': '100', 'cond_code_n': '101', 'cond_txt_d': '晴', 'cond_txt_n': '多云', 'date': '2018-11-22', 'hum': '16', 'mr': '16:35', 'ms': '05:32', 'pcpn': '0.0', 'pop': '0', 'pres': '1030', 'sr': '07:08', 'ss': '16:52', 'tmp_max': '8', 'tmp_min': '-3', 'uv_index': '3', 'vis': '20', 'wind_deg': '181', 'wind_dir': '南风', 'wind_sc': '1-2', 'wind_spd': '9'}, {'cond_code_d': '101', 'cond_code_n': '100', 'cond_txt_d': '多云', 'cond_txt_n': '晴', 'date': '2018-11-23', 'hum': '20', 'mr': '17:15', 'ms': '06:40', 'pcpn': '0.0', 'pop': '19', 'pres': '1026', 'sr': '07:09', 'ss': '16:52', 'tmp_max': '7', 'tmp_min': '0', 'uv_index': '0', 'vis': '20', 'wind_deg': '304', 'wind_dir': '西北风', 'wind_sc': '1-2', 'wind_spd': '3'}]}]}
+**************************PASS测试用例：验证3-10天天气预报【北京】**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_forecast_2</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <pre>
+        pt1.2: **************************Start测试用例：验证3-10天天气预报【东城】*********************************
+请求方式:get,   请求地址：https://free-api.heweather.com/s6/weather/forecast
+测试输入:{'location': '116.40,39.9', 'key': 'eef5b6add91e46f896a9f119968847a7'},   期望输出：[('HeWeather6.daily_forecast', 'list_list_key', 'date,sr,ss,mr,ms,tmp_max,tmp_min,cond_code_d,cond_code_n,cond_txt_d,cond_txt_n,wind_deg,wind_dir,wind_sc,wind_spd,hum,pcpn,pop,pres,uv_index,vis'), ('HeWeather6', 'list_key', 'basic,update,status'), ('HeWeather6.basic', 'list_dict_key', 'cid,location,parent_city,admin_area,cnty,lat,lon,tz'), ('HeWeather6.update', 'list_dict_key', 'loc,utc'), ('HeWeather6.status', 'list_dict', 'ok'), ('HeWeather6.basic.location', 'list_dict', '东城')]
+测试实际返回值：
+{'HeWeather6': [{'basic': {'cid': 'CN101011600', 'location': '东城', 'parent_city': '北京', 'admin_area': '北京', 'cnty': '中国', 'lat': '39.91754532', 'lon': '116.41875458', 'tz': '+8.00'}, 'update': {'loc': '2018-11-21 10:46', 'utc': '2018-11-21 02:46'}, 'status': 'ok', 'daily_forecast': [{'cond_code_d': '100', 'cond_code_n': '100', 'cond_txt_d': '晴', 'cond_txt_n': '晴', 'date': '2018-11-21', 'hum': '27', 'mr': '16:02', 'ms': '04:26', 'pcpn': '0.0', 'pop': '0', 'pres': '1030', 'sr': '07:07', 'ss': '16:53', 'tmp_max': '9', 'tmp_min': '-3', 'uv_index': '6', 'vis': '20', 'wind_deg': '222', 'wind_dir': '西南风', 'wind_sc': '1-2', 'wind_spd': '10'}, {'cond_code_d': '100', 'cond_code_n': '101', 'cond_txt_d': '晴', 'cond_txt_n': '多云', 'date': '2018-11-22', 'hum': '16', 'mr': '16:35', 'ms': '05:32', 'pcpn': '0.0', 'pop': '0', 'pres': '1030', 'sr': '07:08', 'ss': '16:52', 'tmp_max': '8', 'tmp_min': '-3', 'uv_index': '4', 'vis': '20', 'wind_deg': '358', 'wind_dir': '北风', 'wind_sc': '1-2', 'wind_spd': '1'}, {'cond_code_d': '101', 'cond_code_n': '100', 'cond_txt_d': '多云', 'cond_txt_n': '晴', 'date': '2018-11-23', 'hum': '20', 'mr': '17:15', 'ms': '06:40', 'pcpn': '0.0', 'pop': '19', 'pres': '1026', 'sr': '07:09', 'ss': '16:52', 'tmp_max': '7', 'tmp_min': '0', 'uv_index': '1', 'vis': '20', 'wind_deg': '339', 'wind_dir': '西北风', 'wind_sc': '1-2', 'wind_spd': '6'}]}]}
+**************************PASS测试用例：验证3-10天天气预报【东城】**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_lifestyle_1</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        通过</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <pre>
+        pt1.3: **************************Start测试用例：验证生活指数【东城】*********************************
+请求方式:get,   请求地址：https://free-api.heweather.com/s6/weather/lifestyle
+测试输入:{'location': '116.40,39.9', 'key': 'eef5b6add91e46f896a9f119968847a7'},   期望输出：[('HeWeather6.lifestyle', 'list_list_key', 'brf,txt,type'), ('HeWeather6', 'list_key', 'basic,update,status'), ('HeWeather6.basic', 'list_dict_key', 'cid,location,parent_city,admin_area,cnty,lat,lon,tz'), ('HeWeather6.update', 'list_dict_key', 'loc,utc'), ('HeWeather6.status', 'list_dict', 'ok'), ('HeWeather6.basic.location', 'list_dict', '东城')]
+测试实际返回值：
+{'HeWeather6': [{'basic': {'cid': 'CN101011600', 'location': '东城', 'parent_city': '北京', 'admin_area': '北京', 'cnty': '中国', 'lat': '39.91754532', 'lon': '116.41875458', 'tz': '+8.00'}, 'update': {'loc': '2018-11-21 10:46', 'utc': '2018-11-21 02:46'}, 'status': 'ok', 'lifestyle': [{'type': 'comf', 'brf': '较舒适', 'txt': '白天虽然天气晴好，但早晚会感觉偏凉，午后舒适、宜人。'}, {'type': 'drsg', 'brf': '较冷', 'txt': '建议着厚外套加毛衣等服装。年老体弱者宜着大衣、呢外套加羊毛衫。'}, {'type': 'flu', 'brf': '较易发', 'txt': '昼夜温差较大，较易发生感冒，请适当增减衣服。体质较弱的朋友请注意防护。'}, {'type': 'sport', 'brf': '较适宜', 'txt': '天气较好，无雨水困扰，较适宜进行各种运动，但因气温较低，在户外运动请注意增减衣物。'}, {'type': 'trav', 'brf': '适宜', 'txt': '天气较好，气温稍低，会感觉稍微有点凉，不过也是个好天气哦。适宜旅游，可不要错过机会呦！'}, {'type': 'uv', 'brf': '中等', 'txt': '属中等强度紫外线辐射天气，外出时建议涂擦SPF高于15、PA+的防晒护肤品，戴帽子、太阳镜。'}, {'type': 'cw', 'brf': '较适宜', 'txt': '较适宜洗车，未来一天无雨，风力较小，擦洗一新的汽车至少能保持一天。'}, {'type': 'air', 'brf': '中', 'txt': '气象条件对空气污染物稀释、扩散和清除无明显影响，易感人群应适当减少室外活动时间。'}]}]}
+**************************PASS测试用例：验证生活指数【东城】**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_normal_forecast_1</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        通过</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <pre>
+        pt1.4: **************************Start测试用例：验证常规天气数据【北京】*********************************
+请求方式:get,   请求地址：https://free-api.heweather.com/s6/weather/
+测试输入:{'location': '60.194.130.1', 'key': 'eef5b6add91e46f896a9f119968847a7'},   期望输出：[('HeWeather6.now', 'list_dict_key', 'fl,tmp,cond_code,cond_txt,wind_deg,wind_dir,wind_sc,wind_spd,hum,pcpn,pres,vis,cloud'), ('HeWeather6.daily_forecast', 'list_list_key', 'date,sr,ss,mr,ms,tmp_max,tmp_min,cond_code_d,cond_code_n,cond_txt_d,cond_txt_n,wind_deg,wind_dir,wind_sc,wind_spd,hum,pcpn,pop,pres,uv_index,vis'), ('HeWeather6.lifestyle', 'list_list_key', 'brf,txt,type'), ('HeWeather6', 'list_key', 'basic,update,status'), ('HeWeather6.basic', 'list_dict_key', 'cid,location,parent_city,admin_area,cnty,lat,lon,tz'), ('HeWeather6.update', 'list_dict_key', 'loc,utc'), ('HeWeather6.status', 'list_dict', 'ok'), ('HeWeather6.basic.location', 'list_dict', '北京')]
+测试实际返回值：
+{'HeWeather6': [{'basic': {'cid': 'CN101010100', 'location': '北京', 'parent_city': '北京', 'admin_area': '北京', 'cnty': '中国', 'lat': '39.90498734', 'lon': '116.4052887', 'tz': '+8.00'}, 'update': {'loc': '2018-11-21 10:46', 'utc': '2018-11-21 02:46'}, 'status': 'ok', 'now': {'cloud': '0', 'cond_code': '100', 'cond_txt': '晴', 'fl': '3', 'hum': '14', 'pcpn': '0.0', 'pres': '1030', 'tmp': '7', 'vis': '10', 'wind_deg': '348', 'wind_dir': '西北风', 'wind_sc': '3', 'wind_spd': '13'}, 'daily_forecast': [{'cond_code_d': '100', 'cond_code_n': '100', 'cond_txt_d': '晴', 'cond_txt_n': '晴', 'date': '2018-11-21', 'hum': '27', 'mr': '16:02', 'ms': '04:26', 'pcpn': '0.0', 'pop': '0', 'pres': '1030', 'sr': '07:07', 'ss': '16:53', 'tmp_max': '9', 'tmp_min': '-3', 'uv_index': '5', 'vis': '20', 'wind_deg': '4', 'wind_dir': '北风', 'wind_sc': '1-2', 'wind_spd': '1'}, {'cond_code_d': '100', 'cond_code_n': '101', 'cond_txt_d': '晴', 'cond_txt_n': '多云', 'date': '2018-11-22', 'hum': '16', 'mr': '16:35', 'ms': '05:32', 'pcpn': '0.0', 'pop': '0', 'pres': '1030', 'sr': '07:08', 'ss': '16:52', 'tmp_max': '8', 'tmp_min': '-3', 'uv_index': '3', 'vis': '20', 'wind_deg': '181', 'wind_dir': '南风', 'wind_sc': '1-2', 'wind_spd': '9'}, {'cond_code_d': '101', 'cond_code_n': '100', 'cond_txt_d': '多云', 'cond_txt_n': '晴', 'date': '2018-11-23', 'hum': '20', 'mr': '17:15', 'ms': '06:40', 'pcpn': '0.0', 'pop': '19', 'pres': '1026', 'sr': '07:09', 'ss': '16:52', 'tmp_max': '7', 'tmp_min': '0', 'uv_index': '0', 'vis': '20', 'wind_deg': '304', 'wind_dir': '西北风', 'wind_sc': '1-2', 'wind_spd': '3'}], 'lifestyle': [{'type': 'comf', 'brf': '较舒适', 'txt': '白天虽然天气晴好，但早晚会感觉偏凉，午后舒适、宜人。'}, {'type': 'drsg', 'brf': '较冷', 'txt': '建议着厚外套加毛衣等服装。年老体弱者宜着大衣、呢外套加羊毛衫。'}, {'type': 'flu', 'brf': '较易发', 'txt': '昼夜温差较大，较易发生感冒，请适当增减衣服。体质较弱的朋友请注意防护。'}, {'type': 'sport', 'brf': '较适宜', 'txt': '天气较好，无雨水困扰，较适宜进行各种运动，但因气温较低，在户外运动请注意增减衣物。'}, {'type': 'trav', 'brf': '适宜', 'txt': '天气较好，气温稍低，会感觉稍微有点凉，不过也是个好天气哦。适宜旅游，可不要错过机会呦！'}, {'type': 'uv', 'brf': '中等', 'txt': '属中等强度紫外线辐射天气，外出时建议涂擦SPF高于15、PA+的防晒护肤品，戴帽子、太阳镜。'}, {'type': 'cw', 'brf': '较适宜', 'txt': '较适宜洗车，未来一天无雨，风力较小，擦洗一新的汽车至少能保持一天。'}, {'type': 'air', 'brf': '中', 'txt': '气象条件对空气污染物稀释、扩散和清除无明显影响，易感人群应适当减少室外活动时间。'}]}]}
+**************************PASS测试用例：验证常规天气数据【北京】**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_now_1</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        通过</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <pre>
+        pt1.5: **************************Start测试用例：验证实况天气【北京】*********************************
+请求方式:get,   请求地址：https://free-api.heweather.com/s6/weather/now
+测试输入:{'location': '60.194.130.1', 'key': 'eef5b6add91e46f896a9f119968847a7'},   期望输出：[('HeWeather6.now', 'list_dict_key', 'fl,tmp,cond_code,cond_txt,wind_deg,wind_dir,wind_sc,wind_spd,hum,pcpn,pres,vis,cloud'), ('HeWeather6', 'list_key', 'basic,update,status'), ('HeWeather6.basic', 'list_dict_key', 'cid,location,parent_city,admin_area,cnty,lat,lon,tz'), ('HeWeather6.update', 'list_dict_key', 'loc,utc'), ('HeWeather6.status', 'list_dict', 'ok'), ('HeWeather6.basic.location', 'list_dict', '北京')]
+测试实际返回值：
+{'HeWeather6': [{'basic': {'cid': 'CN101010100', 'location': '北京', 'parent_city': '北京', 'admin_area': '北京', 'cnty': '中国', 'lat': '39.90498734', 'lon': '116.4052887', 'tz': '+8.00'}, 'update': {'loc': '2018-11-21 10:46', 'utc': '2018-11-21 02:46'}, 'status': 'ok', 'now': {'cloud': '0', 'cond_code': '100', 'cond_txt': '晴', 'fl': '3', 'hum': '14', 'pcpn': '0.0', 'pres': '1030', 'tmp': '7', 'vis': '10', 'wind_deg': '348', 'wind_dir': '西北风', 'wind_sc': '3', 'wind_spd': '13'}}]}
+**************************PASS测试用例：验证实况天气【北京】**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>5</td>
+            <td>5</td>
+            <td>0</td>
+            <td>0</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:5, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:0, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+   "weixin" : {
+      "Phone" : "Android Emulator",
+      "App" : "WeiXin",
+      "Login_account" : "cj"
+   },
+   "faxuanyun" : {
+      "Phone" : "Android Emulator",
+      "App" : "WeiXin",
+      "Login_account" : "cj"
+   }
+}

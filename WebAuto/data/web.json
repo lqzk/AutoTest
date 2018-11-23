@@ -1,0 +1,27 @@
+{
+   "intelligent_judgement" : {
+      "driver_types" : "Phantomjs,Chrome,IE,Firefox,Chrome_headless",
+      "test_driver" : "Chrome_headless",
+      "test_url" : "online",
+      "test_version" : "jsgy",
+      "jsgy" : {
+         "online" : "http://legal.strategy.aegis-info.com",
+         "local" : "http://192.168.11.88:8555",
+         "username" : "jsgy",
+         "password" : "aegis1234",
+         "cookie" : "[{'domain': 'legal.strategy.aegis-info.com', 'expiry': 1518936217.357667, 'httpOnly': False, 'name': 'user', 'path': '/', 'secure': False, 'value': '\"2|1:0|10:1516344193|4:user|8:anNneQ==|cfab406870ee79a5fa9d159483243466573532b7de7b16d6a9caac2db56ee3ff\"'}]"
+      },
+      "shjcy" : {
+         "online_url" : "http://shjcy.legal.strategy.aegis-info.com",
+         "local_url" : "ttp://192.168.11.88:8555",
+         "username" : "shjcy",
+         "password" : "sdf1234"
+      },
+      "zjgy" : {
+         "online_url" : "http://shjcy.legal.strategy.aegis-info.com",
+         "local_url" : "ttp://192.168.11.88:8555",
+         "username" : "zjgy",
+         "password" : "aegis1234"
+      }
+   }
+}

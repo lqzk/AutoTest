@@ -1,0 +1,11 @@
+selenium
+requests
+xlrd/xlutils/xlwt
+openpyxl
+jmespath
+faker
+configparser
+pypiwin32
+pyinstaller
+parameterized
+tomorrow

@@ -1,0 +1,671 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List href="flws_xs.files/filelist.xml">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>wwwfox</o:Author>
+  <o:LastAuthor>Administrator</o:LastAuthor>
+  <o:Revision>55</o:Revision>
+  <o:TotalTime>188</o:TotalTime>
+  <o:Created>2003-04-16T08:15:00Z</o:Created>
+  <o:LastSaved>2014-01-10T07:02:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>24</o:Words>
+  <o:Characters>143</o:Characters>
+  <o:Company>wwwfox.net</o:Company>
+  <o:Lines>1</o:Lines>
+  <o:Paragraphs>1</o:Paragraphs>
+  <o:CharactersWithSpaces>166</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>90</w:Zoom>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+p.MSONORMAL
+	{mso-char-indent-size:5pt;}
+li.MSONORMAL
+	{mso-char-indent-size:5pt;}
+div.MSONORMAL
+	{mso-char-indent-size:5pt;}
+
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:黑体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimHei;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:仿宋_GB2312;
+	panose-1:2 1 6 9 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:"\@仿宋_GB2312";
+	panose-1:2 1 6 9 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:"\@黑体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:楷体_GB2312;
+	panose-1:2 1 6 9 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:"\@楷体_GB2312";
+	panose-1:2 1 6 9 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.0pt;
+	mso-char-indent-count:2.0;
+	line-height:150%;
+	mso-pagination:none;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:150%;
+	mso-pagination:none;
+	font-size:16.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:仿宋_GB2312;
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-noshow:yes;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.0pt;
+	mso-char-indent-count:2.0;
+	line-height:150%;
+	mso-pagination:none;
+	background:navy;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:3.0cm 72.6pt 1.0cm 72.6pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:网格型;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:10.0pt;
+	mso-char-indent-count:2.0;
+	line-height:150%;
+	mso-pagination:none;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="14338"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal align=center style='text-align:center;text-indent:0cm;
+mso-char-indent-count:0;mso-outline-level:1'><span lang=EN-US style='font-size:
+18.0pt;line-height:150%;font-family:黑体;mso-hansi-font-family:宋体;mso-bidi-font-weight:
+bold'>上 海 市 闵 行 区 人 民 法 院</span><span lang=EN-US style='font-size:18.0pt;line-height:150%;
+font-family:黑体;mso-hansi-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;text-indent:0cm;
+mso-char-indent-count:0;mso-outline-level:1;mso-char-indent-size:0pt'><span
+lang=EN-US style='font-size:18.0pt;line-height:150%;font-family:黑体;mso-hansi-font-family:
+宋体;mso-bidi-font-weight:bold'>刑 事 判 决 书</span><span lang=EN-US style='font-size:
+18.0pt;line-height:150%;font-family:黑体;mso-hansi-font-family:宋体'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+mso-char-indent-count:0;line-height:25.0pt;mso-line-height-rule:exactly;
+mso-outline-level:1'><span lang=EN-US style='font-size:15.0pt;font-family:宋体'>（2014）闵刑初字第687号<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-right:128.0pt;text-indent:0cm;mso-char-indent-count:
+0;line-height:25.0pt;mso-line-height-rule:exactly'><span lang=EN-US
+style='font-size:15.0pt;font-family:宋体'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;line-height:
+25.0pt;mso-line-height-rule:exactly;mso-char-indent-size:16pt'><span
+lang=EN-US style='font-size:15.0pt;font-family:宋体'><BR>　　公诉机关上海市闵行区人民检察院。<BR>　　被告人张爱良，男，1965年10月22日出生于浙江省平湖市，汉族，小学文化，农民，户籍地浙江省平湖市广陈镇三红村杨家泾59号；因本案于2013年4月25日被取保候审。<BR>　　上海市闵行区人民检察院以沪闵检诉刑诉[2014]639号起诉书指控被告人张爱良犯非法捕捞水产品罪，于2014年3月11日向本院提起公诉。本院依法适用简易程序，实行独任审判，公开开庭审理了本案。上海市闵行区人民检察院指派代理检察员邵勇出庭支持公诉，被告人张爱良到庭参加诉讼。本案现已审理终结。<BR>　　公诉机关指控：2013年4月25日12时许，被告人张爱良在禁渔期至本市闵行区马桥镇彭渡村十六组向阳河桥附近河道，使用电鱼方式进行捕鱼，非法捕捞各种鱼类2.65公斤，价值人民币13元，被正在执法的闵行区渔政管理检查站工作人员当场抓获，并缴获用于非法捕捞的12伏电瓶、逆变器、电网兜等工具。<BR>　　被告人张爱良到案后如实供述上述事实。<BR>　　上述事实，被告人张爱良在开庭审理过程中亦无异议，且有证人崔顺荣、郑华的证言，上海市闵行区农委执法队出具的告知承诺书，中华人民共和国渔业捕捞许可证（临时），上海市水产办公室出具的关于调整本市黄浦江和内陆水域禁渔期的通知，公安机关出具的扣押物品清单，上海市闵行区物价局出具的鉴定意见，渔政执法部门出具的渔获物处理单等证据证实，足以认定。<BR>　　本院认为，被告人张爱良违反保护水产资源法规，在禁渔期使用禁用的工具、方法捕捞水产品，情节严重，其行为已构成非法捕捞水产品罪。被告人张爱良如实供述自己的罪行，依法可以从轻处罚。公诉机关指控成立，本院予以确认。据此，依照《中华人民共和国刑法》第三百四十条、第六十七条第三款、第七十二条第一款、第三款、第七十三条第一款、第三款、第六十四条之规定，判决如下：<BR>　　一、被告人张爱良犯非法捕捞水产品罪，判处拘役三个月，缓刑三个月。<BR>　　（缓刑考验期限，从判决确定之日起计算。）<BR>　　二、扣押在案的工具、设备予以没收。<BR>　　张爱良回到社区后，应当遵守法律、法规，服从监督管理，接受教育，完成公益劳动，做一名有益社会的公民。<BR>　　如不服本判决，可在接到判决书的第二日起十日内，通过本院或者直接向上海市第一中级人民法院提出上诉。书面上诉的，应当提交上诉状正本一份，副本两份。通过本院书面上诉的，应将上诉状正、副本送（寄）往本院立案庭。<BR>　　　　　　<BR>　　<br><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;line-height:
+25.0pt;mso-line-height-rule:exactly'><span lang=EN-US style='font-size:16.0pt;
+mso-bidi-font-size:12.0pt;font-family:仿宋_GB2312'><span style='mso-tab-count:
+1'>&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;line-height:
+25.0pt;mso-line-height-rule:exactly'><span lang=EN-US style='font-size:16.0pt;
+mso-bidi-font-size:12.0pt;font-family:仿宋_GB2312'><span style='mso-tab-count:
+1'>&nbsp;&nbsp; </span><o:p></o:p></span></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-yfti-tbllook:480;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+  page-break-inside:avoid'>
+  <td width=614 valign=top style='width:460.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+  <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=292
+   style='width:218.8pt;margin-left:221.4pt;border-collapse:collapse;
+   mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+   <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+    <td width=156 valign=top style='width:117.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'><o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=104 valign=top style='width:78.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'><o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:16.0pt;mso-bidi-font-size:12.0pt;line-height:150%;
+    font-family:仿宋_GB2312'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:1'>
+    <td width=156 valign=top style='width:117.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:15.0pt;line-height:150%;font-family:宋体'>代理审判员<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=104 valign=top style='width:78.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'>赵轶嘉<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:16.0pt;
+    mso-bidi-font-size:12.0pt;line-height:150%;font-family:仿宋_GB2312'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:2'>
+    <td width=156 valign=top style='width:117.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:15.0pt;line-height:150%;font-family:宋体'><o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=104 valign=top style='width:78.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'><o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:16.0pt;
+    mso-bidi-font-size:12.0pt;line-height:150%;font-family:仿宋_GB2312'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:3'>
+    <td width=156 valign=top style='width:117.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:15.0pt;line-height:150%;font-family:宋体'>&nbsp;<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=104 valign=top style='width:78.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'>&nbsp;<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:16.0pt;
+    mso-bidi-font-size:12.0pt;line-height:150%;font-family:仿宋_GB2312'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:4'>
+    <td width=156 valign=top style='width:117.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:15.0pt;line-height:150%;font-family:宋体'>&nbsp;<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=104 valign=top style='width:78.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'>&nbsp;<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:16.0pt;
+    mso-bidi-font-size:12.0pt;line-height:150%;font-family:仿宋_GB2312'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:5'>
+    <td width=156 valign=top style='width:117.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:15.0pt;line-height:150%;font-family:宋体'>&nbsp; <o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=104 valign=top style='width:78.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'>&nbsp;<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:16.0pt;
+    mso-bidi-font-size:12.0pt;line-height:150%;font-family:仿宋_GB2312'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:6'>
+    <td width=156 valign=top style='width:117.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:15.0pt;line-height:150%;font-family:宋体'>&nbsp;<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=104 valign=top style='width:78.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'>&nbsp;<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:16.0pt;
+    mso-bidi-font-size:12.0pt;line-height:150%;font-family:仿宋_GB2312'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:7'>
+    <td width=276 colspan=3 valign=top style='width:207.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=center style='text-align:center;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:15.0pt;line-height:150%;font-family:宋体'>二〇一四年三月十八日<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=center style='text-align:center;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:8'>
+    <td width=156 valign=top style='width:117.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:15.0pt;line-height:150%;font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:15.0pt;line-height:150%;font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=104 valign=top style='width:78.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:15.0pt;line-height:150%;font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:16.0pt;mso-bidi-font-size:12.0pt;line-height:150%;
+    mso-fareast-font-family:仿宋_GB2312'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+   <tr style='mso-yfti-irow:9;mso-yfti-lastrow:yes'>
+    <td width=156 valign=top style='width:117.0pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal align=right style='text-align:right;text-indent:0cm;
+    mso-char-indent-count:0;mso-char-indent-size:0cm'><span lang=EN-US
+    style='font-size:15.0pt;line-height:150%;font-family:宋体'>书　记　员<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'><o:p>&nbsp;</o:p></span></p>
+    </td>
+    <td width=104 valign=top style='width:78.2pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:15.0pt;
+    line-height:150%;font-family:宋体'>倪小瑛<o:p></o:p></span></p>
+    </td>
+    <td width=16 valign=top style='width:11.8pt;padding:0cm 5.4pt 0cm 5.4pt'>
+    <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;
+    mso-char-indent-size:0cm'><span lang=EN-US style='font-size:16.0pt;
+    mso-bidi-font-size:12.0pt;line-height:150%;font-family:仿宋_GB2312'><o:p>&nbsp;</o:p></span></p>
+    </td>
+   </tr>
+  </table>
+  <p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0;mso-char-indent-size:
+  12pt'><span lang=EN-US style='font-size:16.0pt;mso-bidi-font-size:12.0pt;
+  line-height:150%;font-family:仿宋_GB2312'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<span lang=EN-US style='font-size:16.0pt;mso-bidi-font-size:12.0pt;line-height:
+150%;font-family:仿宋_GB2312;mso-hansi-font-family:"Times New Roman";mso-bidi-font-family:
+"Times New Roman";mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0'><span
+style='font-size:14.0pt;line-height:150%;font-family:黑体'>附：相关法律条文<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal style='text-indent:0cm;mso-char-indent-count:0'><span
+lang=EN-US style='font-size:14.0pt;line-height:150%;font-family:楷体_GB2312'>　第三百四十条　违反保护水产资源法规，在禁渔区、禁渔期或者使用禁用的工具、方法捕捞水产品，情节严重的，处三年以下有期徒刑、拘役、管制或者罚金。<BR>　　第六十七条 ……<BR>　　犯罪嫌疑人虽不具有前两款规定的自首情节，但是如实供述自己罪行的，可以从轻处罚；因其如实供述自己罪行，避免特别严重后果发生的，可以减轻处罚。<BR>　　第七十二条 对于被判处拘役、三年以下有期徒刑的犯罪分子，同时符合下列条件的，可以宣告缓刑，对其中不满十八周岁的人、怀孕的妇女和已满七十五周岁的人，应当宣告缓刑：<BR>　　（一）犯罪情节较轻；<BR>　　（二）有悔罪表现；<BR>　　（三）没有再犯罪的危险；<BR>　　（四）宣告缓刑对所居住社区没有重大不良影响。<BR>　　……<BR>　　被宣告缓刑的犯罪分子，如果被判处附加刑，附加刑仍须执行。<BR>　　第七十三条 拘役的缓刑考验期限为原判刑期以上一年以下，但是不能少于二个月。<BR>　　……<BR>　　缓刑考验期限，从判决确定之日起计算。<BR>　　第六十四条 犯罪分子违法所得的一切财物，应当予以追缴或者责令退赔；对被害人的合法财产，应当及时返还；违禁品和供犯罪所用的本人财物，应当予以没收。没收的财物和罚金，一律上缴国库，不得挪用和自行处理。<BR>　　<BR>　　<br><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:-9.0pt;mso-para-margin-left:-.75gd;
+text-indent:27.0pt;mso-char-indent-count:2.25;line-height:28.0pt;mso-line-height-rule:
+exactly;mso-char-indent-size:0cm'><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
+

@@ -1,0 +1,31 @@
+{
+   "Phone" : {
+      "Huawei" : {
+         "platformName" : "Android",
+         "platformVersion" : "8.0.0",
+         "deviceName" : "KWG5T16B18015984"
+      },
+      "OPPO" : {
+         "platformName" : "Android",
+         "platformVersion" : "7.1.1",
+         "deviceName" : "DYFMUKGAZPLFQOUW"
+      },
+      "Android Emulator" : {
+         "platformName" : "Android",
+         "platformVersion" : "5.1.1",
+         "deviceName" : "127.0.0.1:62001"
+      }
+   },
+   "App" : {
+      "WeiXin" : {
+         "appPackage" : "com.tencent.mm",
+         "appActivity" : "com.tencent.mm.ui.LauncherUI",
+         "appWaitActivity" : ""
+      },
+      "AndroidMessage" : {
+         "appPackage" : "com.android.mms",
+         "appActivity" : "com.android.mms.ui.ConversationList",
+         "appWaitActivity" : ""
+      }
+   }
+}

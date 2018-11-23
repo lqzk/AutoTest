@@ -1,0 +1,1285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a0a39109-9e2e-4b5c-8814-65c376ffa219" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_test_analysis.coverage" NAME="Unittests for start_caselist.Caselist.test_analysis Coverage Results" MODIFIED="1523609720192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login2_TestLogin_test_login.coverage" NAME="Unittests for start_login2.TestLogin.test_login Coverage Results" MODIFIED="1513302727876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$warningstatistics_page.coverage" NAME="warningstatistics_page Coverage Results" MODIFIED="1516696993579" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/page" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_file_analysis_new_py.coverage" NAME="Unittests in file_analysis.py Coverage Results" MODIFIED="1509607986897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/Base_data_interferce" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_test_upload.coverage" NAME="Unittests for start_caselist.Caselist.test_upload Coverage Results" MODIFIED="1516695151425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist2_TestCaselist_test_timefliter.coverage" NAME="Unittests for start_caselist2.TestCaselist.test_timefliter Coverage Results" MODIFIED="1513558305042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_start_login_py.coverage" NAME="Unittests in start_login.py Coverage Results" MODIFIED="1515578762945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$login.coverage" NAME="login Coverage Results" MODIFIED="1511772989543" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_test_login_test_Login.coverage" NAME="Unittests for start_login.test_login.test_Login Coverage Results" MODIFIED="1513302591392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_casecause_Identify_py.coverage" NAME="Unittests in casecause_Identify.py Coverage Results" MODIFIED="1515578110373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/algorithm" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_micropage_sentence_MicropageSentence_test_sentence_predict.coverage" NAME="Unittests for micropage_sentence.MicropageSentence.test_sentence_predict Coverage Results" MODIFIED="1526289445936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+    <SUITE FILE_PATH="coverage/AutoTest$find_question.coverage" NAME="find_question Coverage Results" MODIFIED="1517901268984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study/test_case" />
+    <SUITE FILE_PATH="coverage/AutoTest$start_login.coverage" NAME="start_login Coverage Results" MODIFIED="1510286563374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$excel_data.coverage" NAME="excel_data Coverage Results" MODIFIED="1532831451158" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils/file_operation" />
+    <SUITE FILE_PATH="coverage/AutoTest$run.coverage" NAME="run Coverage Results" MODIFIED="1542074074493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AppAutoTest" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_qa_remote_py.coverage" NAME="Unittests in qa_remote.py Coverage Results" MODIFIED="1534406039388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_test_login.coverage" NAME="Unittests for start_login.test_login Coverage Results" MODIFIED="1512981177272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_amount.coverage" NAME="test_amount Coverage Results" MODIFIED="1515578715701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_match_all.coverage" NAME="test_match_all Coverage Results" MODIFIED="1517563821357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study/test_case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_test_analysis_fromfile.coverage" NAME="Unittests for start_caselist.Caselist.test_analysis_fromfile Coverage Results" MODIFIED="1525397015417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$data_handle.coverage" NAME="data_handle Coverage Results" MODIFIED="1541727641742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceTest/common" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_s6.coverage" NAME="test_s6 Coverage Results" MODIFIED="1542180215075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceTest/server/weather" />
+    <SUITE FILE_PATH="coverage/AutoTest$start_caselist__1_.coverage" NAME="start_caselist (1) Coverage Results" MODIFIED="1509601969529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist2_TestCaselist.coverage" NAME="Unittests for start_caselist2.TestCaselist Coverage Results" MODIFIED="1513576484212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1515135507116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="F:/workspace/api/test_port" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_TestLogin_test_correct_login.coverage" NAME="Unittests for start_login.TestLogin.test_correct_login Coverage Results" MODIFIED="1513759757103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$runtest.coverage" NAME="runtest Coverage Results" MODIFIED="1542612002358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="F:/AutoTest_o/src/test_ui/suite" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_Login_setUpClass.coverage" NAME="Unittests for start_login.Login.setUpClass Coverage Results" MODIFIED="1518145354150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/Auto_test$runtest.coverage" NAME="runtest Coverage Results" MODIFIED="1509346501891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/suite" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_match_all_py.coverage" NAME="Unittests in test_match_all.py Coverage Results" MODIFIED="1517556388875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study/test_case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_warningstatistic_WarningStatistic_test_timefliter.coverage" NAME="Unittests for start_warningstatistic.WarningStatistic.test_timefliter Coverage Results" MODIFIED="1516861540420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_login_page_py.coverage" NAME="Unittests in test_login_page.py Coverage Results" MODIFIED="1542095171449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AppAutoTest/project/weixin/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$run_interface__1_.coverage" NAME="run_interface (1) Coverage Results" MODIFIED="1542333031570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_setUp.coverage" NAME="Unittests for start_caselist.Caselist.setUp Coverage Results" MODIFIED="1516689049127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_TestLogin_setUp.coverage" NAME="Unittests for start_login.TestLogin.setUp Coverage Results" MODIFIED="1513311144977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_warningstatistic_WarningStatistic_test_warning_aggreement.coverage" NAME="Unittests for start_warningstatistic.WarningStatistic.test_warning_aggreement Coverage Results" MODIFIED="1525230818241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$run_web.coverage" NAME="run_web Coverage Results" MODIFIED="1542791038458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebAuto" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_match_error_py.coverage" NAME="Unittests in test_match_error.py Coverage Results" MODIFIED="1516586972522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study/test_case" />
+    <SUITE FILE_PATH="coverage/AutoTest$casecause_Identify_more.coverage" NAME="casecause_Identify_more Coverage Results" MODIFIED="1510561026428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/Algorithm" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_qa_remote_QaTest.coverage" NAME="Unittests for qa_remote.QaTest Coverage Results" MODIFIED="1524554423670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_TestLogin_test_null_password_login.coverage" NAME="Unittests for start_login.TestLogin.test_null_password_login Coverage Results" MODIFIED="1513329656216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_test_caselist_test_caselist.coverage" NAME="Unittests for start_caselist.test_caselist.test_caselist Coverage Results" MODIFIED="1512983006785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_handlers_py.coverage" NAME="Unittests in handlers.py Coverage Results" MODIFIED="1515980111349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="F:/workspace/api/test_port" />
+    <SUITE FILE_PATH="coverage/AutoTest$handlers.coverage" NAME="test_port Coverage Results" MODIFIED="1515640128305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="F:/workspace/api/test_port" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_test_upload_files.coverage" NAME="Unittests for start_caselist.Caselist.test_upload_files Coverage Results" MODIFIED="1516593437411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$start_caselist.coverage" NAME="start_caselist Coverage Results" MODIFIED="1512977443903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_police_answer_py.coverage" NAME="Unittests in police_answer.py Coverage Results" MODIFIED="1532846797747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+    <SUITE FILE_PATH="coverage/AutoTest$generator.coverage" NAME="generator Coverage Results" MODIFIED="1516599736936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
+    <SUITE FILE_PATH="coverage/AutoTest$config.coverage" NAME="config Coverage Results" MODIFIED="1510708802184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_answer_py.coverage" NAME="Unittests in test_answer.py Coverage Results" MODIFIED="1517901455746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study/test_case" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_login_page.coverage" NAME="test_login_page Coverage Results" MODIFIED="1542095870454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AppAutoTest/project/weixin/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_s6_py.coverage" NAME="Unittests in test_s6.py Coverage Results" MODIFIED="1542166011200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceTest/server/weather" />
+    <SUITE FILE_PATH="coverage/Auto_test$jsonconfig.coverage" NAME="jsonconfig Coverage Results" MODIFIED="1508811135516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils/backup" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_micropage_sentence_py.coverage" NAME="Unittests in micropage_sentence.py Coverage Results" MODIFIED="1534407547198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_warningstatistic.coverage" NAME="test_warningstatistic Coverage Results" MODIFIED="1542788825785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
+    <SUITE FILE_PATH="coverage/Auto_test$Unittests_in_start_login_py.coverage" NAME="Unittests in start_login.py Coverage Results" MODIFIED="1509008797842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/case" />
+    <SUITE FILE_PATH="coverage/Auto_test$global_var.coverage" NAME="global_var Coverage Results" MODIFIED="1508749516020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/common" />
+    <SUITE FILE_PATH="coverage/AutoTest$save_csv.coverage" NAME="save_csv Coverage Results" MODIFIED="1525940529022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils/file_operation" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_sysytem_System.coverage" NAME="Unittests for sysytem.System Coverage Results" MODIFIED="1512981290055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_judgment_analysis_py.coverage" NAME="Unittests in judgment_analysis.py Coverage Results" MODIFIED="1534406842333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/base_data" />
+    <SUITE FILE_PATH="coverage/Auto_test$Config.coverage" NAME="Config Coverage Results" MODIFIED="1508814339345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
+    <SUITE FILE_PATH="coverage/AutoTest$practise.coverage" NAME="practise Coverage Results" MODIFIED="1516861192270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_TestCaselist_test_analysis.coverage" NAME="Unittests for start_caselist.TestCaselist.test_analysis Coverage Results" MODIFIED="1513826005571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_case_py.coverage" NAME="Unittests in test_case.py Coverage Results" MODIFIED="1542264993792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto/server/police_wiki" />
+    <SUITE FILE_PATH="coverage/AutoTest$test.coverage" NAME="test Coverage Results" MODIFIED="1541658632215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceTest/server/police_wiki" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_socket_py.coverage" NAME="Unittests in test_socket.py Coverage Results" MODIFIED="1509936304773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/Socket" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_handlers_TestUnlockHandler_get.coverage" NAME="Unittests for handlers.TestUnlockHandler.get Coverage Results" MODIFIED="1515638712172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="F:/workspace/api/test_port" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist2_TestCaselist_test_casecausefliter.coverage" NAME="Unittests for start_caselist2.TestCaselist.test_casecausefliter Coverage Results" MODIFIED="1513576009315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_match_error.coverage" NAME="test_match_error Coverage Results" MODIFIED="1516188278114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study/test_case" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_home_page.coverage" NAME="test_home_page Coverage Results" MODIFIED="1542333815867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AppAuto/project/faxuanyun/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_Login_test_correct_login.coverage" NAME="Unittests for start_login.Login.test_correct_login Coverage Results" MODIFIED="1516847755575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_analysis_fromfile.coverage" NAME="Unittests for start_caselist.Caselist.analysis_fromfile Coverage Results" MODIFIED="1513822626764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$json_handle.coverage" NAME="json_handle Coverage Results" MODIFIED="1513310030279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils/file_operation" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_home_page_py.coverage" NAME="Unittests in test_home_page.py Coverage Results" MODIFIED="1542333160058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AppAuto/project/faxuanyun/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_test_analysis_fromExcel.coverage" NAME="Unittests for start_caselist.Caselist.test_analysis_fromExcel Coverage Results" MODIFIED="1525338909339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_caselist.coverage" NAME="test_caselist Coverage Results" MODIFIED="1542788832154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_qa_remote_QaTest_test_qa_remote.coverage" NAME="Unittests for qa_remote.QaTest.test_qa_remote Coverage Results" MODIFIED="1524816846843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_TestLogin_tearDown.coverage" NAME="Unittests for start_login.TestLogin.tearDown Coverage Results" MODIFIED="1513308547529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist2_TestCaselist_test_analysis.coverage" NAME="Unittests for start_caselist2.TestCaselist.test_analysis Coverage Results" MODIFIED="1513735783140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$run_app.coverage" NAME="run_app Coverage Results" MODIFIED="1542351762368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AppAuto" />
+    <SUITE FILE_PATH="coverage/Auto_test$analysis.coverage" NAME="analysis Coverage Results" MODIFIED="1508983289450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$assertion.coverage" NAME="assertion Coverage Results" MODIFIED="1509592476006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_port.coverage" NAME="test_port Coverage Results" MODIFIED="1515983547281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="F:/workspace/api/test_port" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_Login_setUp.coverage" NAME="Unittests for start_login.Login.setUp Coverage Results" MODIFIED="1515565487435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_practise_Caselist_test_floor.coverage" NAME="Unittests for practise.Caselist.test_floor Coverage Results" MODIFIED="1516689736238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study" />
+    <SUITE FILE_PATH="coverage/AutoTest$support.coverage" NAME="support Coverage Results" MODIFIED="1509688139099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_start_caselist_py.coverage" NAME="Unittests in start_caselist.py Coverage Results" MODIFIED="1524031680390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_answer.coverage" NAME="test_answer Coverage Results" MODIFIED="1517903752387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study/test_case" />
+    <SUITE FILE_PATH="coverage/Auto_test$start_caselist.coverage" NAME="start_caselist Coverage Results" MODIFIED="1509008638144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_qa_remote_QaTest_handle_parm.coverage" NAME="Unittests for qa_remote.QaTest.handle_parm Coverage Results" MODIFIED="1524624309499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_file_analysis_py.coverage" NAME="Unittests in file_analysis.py Coverage Results" MODIFIED="1534406237324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/base_data" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_warningstatistic_WarningStatistic_test_casecausefliter.coverage" NAME="Unittests for start_warningstatistic.WarningStatistic.test_casecausefliter Coverage Results" MODIFIED="1516928698240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$runtest__1_.coverage" NAME="runtest (1) Coverage Results" MODIFIED="1534408006381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/suite" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_TestLogin_test_error_user.coverage" NAME="Unittests for start_login.TestLogin.test_error_user Coverage Results" MODIFIED="1513311589646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$run__1_.coverage" NAME="run (1) Coverage Results" MODIFIED="1542073937926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceTest" />
+    <SUITE FILE_PATH="coverage/AutoTest$client.coverage" NAME="client Coverage Results" MODIFIED="1515579237766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_test_paging.coverage" NAME="Unittests for start_caselist.Caselist.test_paging Coverage Results" MODIFIED="1514444458323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$1.coverage" NAME="1 Coverage Results" MODIFIED="1516689060014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist.coverage" NAME="Unittests for start_caselist.Caselist Coverage Results" MODIFIED="1516689320313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_casecause_Identify_more_py.coverage" NAME="Unittests in casecause_Identify_more.py Coverage Results" MODIFIED="1510217360490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/Algorithm" />
+    <SUITE FILE_PATH="coverage/AutoTest$remote_answer.coverage" NAME="remote_answer Coverage Results" MODIFIED="1515557415239" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+    <SUITE FILE_PATH="coverage/AutoTest$1__1_.coverage" NAME="1 (1) Coverage Results" MODIFIED="1515579325871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$file_analysis_new.coverage" NAME="file_analysis_new Coverage Results" MODIFIED="1509607869319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/Base_data_interferce" />
+    <SUITE FILE_PATH="coverage/AutoTest$time.coverage" NAME="time Coverage Results" MODIFIED="1512956158968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils" />
+    <SUITE FILE_PATH="coverage/AutoTest$jsonconfig.coverage" NAME="jsonconfig Coverage Results" MODIFIED="1513309739177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils/backup" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_amount_py.coverage" NAME="Unittests in test_amount.py Coverage Results" MODIFIED="1515632014388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study" />
+    <SUITE FILE_PATH="coverage/AutoTest$data_handle__1_.coverage" NAME="data_handle (1) Coverage Results" MODIFIED="1542009095845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AppAutoTest/common" />
+    <SUITE FILE_PATH="coverage/AutoTest$analogue_mobile.coverage" NAME="analogue_mobile Coverage Results" MODIFIED="1510045078448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test" />
+    <SUITE FILE_PATH="coverage/Auto_test$file_handle.coverage" NAME="file_handle Coverage Results" MODIFIED="1509443418377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_TestCaselist_test_casecausefliter.coverage" NAME="Unittests for start_caselist.TestCaselist.test_casecausefliter Coverage Results" MODIFIED="1513738260006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist2_TestCaselist_test_caselist.coverage" NAME="Unittests for start_caselist2.TestCaselist.test_caselist Coverage Results" MODIFIED="1513307867151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_port.coverage" NAME="Unittests in test_port Coverage Results" MODIFIED="1515639648085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="F:/workspace/api/test_port" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_1_py.coverage" NAME="Unittests in 1.py Coverage Results" MODIFIED="1516689088613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$call_api.coverage" NAME="call_api Coverage Results" MODIFIED="1515632004936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce" />
+    <SUITE FILE_PATH="coverage/Auto_test$excel_data.coverage" NAME="excel_data Coverage Results" MODIFIED="1508914836070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils/file_operation" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_test_upload_file.coverage" NAME="Unittests for start_caselist.Caselist.test_upload_file Coverage Results" MODIFIED="1516688687647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_Login.coverage" NAME="Unittests for start_login.Login Coverage Results" MODIFIED="1518147033676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_TestLogin.coverage" NAME="Unittests for start_login.TestLogin Coverage Results" MODIFIED="1513331103371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_casecause_Identify_more_test_analysis_fromExcel.coverage" NAME="Unittests for casecause_Identify_more.test_analysis_fromExcel Coverage Results" MODIFIED="1515578077808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/algorithm" />
+    <SUITE FILE_PATH="coverage/AutoTest$achive_filepath.coverage" NAME="achive_filepath Coverage Results" MODIFIED="1509616163416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils/file_operation" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_caselist_py.coverage" NAME="Unittests in test_caselist.py Coverage Results" MODIFIED="1542612084007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$run_interface.coverage" NAME="run_interface Coverage Results" MODIFIED="1542770425372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto" />
+    <SUITE FILE_PATH="coverage/AutoTest$file_analysis.coverage" NAME="file_analysis Coverage Results" MODIFIED="1516591905303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/base_data" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_qa_remote_QaTest_qa_test.coverage" NAME="Unittests for qa_remote.QaTest.qa_test Coverage Results" MODIFIED="1523935773694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+    <SUITE FILE_PATH="coverage/AutoTest$browser.coverage" NAME="browser Coverage Results" MODIFIED="1516583510899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/common" />
+    <SUITE FILE_PATH="coverage/AutoTest$address.coverage" NAME="address Coverage Results" MODIFIED="1521102076094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_case.coverage" NAME="test_case Coverage Results" MODIFIED="1542332751638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto/server/police_wiki" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_start_login2_py.coverage" NAME="Unittests in start_login.py Coverage Results" MODIFIED="1513307892775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist2_TestCaselist_test_warning_aggreement.coverage" NAME="Unittests for start_caselist2.TestCaselist.test_warning_aggreement Coverage Results" MODIFIED="1513576514180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_s6__1_.coverage" NAME="test_s6 (1) Coverage Results" MODIFIED="1542264925669" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto/server/weather" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_warningstatistic_WarningStatistic_setUp.coverage" NAME="Unittests for start_warningstatistic.WarningStatistic.setUp Coverage Results" MODIFIED="1516846287470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_TestCaselist_test_analysis_fromfile.coverage" NAME="Unittests for start_caselist.TestCaselist.test_analysis_fromfile Coverage Results" MODIFIED="1513824843455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$backup.coverage" NAME="backup Coverage Results" MODIFIED="1519626556532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study/test_case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_micropage_sentence_MicropageSentence_get_numeric_tags.coverage" NAME="Unittests for micropage_sentence.MicropageSentence.get_numeric_tags Coverage Results" MODIFIED="1525830338821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+    <SUITE FILE_PATH="coverage/AutoTest$run_suite.coverage" NAME="run_suite Coverage Results" MODIFIED="1541664131458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AppAutoTest" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_login.coverage" NAME="test_login Coverage Results" MODIFIED="1542785834931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_remote_answer_py.coverage" NAME="Unittests in remote_answer.py Coverage Results" MODIFIED="1515549812570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="AutoTest" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="test_caselist.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_caselist.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="28">
+              <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
+              <folding>
+                <element signature="e#22#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="XHTML File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>self.browser_type</find>
+      <find>win32com</find>
+      <find>mylogger</find>
+      <find>ec</find>
+      <find>config_para</find>
+      <find>By.XPATH</find>
+      <find>By.CSS_SELECTOR</find>
+      <find>By.ID</find>
+      <find>self.user</find>
+      <find>move_file</find>
+      <find>move_file.move_file</find>
+      <find>excel_data.Excel_Data</find>
+      <find>Excel_Data</find>
+      <find>dicResult_pass</find>
+      <find>file_path</find>
+      <find>src.test_ui.</find>
+      <find>test_login_data</find>
+      <find>cutout_content</find>
+      <find>FileAnalysis</find>
+      <find>mylogger.info</find>
+      <find>mylogger.error</find>
+      <find>user_name</find>
+      <find>content</find>
+      <find>file_content</find>
+      <find>user</find>
+      <find>getscreen</find>
+      <find>print</find>
+      <find>time.sleep</find>
+      <find>GeneralTest()</find>
+      <find>tdata</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>&quot;pessimisticTags&quot;</replace>
+      <replace>self.parm</replace>
+      <replace>res</replace>
+      <replace>content</replace>
+      <replace>module</replace>
+      <replace>msg</replace>
+      <replace>server</replace>
+      <replace>suffix_path</replace>
+      <replace>attachment</replace>
+      <replace>attachment_path</replace>
+      <replace>database</replace>
+      <replace>driver_dir</replace>
+      <replace>project_data(project)</replace>
+      <replace>browser_type</replace>
+      <replace>EC</replace>
+      <replace>&quot;xpath&quot;</replace>
+      <replace>&quot;css&quot;</replace>
+      <replace>&quot;id&quot;</replace>
+      <replace>user</replace>
+      <replace>move_file</replace>
+      <replace>Excel_Data</replace>
+      <replace>dicResult</replace>
+      <replace>from WebAuto.project.intelligent_judgement.</replace>
+      <replace>WebAuto.project.intelligent_judgement.</replace>
+      <replace>cutout_content.cutout_content</replace>
+      <replace>print</replace>
+      <replace>test_content</replace>
+      <replace>version</replace>
+      <replace>self.sleep</replace>
+      <replace>self.run</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Database/common/system.py" />
+        <option value="$PROJECT_DIR$/Database/common/database.py" />
+        <option value="$PROJECT_DIR$/Database/run_database.py" />
+        <option value="$PROJECT_DIR$/Database/readme" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/common/run_suite.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/common/excel_data.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/common/general_test.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/run_interface.py" />
+        <option value="$PROJECT_DIR$/AppAuto/common/run_suite.py" />
+        <option value="$PROJECT_DIR$/AppAuto/run_app.py" />
+        <option value="$PROJECT_DIR$/WebAuto/data/intelligent_judgement.js" />
+        <option value="$PROJECT_DIR$/WebAuto/data/intelligent_judgement.json" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/common/data_handle.py" />
+        <option value="$PROJECT_DIR$/AppAuto/common/data_handle.py" />
+        <option value="$PROJECT_DIR$/AppAuto/project/weixin/case/test_1_login_page.py" />
+        <option value="$PROJECT_DIR$/AppAuto/project/weixin/case/test_address_book_page.py" />
+        <option value="$PROJECT_DIR$/AppAuto/project/weixin/case/test_chat_page.py" />
+        <option value="$PROJECT_DIR$/AppAuto/project/weixin/case/test_find_page.py" />
+        <option value="$PROJECT_DIR$/AppAuto/project/weixin/case/test_self_page.py" />
+        <option value="$PROJECT_DIR$/AppAuto/project/faxuanyun/case/test_0_login_page.py" />
+        <option value="$PROJECT_DIR$/AppAuto/project/faxuanyun/case/test_home_page.py" />
+        <option value="$PROJECT_DIR$/AppAuto/project/faxuanyun/case/test_z_self_page.py" />
+        <option value="$PROJECT_DIR$/AppAuto/common/app.py" />
+        <option value="F:/AutoTest_o/ReadMe.txt" />
+        <option value="$PROJECT_DIR$/WebAuto/readme" />
+        <option value="F:/AutoTest_o/src/test_ui/case/start_caselist.py" />
+        <option value="F:/AutoTest_o/data/data_from/testui_data.json" />
+        <option value="$PROJECT_DIR$/WebAuto/common/json_handle.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/start_caselist.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/start_login.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/start_warningstatistic.py" />
+        <option value="$PROJECT_DIR$/WebAuto/run_web.py" />
+        <option value="$PROJECT_DIR$/WebAuto/common/run_suite.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/common/achive_filepath.py" />
+        <option value="$PROJECT_DIR$/AppAuto/common/page.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/common/read_file_content.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/common/read_file.py" />
+        <option value="$PROJECT_DIR$/WebAuto/common/browser.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/login_page.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/casestudy_page.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_caselist.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/server/police_wiki/test_case.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/server/weather/test_s6.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_login.py" />
+        <option value="$PROJECT_DIR$/WebAuto/common/data_handle.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_warningstatistic.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/data/case_data.json" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/caselist_page.py" />
+        <option value="$PROJECT_DIR$/WebAuto/common/page.py" />
+        <option value="$PROJECT_DIR$/WebAuto/data/web.json" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/warningstatistics_page.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="245" />
+    <option name="y" value="24" />
+    <option name="width" value="1339" />
+    <option name="height" value="1012" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebAuto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="nodejs_interpreter_path" value="D:/program/nodejs/node" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="DefaultHtmlFileTemplate" value="XHTML File" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="Auto_test" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="Auto_test" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\AutoTest\WebAuto\project\intelligent_judgement\data\长文本研判分析" />
+      <recent name="F:\AutoTest\WebAuto\common" />
+      <recent name="F:\AutoTest\WebAuto\drivers" />
+      <recent name="F:\AutoTest\WebAuto\project\intelligent_judgement\common" />
+      <recent name="F:\AutoTest\WebAuto" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\AutoTest\WebAuto\project\intelligent_judgement\data" />
+      <recent name="F:\AutoTest\WebAutoTest\data" />
+      <recent name="F:\AutoTest\WebAutoTest" />
+      <recent name="F:\AutoTest\WebAutoTest\common" />
+      <recent name="F:\AutoTest\InterfaceTest\report" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.run_web">
+    <configuration default="false" name="test_caselist" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="AutoTest" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_caselist.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="run_interface" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/InterfaceAuto" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="AutoTest" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/InterfaceAuto/run_interface.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_login" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="AutoTest" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_login.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_warningstatistic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="AutoTest" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_warningstatistic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="run_web" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebAuto" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="AutoTest" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAuto/run_web.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Auto_test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Auto_test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Auto_test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Auto_test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="host" value="127.0.0.1" />
+      <option name="browserUrl" value="" />
+      <option name="additionalOptions" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Auto_test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="Auto_test" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Auto_test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Auto_test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.test_caselist" />
+      <item index="1" class="java.lang.String" itemvalue="Python.run_interface" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test_login" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test_warningstatistic" />
+      <item index="4" class="java.lang.String" itemvalue="Python.run_web" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.run_web" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test_caselist" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test_warningstatistic" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test_login" />
+        <item index="4" class="java.lang.String" itemvalue="Python.run_interface" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a0a39109-9e2e-4b5c-8814-65c376ffa219" name="Default" comment="" />
+      <created>1508745014143</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1508745014143</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in_test_case_py - 2018.11.09 at 10h 09m 12s.xml">
+      <configuration name="Unittests in test_case.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_case_py - 2018.11.09 at 10h 12m 34s.xml">
+      <configuration name="Unittests in test_case.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_case_py - 2018.11.09 at 10h 14m 13s.xml">
+      <configuration name="Unittests in test_case.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_case_py - 2018.11.14 at 14h 20m 14s.xml">
+      <configuration name="Unittests in test_case.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_case_py - 2018.11.15 at 14h 56m 33s.xml">
+      <configuration name="Unittests in test_case.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_caselist_py - 2018.11.19 at 08h 53m 38s.xml">
+      <configuration name="Unittests in test_caselist.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_caselist_py - 2018.11.19 at 15h 21m 24s.xml">
+      <configuration name="Unittests in test_caselist.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_home_page_py - 2018.11.16 at 09h 52m 40s.xml">
+      <configuration name="Unittests in test_home_page.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_login_page_py - 2018.11.13 at 15h 46m 11s.xml">
+      <configuration name="Unittests in test_login_page.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_s6_py - 2018.11.14 at 11h 26m 51s.xml">
+      <configuration name="Unittests in test_s6.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="245" y="24" width="1339" height="1012" extended-state="0" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32697546" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61272323" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21688034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48591548" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44017094" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25097734" sideWeight="0.49602723" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21136364" sideWeight="0.49130434" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32692307" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25323194" sideWeight="0.50397277" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45774648" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.011318619" sideWeight="0.50869566" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32521316" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.56808037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1444563" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51339287" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/utils/support.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/utils/file_operation/excel_data.py</url>
+          <line>103</line>
+          <option name="timeStamp" value="200" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="284" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/common/excel_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1980">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#30#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/common/excel_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/common/read_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+            <element signature="e#213#497#0" expanded="false" />
+            <element signature="e#524#945#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/subprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="851" column="0" lean-forward="false" selection-start-line="851" selection-start-column="0" selection-end-line="851" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-29-36案例推送_150527115213166.doc.doc.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-13案例推送_150527115213166.doc.doc.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-14刑法规定__150527115213166.doc.doc.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-14司法解释_150527115213166.doc.doc.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-14理解与适用_.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-15法信推送_150527115213166.doc.doc.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-15量刑指导意见_.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-16量刑地图_.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://F:/AutoTest_o/src/test_ui/common/browser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="59" column="12" lean-forward="false" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#30#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/data/长文本研判分析/青岛坤格汇鑫进出口有限公司等走私废物罪一审刑事判决书.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3036">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/selenium/webdriver/common/by.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/sqlite3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="73" column="8" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/unittest/suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/selenium/webdriver/support/wait.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="67" column="44" lean-forward="true" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/selenium/webdriver/remote/errorhandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="241" column="0" lean-forward="false" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="953" column="8" lean-forward="false" selection-start-line="953" selection-start-column="8" selection-end-line="953" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppAuto/common/page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AutoTest_o/src/test_ui/common/page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="84" column="8" lean-forward="false" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-21 09-40-35量刑地图_.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/report/18-11-21-11-20-28.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/report/18-11-21-11-20-26.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/run_interface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#51#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/weather/test_s6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="916">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/police_wiki/test_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/login_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/common/data_handle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="95" column="8" lean-forward="false" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+            <element signature="e#792#1846#0" expanded="false" />
+            <element signature="e#1892#2169#0" expanded="false" />
+            <element signature="e#2224#2628#0" expanded="false" />
+            <element signature="e#2691#3341#0" expanded="false" />
+            <element signature="e#3394#3977#0" expanded="false" />
+            <element signature="e#4027#4969#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/selenium/webdriver/support/expected_conditions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="122" column="8" lean-forward="false" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2332">
+          <caret line="110" column="37" lean-forward="true" selection-start-line="110" selection-start-column="7" selection-end-line="110" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="102" column="4" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/common/browser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/data/case_data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="39" column="33" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!block;n#start_login#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/data/web.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/selenium/webdriver/remote/webelement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/appium/webdriver/imagelement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/appium/webdriver/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-339">
+          <caret line="222" column="8" lean-forward="false" selection-start-line="222" selection-start-column="8" selection-end-line="222" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-15-56-17.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/caselist_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/common/page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding>
+            <element signature="e#22#84#0" expanded="true" />
+            <element signature="e#755#817#0" expanded="false" />
+            <element signature="e#864#1173#0" expanded="false" />
+            <element signature="e#2743#2992#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/casestudy_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#81#0" expanded="true" />
+            <element signature="e#5036#5458#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-16-30-08.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/run_web.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/warningstatistics_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="100" column="20" lean-forward="false" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-17-00-24.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-17-03-59.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="59" lean-forward="true" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-16-45-00.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_warningstatistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding>
+            <element signature="e#22#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_caselist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
+          <folding>
+            <element signature="e#22#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

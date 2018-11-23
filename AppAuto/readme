@@ -1,0 +1,44 @@
+【import】
+1、来自selenium框架下的导入模块(By,EC,WebDriverWait)
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+2、来自appium框架下的导入模块(webdriver,TouchAction,MultiAction)
+from appium import webdriver
+from appium.webdriver.common.touch_action import TouchAction
+from appium.webdriver.common.multi_action import MultiAction
+
+
+【app自动化的准备】
+1、启动appium、夜神模拟器
+2、终端连接夜神模拟器命令并检验是否成功连接
+adb connect 127.0.0.1:62001
+adb services -l
+
+
+
+【关于python命名规范】
+文件名
+全小写,可用下划线
+
+
+包
+简短的、小写的名字。可用下划线改善可读性。如mypackage。
+
+
+模块
+与包的规范同。如mymodule。
+
+
+类
+总是使用首字母大写单词串。如MyClass。内部类可以使用额外的前导下划线。
+
+
+函数&方法
+小写，可用下划线改善可读性。如：myfunction，my_example_function。
+*注意*：混合大小写仅被允许用于这种风格已经占据优势的时候，以便保持向后兼容。
+
+
+【运行】
+此项目需copy到根目录盘下，采用pycharm编译器运行
