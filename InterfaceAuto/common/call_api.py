@@ -1,5 +1,7 @@
 import requests
 import json
+import re
+from InterfaceAuto.common.data_handle import PATH
 
 
 class CallAPI:
@@ -18,7 +20,17 @@ class CallAPI:
         if method =="get":
             response=requests.get(url,params=input,**kwargs)
         elif method =="post":
-            response = requests.post(url,data=input, **kwargs)
+            for key,value in input.items():
+                if "data\\" in value:
+                    filepath=PATH(value)
+                    filename = "test" + re.search(r'\..*', filepath).group(0)
+                    del input[key]
+                    with open(filepath,"rb") as f:
+                        files= {key: (filename,f)}
+                        response = requests.post(url, data=input, files=files,**kwargs)
+                        break
+            else:
+                response = requests.post(url, data=input)
         elif method =="put":
             response = requests.put(url, data=input,**kwargs)
         elif method =="delete":

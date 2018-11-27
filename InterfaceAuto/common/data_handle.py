@@ -78,20 +78,29 @@ class DataHandle:
             project_info =prefix_url_data[project]
             base_url=project_info.get("base_url")
             base_except=project_info.get("base_except")
+            base_description = project_info.get("base_description") or ""
             if project_info.get(module):
                 module_info=project_info[module]
                 module_url = module_info.get("module_url")
-                module_except=module_info.get("module_except")
+                module_description=module_info.get("module_description") or ""
+                module_except = module_info.get("module_except")
                 if module_info.get(interface):
                     interface_info=module_info[interface]
 
                     interface_url=base_url+module_url+interface
                     interface_info["url"]= interface_url
 
-                    interface_except=interface_info.get("interface_except") or []
-                    interface_except.extend(module_except)
+                    interface_except=[]
                     interface_except.extend(base_except)
+                    interface_except.extend(module_except)
+                    interface_except.extend(interface_info.get("interface_except") or [])
                     interface_info["interface_except"]=interface_except
+
+                    interface_description=interface_info.get("interface_description") or ""
+                    if module_description!="":
+                        interface_description="【{0}】{1}".format(module_description,interface_description)
+                    interface_info["interface_description"] = interface_description
+
                     return interface_info
                 else:
                     print("{0}该模块下未找到接口：{1}".format(module, interface))

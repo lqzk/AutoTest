@@ -1,4 +1,164 @@
 {
+   "Intelligent_mediation" : {
+      "base_description" : "智慧调解项目",
+      "base_url" : "https://dispute.aegis-info.com/",
+      "base_except" : [ "code[=]200"],
+      "mediate" : {
+         "module_description" : "书面调解快速调解接口",
+         "module_url" : "api/mediate/",
+         "module_except" : [],
+         "getCaseInfo" : {
+            "method" : "get",
+            "interface_except" : ["data.caseId[=]{caseId}"],
+            "interface_description" : "获取案件信息"
+         },
+         "getFullCaseInfo" : {
+            "method" : "get",
+            "interface_except" : ["data.disputeCaseInfo.caseId[=]{caseId}"],
+            "interface_description" : "获取完整案件信息"
+         },
+         "getParties" : {
+            "method" : "get",
+            "interface_except" : ["data.partyId[list_dict]{partyIds}"],
+            "interface_description" : "获取当事人信息"
+         },
+         "quick/saveCaseInfo" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "快速调解保存案件信息"
+         },
+         "quick/saveCompany" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "快速调解保存当事人信息(法人)"
+         },
+         "quick/saveNatural" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "快速调解保存当事人信息(自然人)"
+         },
+         "quick/saveResult" : {
+            "method" : "post",
+            "interface_except" : ["data.caseId[=]{caseId}"],
+            "interface_description" : "快速调解保存调解结果"
+         },
+         "uploadFile" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "调解结果附件上传"
+         },
+         "written/saveCaseInfo" : {
+            "method" : "post",
+            "interface_except" : ["data[key]caseId"],
+            "interface_description" : "书面调解保存案件信息"
+         },
+        "written/saveCompany" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "书面调解保存当事人信息(法人)"
+         },
+         "written/saveNatural" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "书面调解保存当事人信息(自然人)"
+         },
+        "written/saveResult" : {
+            "method" : "post",
+            "interface_except" : ["data[key]caseId"],
+            "interface_description" : "书面调解保存调解结果"
+         }
+      },
+      "record" : {
+         "module_description" : "案件补录接口",
+         "module_url" : "api/record/",
+         "module_except" : [],
+         "save" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "补录信息提交"
+         },
+         "test1" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "上传调解协议书"
+         }
+      },
+      "checkInfo" : {
+         "module_description" : "纠纷排查接口",
+         "module_url" : "api/checkInfo/",
+         "module_except" : [],
+         "queryForDetail" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "查询纠纷排查详情"
+         },
+         "queryForPage" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "查询纠纷排查信息"
+         },
+         "save" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "保存纠纷排查信息"
+         },
+         "update" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "更新纠纷排查信息"
+         }
+      },
+      "mediator" : {
+         "module_description" : "调解员接口\r\n",
+         "module_url" : "api/mediator/",
+         "module_except" : [],
+         "getMediator" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "调解员检索"
+         }
+      },
+      "committee" : {
+         "module_description" : "调解委员会接口",
+         "module_url" : "api/committee/",
+         "module_except" : [],
+         "query" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "调解委员会信息查询"
+         },
+         "save" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "调解委员会信息保存"
+         },
+         "update" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "调解委员会信息更新"
+         }
+      },
+      "common" : {
+         "module_description" : "调解委员会接口",
+         "module_url" : "api/common/",
+         "module_except" : [],
+         "idcard_upload" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "身份证上传"
+         },
+         "nationDictionary" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "民族字典"
+         },
+         "newIdentify" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "新增主键ID"
+         }
+      }
+   },
    "weather" : {
       "base_url" : "https://free-api.heweather.com/",
       "base_except" : [],
@@ -18,10 +178,8 @@
          },
          "lifestyle" : {
             "method" : "get",
-            "interface_except" : [
-               "HeWeather6.lifestyle[list_list_key]brf,txt,type"
-            ]
-      },
+            "interface_except" : [ "HeWeather6.lifestyle[list_list_key]brf,txt,type" ]
+         },
          "" : {
             "method" : "get",
             "interface_except" : [
@@ -29,14 +187,14 @@
                "HeWeather6.daily_forecast[list_list_key]date,sr,ss,mr,ms,tmp_max,tmp_min,cond_code_d,cond_code_n,cond_txt_d,cond_txt_n,wind_deg,wind_dir,wind_sc,wind_spd,hum,pcpn,pop,pres,uv_index,vis",
                "HeWeather6.lifestyle[list_list_key]brf,txt,type"
             ]
-      },
+         },
          "now" : {
             "method" : "get",
             "interface_except" : [
                "HeWeather6.now[list_dict_key]fl,tmp,cond_code,cond_txt,wind_deg,wind_dir,wind_sc,wind_spd,hum,pcpn,pres,vis,cloud"
             ]
+         }
       }
-   }
    },
    "police_wiki" : {
       "base_url" : "http://ipolice.aegis-info.com/",

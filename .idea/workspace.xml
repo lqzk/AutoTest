@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0a39109-9e2e-4b5c-8814-65c376ffa219" name="Default" comment="" />
+    <list default="true" id="a0a39109-9e2e-4b5c-8814-65c376ffa219" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InterfaceAuto/report/18-11-21-11-20-26.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/InterfaceAuto/report/18-11-21-11-20-28.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InterfaceAuto/data/police_wiki.xlsx" afterPath="$PROJECT_DIR$/InterfaceAuto/data/police_wiki.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InterfaceAuto/data/weather.xlsx" afterPath="$PROJECT_DIR$/InterfaceAuto/data/weather.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAuto/data/intelligent_judgement.xlsx" afterPath="$PROJECT_DIR$/WebAuto/data/intelligent_judgement.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InterfaceAuto/common/call_api.py" afterPath="$PROJECT_DIR$/InterfaceAuto/common/call_api.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InterfaceAuto/common/data_handle.py" afterPath="$PROJECT_DIR$/InterfaceAuto/common/data_handle.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InterfaceAuto/common/general_test.py" afterPath="$PROJECT_DIR$/InterfaceAuto/common/general_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/InterfaceAuto/data/interface_info.json" afterPath="$PROJECT_DIR$/InterfaceAuto/data/interface_info.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/caselist_page.py" afterPath="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/caselist_page.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,10 +59,11 @@
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_setUp.coverage" NAME="Unittests for start_caselist.Caselist.setUp Coverage Results" MODIFIED="1516689049127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_TestLogin_setUp.coverage" NAME="Unittests for start_login.TestLogin.setUp Coverage Results" MODIFIED="1513311144977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_warningstatistic_WarningStatistic_test_warning_aggreement.coverage" NAME="Unittests for start_warningstatistic.WarningStatistic.test_warning_aggreement Coverage Results" MODIFIED="1525230818241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
-    <SUITE FILE_PATH="coverage/AutoTest$run_web.coverage" NAME="run_web Coverage Results" MODIFIED="1542791038458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebAuto" />
+    <SUITE FILE_PATH="coverage/AutoTest$run_web.coverage" NAME="run_web Coverage Results" MODIFIED="1542940845634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebAuto" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_match_error_py.coverage" NAME="Unittests in test_match_error.py Coverage Results" MODIFIED="1516586972522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study/test_case" />
     <SUITE FILE_PATH="coverage/AutoTest$casecause_Identify_more.coverage" NAME="casecause_Identify_more Coverage Results" MODIFIED="1510561026428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/Algorithm" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_qa_remote_QaTest.coverage" NAME="Unittests for qa_remote.QaTest Coverage Results" MODIFIED="1524554423670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_common.coverage" NAME="test_common Coverage Results" MODIFIED="1543046400585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_TestLogin_test_null_password_login.coverage" NAME="Unittests for start_login.TestLogin.test_null_password_login Coverage Results" MODIFIED="1513329656216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_test_caselist_test_caselist.coverage" NAME="Unittests for start_caselist.test_caselist.test_caselist Coverage Results" MODIFIED="1512983006785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_handlers_py.coverage" NAME="Unittests in handlers.py Coverage Results" MODIFIED="1515980111349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="F:/workspace/api/test_port" />
@@ -74,18 +88,21 @@
     <SUITE FILE_PATH="coverage/AutoTest$practise.coverage" NAME="practise Coverage Results" MODIFIED="1516861192270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_TestCaselist_test_analysis.coverage" NAME="Unittests for start_caselist.TestCaselist.test_analysis Coverage Results" MODIFIED="1513826005571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_case_py.coverage" NAME="Unittests in test_case.py Coverage Results" MODIFIED="1542264993792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto/server/police_wiki" />
-    <SUITE FILE_PATH="coverage/AutoTest$test.coverage" NAME="test Coverage Results" MODIFIED="1541658632215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceTest/server/police_wiki" />
+    <SUITE FILE_PATH="coverage/AutoTest$test.coverage" NAME="test Coverage Results" MODIFIED="1543309070761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_common_py.coverage" NAME="Unittests in test_common.py Coverage Results" MODIFIED="1543044934767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_socket_py.coverage" NAME="Unittests in test_socket.py Coverage Results" MODIFIED="1509936304773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/Socket" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_handlers_TestUnlockHandler_get.coverage" NAME="Unittests for handlers.TestUnlockHandler.get Coverage Results" MODIFIED="1515638712172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="F:/workspace/api/test_port" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist2_TestCaselist_test_casecausefliter.coverage" NAME="Unittests for start_caselist2.TestCaselist.test_casecausefliter Coverage Results" MODIFIED="1513576009315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
     <SUITE FILE_PATH="coverage/AutoTest$test_match_error.coverage" NAME="test_match_error Coverage Results" MODIFIED="1516188278114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/study/test_case" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_mediate.coverage" NAME="test_mediate Coverage Results" MODIFIED="1543311222762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation" />
     <SUITE FILE_PATH="coverage/AutoTest$test_home_page.coverage" NAME="test_home_page Coverage Results" MODIFIED="1542333815867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AppAuto/project/faxuanyun/case" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_Login_test_correct_login.coverage" NAME="Unittests for start_login.Login.test_correct_login Coverage Results" MODIFIED="1516847755575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_analysis_fromfile.coverage" NAME="Unittests for start_caselist.Caselist.analysis_fromfile Coverage Results" MODIFIED="1513822626764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
     <SUITE FILE_PATH="coverage/AutoTest$json_handle.coverage" NAME="json_handle Coverage Results" MODIFIED="1513310030279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils/file_operation" />
+    <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_mediate_py.coverage" NAME="Unittests in test_mediate.py Coverage Results" MODIFIED="1543309108032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_home_page_py.coverage" NAME="Unittests in test_home_page.py Coverage Results" MODIFIED="1542333160058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/AppAuto/project/faxuanyun/case" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist_Caselist_test_analysis_fromExcel.coverage" NAME="Unittests for start_caselist.Caselist.test_analysis_fromExcel Coverage Results" MODIFIED="1525338909339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
-    <SUITE FILE_PATH="coverage/AutoTest$test_caselist.coverage" NAME="test_caselist Coverage Results" MODIFIED="1542788832154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
+    <SUITE FILE_PATH="coverage/AutoTest$test_caselist.coverage" NAME="test_caselist Coverage Results" MODIFIED="1542951726731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_qa_remote_QaTest_test_qa_remote.coverage" NAME="Unittests for qa_remote.QaTest.test_qa_remote Coverage Results" MODIFIED="1524816846843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_login_TestLogin_tearDown.coverage" NAME="Unittests for start_login.TestLogin.tearDown Coverage Results" MODIFIED="1513308547529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_start_caselist2_TestCaselist_test_analysis.coverage" NAME="Unittests for start_caselist2.TestCaselist.test_analysis Coverage Results" MODIFIED="1513735783140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/case" />
@@ -131,7 +148,7 @@
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_casecause_Identify_more_test_analysis_fromExcel.coverage" NAME="Unittests for casecause_Identify_more.test_analysis_fromExcel Coverage Results" MODIFIED="1515578077808" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/algorithm" />
     <SUITE FILE_PATH="coverage/AutoTest$achive_filepath.coverage" NAME="achive_filepath Coverage Results" MODIFIED="1509616163416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/utils/file_operation" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_in_test_caselist_py.coverage" NAME="Unittests in test_caselist.py Coverage Results" MODIFIED="1542612084007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
-    <SUITE FILE_PATH="coverage/AutoTest$run_interface.coverage" NAME="run_interface Coverage Results" MODIFIED="1542770425372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto" />
+    <SUITE FILE_PATH="coverage/AutoTest$run_interface.coverage" NAME="run_interface Coverage Results" MODIFIED="1542942914862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InterfaceAuto" />
     <SUITE FILE_PATH="coverage/AutoTest$file_analysis.coverage" NAME="file_analysis Coverage Results" MODIFIED="1516591905303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/base_data" />
     <SUITE FILE_PATH="coverage/AutoTest$Unittests_for_qa_remote_QaTest_qa_test.coverage" NAME="Unittests for qa_remote.QaTest.qa_test Coverage Results" MODIFIED="1523935773694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_interferce/law_push" />
     <SUITE FILE_PATH="coverage/AutoTest$browser.coverage" NAME="browser Coverage Results" MODIFIED="1516583510899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/test_ui/common" />
@@ -163,14 +180,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_caselist.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_caselist.py">
+      <file leaf-file-name="test_mediate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_mediate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
+            <state relative-caret-position="158">
+              <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
-                <element signature="e#22#37#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ddt.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/program/Python/Lib/site-packages/ddt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="case.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/program/Python/Lib/unittest/case.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="838" column="0" lean-forward="false" selection-start-line="838" selection-start-column="0" selection-end-line="838" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="general_test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/InterfaceAuto/common/general_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="call_api.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/InterfaceAuto/common/call_api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -188,7 +247,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.browser_type</find>
       <find>win32com</find>
       <find>mylogger</find>
       <find>ec</find>
@@ -218,6 +276,7 @@
       <find>time.sleep</find>
       <find>GeneralTest()</find>
       <find>tdata</find>
+      <find>getParties</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;pessimisticTags&quot;</replace>
@@ -252,22 +311,21 @@
       <replace>self.run</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Database/common/system.py" />
-        <option value="$PROJECT_DIR$/Database/common/database.py" />
-        <option value="$PROJECT_DIR$/Database/run_database.py" />
-        <option value="$PROJECT_DIR$/Database/readme" />
-        <option value="$PROJECT_DIR$/InterfaceAuto/common/run_suite.py" />
-        <option value="$PROJECT_DIR$/InterfaceAuto/common/excel_data.py" />
-        <option value="$PROJECT_DIR$/InterfaceAuto/common/general_test.py" />
-        <option value="$PROJECT_DIR$/InterfaceAuto/run_interface.py" />
-        <option value="$PROJECT_DIR$/AppAuto/common/run_suite.py" />
         <option value="$PROJECT_DIR$/AppAuto/run_app.py" />
         <option value="$PROJECT_DIR$/WebAuto/data/intelligent_judgement.js" />
         <option value="$PROJECT_DIR$/WebAuto/data/intelligent_judgement.json" />
-        <option value="$PROJECT_DIR$/InterfaceAuto/common/data_handle.py" />
         <option value="$PROJECT_DIR$/AppAuto/common/data_handle.py" />
         <option value="$PROJECT_DIR$/AppAuto/project/weixin/case/test_1_login_page.py" />
         <option value="$PROJECT_DIR$/AppAuto/project/weixin/case/test_address_book_page.py" />
@@ -302,10 +360,20 @@
         <option value="$PROJECT_DIR$/WebAuto/common/data_handle.py" />
         <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_warningstatistic.py" />
         <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/data/case_data.json" />
-        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/caselist_page.py" />
         <option value="$PROJECT_DIR$/WebAuto/common/page.py" />
         <option value="$PROJECT_DIR$/WebAuto/data/web.json" />
         <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/warningstatistics_page.py" />
+        <option value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/caselist_page.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_base_except.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_record.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_common.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_checkInfo.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_mediate.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/common/data_handle.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/data/interface_info.json" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/common/call_api.py" />
+        <option value="$PROJECT_DIR$/InterfaceAuto/common/general_test.py" />
       </list>
     </option>
   </component>
@@ -322,9 +390,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="245" />
-    <option name="y" value="24" />
-    <option name="width" value="1339" />
+    <option name="x" value="278" />
+    <option name="y" value="11" />
+    <option name="width" value="1324" />
     <option name="height" value="1012" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -359,7 +427,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -368,11 +435,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AutoTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebAuto" />
+              <option name="myItemId" value="AutoTest_o" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -386,13 +449,104 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InterfaceAuto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InterfaceAuto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InterfaceAuto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Intelligent_mediation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InterfaceAuto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AutoTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InterfaceAuto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/Function3" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
     <property name="nodejs_interpreter_path" value="D:/program/nodejs/node" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
@@ -408,11 +562,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\AutoTest\InterfaceAuto\server\Intelligent_mediation" />
+      <recent name="F:\AutoTest\InterfaceAuto\data" />
+      <recent name="F:\AutoTest\run_main" />
       <recent name="F:\AutoTest\WebAuto\project\intelligent_judgement\data\长文本研判分析" />
       <recent name="F:\AutoTest\WebAuto\common" />
-      <recent name="F:\AutoTest\WebAuto\drivers" />
-      <recent name="F:\AutoTest\WebAuto\project\intelligent_judgement\common" />
-      <recent name="F:\AutoTest\WebAuto" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\AutoTest\WebAuto\project\intelligent_judgement\data" />
@@ -434,97 +588,91 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run_web">
-    <configuration default="false" name="test_caselist" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.test_mediate">
+    <configuration default="false" name="Unittests in test_common.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Auto_test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_common.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_common" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="AutoTest" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_caselist.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_common.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="run_interface" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="Unittests in test_mediate.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Auto_test" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_mediate.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_mediate" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/InterfaceAuto" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="AutoTest" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/InterfaceAuto/run_interface.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_mediate.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="test_login" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="AutoTest" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_login.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="test_warningstatistic" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="AutoTest" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_warningstatistic.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="run_web" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/WebAuto" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="AutoTest" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/WebAuto/run_web.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -696,19 +844,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.test_caselist" />
-      <item index="1" class="java.lang.String" itemvalue="Python.run_interface" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test_login" />
-      <item index="3" class="java.lang.String" itemvalue="Python.test_warningstatistic" />
-      <item index="4" class="java.lang.String" itemvalue="Python.run_web" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_common.py" />
+      <item index="1" class="java.lang.String" itemvalue="Python.test_common" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_mediate.py" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test_mediate" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.run_web" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test_caselist" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test_warningstatistic" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test_login" />
-        <item index="4" class="java.lang.String" itemvalue="Python.run_interface" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test_mediate" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_mediate.py" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test_common" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_common.py" />
       </list>
     </recent_temporary>
   </component>
@@ -726,15 +874,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_case_py - 2018.11.09 at 10h 09m 12s.xml">
-      <configuration name="Unittests in test_case.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_case_py - 2018.11.09 at 10h 12m 34s.xml">
-      <configuration name="Unittests in test_case.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_case_py - 2018.11.09 at 10h 14m 13s.xml">
-      <configuration name="Unittests in test_case.py" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_case_py - 2018.11.14 at 14h 20m 14s.xml">
       <configuration name="Unittests in test_case.py" configurationId="tests" />
     </history-entry>
@@ -747,11 +886,20 @@
     <history-entry file="Unittests_in_test_caselist_py - 2018.11.19 at 15h 21m 24s.xml">
       <configuration name="Unittests in test_caselist.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_common_py - 2018.11.24 at 15h 35m 35s.xml">
+      <configuration name="Unittests in test_common.py" configurationId="tests" />
+    </history-entry>
     <history-entry file="Unittests_in_test_home_page_py - 2018.11.16 at 09h 52m 40s.xml">
       <configuration name="Unittests in test_home_page.py" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_test_login_page_py - 2018.11.13 at 15h 46m 11s.xml">
       <configuration name="Unittests in test_login_page.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_mediate_py - 2018.11.24 at 17h 03m 11s.xml">
+      <configuration name="Unittests in test_mediate.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_mediate_py - 2018.11.27 at 16h 58m 28s.xml">
+      <configuration name="Unittests in test_mediate.py" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_test_s6_py - 2018.11.14 at 11h 26m 51s.xml">
       <configuration name="Unittests in test_s6.py" configurationId="tests" />
@@ -767,20 +915,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="245" y="24" width="1339" height="1012" extended-state="0" />
+    <frame x="278" y="11" width="1324" height="1012" extended-state="0" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2136076" sideWeight="0.49602723" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32697546" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61272323" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21688034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48591548" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44017094" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25097734" sideWeight="0.49602723" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21136364" sideWeight="0.49130434" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21688034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4735605" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32692307" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44017094" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25323194" sideWeight="0.50397277" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45774648" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5208556" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -791,6 +938,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32521316" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32692307" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -844,251 +992,15 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="284" />
+      <option name="time" value="290" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/InterfaceAuto/common/excel_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1980">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#30#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/common/excel_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/common/read_file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-            <element signature="e#213#497#0" expanded="false" />
-            <element signature="e#524#945#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/program/Python/Lib/subprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="851" column="0" lean-forward="false" selection-start-line="851" selection-start-column="0" selection-end-line="851" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-29-36案例推送_150527115213166.doc.doc.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-13案例推送_150527115213166.doc.doc.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-14刑法规定__150527115213166.doc.doc.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-14司法解释_150527115213166.doc.doc.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-14理解与适用_.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-15法信推送_150527115213166.doc.doc.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-15量刑指导意见_.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-20 09-48-16量刑地图_.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://F:/AutoTest_o/src/test_ui/common/browser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="59" column="12" lean-forward="false" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#30#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/data/长文本研判分析/青岛坤格汇鑫进出口有限公司等走私废物罪一审刑事判决书.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3036">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/program/Python/Lib/site-packages/selenium/webdriver/common/by.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/sqlite3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="73" column="8" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/program/Python/Lib/unittest/suite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="167" column="0" lean-forward="false" selection-start-line="167" selection-start-column="0" selection-end-line="167" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/program/Python/Lib/site-packages/selenium/webdriver/support/wait.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="67" column="44" lean-forward="true" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/program/Python/Lib/site-packages/selenium/webdriver/remote/errorhandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="241" column="0" lean-forward="false" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/program/Python/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="953" column="8" lean-forward="false" selection-start-line="953" selection-start-column="8" selection-end-line="953" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppAuto/common/page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="61" column="8" lean-forward="false" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://F:/AutoTest_o/src/test_ui/common/page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="84" column="8" lean-forward="false" selection-start-line="84" selection-start-column="8" selection-end-line="84" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/picture/2018-11-21 09-40-35量刑地图_.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InterfaceAuto/report/18-11-21-11-20-28.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InterfaceAuto/report/18-11-21-11-20-26.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InterfaceAuto/run_interface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#51#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/weather/test_s6.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="916">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/police_wiki/test_case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/login_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/common/data_handle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="95" column="8" lean-forward="false" selection-start-line="95" selection-start-column="8" selection-end-line="95" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-            <element signature="e#792#1846#0" expanded="false" />
-            <element signature="e#1892#2169#0" expanded="false" />
-            <element signature="e#2224#2628#0" expanded="false" />
-            <element signature="e#2691#3341#0" expanded="false" />
-            <element signature="e#3394#3977#0" expanded="false" />
-            <element signature="e#4027#4969#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/program/Python/Lib/site-packages/selenium/webdriver/support/expected_conditions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="122" column="8" lean-forward="false" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1096,15 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2332">
           <caret line="110" column="37" lean-forward="true" selection-start-line="110" selection-start-column="7" selection-end-line="110" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/program/Python/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="102" column="4" lean-forward="false" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1112,7 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1120,9 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="39" column="33" lean-forward="false" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#start_login#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1130,7 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1138,7 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1146,7 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1154,63 +1050,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-339">
           <caret line="222" column="8" lean-forward="false" selection-start-line="222" selection-start-column="8" selection-end-line="222" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-15-56-17.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/caselist_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-15-56-17.html" />
     <entry file="file://$PROJECT_DIR$/WebAuto/common/page.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding>
-            <element signature="e#22#84#0" expanded="true" />
-            <element signature="e#755#817#0" expanded="false" />
-            <element signature="e#864#1173#0" expanded="false" />
-            <element signature="e#2743#2992#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/casestudy_page.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#81#0" expanded="true" />
-            <element signature="e#5036#5458#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-16-30-08.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-16-30-08.html" />
     <entry file="file://$PROJECT_DIR$/WebAuto/run_web.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1218,50 +1073,268 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="100" column="20" lean-forward="false" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-17-00-24.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-17-00-24.html" />
     <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-17-03-59.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="59" lean-forward="true" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-16-45-00.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-21-16-45-00.html" />
     <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_warningstatistic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding>
-            <element signature="e#22#37#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/report/18-11-23-11-18-38.html" />
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/report/18-11-23-11-22-11.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppAuto/report/18-11-23-11-22-14.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-23-11-26-06.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-23-11-50-30.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="87" lean-forward="true" selection-start-line="9" selection-start-column="87" selection-end-line="9" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/report/18-11-23-11-44-23.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppAuto/report/18-11-23-11-23-48.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/caselist_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/common/read_file.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="22" lean-forward="true" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/readme">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/page/casestudy_page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="48" column="49" lean-forward="true" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/case/test_caselist.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="109" column="27" lean-forward="false" selection-start-line="109" selection-start-column="27" selection-end-line="109" selection-end-column="27" />
+        <state relative-caret-position="-994">
+          <caret line="75" column="33" lean-forward="true" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAuto/project/intelligent_judgement/common/achive_filepath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RunMain/run_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RunMain/run_web.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RunMain/run_interface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/police_wiki/test_case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/requests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="114" column="43" lean-forward="false" selection-start-line="114" selection-start-column="43" selection-end-line="114" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/django/utils/datastructures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="171" column="8" lean-forward="false" selection-start-line="171" selection-start-column="8" selection-end-line="171" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AutoTest_o/src/test_interferce/call_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="78" column="38" lean-forward="false" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_record.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://F:/AutoTest_o/src/test_interferce/base_data/file_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="28" lean-forward="true" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/common/data_handle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_checkInfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="52" column="27" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/data/interface_info.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/site-packages/ddt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/common/call_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/server/Intelligent_mediation/test_mediate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
-            <element signature="e#22#37#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/program/Python/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="838" column="0" lean-forward="false" selection-start-line="838" selection-start-column="0" selection-end-line="838" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InterfaceAuto/common/general_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -55,10 +55,8 @@ class GeneralTest(unittest.TestCase):
                     if obtain_value in input_data.keys():
                         check_value = input_data[obtain_value]
 
-                if check_value.isnumeric():
+                if check_value.isnumeric() and len(check_value)<10 and check_value[0]!="0" :
                     check_value = int(check_value)
-                elif check_value.isdigit():
-                    check_value = float(check_value)
 
                 except_info.append((obtain_obj_method, check_method, check_value))
 
@@ -126,13 +124,25 @@ class GeneralTest(unittest.TestCase):
                 elif check_method == "list_dict":
                     check_value = check_info[2]
 
-
                     check_obj_split = check_info[0].split(".")
                     check_obj_list = JExtractor.extract(check_obj_split[0], response)
                     self.assertTrue(isinstance(check_obj_list, list))
                     for check_o in check_obj_list:
                         self.assertTrue(isinstance(check_o, dict))
                         check_obj_dict=check_info[0].replace(check_obj_split[0]+".","")
+                        check_obj_dict = JExtractor.extract(check_obj_dict, check_o)
+                        self.assertEqual(check_value, check_obj_dict)
+
+
+                elif check_method == "dict_list_dict":
+                    check_value = check_info[2]
+
+                    check_obj_split = check_info[0].split(".")
+                    check_obj_list = JExtractor.extract("{0}.{1}".format(check_obj_split[0],check_obj_split[1]), response)
+                    self.assertTrue(isinstance(check_obj_list, list))
+                    for check_o in check_obj_list:
+                        self.assertTrue(isinstance(check_o, dict))
+                        check_obj_dict=check_info[0].replace("{0}.{1}.".format(check_obj_split[0],check_obj_split[1]),"")
                         check_obj_dict = JExtractor.extract(check_obj_dict, check_o)
                         self.assertEqual(check_value, check_obj_dict)
 
@@ -168,7 +178,6 @@ class GeneralTest(unittest.TestCase):
                 raise Exception("验证check_info失败：{0}，error info：{1}\n".format(check_info,e))
 
     def execute_case(self,case_data):
-
 
         if case_data["Run"]=="Y":
             print("**************************Start测试用例：{0}*********************************".format(case_data["用例描述"]))

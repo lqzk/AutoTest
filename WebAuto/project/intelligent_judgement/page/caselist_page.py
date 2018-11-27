@@ -45,9 +45,9 @@ class CaselistPage(WarningStatisticsPage):
         print("测试文本:{0}".format(content))
         analysis_result="成功"
         self.click(*self.predict_button)
-        self.sleep(0.01)
+        self.sleep(0.02)
         self.clear(*self.predict_put)
-        self.sleep(0.01)
+        self.sleep(0.02)
         self.click(*self.predict_put)
         self.type(content,*self.predict_put)
         self.click(*self.predict_confirm)

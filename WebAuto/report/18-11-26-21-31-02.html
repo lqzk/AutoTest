@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/echarts.common.min.js"></script>
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>自动化测试报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2018-11-26 21:31:02</p>
+<p class='attribute'><strong>运行时长:</strong> 0:07:41.385197</p>
+<p class='attribute'><strong>状态:</strong> 通过 10 失败 1 错误 1</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='errorClass'>
+        <td>test_caselist.Caselist</td>
+        <td>4</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1</td>
+        <td><a href="javascript:showClassDetail('c1',4)">详情</a></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_analysis</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <pre>
+        pt1.1: ----------------------------StartTest:【案件列表】研判分析_单次测试-----------------------------------
+测试文本:盗窃500
+标签信息：
+涉案金额 :500元
+次数 :1次
+标题：盗窃罪文书片段
+罪名：盗窃罪
+当前判罚为：,-- --,-- --
+有案例推送
+无刑法规定
+无司法解释
+有理解与适用
+有量刑指导意见,宣告刑期：0个月
+有法信推送
+个案研究页面跳转案件列表页面
+-----------------------------EndTest:【案件列表】研判分析_单次测试---------------------------------------
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_analysis_fromExcel</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <pre>
+        pt1.2: =================================================StartTest:【案件列表】研判分析_fromExcel====================================================
+----------------------------StartTest:【案件列表】研判分析_单次测试-----------------------------------
+测试文本:五个人一起盗窃10000
+标签信息：
+涉案金额 :10000元
+次数 :1次
+盗窃数额较大
+标题：盗窃罪文书片段
+罪名：盗窃罪
+当前判罚为：,-- --,-- --
+有案例推送
+有刑法规定
+无司法解释
+有理解与适用
+有量刑指导意见,宣告刑期：6个月
+有法信推送
+个案研究页面跳转案件列表页面
+-----------------------------EndTest:【案件列表】研判分析_单次测试---------------------------------------
+=================================================EndTest:【案件列表】研判分析_fromExcel====================================================
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_analysis_fromfile</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        错误</a>
+
+    <div id='div_ft1.3' class="popup_window">
+        <pre>
+        ft1.3: =================================================StartTest:【案件列表】研判分析_fromFile====================================================
+Traceback (most recent call last):
+  File "F:\AutoTest\WebAuto\project\intelligent_judgement\case\test_caselist.py", line 76, in test_analysis_fromfile
+    content_list=read_file.read(dicfile)
+  File "F:\AutoTest\WebAuto\project\intelligent_judgement\common\read_file.py", line 23, in read
+    doc.SaveAs(filepath_new, 4)
+AttributeError: 'NoneType' object has no attribute 'SaveAs'
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_upload</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        通过</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <pre>
+        pt1.4: 上传文书案号：（2016）苏0591刑初198号
+上传文书案号：（2016）苏0585刑初498号
+上传文书案号：（2016）苏1084刑初369号
+上传文书案号：泗检诉刑诉（2017）144号
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td>test_login.Login</td>
+        <td>5</td>
+        <td>5</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c2',5)">详情</a></td>
+    </tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_correct_login</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        通过</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <pre>
+        pt2.1: web自动化测试网址：http://legal.strategy.aegis-info.com
+-------------------------------------------------StartTest:【登录页面】输入正确的用户名和密码，成功登陆------------------------------------
+登录用户:jsgy，密码:aegis1234
+验证ok-成功登陆
+
+[{'domain': 'legal.strategy.aegis-info.com', 'expiry': 1545831336.00279, 'httpOnly': False, 'name': 'user', 'path': '/', 'secure': False, 'value': '"2|1:0|10:1543239326|4:user|8:anNneQ==|5591cfb15a9912082ede39d4569b27b06e69fd4c5804101895c31f6d9db2700e"'}]
+-------------------------------------------------EndTest:【登录页面】 输入正确的用户名和密码，成功登陆------------------------------------
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_error_password_login</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        通过</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <pre>
+        pt2.2: web自动化测试网址：http://legal.strategy.aegis-info.com
+-------------------------------------------------StartTest:【登录页面】输入正确用户名、错误密码，提示“密码输入错误”------------------------------------
+登录用户:jsgy，密码:2w3
+验证ok-密码输入错误
+
+-------------------------------------------------EndTest:【登录页面】输入正确用户名、错误密码，提示“密码输入错误”------------------------------------
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_error_user_login</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
+        通过</a>
+
+    <div id='div_pt2.3' class="popup_window">
+        <pre>
+        pt2.3: web自动化测试网址：http://legal.strategy.aegis-info.com
+-------------------------------------------------StartTest:【登录页面】 输入错误的用户名、非空密码，提示“用户名输入错误”------------------------------------
+登录用户:as，密码:2w3
+验证ok-用户名输入有误
+
+--------------------------------------------------EndTest:【登录页面】 输入错误的用户名、非空密码，提示“用户名输入错误”------------------------------------
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_null_password_login</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.4')" >
+        通过</a>
+
+    <div id='div_pt2.4' class="popup_window">
+        <pre>
+        pt2.4: web自动化测试网址：http://legal.strategy.aegis-info.com
+-------------------------------------------------StartTest:【登录页面】 输入非空用户名、空的密码，提示“请输入密码”------------------------------------
+登录用户:jsgy，密码: 
+验证ok-密码输入错误
+
+-------------------------------------------------EndTest:【登录页面】 输入非空用户名、空的密码，提示“请输入密码”------------------------------------
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_null_user_login</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.5')" >
+        通过</a>
+
+    <div id='div_pt2.5' class="popup_window">
+        <pre>
+        pt2.5: web自动化测试网址：http://legal.strategy.aegis-info.com
+-------------------------------------------------StartTest:【登录页面】输入空的用户名、非空密码，提示“请输入用户名”------------------------------------
+登录用户: ，密码:aegis1234
+验证ok-账户输入有误
+
+-------------------------------------------------EndTest:【登录页面】输入空的用户名、非空密码，提示“请输入用户名”------------------------------------
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    <tr class='failClass'>
+        <td>test_warningstatistic.WarningStatistic</td>
+        <td>3</td>
+        <td>2</td>
+        <td>1</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c3',3)">详情</a></td>
+    </tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_casecausefliter</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        通过</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <pre>
+        pt3.1: =====StartTest:预警案件数量趋势图-案由筛选,测试案由['盗窃罪', '抢劫罪', '不限案由', '信用卡诈骗罪', '不限案由', '信用卡诈骗罪', '信用卡诈骗罪']======
+=====SubTest:案由筛选:盗窃罪======
+=====EndSubTest:案由筛选======
+=====SubTest:案由筛选:抢劫罪======
+=====EndSubTest:案由筛选======
+=====SubTest:案由筛选:不限案由======
+=====EndSubTest:案由筛选======
+=====SubTest:案由筛选:信用卡诈骗罪======
+=====EndSubTest:案由筛选======
+=====SubTest:案由筛选:不限案由======
+=====EndSubTest:案由筛选======
+=====SubTest:案由筛选:信用卡诈骗罪======
+=====EndSubTest:案由筛选======
+=====SubTest:案由筛选:信用卡诈骗罪======
+=====EndSubTest:案由筛选======
+=====EndTest:预警案件数量趋势图-案由筛选======
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_timefliter</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        通过</a>
+
+    <div id='div_pt3.2' class="popup_window">
+        <pre>
+        pt3.2: SubTest:时间筛选：2011-01-12至2018-11-26
+EndTest:时间筛选结束
+SubTest:时间筛选：2011-01-12至2011-01-15
+EndTest:时间筛选结束
+SubTest:时间筛选：2018-11-01至2018-11-26
+EndTest:时间筛选结束
+SubTest:时间筛选：2018-10-31至2018-11-01
+EndTest:时间筛选结束
+SubTest:时间筛选：2011-01-12至2018-11-21
+EndTest:时间筛选结束
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft3.3' class='none'>
+    <td class='failCase'><div class='testcase'>test_warning_aggreement</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.3')" >
+        失败</a>
+
+    <div id='div_ft3.3' class="popup_window">
+        <pre>
+        ft3.3: ----------------------验证预警页面偏离度里外一致,次数3-----------------------
+----------------------subTest：验证预警页面偏离度里外一致之第1次验证-----------------------
+验证预警页面偏离度里外一致之1级预警
+偏离度预警案件分布模块状态：1级预警-36，二级预警-17，三级预警-112
+1级预警数值36，点击进入该预警入口
+案件列表页案件总数：7
+验证失败:里外不一致
+Traceback (most recent call last):
+  File "F:\AutoTest\WebAuto\project\intelligent_judgement\case\test_warningstatistic.py", line 32, in tearDown
+    self.assertEqual([], self.verificationErrors)
+AssertionError: Lists differ: [] != ['验证失败:里外不一致']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'验证失败:里外不一致'
+
+- []
++ ['验证失败:里外不一致']
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>12</td>
+            <td>10</td>
+            <td>1</td>
+            <td>1</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:10, name:'通过'},
+                        {value:1, name:'失败'},
+                        {value:1, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>
