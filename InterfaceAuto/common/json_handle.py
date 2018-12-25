@@ -1,5 +1,21 @@
 import json
 
+import jmespath
+import json
+
+
+class JmespathExtractor(object):
+    """
+        用JMESPath实现的抽取器，对于json格式数据实现简单方式的抽取。
+    """
+    def extract(self,quary=None,body=None):
+        try:
+            # return jmespath.search(quary, json.loads(body))
+            return jmespath.search(quary, body)
+        except Exception as e:
+            raise ValueError("Invalid quary :"+quary+":"+str(e))
+
+
 class JsonHandle:
     def __init__(self,jsonfile_path):
         self.jsonfile_path=jsonfile_path

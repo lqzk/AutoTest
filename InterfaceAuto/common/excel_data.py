@@ -53,6 +53,9 @@ class Excel_Data:
                 raise SheetIsNullError("sheet 为空")
         return self._data
 
+
+
+
     # 方法二：openpyxl读取excel
     # def data(self):
     #     if not self._data:
@@ -77,6 +80,39 @@ class Excel_Data:
     #         else:
     #             raise SheetIsNullError("{} 为空",format(self.sheet))
     #     return self._data
+
+    def getColumnType(self, columnName):
+        columnType=None
+
+        workbook = open_workbook(self.excel)
+
+        if type(self.sheet) not in [int, str]:
+            raise SheetTypeError("please pass in <type int> or <type str>, not {0} ", format(type(self.sheet)))
+        elif type(self.sheet) == int:
+            try:
+                ws = workbook.sheet_by_index(self.sheet)
+            except:
+                raise SheetNotFoundError("{0} 不存在", format(self.sheet))
+        else:
+            try:
+                ws = workbook.sheet_by_name(self.sheet)
+            except:
+                raise SheetNotFoundError("{0} 不存在", format(self.sheet))
+
+        for i in range(ws.ncols):
+            if ws.cell(0,i).value==columnName:
+                columnData=ws.col_values(i)
+                columnType=list(set(columnData[1:]))
+                break
+
+        return columnType
+
+
+
+
+
+
+
 
 
 

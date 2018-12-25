@@ -7,12 +7,17 @@ from InterfaceAuto.common.email import Email
 class RunSuite:
     def create_suite(self,project_name,ordered=False,pattern='test*.py'):
         # 导入该项目下全部测试用例模块
-        import_statement = DataHandle().obtain_import_cases_statement(project_name)
-        exec(import_statement)
-
+        # import_statement = DataHandle().obtain_import_cases_statement(project_name)
+        # exec(import_statement)
+        # suite=unittest.defaultTestLoader.discover(project_case_path(project_name),pattern=pattern,top_level_dir=project_case_path(project_name))
 
         if not ordered:
-            suite=unittest.defaultTestLoader.discover(project_case_path(project_name),pattern=pattern,top_level_dir=project_case_path(project_name))
+
+            suite = unittest.TestSuite()
+            discover = unittest.defaultTestLoader.discover(project_case_path(project_name), pattern=pattern,
+                                                        top_level_dir=project_case_path(project_name))
+            suite.addTest(discover)
+
         else:
             test_case_list = DataHandle().obtain_case_exe_order(project_name)
             suite=unittest.TestSuite()
@@ -22,7 +27,6 @@ class RunSuite:
 
     def run(self,project_name,pattern='test*.py',ordered=False,html_report=True,send_email=False):
 
-
         #创建测试用例
         suite=self.create_suite(project_name=project_name,ordered=ordered,pattern=pattern)
 
@@ -31,7 +35,8 @@ class RunSuite:
             runner=unittest.TextTestRunner()
             runner.run(suite)
         else:
-            from AppAuto.common.HTMLTestRunner_PY3 import HTMLTestRunner
+            from InterfaceAuto.common.HTMLTestRunner_PY3 import HTMLTestRunner
+
             now=time.strftime("%y-%m-%d-%H-%M-%S",time.localtime(time.time()))
             report_path=dir_report_path+now+".html"
             print(report_path)

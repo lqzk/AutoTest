@@ -4,7 +4,7 @@ from InterfaceAuto.common.data_handle import DataHandle,project_case_data
 from InterfaceAuto.common.general_test import GeneralTest
 
 project = "Intelligent_mediation"
-module = "mediate"
+module = "informer"
 module_cases=DataHandle().obtain_interface_cases(project, module)
 case_result=project_case_data("{0}_result".format(project),module)
 table_result=[]
@@ -14,7 +14,7 @@ table_result=[]
 class TestCase(unittest.TestCase):
 
     def setUp(self):
-        self.run=GeneralTest()
+        self.run = GeneralTest()
 
     def tearDown(self):
         pass
@@ -28,11 +28,7 @@ class TestCase(unittest.TestCase):
             raise Exception(e)
         finally:
             table_result[-1] = case_data
-            case_result.data = case_data
-
-
-
-
+            case_result.data=case_data
 
 
 

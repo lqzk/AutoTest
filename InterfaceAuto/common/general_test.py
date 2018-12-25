@@ -1,211 +1,218 @@
 import unittest
 from InterfaceAuto.common.call_api import CallAPI
-import re
-from InterfaceAuto.common.json_extractor import JmespathExtractor
+import json,re
+import warnings
+from collections import Counter
+from InterfaceAuto.common.data_handle import DataHandle
+from InterfaceAuto.common.json_handle import JmespathExtractor
 JExtractor = JmespathExtractor()
 
 
-
 class GeneralTest(unittest.TestCase):
-    #加工单个接口用例的测试数据,主要是输入、预期数据的加工提取
-    def handle_case_data(self,case_data):
 
-        input_data = {}
-        except_info=[]
+    def assert_result(self,check_obj,check_method,check_value):
 
-        #加工Input数据
-        input=case_data["Input"]
+        if check_method == "=":
+            if type(check_value)==type(check_obj):
+                self.assertEqual(check_value, check_obj)
+            elif isinstance(check_obj, list):
+                for check_ob in check_obj:
+                    self.assertEqual(check_value, check_ob)
+            else:
+                self.assertEqual(check_value, check_obj)
 
-        if input=="":
-            input_data=None
+
+        elif check_method == "C=":
+            if isinstance(check_obj, dict) and isinstance(check_value, dict):
+                for key1, value1 in check_obj.items():
+                    if value1==None:
+                        continue
+                    else:
+                        for key2, value2 in check_value.items():
+                            if value2==None:
+                                continue
+                            elif key1 == key2:
+                                self.assertEqual(value1, value2)
+                                break
+            elif isinstance(check_obj, list):
+                self.assertIn(check_value,check_obj)
+
+        elif check_method == "DO=":
+            self.assertEqual(type(check_obj),type(check_value))
+            if isinstance(check_obj, list):
+                if isinstance(check_obj[0], list):
+                    for check_ob in check_obj:
+                        if isinstance(check_ob[0], list):
+                            for check_o in check_ob:
+                                self.assertEqual(Counter(check_o), Counter(check_value))
+                        else:
+                            self.assertEqual(Counter(check_ob), Counter(check_value))
+                elif isinstance(check_obj[0], dict):
+                    key1=list(check_obj[0].keys())[0]
+                    check_obj=sorted(check_obj,key=lambda x:x[key1])
+                    check_value = sorted(check_value, key=lambda x:x[key1])
+                    self.assertEqual(len(check_obj),len(check_value))
+                    for i in range(len(check_obj)):
+                        self.assertEqual(check_obj[i],check_value[i])
+                else:
+                    self.assertEqual(Counter(check_obj), Counter(check_value))
+
+
+        elif check_method == "!=":
+            self.assertNotEqual(check_value, check_obj)
+
+        elif check_method == "len":
+            self.assertEqual(check_value, len(check_obj))
+
+        elif check_method == "contains":
+            self.assertIn(check_value, check_obj)
+
+        elif check_method == "key":
+            if isinstance(check_value,str):
+                check_value = check_value.split(",")
+
+            if isinstance(check_obj,list) :
+                for every_check_obj in check_obj:
+                    try:
+                        self.assertEqual(Counter(check_value), Counter(every_check_obj.keys()))
+                    except Exception as e:
+                        different=Counter(check_value)-Counter(every_check_obj.keys())
+                        raise Exception("丢失的key值：{0}".format(list(different),e))
+            else:
+                try:
+                    self.assertEqual(Counter(check_value), Counter(check_obj.keys()))
+                except Exception as e:
+                    different = Counter(check_value) - Counter(check_obj.keys())
+                    raise Exception("丢失的key值：{0}".format(list(different), e))
+
+        elif check_method == "Ckey":
+            if isinstance(check_value, str):
+                check_value = check_value.split(",")
+
+            if isinstance(check_obj, list):
+                for every_check_obj in check_obj:
+                    for check_v in check_value:
+                        self.assertIn(check_v, every_check_obj.keys())
+
+            else:
+                for check_v in check_value:
+                    self.assertIn(check_v, check_obj.keys())
+
+
+        elif check_method == "type":
+            if check_value == "list":
+                self.assertTrue(isinstance(check_obj, list))
+            elif check_value == "dict":
+                self.assertTrue(isinstance(check_obj, dict))
+
+        elif check_method == "mode":
+            self.assertTrue(re.search(check_value,check_obj))
+
         else:
-            input_list=input.strip().split("\n")
-            for every_input in input_list:
-                parse_input=every_input.split("=")
-                input_data[parse_input[0]]=parse_input[1]
+            raise Exception("不存在的校验方式：{0}".format(check_method))
 
 
-        #加工CaseExcept数据,并获取验证数据，其格式
-        # {"验证方式，如equal，contains"：
-        #                         {"验证对象获取方式":"验证数值"}}
+    def check_result(self,table_result,check_infos):
+        case_data = table_result[-1]
 
+        quoto_situation = case_data["QuotoSituation"]
+        if quoto_situation != None:
+            for k,v in quoto_situation.items():
+                v=DataHandle().obtain_quote_data(v,table_result)
+                v=DataHandle().handle_string_obj(v)
+                quoto_situation[k]=v
+            case_data["QuotoSituation"]=quoto_situation
 
-
-        interface_except=""
-        for iexcept in case_data["interface_except"] :
-
-            iexcept=iexcept.strip()
-            if  not iexcept=="":
-                interface_except=interface_except+iexcept+"\n"
-        case_data["interface_except"] =interface_except
-
-        case_except=interface_except+case_data["CaseExcept"]
-
-
-        if not case_except=="":
-            case_except_list=case_except.strip().split("\n")
-
-            for case_except in case_except_list:
-                obtain_obj_method = re.search(r'(.*?)\[', case_except).group(1)
-                check_method = re.search(r'\[(.*?)\]', case_except).group(1)
-                check_value = re.search(r'\](.*?)$', case_except).group(1)
-
-                if re.search(r'\{(.*?)\}', check_value):
-                    obtain_value = re.search(r'\{(.*?)\}', check_value).group(1)
-                    if obtain_value in input_data.keys():
-                        check_value = input_data[obtain_value]
-
-                if check_value.isnumeric() and len(check_value)<10 and check_value[0]!="0" :
-                    check_value = int(check_value)
-
-                except_info.append((obtain_obj_method, check_method, check_value))
-
-        return (input_data,except_info)
-
-
-
-    def check_result(self,response,check_infos):
 
         for check_info in check_infos:
+            response = case_data["Res"]
             try:
+                quary_string=check_info[0]
+                check_des = check_info[1]
+                check_value= check_info[2]
 
-                check_method = check_info[1]
+                check_des= DataHandle().obtain_quote_data(check_des, table_result)
+                check_des=DataHandle().obtain_QuotoSituation_data(quoto_situation,check_des)
 
-                # 根据check_method区别验证
-                if check_method == "=":
-                    check_obj = JExtractor.extract(check_info[0], response)
-                    check_value = check_info[2]
-                    self.assertEqual(check_value, check_obj)
+                check_des_list=check_des.split(",")
+                location_list=None
+                if len(check_des_list)==1:
+                    check_obj_type, check_method = "default", check_des_list[0]
+                elif len(check_des_list)==2:
+                    check_obj_type, check_method = check_des_list[0],check_des_list[1]
+                elif len(check_des_list)==3:
+                    check_obj_type, check_method,location_des = check_des_list[0], check_des_list[1],check_des_list[2]
+                    location_list=location_des.split("@")
+                else:
+                    raise Exception("check_info:{0},验证格式错误:{1}".format(check_info,check_des))
 
+                if re.search(r'\%(.*?)\%', quary_string):
+                    check_obj=DataHandle().obtain_QuotoSituation_data(quoto_situation,quary_string,check_obj_type,location_list)
+                elif re.search(r'\<(.*?)\>', quary_string):
+                    check_obj=DataHandle().obtain_quote_data(quary_string,table_result)
+                else:
+                    check_obj = DataHandle().obtain_type_data(quary_string, check_obj_type, response, location_list)
 
-                elif check_method == "contains":
-                    check_obj = JExtractor.extract(check_info[0], response)
-                    check_value = check_info[2]
-                    if isinstance(check_obj, list):
-                        for obj in check_obj:
-                            self.assertIn(check_value, obj)
-                    else:
-                        self.assertIn(check_value, check_obj)
+                check_value=DataHandle().obtain_QuotoSituation_data(quoto_situation,check_value)
 
-                elif check_method == "type":
-                    check_obj = JExtractor.extract(check_info[0], response)
-                    check_value = check_info[2]
-                    if check_value == "list":
-                        self.assertTrue(isinstance(check_obj, list))
-                    elif check_value == "dict":
-                        self.assertTrue(isinstance(check_obj, dict))
-                    elif check_value == "tuple":
-                        self.assertTrue(isinstance(check_obj, tuple))
+                self.assert_result(check_obj, check_method, check_value)
 
-                elif check_method == "len":
-                    check_obj = JExtractor.extract(check_info[0], response)
-                    check_value = check_info[2]
-                    self.assertEqual(check_value, len(check_obj))
+                print("校验该段信息成功：{0}".format(check_info))
 
-
-                elif check_method == "key":
-                    check_value = check_info[2].split(",")
-
-                    check_obj = JExtractor.extract(check_info[0], response)
-                    self.assertTrue(isinstance(check_obj, dict))
-                    for value in check_value:
-                        self.assertIn(value, check_obj.keys())
-
-
-                elif check_method == "list_key":
-                    check_value = check_info[2].split(",")
-
-                    check_obj = JExtractor.extract(check_info[0], response)
-                    self.assertTrue(isinstance(check_obj, list))
-                    for check_o in check_obj:
-                        for value in check_value:
-                            self.assertIn(value, check_o.keys())
-
-                elif check_method == "list_dict":
-                    check_value = check_info[2]
-
-                    check_obj_split = check_info[0].split(".")
-                    check_obj_list = JExtractor.extract(check_obj_split[0], response)
-                    self.assertTrue(isinstance(check_obj_list, list))
-                    for check_o in check_obj_list:
-                        self.assertTrue(isinstance(check_o, dict))
-                        check_obj_dict=check_info[0].replace(check_obj_split[0]+".","")
-                        check_obj_dict = JExtractor.extract(check_obj_dict, check_o)
-                        self.assertEqual(check_value, check_obj_dict)
-
-
-                elif check_method == "dict_list_dict":
-                    check_value = check_info[2]
-
-                    check_obj_split = check_info[0].split(".")
-                    check_obj_list = JExtractor.extract("{0}.{1}".format(check_obj_split[0],check_obj_split[1]), response)
-                    self.assertTrue(isinstance(check_obj_list, list))
-                    for check_o in check_obj_list:
-                        self.assertTrue(isinstance(check_o, dict))
-                        check_obj_dict=check_info[0].replace("{0}.{1}.".format(check_obj_split[0],check_obj_split[1]),"")
-                        check_obj_dict = JExtractor.extract(check_obj_dict, check_o)
-                        self.assertEqual(check_value, check_obj_dict)
-
-
-                elif check_method == "list_dict_key":
-                    check_value = check_info[2].split(",")
-
-                    check_obj_split = check_info[0].split(".")
-                    check_obj_list = JExtractor.extract(check_obj_split[0], response)
-                    self.assertTrue(isinstance(check_obj_list, list))
-                    for check_o in check_obj_list:
-                        self.assertTrue(isinstance(check_o, dict))
-                        check_obj_dict = JExtractor.extract(check_obj_split[1], check_o)
-                        for value in check_value:
-                            self.assertIn(value, check_obj_dict.keys())
-
-
-                elif check_method == "list_list_key":
-                    check_value = check_info[2].split(",")
-
-                    check_obj_split = check_info[0].split(".")
-                    check_obj_list_1 = JExtractor.extract(check_obj_split[0], response)
-                    self.assertTrue(isinstance(check_obj_list_1, list))
-                    for check_o1 in check_obj_list_1:
-                        self.assertTrue(isinstance(check_o1, dict))
-                        check_obj_list_2 = JExtractor.extract(check_obj_split[1], check_o1)
-                        self.assertTrue(isinstance(check_obj_list_1, list))
-                        for check_o2 in check_obj_list_2:
-                            self.assertTrue(isinstance(check_o2, dict))
-                            for value in check_value:
-                                self.assertIn(value, check_o2.keys())
             except Exception as e:
-                raise Exception("验证check_info失败：{0}，error info：{1}\n".format(check_info,e))
+                raise Exception("case_data：{0}\n\n\n验证check_info失败：{1}，error info：{2}\n".format(case_data,check_info,e))
 
-    def execute_case(self,case_data):
 
-        if case_data["Run"]=="Y":
+    def execute_case(self,table_result):
+
+        case_data=table_result[-1]
+        print(case_data)
+        warnings.simplefilter("ignore", ResourceWarning)
+
+        if case_data.get("Run")!="N":
             print("**************************Start测试用例：{0}*********************************".format(case_data["用例描述"]))
 
-            print("请求方式:{0},   请求地址：{1}".format(case_data["method"], case_data["url"]))
-            input_and_except_info=self.handle_case_data(case_data)
-
-            handle_input=input_and_except_info[0]
-            handle_except_info=input_and_except_info[1]
-            print("测试输入:{0},   期望输出：{1}".format(handle_input,handle_except_info))
-            res = CallAPI().run(method=case_data["method"], url=case_data["url"], input=handle_input)
-            print("测试实际返回值：\n{0}".format(res))
-            case_data["response"] = res
 
             try:
-                self.check_result(res, handle_except_info)
+                table_result =DataHandle().handle_case_data(table_result)
+                case_data = table_result[-1]
+
+                handle_input = case_data["handle_Input"]
+                handle_except_info = case_data["CaseExcept"]
+                handle_url = case_data["Url"]
+                handle_headers=case_data.get("headers")
+                handle_files=case_data.get("files")
+
+                print("请求方式:{0},   请求地址：{1}".format(case_data["method"], handle_url))
+                print("测试输入:{0},   期望输出：{1}".format(case_data["Input"], handle_except_info))
+                Response=CallAPI().run(method=case_data["method"], url=handle_url, input=handle_input,headers=handle_headers,files=handle_files)
+                del case_data["handle_Input"]
+
+                print("测试实际返回值：\n{0}".format(Response["res"]))
+                case_data["Res"] = Response["res"]
+                case_data["Res_headers"] = Response["Res_headers"]
+                case_data["Res_time(s)"] = Response["res_time"]
+                case_data["status_code"]=Response["status_code"]
+
+                table_result[-1]=case_data
+
+                self.check_result(table_result, handle_except_info)
+
                 case_data["Result"] = "True"
                 case_data["Error_msg"] = ""
             except Exception as e:
                 case_data["Result"] = "False"
                 case_data["Error_msg"] = e
                 raise Exception(e)
+            finally:
+                del case_data["result_table_name"]
 
-            print("**************************PASS测试用例：{0}**********************************\n\n".format(
-                case_data["用例描述"]))
+            print("**************************PASS测试用例：{0}**********************************\n\n".format(case_data.get("用例描述")))
         else:
-            self.handle_case_data(case_data)
+            del case_data["result_table_name"]
+
             print("skip and No Run")
+
 
 
 

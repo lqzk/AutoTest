@@ -5,12 +5,14 @@ from InterfaceAuto.common.general_test import GeneralTest
 
 project = "Intelligent_mediation"
 module = "intelligentHelper"
-cases=lambda interface: DataHandle().obtain_interface_cases(project, module, interface)
-case_result=project_case_data(project,module)
+module_cases=DataHandle().obtain_interface_cases(project, module)
+case_result=project_case_data("{0}_result".format(project),module)
+table_result=[]
 
 
 @ddt.ddt
 class TestIntelligentHelper(unittest.TestCase):
+
 
     def setUp(self):
         self.run=GeneralTest()
@@ -18,31 +20,22 @@ class TestIntelligentHelper(unittest.TestCase):
     def tearDown(self):
         pass
 
-    @ddt.data(*cases("similarInfo"))
-    def test_similarInfo(self,case_data):
+    @ddt.data(*module_cases)
+    def test_module_cases(self,case_data):
+        table_result.append(case_data)
         try:
-            self.run.execute_case(case_data)
+            self.run.execute_case(table_result)
         except Exception as e:
             raise Exception(e)
         finally:
-            case_result.data=case_data
+            table_result[-1] = case_data
+            case_result.data = case_data
 
 
-    @ddt.data(*cases("similarLaw"))
-    def test_similarLaw(self,case_data):
-        try:
-            self.run.execute_case(case_data)
-        except Exception as e:
-            raise Exception(e)
-        finally:
-            case_result.data=case_data
 
 
-    @ddt.data(*cases("strategy"))
-    def test_strategy(self,case_data):
-        try:
-            self.run.execute_case(case_data)
-        except Exception as e:
-            raise Exception(e)
-        finally:
-            case_result.data=case_data
+
+
+
+if __name__ == '__main__':
+    unittest.main()

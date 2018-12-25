@@ -1,25 +1,25 @@
 {
    "Intelligent_mediation" : {
-      "base_description" : "智慧调解项目",
+      "base_description" : "智慧调解小程序项目",
       "base_url" : "https://dispute.aegis-info.com/",
-      "base_except" : [ "code[=]200"],
+      "base_except" : ["all[Ckey]code,data,msg"],
       "mediate" : {
          "module_description" : "书面调解快速调解接口",
          "module_url" : "api/mediate/",
-         "module_except" : [],
+         "module_except" : ["code[=]int(200)"],
          "getCaseInfo" : {
             "method" : "get",
-            "interface_except" : ["data.caseId[=]{caseId}"],
+            "interface_except" : ["data.caseId[=]<caseId>"],
             "interface_description" : "获取案件信息"
          },
          "getFullCaseInfo" : {
             "method" : "get",
-            "interface_except" : ["data.disputeCaseInfo.caseId[=]{caseId}"],
+            "interface_except" : ["data.disputeCaseInfo.caseId[=]<caseId>"],
             "interface_description" : "获取完整案件信息"
          },
          "getParties" : {
             "method" : "get",
-            "interface_except" : ["data.partyId[list_dict]{partyIds}"],
+            "interface_except" : [],
             "interface_description" : "获取当事人信息"
          },
          "quick/saveCaseInfo" : {
@@ -39,7 +39,7 @@
          },
          "quick/saveResult" : {
             "method" : "post",
-            "interface_except" : ["data.caseId[=]{caseId}"],
+            "interface_except" : ["data.caseId[=]<caseId>"],
             "interface_description" : "快速调解保存调解结果"
          },
          "uploadFile" : {
@@ -68,25 +68,71 @@
             "interface_description" : "书面调解保存调解结果"
          }
       },
+      "intelligentHelper" : {
+         "module_description" : "智能辅调接口",
+         "module_url" : "api/intelligentHelper/",
+         "module_except" : ["code[=]int(200)"],
+         "similarInfo" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "根据纠纷类型获取类案"
+         },
+         "similarLaw" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "根据纠纷类型获取法条"
+         },
+         "strategy" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "根据纠纷类型获取策略"
+         }
+      },
       "record" : {
          "module_description" : "案件补录接口",
          "module_url" : "api/record/",
          "module_except" : [],
-         "save" : {
+         "getUrl" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "获取文档地址"
+         },
+         "photo" : {
             "method" : "post",
             "interface_except" : [],
-            "interface_description" : "补录信息提交"
+            "interface_description" : "上传照片"
          },
-         "test1" : {
+         "recognize" : {
             "method" : "post",
             "interface_except" : [],
             "interface_description" : "上传调解协议书"
+         },
+         "save" : {
+            "method" : "post",
+            "headers":{"Content-Type":"application/json"},
+            "interface_except" : [],
+            "interface_description" : "补录信息提交"
+         },
+         "uploadSituation" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "上传情况"
          }
       },
       "checkInfo" : {
          "module_description" : "纠纷排查接口",
          "module_url" : "api/checkInfo/",
-         "module_except" : [],
+         "module_except" : ["code[=]int(200)"],
+         "convertToQuickDispute" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "纠纷转快速调解"
+         },
+         "queryCountWithCase" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "纠纷排查统计并返回案例"
+         },
          "queryForDetail" : {
             "method" : "get",
             "interface_except" : [],
@@ -95,7 +141,7 @@
          "queryForPage" : {
             "method" : "get",
             "interface_except" : [],
-            "interface_description" : "查询纠纷排查信息"
+            "interface_description" : "查询纠纷排查信息(分页)"
          },
          "save" : {
             "method" : "post",
@@ -106,22 +152,57 @@
             "method" : "post",
             "interface_except" : [],
             "interface_description" : "更新纠纷排查信息"
+         },
+         "upload_attachment" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "纠纷排查附件上传"
+         }
+      },
+      "informer" : {
+         "module_description" : "语音识别",
+         "module_url" : "api/informer/",
+         "module_except" : ["code[=]int(200)"],
+         "audio" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "语音识别"
+         }
+      },
+      "message" : {
+         "module_description" : "发送模板消息",
+         "module_url" : "api/message/",
+         "module_except" : ["code[=]int(200)"],
+         "send" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "发送模板消息"
          }
       },
       "mediator" : {
-         "module_description" : "调解员接口\r\n",
+         "module_description" : "调解员接口",
          "module_url" : "api/mediator/",
-         "module_except" : [],
+         "module_except" : ["code[=]int(200)"],
          "getMediator" : {
             "method" : "get",
             "interface_except" : [],
             "interface_description" : "调解员检索"
+         },
+         "save" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "调解员保存"
+         },
+         "update" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "调解员更新"
          }
       },
       "committee" : {
          "module_description" : "调解委员会接口",
          "module_url" : "api/committee/",
-         "module_except" : [],
+         "module_except" : ["code[=]int(200)"],
          "query" : {
             "method" : "get",
             "interface_except" : [],
@@ -138,10 +219,45 @@
             "interface_description" : "调解委员会信息更新"
          }
       },
+      "disputeCaseInfo" : {
+         "module_description" : "调解案件接口",
+         "module_url" : "api/disputeCaseInfo/",
+         "module_except" : ["code[=]int(200)"],
+         "changeInputState" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "案件补录状态更改接口"
+         },
+         "changeState" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "案件状态更改接口"
+         },
+         "getCaseDetail" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "案件详情"
+         },
+         "getCaseHandleCount" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "案件处理情况"
+         },
+         "getCaseInfoList" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "调解案件列表"
+         },
+         "getRoomId" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "获取房间号"
+         }
+      },
       "common" : {
-         "module_description" : "调解委员会接口",
+         "module_description" : "通用接口",
          "module_url" : "api/common/",
-         "module_except" : [],
+         "module_except" : ["code[=]int(200)"],
          "idcard_upload" : {
             "method" : "post",
             "interface_except" : [],
@@ -156,73 +272,79 @@
             "method" : "get",
             "interface_except" : [],
             "interface_description" : "新增主键ID"
+         },
+         "sendSms" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "发送短信"
          }
       }
    },
-   "weather" : {
-      "base_url" : "https://free-api.heweather.com/",
+   "Intelligent_mediation_web" :{
+      "base_description" : "智慧调解平台项目",
+      "base_url" : "http://192.168.11.88:9980",
       "base_except" : [],
-      "s6" : {
-         "module_url" : "s6/weather/",
-         "module_except" : [
-            "HeWeather6[list_key]basic,update,status",
-            "HeWeather6.basic[list_dict_key]cid,location,parent_city,admin_area,cnty,lat,lon,tz",
-            "HeWeather6.update[list_dict_key]loc,utc",
-            "HeWeather6.status[list_dict]ok"
-         ],
-         "forecast" : {
-            "method" : "get",
-            "interface_except" : [
-               "HeWeather6.daily_forecast[list_list_key]date,sr,ss,mr,ms,tmp_max,tmp_min,cond_code_d,cond_code_n,cond_txt_d,cond_txt_n,wind_deg,wind_dir,wind_sc,wind_spd,hum,pcpn,pop,pres,uv_index,vis"
-            ]
-         },
-         "lifestyle" : {
-            "method" : "get",
-            "interface_except" : [ "HeWeather6.lifestyle[list_list_key]brf,txt,type" ]
-         },
-         "" : {
-            "method" : "get",
-            "interface_except" : [
-               "HeWeather6.now[list_dict_key]fl,tmp,cond_code,cond_txt,wind_deg,wind_dir,wind_sc,wind_spd,hum,pcpn,pres,vis,cloud",
-               "HeWeather6.daily_forecast[list_list_key]date,sr,ss,mr,ms,tmp_max,tmp_min,cond_code_d,cond_code_n,cond_txt_d,cond_txt_n,wind_deg,wind_dir,wind_sc,wind_spd,hum,pcpn,pop,pres,uv_index,vis",
-               "HeWeather6.lifestyle[list_list_key]brf,txt,type"
-            ]
-         },
-         "now" : {
-            "method" : "get",
-            "interface_except" : [
-               "HeWeather6.now[list_dict_key]fl,tmp,cond_code,cond_txt,wind_deg,wind_dir,wind_sc,wind_spd,hum,pcpn,pres,vis,cloud"
-            ]
-         }
-      }
-   },
-   "police_wiki" : {
-      "base_url" : "http://ipolice.aegis-info.com/",
-      "base_except" : [ "msg[=]成功", "code[=]200" ],
-      "case" : {
-         "module_url" : "api/case/",
+      "auth" : {
+         "module_description" : "用户端",
+         "module_url" : "/intelligentmediation/itm/auth/",
          "module_except" : [],
-         "causeRecommend" : {
+         "image/gen" : {
             "method" : "get",
-            "interface_except" : []
+            "interface_except" : ["all[key]code,data,msg","code[=]int(200)","data[mode]/statics/auth_images/([0-9]*?).jpg$"],
+            "interface_description" : "生成图形二维码"
          },
-         "typicalList" : {
-            "method" : "get",
-            "interface_except" : [
-               "data[len]{pageSize}",
-               "data[list_key]id,title,content",
-               "pager.total[=]2",
-               "pager.page[=]{pageNo}",
-               "pager.page_size[=]{pageSize}"
-            ]
+         "image/check" : {
+            "method" : "post",
+            "interface_except" : ["all[key]code,data,msg","code[=]int(200)","data[=]验证成功！！！"],
+            "interface_description" : "验证图形验证码"
          },
-         "typicalDetail" : {
+         "No_module_url" : {
             "method" : "get",
-            "interface_except" : [ "data[key]id,title,content", "data.id[=]{id}" ]
+            "interface_except" : ["<status_code>[=]int(200)"],
+            "interface_description" : "查看图形验证码"
          }
       },
-      "favourite" : {
-         "module_url" : "api/favourite/"
+      "administrator" : {
+         "module_description": "管理员端",
+         "module_url": "/intelligentmediation/itm/administrator/",
+         "module_except": ["all[key]code,data,msg", "code[=]int(200)"],
+         "administrators": {
+            "method": "get",
+            "interface_except": [],
+            "interface_description": "关键词查询所有的管理员"
+         }
+      },
+      "user" : {
+         "module_description": "用户端",
+         "module_url": "/intelligentmediation/itm/user/",
+         "module_except": ["all[key]code,data,msg", "code[=]int(200)"],
+         "login": {
+            "method": "post",
+            "interface_except": ["data.userInfo.LX[=]<LX>"],
+            "interface_description": "用户登录"
+         }
+
+      },
+      "institution" : {
+         "module_description": "机构端",
+         "module_url": "/intelligentmediation/itm/institution/",
+         "module_except": ["all[key]code,data,msg", "code[=]int(200)"],
+         "register": {
+            "method": "post",
+            "interface_except": ["data[=]管理员创建调委会成功"],
+            "interface_description": "机构创建"
+         },
+         "institutions": {
+            "method": "get",
+            "interface_except": [],
+            "interface_description": "查询机构"
+         },
+         "delete": {
+            "method": "post",
+            "interface_except": ["data[=]注销成功"],
+            "interface_description": "机构注销"
+         }
       }
    }
 }
+

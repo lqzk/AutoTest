@@ -1,40 +1,35 @@
 import requests
 import json
 import re
-from InterfaceAuto.common.data_handle import PATH
 
 
 class CallAPI:
 
     def handle_response(self,response):
-        response_text = response.text
+        handle_response={}
         try:
-            r = json.loads(response_text)
+            handle_response["res"] = json.loads(response.text)
         except Exception as e:
-            print("Error:response_text={0}".format(response_text))
-            raise Exception(response_text, e.args)
-        return r
+            handle_response["res"]=response.content
+
+        handle_response["Res_headers"]=dict(response.headers)
+        handle_response["cookies"]=response.cookies
+        handle_response["res_time"]=response.elapsed.total_seconds()
+        handle_response["status_code"]=response.status_code
+
+        return handle_response
 
 
-    def run(self,method, url, input=None,**kwargs):
+
+    def run(self,method, url, input=None,headers=None,files=None):
         if method =="get":
-            response=requests.get(url,params=input,**kwargs)
+            response=requests.get(url,params=input,headers=headers)
         elif method =="post":
-            for key,value in input.items():
-                if "data\\" in value:
-                    filepath=PATH(value)
-                    filename = "test" + re.search(r'\..*', filepath).group(0)
-                    del input[key]
-                    with open(filepath,"rb") as f:
-                        files= {key: (filename,f)}
-                        response = requests.post(url, data=input, files=files,**kwargs)
-                        break
-            else:
-                response = requests.post(url, data=input)
+            response = requests.post(url, data=input,headers=headers,files=files)
         elif method =="put":
-            response = requests.put(url, data=input,**kwargs)
+            response = requests.put(url, data=input)
         elif method =="delete":
-            response = requests.delete(url,**kwargs)
+            response = requests.delete(url)
         else:
             print("无法找到该方法：{0}".format(method))
             raise Exception(method)

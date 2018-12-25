@@ -6,10 +6,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from socket import error,gaierror
-import logging.config
-from AppAuto.common.data_handle import PATH
-# logging.config.fileConfig(PATH("data\\log_config.ini"))
-# mylogger=logging.getLogger("main")
+
 
 class Email:
     def _attach_file(self,att_file,msg):
@@ -17,7 +14,7 @@ class Email:
         file_name=re.split(r"[\\|/]",att_file)
         att["Content-Disposition"]='attachment_path;filename="%s'%file_name[-1]
         msg.attach(att)
-        # mylogger.info("attach file")
+
 
     def send_email(self,email_config_info):
         server=email_config_info["server"]
