@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/echarts.common.min.js"></script>
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>自动化测试报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2018-12-26 17:49:55</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:01.981683</p>
+<p class='attribute'><strong>状态:</strong> 通过 27</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='passClass'>
+        <td>test_administrator.TestCase</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_1__管理员端_关键词查询所有的管理员_04类型</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <pre>
+        pt1.1: {'Run': 'Y', 'CaseNum': 'case1', 'Interface': 'administrators', '用例描述': '04类型', 'Input': 'LX=04\nstatus=True', 'CaseExcept': 'data.records[dict_list,key]MMFZD&amp;NC&amp;LXDH&amp;status&amp;XM&amp;XXCJRQ&amp;register_time&amp;LX&amp;BM&amp;MM&amp;keywords&amp;_id\ndata.pager[key]has_more&amp;page&amp;pages&amp;enable&amp;max_page&amp;total&amp;page_size&amp;skip&amp;page_num', 'project': 'Intelligent_mediation_web', 'result_table_name': 'administrator', 'method': 'get', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/administrator/administrators', 'Interface_description': '【管理员端】关键词查询所有的管理员', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：04类型*********************************
+请求方式:get,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/administrator/administrators
+测试输入:{'LX': '04', 'status': 'True'}、None、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data.records', 'dict_list,key', ['MMFZD', 'NC', 'LXDH', 'status', 'XM', 'XXCJRQ', 'register_time', 'LX', 'BM', 'MM', 'keywords', '_id']), ('data.pager', 'key', ['has_more', 'page', 'pages', 'enable', 'max_page', 'total', 'page_size', 'skip', 'page_num'])]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'records': [{'status': True, 'XM': '毛毛', 'MM': 'e10adc3949ba59abbe56e057f20f883e', 'NC': 'mm', 'BM': '1e030a60beea3b5086019992d701ef2e', 'XXCJRQ': '2018-11-27 18:37:54.481124', 'LXDH': 18196585820, 'LX': '04', 'MMFZD': 3, 'register_time': '2018-11-27 18:37:54.481124', '_id': '1e030a60beea3b5086019992d701ef2e', 'keywords': '毛  毛毛'}], 'pager': {'page_num': 1, 'pages': [1], 'total': 1, 'has_more': False, 'skip': 0, 'page': 1, 'enable': True, 'max_page': 1, 'page_size': 10}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data.records', 'dict_list,key', ['MMFZD', 'NC', 'LXDH', 'status', 'XM', 'XXCJRQ', 'register_time', 'LX', 'BM', 'MM', 'keywords', '_id'])
+校验该段信息成功：('data.pager', 'key', ['has_more', 'page', 'pages', 'enable', 'max_page', 'total', 'page_size', 'skip', 'page_num'])
+**************************PASS测试用例：04类型**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td>test_auth.TestCase</td>
+        <td>3</td>
+        <td>3</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c2',3)">详情</a></td>
+    </tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_1__用户端_生成图形二维码</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        通过</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <pre>
+        pt2.1: {'Run': 'Y', 'CaseNum': 'case1', 'Interface': 'image/gen', '用例描述': '', 'Input': '', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'auth', 'method': 'get', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/auth/image/gen', 'Interface_description': '【用户端】生成图形二维码', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[mode]/statics/auth_images/([0-9]*?).jpg$']}
+**************************Start测试用例：*********************************
+请求方式:get,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/auth/image/gen
+测试输入:None、None、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', 'mode', '/statics/auth_images/([0-9]*?).jpg$')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '/statics/auth_images/15458177952.jpg'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', 'mode', '/statics/auth_images/([0-9]*?).jpg$')
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_2__用户端_查看图形验证码</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        通过</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <pre>
+        pt2.2: {'Run': 'Y', 'CaseNum': 'case2', 'Interface': 'No_module_url', '用例描述': '', 'Input': 'Url=&lt;base_url&gt;+&lt;case1,Res,data&gt;', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'auth', 'method': 'get', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/auth/No_module_url', 'Interface_description': '【用户端】查看图形验证码', 'headers': None, 'Interface_except': ['&lt;status_code&gt;[=]int(200)']}
+**************************Start测试用例：*********************************
+请求方式:get,   请求地址：http://192.168.11.88:9980/statics/auth_images/15458177952.jpg
+测试输入:{}、None、None
+期望输出：[('&lt;status_code&gt;', '=', 200)]
+测试实际返回值：
+b'\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x01\x00\x00\x01\x00\x01\x00\x00\xff\xdb\x00C\x00\x08\x06\x06\x07\x06\x05\x08\x07\x07\x07\t\t\x08\n\x0c\x14\r\x0c\x0b\x0b\x0c\x19\x12\x13\x0f\x14\x1d\x1a\x1f\x1e\x1d\x1a\x1c\x1c $.\' ",#\x1c\x1c(7),01444\x1f\'9=82&lt;.342\xff\xdb\x00C\x01\t\t\t\x0c\x0b\x0c\x18\r\r\x182!\x1c!22222222222222222222222222222222222222222222222222\xff\xc0\x00\x11\x08\x00\x1e\x00x\x03\x01"\x00\x02\x11\x01\x03\x11\x01\xff\xc4\x00\x1f\x00\x00\x01\x05\x01\x01\x01\x01\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\xff\xc4\x00\xb5\x10\x00\x02\x01\x03\x03\x02\x04\x03\x05\x05\x04\x04\x00\x00\x01}\x01\x02\x03\x00\x04\x11\x05\x12!1A\x06\x13Qa\x07"q\x142\x81\x91\xa1\x08#B\xb1\xc1\x15R\xd1\xf0$3br\x82\t\n\x16\x17\x18\x19\x1a%&amp;\'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\x83\x84\x85\x86\x87\x88\x89\x8a\x92\x93\x94\x95\x96\x97\x98\x99\x9a\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xff\xc4\x00\x1f\x01\x00\x03\x01\x01\x01\x01\x01\x01\x01\x01\x01\x00\x00\x00\x00\x00\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\xff\xc4\x00\xb5\x11\x00\x02\x01\x02\x04\x04\x03\x04\x07\x05\x04\x04\x00\x01\x02w\x00\x01\x02\x03\x11\x04\x05!1\x06\x12AQ\x07aq\x13"2\x81\x08\x14B\x91\xa1\xb1\xc1\t#3R\xf0\x15br\xd1\n\x16$4\xe1%\xf1\x17\x18\x19\x1a&amp;\'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x92\x93\x94\x95\x96\x97\x98\x99\x9a\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xff\xda\x00\x0c\x03\x01\x00\x02\x11\x03\x11\x00?\x00\xf7?6\x1d5-\xad\xdf\xcc[p\x8b\x1a\xdcO8`\x1br"#3\xb6\xf6w-\x80y\xc9\x07\'$fK\x1b\xaf\xb6\xd9\xc7pm\xe7\xb7f\xc8hgM\xae\x8c\t\x04\x1e\xc7\x04\x1eA*z\x82A\x04\xd8\xa8\xe4\x8d\x9d\xe1e\x9aH\xc2&gt;\xe6U\x0b\x89\x06\xd26\xb6A8\xc9\x07\x8c\x1c\xa8\xe7\x19\x04\x02;\x7f7\xcf\xbb\xf3&lt;\xfd\xbeh\xf2\xfc\xdd\x9bv\xec_\xb9\xb7\x9d\xb9\xcf\xdf\xf9\xb7n\xfe\x1d\xb5b\xa3\x8e6G\x99\x9ai$\x0e\xfb\x95X.#\x1b@\xda\xb8\x00\xe3 \x9err\xc7\x9c`\x0f9\x93\xc6P\xe8\xfe.\xf1n\xa7}su{cb\xd6\xf6V\x96\x96R\xf9\xa47\x94\xd2M\x98\x83`\x15\xd8\xc4\xbbc\x027\x00\xe4\x11]8l-LG2\xa7\xba_}\xdaI~?\x81.Inw\xd1\x8dI\xae\x03\xc9%\xa4P\x07 \xc4\xa8\xd21P\\\x03\xbf*\x01 \xc4q\xb4\xed\xc3\x8c\xb6C-\x88L\xcc\x84\xcf\x1ch\xfb\xd8\x00\x8eXm\xdcv\x9c\x909+\x82GbH\xc9\xc6O\x1b\xe1)\xb5E\x9fY\xbd\xb8\x86\xfe\xee)\xb5v\xd3\xed\xa2K\xa5\x91-\xed\xe0\xccBR$\x93 \x92\xad\xbf\x04\xb3\x1c\x10\xa6\xbaMr\xedt\x9d*\xf7Z1\xc9+\xd8Y\xcd(\x88L\xc8\xae\x02\xef \x8e\x99\xf9\x00\x0cA#\'\x1dNf\xae\x1d\xc2\xb7\xb1\x8b\xbb\xd1|\xdd\xb4\xfcR\x1az\\\xbd!\x98&lt;"(\xe3d/\x89K9R\xab\xb4\xf2\xa3\x07q\xdd\xb4`\xe3\x82Nx\xc1\xaf\x1d\x83E\xaaMx\xb7\xd7f9S\rh\xcc\xad\x10~\x06\xf5\xc8\xdc\xa7\n\x06\xd0\xc1z\x9d\xbb\x89\'\xcc\xed\xbe2j2j\xd6Zu\xcf\x82/\xed\xa6\xb8x\xcb+\xcc\xc0\xacO"\xc6\xb2\x00c\x19\x05\x9b\x038\x04\xe0g\x9e=b\xaf\x15\x82\xad\x85iVV\xbe\xda\xa7\xf96(\xc9Kb\x9cv\r\x16\xa95\xe2\xdf]\x98\xe5L5\xa32\xb4A\xf8\x1b\xd7#r\x9c(\x1bC\x05\xeav\xee$\x9b\x95\xcex\xc7\xc4\xb7\xde\x1a\xb0\xb7\x9bN\xd0/u\xab\x99\xa5\xda`\xb6G\xf9\x10\x02K\x16T`9\xda0q\x9c\x9ct5\xc3|;\xf1f\xa7z&amp;\xb0\xb6\xb2\xd5\xdd\xec\xefc\x8fR\xfe\xd8\xbbk\x96\x8d\x1c\xb2|\x8c\xa8$\x12n\xc6T\xa7\x96\x16"K!%\xaa\xe3\x81\xab,,\xb1_e[\xb7{w\xba\xd7\xba\xd49\x977)\xea\x1a]\xd9\xbe\xb0[\x92d"Gr\xbee\xac\x96\xcc\x17y\n\x0cr|\xc0\x81\x81\x93\x8d\xdd@\x00\x81R\\\xc3q6\xe4\x8a\xeb\xec\xf1\xb4N\x85\x920dW8\xda\xea[*1\xf3pU\xb2H\xec\x086+\xc8\xf5]kS\xd1\xbe,\xdd\xb4\xf7\x17K\xa6\xc9\x02\xdb\xcbu0T\x8e\xd0\xc8\xae\xea\xf0\x06Y\x0e\xd1\x1c\x07v\x00V\x922_\n\x00\x13\x84\xc1\xcb\x14\xe5\x18;4\xaf\xeb\xe4\xbc\xff\x00\xe1\x82R\xe5=R\xe5~\xd1\xba\xcd\xe2\x9f\xc9\x9a\'\x0f4Ry{:\x0cn\x0c\x1c1\x0cH+\xd3i\xe4\x1cf;\xd9\'/\x1d\xa40\xdd\xa8\xb8I\x14\xde\xc0b\xc5\xa9\x0b\xc3\x10\xe7$\x93\xd3\n\xe3#\xe6\x00W\x9d\xfc&amp;\xd75\x1b\xdb\xedn\xd3S\x92b$h\xefl\xa2\x9a\xf1\xeed\x8a\x19\x11\\!fc\x80\x16H\xb0H\x05\x89~\xbbN\xdfP\xa5\x8d\xc2\xcb\x0bY\xd1\x93\xbd\xad\xaf\xaa\xbf\xfc\x0f\x90F\\\xca\xe1EW\xb8\xb5\xfbD\xf6\x92\xfd\xa2x\xbe\xcd)\x97dO\xb5e\xca2mq\xfcK\xf3\xee\xc7\xf7\x95Oj+\x94\xa2\xc5c\xcd\xa0\xfd\xb3\xed\xa9y{&lt;\xb0\xcf\xa8[\xdfB\x80\xe3\xc8\xf2|\x96X\xc6s\xf2\x97\x84\xb1\xc0\x1f}\xbb\xf3[\x14P\x05t\xbe\xb7\x93Q\x9a\xc1d\xcd\xd41G4\x89\xb4\xfc\xa8\xe5\xc2\x9c\xf4\xe4\xc6\xff\x00\x97\xb8\xaf&lt;\xb9\xf8k\xa8I\xaf\xf8\xa2\xf6\xde\xfa\xd2\x1b=N\xd6E\xb7\xb5\x11\x83\xbe\xe2H\x9dZI\x19\x94\xb2a\xa5\x94\x8d\xa4\x9c&gt;2\x14m&gt;\x97Eta\xf1Up\xf7\xf6o{_\xe4\xd3\xfc\xd7\xe7\xdcN)\xeeq~\x0f\xd3\xef|9kk\xa3\xea\xfa\x8d\xfd\xce\xadqs5\xf5\xc4\x90\xdb\xc9%\xab\x17\xdf\x94\xf3L[c\x1co\xdb\x95;\xfd\x9b\x07G\xc7\x9a]\xe6\xb5\xe0\xbdKO\xb1\x13&lt;\xf3\xc4Uc\x81\x95\x1d\xcfe\xdc\xcc\x00]\xd8\xdd\x9c\xe5w\x002Etu\x1c\xe2f\xb7\x95m\xe4\x8e9\xca\x11\x1b\xc8\x85\xd5[\x1c\x12\xa0\x82F{dg\xd4S\xfa\xd5O\xac}e\xdb\x9a\xf7\xdbO\xbb\xb6\x81\xca\xadc\x83\xd7&lt;\x0e\xfa\x97\x84-t\xfb\x98\xef\xaeu;\xcf\xec\xfb}F\xe6;\xe68H\x88\xde\xe7{\x00@\x06C\x80\xa7.\xc1\x8a\x93\xc8\xefbv\x92\x14w\x89\xe2fPLnAd\'\xb1\xc1##\xd8\x91Q_\xd8\xdb\xeazu\xcd\x85\xe4~e\xad\xd4O\x0c\xc9\xb8\x8d\xc8\xc0\x86\x19\x1c\x8c\x82zU\x8aU\xb1U+EF}\x1b\x7f\x7f\xfc5\x97\x90(\xa4T\x9bR\xb5\xb7\xd4\xadt\xf9\x1d\xfe\xd5t\xb2&lt;H\xb13\x02\xa9\x8d\xc4\xb0\x18P7(\xcb\x11\x92@\x1c\xd7\x99|/\x87\xc9\xf1\xff\x00\x8c\xbf\xd3\x0e\xdf5![H\xca\x98\xe31\x92\n\x81\x8d\xc1c\xdc#C\xf2\x86Pp\xbf.\x13\xbb\xd7|\x1b\xa0\xf8\x9aa.\xb3bn\xd9b\xf2P&lt;\xf2\x05E\xdc\x18\x95P\xc0+\x12\xa3,\x00b\x06\t\xc7\x15_\xc3Z7\x87|5\xa9j\x1a.\x87\xa6\xfd\x92E\x86\x1b\xb9\xdfq}\xe2C" \xdc\xccX\xe3\xca~:\r\xdcu5\xd3J\xbd\nxZ\x94\xf5\xe7\x92K\xa5\xb4w\xbd\xef}\xb4\xb5\xbe}\xa5\xa6\xe4\x99\xd0\xcf\x1bMo,I4\x90;\xa1U\x960\xa5\x90\x91\xf7\x86\xe0FG^A\x1e\xa0\xd7\x9c\xdf\xe9\x13\xdd|S\xd4\xe0\xb9\xd2.\xc6\x81\xa9i\xa9\x1d\xe4\xb1\xc9([\x997\xc6\xaa\xd9\x8c\x13\x91\x80\x9b\tP\x14H\xc7\x01\x8e\xee\xe9\xe1\xd5$\xd6!\x99n\xa0\x86\xc2/1$\xb7\xf2\xfc\xc6\xb8\x0c\xa8U\xf7|\xbe[+\x07\x18\xf9\xc1S\xd8\x91\xb7B\xb9\xf0\xd8\x99a\xdc\x9cV\xea\xde\x9b;\xaf5m\x07(\xdc\xe0-\xd6\xefO\xf8\xbf\xf6[s\xa8\xcfcq\xa6\xc6\xac\'c\xb2?$0\xdc$o\x9aLy\xb1\x82&gt;l\xb4\xec\xc5\x81LWo\xf6y\x7f\xb4~\xd3\xf6\xd9\xfc\x9f+\xcb\xfb&amp;\x13\xcb\xdd\x9c\xef\xce\xdd\xfb\xb1\xc7\xde\xdb\x8e\xd9\xe6\xacQS\x88\xae\xeb8\xb6\xadd\x97\xad\xba\x8d+\x11\xc7#;\xcc\xad\x0c\x91\x84}\xaa\xccW\x12\r\xa0\xee\\\x12q\x92G89S\xc60IU\xedt\xbbK;\xfb\xeb\xd8\x12E\x9e\xf9\xd1\xee3+\xb2\xb3*\x04\x04);T\xedU\x04\xa8\x19\xc0\xcep(\xac\x06\x7f\xff\xd9'
+校验该段信息成功：('&lt;status_code&gt;', '=', 200)
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_3__用户端_验证图形验证码</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
+        通过</a>
+
+    <div id='div_pt2.3' class="popup_window">
+        <pre>
+        pt2.3: {'Run': 'Y', 'CaseNum': 'case3', 'Interface': 'image/check', '用例描述': '', 'Input': 'account=18052063223\nimage_code=&lt;case1,Res_headers,Set-Cookie,extract[=(.*?);]&gt;', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'auth', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/auth/image/check', 'Interface_description': '【用户端】验证图形验证码', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]验证成功！！！']}
+**************************Start测试用例：*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/auth/image/check
+测试输入:{'account': '18052063223', 'image_code': 'wmjm'}、None、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', '=', '验证成功！！！')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '验证成功！！！'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', '=', '验证成功！！！')
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td>test_institution.TestCase</td>
+        <td>6</td>
+        <td>6</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c3',6)">详情</a></td>
+    </tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_1__机构端_机构创建_机构1</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        通过</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <pre>
+        pt3.1: {'Run': 'Y', 'CaseNum': 'case1', 'Interface': 'register', '用例描述': '机构1', 'QuotoSituation': 'user_case4=&lt;user,case4,all,all,Undo&gt;\nRes_headers=%user_case4%Res_headers\ntoken=%Res_headers%Set-Cookie&amp;extract[=(.*?);]', 'Input': 'ID=aecefbf7982334a9901c2eb12a170f24\nNC=dingxiaohui1234567890\nMM=123456\nlocation=dumps{"province":{"label":"江苏省","value":"320000"},"city":{"label":"南京市","value":"320100"},"district":{"label":"玄武区","value":"320102"},"detail":"新街口街道人民调解委员会"}\ndomains=dumps[{"value": "16", "label": "医疗纠纷"},{"value": "01", "label": "婚姻家庭纠纷"},{"value": "17", "label": "道路交通事故纠纷"},{"value": "04", "label": "合同纠纷"}]\nFZR=张庆\nCLRQ=1991-08-07\nTWHLX=04\nTWHMC=张庆调委会1234567\nheaders={"token":%token%}', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'institution', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/institution/register', 'Interface_description': '【机构端】机构创建', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]管理员创建调委会成功']}
+**************************Start测试用例：机构1*********************************
+{'Run': 'Y', 'CaseNum': 'case4', 'Interface': 'login', '用例描述': '用户类型04', 'QuotoSituation': '', 'Input': 'DLMC=mm\nMM=123456\nLX=04', 'CaseExcept': 'data.userInfo.NC[=]&lt;DLMC&gt;\ndata.userInfo[key]MMFZD&amp;NC&amp;LXDH&amp;status&amp;XM&amp;XXCJRQ&amp;register_time&amp;LX&amp;BM&amp;keywords&amp;_id\ndata.userInfo.LX[=]&lt;LX&gt;', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/login', 'Interface_description': '【用户端】用户登录', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：用户类型04*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/user/login
+测试输入:{'DLMC': 'mm', 'MM': '123456', 'LX': '04'}、None、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data.userInfo.NC', '=', 'mm'), ('data.userInfo', 'key', ['MMFZD', 'NC', 'LXDH', 'status', 'XM', 'XXCJRQ', 'register_time', 'LX', 'BM', 'keywords', '_id']), ('data.userInfo.LX', '=', '04')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'token': '99746492-08f3-11e9-9a19-00043c99dd5c', 'userInfo': {'status': True, 'XM': '毛毛', 'NC': 'mm', 'BM': '1e030a60beea3b5086019992d701ef2e', 'XXCJRQ': '2018-11-27 18:37:54.481124', 'LXDH': 18196585820, 'LX': '04', 'MMFZD': 3, 'register_time': '2018-11-27 18:37:54.481124', '_id': '1e030a60beea3b5086019992d701ef2e', 'keywords': '毛  毛毛'}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data.userInfo.NC', '=', 'mm')
+校验该段信息成功：('data.userInfo', 'key', ['MMFZD', 'NC', 'LXDH', 'status', 'XM', 'XXCJRQ', 'register_time', 'LX', 'BM', 'keywords', '_id'])
+校验该段信息成功：('data.userInfo.LX', '=', '04')
+**************************PASS测试用例：用户类型04**********************************
+
+
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/institution/register
+测试输入:{'ID': 'aecefbf7982334a9901c2eb12a170f24', 'NC': 'dingxiaohui1234567890', 'MM': '123456', 'location': '{"province": {"label": "\\u6c5f\\u82cf\\u7701", "value": "320000"}, "city": {"label": "\\u5357\\u4eac\\u5e02", "value": "320100"}, "district": {"label": "\\u7384\\u6b66\\u533a", "value": "320102"}, "detail": "\\u65b0\\u8857\\u53e3\\u8857\\u9053\\u4eba\\u6c11\\u8c03\\u89e3\\u59d4\\u5458\\u4f1a"}', 'domains': '[{"value": "16", "label": "\\u533b\\u7597\\u7ea0\\u7eb7"}, {"value": "01", "label": "\\u5a5a\\u59fb\\u5bb6\\u5ead\\u7ea0\\u7eb7"}, {"value": "17", "label": "\\u9053\\u8def\\u4ea4\\u901a\\u4e8b\\u6545\\u7ea0\\u7eb7"}, {"value": "04", "label": "\\u5408\\u540c\\u7ea0\\u7eb7"}]', 'FZR': '张庆', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'TWHMC': '张庆调委会1234567'}、{'token': '99746492-08f3-11e9-9a19-00043c99dd5c'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', '=', '管理员创建调委会成功')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '管理员创建调委会成功'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', '=', '管理员创建调委会成功')
+**************************PASS测试用例：机构1**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_2__机构端_查询机构</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        通过</a>
+
+    <div id='div_pt3.2' class="popup_window">
+        <pre>
+        pt3.2: {'Run': '', 'CaseNum': 'case2', 'Interface': 'institutions', '用例描述': '', 'QuotoSituation': 'records0=&lt;Res,data.records[dict_list0]&gt;\ncase1_input=&lt;case1,Input,all&gt;', 'Input': 'headers=&lt;case1,headers,all&gt;', 'CaseExcept': '%records0%TWHMC[=]%case1_input%TWHMC\n%records0%CLRQ[=]]%case1_input%CLRQ\n%records0%TWHLX[=]%case1_input%TWHLX\n%records0%FZR[=]%case1_input%FZR\n%records0%NC[=]%case1_input%NC\n%records0%domains[DO=][{"value": "16", "label": "医疗纠纷"},{"value": "01", "label": "婚姻家庭纠纷"},{"value": "17", "label": "道路交通事故纠纷"},{"value": "04", "label": "合同纠纷"}]\n%records0%location[=]{"province":{"label":"江苏省","value":"320000"},"city":{"label":"南京市","value":"320100"},"district":{"label":"玄武区","value":"320102"},"detail":"新街口街道人民调解委员会"}', 'project': 'Intelligent_mediation_web', 'result_table_name': 'institution', 'method': 'get', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/institution/institutions', 'Interface_description': '【机构端】查询机构', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：*********************************
+请求方式:get,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/institution/institutions
+测试输入:{}、{'token': '99746492-08f3-11e9-9a19-00043c99dd5c'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('%records0%TWHMC', '=', '张庆调委会1234567'), ('%records0%CLRQ', '=', '1991-08-07'), ('%records0%TWHLX', '=', '04'), ('%records0%FZR', '=', '张庆'), ('%records0%NC', '=', 'dingxiaohui1234567890'), ('%records0%domains', 'DO=', [{'value': '16', 'label': '医疗纠纷'}, {'value': '01', 'label': '婚姻家庭纠纷'}, {'value': '17', 'label': '道路交通事故纠纷'}, {'value': '04', 'label': '合同纠纷'}]), ('%records0%location', '=', {'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'district': {'label': '玄武区', 'value': '320102'}, 'detail': '新街口街道人民调解委员会'})]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'records': [{'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204001051', 'status': True, 'TWHMC': '张庆调委会1234567', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'SUQY': '320102', 'FZR': '张庆', 'NC': 'dingxiaohui1234567890', '_id': '32010204001051', 'XXCJRQ': '2018-12-26 17:49:55.643848', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'SYRQ': '2018-12-26 17:49:55', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'keywords': ' 庆 4 张庆调委会12 5 调 委 张庆调委会1234 3 张庆调 1234567 7 2 张庆调委会1 6 张庆调委会1234567 1 张 张庆调委 张庆 张庆调委会12345 张庆调委会123 张庆调委会 会 调委会 张庆调委会123456', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '21010106000914', 'status': True, 'CLRQ': '2018-11-26', 'TWHLX': '06', 'SUQY': '210101', 'FZR': '1', 'NC': '11111111111111111', 'location': {'district': {'label': '市辖区', 'value': '210101'}, 'province': {'label': '辽宁省', 'value': '210000'}, 'city': {'label': '沈阳市', 'value': '210100'}, 'detail': ''}, 'XXCJRQ': '2018-12-26 14:28:50.028840', 'domains': [{'label': '医疗纠纷', 'value': '16'}, {'label': '物业纠纷', 'value': '18'}], 'SYRQ': '2018-12-17', 'JZTJYRS': 0, 'LXDZ': '辽宁省沈阳市市辖区', '_id': '21010106000914', 'TWHMC': '11111', 'keywords': ' 1111 1 11 111 11111', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '21010105000913', 'status': True, 'CLRQ': '2018-12-17', 'TWHLX': '05', 'SUQY': '210101', 'FZR': '2312', 'NC': '222222222222222222222', 'location': {'district': {'label': '市辖区', 'value': '210101'}, 'province': {'label': '辽宁省', 'value': '210000'}, 'city': {'label': '沈阳市', 'value': '210100'}, 'detail': ''}, 'XXCJRQ': '2018-12-26 14:28:20.673595', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '邻里纠纷', 'value': '02'}], 'SYRQ': '2018-12-3', 'JZTJYRS': 0, 'LXDZ': '辽宁省沈阳市市辖区', '_id': '21010105000913', 'TWHMC': '222222', 'keywords': ' 22 2222 222222 2 222 22222', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '23010101000750', 'status': True, 'CLRQ': '2018-12-24', 'TWHLX': '01', 'SUQY': '230101', 'FZR': 'sdf', 'NC': '2131', 'location': {'district': {'label': '市辖区', 'value': '230101'}, 'province': {'label': '黑龙江省', 'value': '230000'}, 'city': {'label': '哈尔滨市', 'value': '230100'}, 'detail': ''}, 'XXCJRQ': '2018-12-24 15:53:02.262636', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '物业纠纷', 'value': '18'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'LXDH': '18260059218', 'SYRQ': '2018-12-17', 'JZTJYRS': 0, 'LXDZ': '黑龙江省哈尔滨市市辖区', '_id': '23010101000750', 'TWHMC': '121', 'keywords': '1  121 2 12', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204000684', 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'SUQY': '320102', 'TWHMC': '心心调委会', 'keywords': ' 心心调委 委 心心 心心调委会 心 心心调 调 会 调委会', 'domains': [{'label': '机动车交通事故责任纠纷', 'value': 9722}, {'label': '医疗纠纷', 'value': 9853}, {'label': '劳动争议', 'value': 9462}], 'NC': 'xxtwh', 'XXCJRQ': '2018-12-24 13:10:08.824096', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'SYRQ': '2018-12-24 13:30:34', 'JZTJYRS': 0, 'status': True, '_id': '32010204000684', 'FZR': '张庆', 'ZZTJYRS': 1}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204000682', 'status': True, 'NC': 'dingxiaohui12345678901222', 'TWHLX': '04', 'SUQY': '320102', 'FZR': '张庆', 'TWHMC': '张庆调委会', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'XXCJRQ': '2018-12-21 17:04:36.468827', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'keywords': ' 庆 张庆调委 委 张 调委会 张庆 会 调 张庆调 张庆调委会', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', '_id': '32010204000682', 'CLRQ': '1991-08-07', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204000681', 'status': True, 'NC': 'dingxiaohui12345678901', 'TWHLX': '04', 'SUQY': '320102', 'FZR': '张庆', 'TWHMC': '张庆调委会', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'XXCJRQ': '2018-12-21 16:52:24.871879', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'keywords': ' 庆 张庆调委 委 张 调委会 张庆 会 调 张庆调 张庆调委会', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', '_id': '32010204000681', 'CLRQ': '1991-08-07', 'ZZTJYRS': 0}, {'institutionInfo': {'on': 0, 'done': 0, 'un': 0}, 'TWHBM': '32010204000241', 'status': True, 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', 'TWHLX': '04', 'SUQY': '320102', 'CLRQ': '1991-08-07', 'NC': 'zqtwh', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'XXCJRQ': '2018-12-12 14:11:25.424796', 'domains': [{'label': '机动车交通事故责任纠纷', 'value': 9722}, {'label': '医疗纠纷', 'value': 9853}, {'label': '劳动争议', 'value': 9462}], 'keywords': ' 张庆调 调 张庆调委会 会 庆 张庆 张 调委会 委 张庆调委', 'FZR': '张庆', 'JZTJYRS': 0, 'TWHMC': '张庆调委会', '_id': '32010204000241', 'ZZTJYRS': 1}, {'institutionInfo': {'un': 13, 'done': 3, 'on': 2}, 'TWHBM': '32010105000013', 'status': True, 'TWHMC': '南京擎盾', 'TWHLX': '05', 'SUQY': '320101', 'CLRQ': '2018-11-28', 'NC': 'njqd', '_id': '32010105000013', 'XXCJRQ': '2018-11-30 14:16:20.615039', 'domains': [{'label': '山林土地纠纷', 'value': '07'}, {'label': '生产经营纠纷', 'value': '05'}, {'label': '其他劳动争议纠纷', 'value': '12'}, {'label': '物业纠纷', 'value': '18'}, {'label': '拖欠农民工工资纠纷', 'value': '11'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '损害赔偿纠纷', 'value': '06'}, {'label': '旅游纠纷', 'value': '13'}, {'label': '征地拆迁纠纷', 'value': '08'}, {'label': '婚姻家庭纠纷', 'value': '01'}, {'label': '合同纠纷', 'value': '04'}, {'label': '其他纠纷', 'value': '99'}, {'label': '房产宅基地纠纷', 'value': '03'}, {'label': '邻里纠纷', 'value': '02'}, {'label': '环境污染纠纷', 'value': '09'}, {'label': '电子商务纠纷', 'value': '14'}, {'label': '其他消费纠纷', 'value': '15'}, {'label': '道路交通事故纠纷', 'value': '17'}], 'keywords': ' 擎盾 南京擎盾 南京擎 南京 盾 南 京 擎', 'FZR': '姚瑶', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市雨花台区安德门大街', 'location': {'district': {'label': '雨花台区', 'value': '320101'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '安德门大街'}, 'ZZTJYRS': 4}, {'institutionInfo': {'un': 5, 'done': 0, 'on': 0}, 'TWHBM': '14040105000010', 'LXDZ': '山西省长治市襄垣县', 'CLRQ': '2010-1-29', 'TWHLX': '05', 'SUQY': '140401', 'TWHMC': '丁晓晖dingxiaohui2', 'NC': '丁晓晖dingxiaohui2', '_id': '14040105000010', 'XXCJRQ': '2018-11-29 12:35:43.598211', 'domains': [{'label': '山林土地纠纷', 'value': '07'}, {'label': '生产经营纠纷', 'value': '05'}, {'label': '其他劳动争议纠纷', 'value': '12'}, {'label': '物业纠纷', 'value': '18'}, {'label': '拖欠农民工工资纠纷', 'value': '11'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '损害赔偿纠纷', 'value': '06'}, {'label': '旅游纠纷', 'value': '13'}, {'label': '征地拆迁纠纷', 'value': '08'}, {'label': '婚姻家庭纠纷', 'value': '01'}, {'label': '合同纠纷', 'value': '04'}, {'label': '其他纠纷', 'value': '99'}, {'label': '房产宅基地纠纷', 'value': '03'}, {'label': '邻里纠纷', 'value': '02'}, {'label': '环境污染纠纷', 'value': '09'}, {'label': '电子商务纠纷', 'value': '14'}, {'label': '其他消费纠纷', 'value': '15'}, {'label': '道路交通事故纠纷', 'value': '17'}], 'keywords': ' 丁晓晖dingxiaohui2 晖 丁晓晖ding 丁晓晖din 丁晓晖dingxiaohui 丁晓晖dingxi n 丁晓晖dingx 丁晓晖dingxiaohu 丁晓晖d a 丁晓晖di x 丁晓晖dingxiao h dingxiaohui2 g 丁 2 丁晓晖dingxia u 丁晓晖dingxiaoh i d 晓 丁晓 o 丁晓晖', 'JZTJYRS': 0, 'status': True, 'location': {'district': {'label': '鼓楼区', 'value': '320101'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': ''}, 'FZR': '丁晓晖', 'ZZTJYRS': 6}], 'pager': {'page_num': 1, 'pages': [1, 2], 'total': 13, 'has_more': True, 'skip': 0, 'page': 1, 'enable': True, 'max_page': 2, 'page_size': 10}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('%records0%TWHMC', '=', '张庆调委会1234567')
+校验该段信息成功：('%records0%CLRQ', '=', '1991-08-07')
+校验该段信息成功：('%records0%TWHLX', '=', '04')
+校验该段信息成功：('%records0%FZR', '=', '张庆')
+校验该段信息成功：('%records0%NC', '=', 'dingxiaohui1234567890')
+校验该段信息成功：('%records0%domains', 'DO=', [{'value': '16', 'label': '医疗纠纷'}, {'value': '01', 'label': '婚姻家庭纠纷'}, {'value': '17', 'label': '道路交通事故纠纷'}, {'value': '04', 'label': '合同纠纷'}])
+校验该段信息成功：('%records0%location', '=', {'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'district': {'label': '玄武区', 'value': '320102'}, 'detail': '新街口街道人民调解委员会'})
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_3__机构端_管理员修改机构信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.3')" >
+        通过</a>
+
+    <div id='div_pt3.3' class="popup_window">
+        <pre>
+        pt3.3: {'Run': 'Y', 'CaseNum': 'case3', 'Interface': 'update', '用例描述': '', 'QuotoSituation': 'GLYBM=&lt;case1,QuotoSituation,user_case4.Res.data.userInfo.BM&gt;', 'Input': 'headers=&lt;case1,headers,all&gt;\nGLYBM=%GLYBM%\nTWHBM=&lt;case2,Res,data.records.TWHBM[dict_list0_dict]&gt;\nFZR=dasfvgsdfg\nSYRQ=2020-12-24 12:53:34\nlocation=dumps{"province":{"label":"江苏省","value":"320000"},"city":{"label":"南京市","value":"320100"},"district":{"label":"雨花台区","value":"320114"},"detail":"雨花台街道人民调解委员会"}\ndomains=dumps[{"value": "18", "label": "物业纠纷"},{"value": "02", "label": "邻里纠纷"},{"value": "03", "label": "房产宅基地纠纷"},{"value": "06", "label": "损害赔偿纠纷"},{"value": "05", "label": "生产经营纠纷"},{"value": "08", "label": "征地拆迁纠纷"}]', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'institution', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/institution/update', 'Interface_description': '【机构端】管理员修改机构信息', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/institution/update
+测试输入:{'GLYBM': '1e030a60beea3b5086019992d701ef2e', 'TWHBM': '32010204001051', 'FZR': 'dasfvgsdfg', 'SYRQ': '2020-12-24 12:53:34', 'location': '{"province": {"label": "\\u6c5f\\u82cf\\u7701", "value": "320000"}, "city": {"label": "\\u5357\\u4eac\\u5e02", "value": "320100"}, "district": {"label": "\\u96e8\\u82b1\\u53f0\\u533a", "value": "320114"}, "detail": "\\u96e8\\u82b1\\u53f0\\u8857\\u9053\\u4eba\\u6c11\\u8c03\\u89e3\\u59d4\\u5458\\u4f1a"}', 'domains': '[{"value": "18", "label": "\\u7269\\u4e1a\\u7ea0\\u7eb7"}, {"value": "02", "label": "\\u90bb\\u91cc\\u7ea0\\u7eb7"}, {"value": "03", "label": "\\u623f\\u4ea7\\u5b85\\u57fa\\u5730\\u7ea0\\u7eb7"}, {"value": "06", "label": "\\u635f\\u5bb3\\u8d54\\u507f\\u7ea0\\u7eb7"}, {"value": "05", "label": "\\u751f\\u4ea7\\u7ecf\\u8425\\u7ea0\\u7eb7"}, {"value": "08", "label": "\\u5f81\\u5730\\u62c6\\u8fc1\\u7ea0\\u7eb7"}]'}、{'token': '99746492-08f3-11e9-9a19-00043c99dd5c'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200)]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'institutionInfo': [{'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204001051', 'status': True, 'TWHMC': '张庆调委会1234567', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'SUQY': '320102', 'FZR': 'dasfvgsdfg', 'NC': 'dingxiaohui1234567890', '_id': '32010204001051', 'XXCJRQ': '2018-12-26 17:49:55.848935', 'domains': [{'label': '房产宅基地纠纷', 'value': '03'}, {'label': '生产经营纠纷', 'value': '05'}, {'label': '征地拆迁纠纷', 'value': '08'}, {'label': '物业纠纷', 'value': '18'}, {'label': '损害赔偿纠纷', 'value': '06'}, {'label': '邻里纠纷', 'value': '02'}], 'SYRQ': '2020-12-24 12:53:34', 'LXDZ': '江苏省南京市雨花台区雨花台街道人民调解委员会', 'location': {'district': {'label': '雨花台区', 'value': '320114'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '雨花台街道人民调解委员会'}, 'keywords': ' 庆 4 张庆调委会12 5 调 委 张庆调委会1234 3 张庆调 1234567 7 2 张庆调委会1 6 张庆调委会1234567 1 张 张庆调委 张庆 张庆调委会12345 张庆调委会123 张庆调委会 会 调委会 张庆调委会123456'}], 'pager': {'page_num': 1, 'pages': [1], 'total': 1, 'has_more': False, 'skip': 0, 'page': 1, 'enable': True, 'max_page': 1, 'page_size': 10}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_4__机构端_查询机构</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.4')" >
+        通过</a>
+
+    <div id='div_pt3.4' class="popup_window">
+        <pre>
+        pt3.4: {'Run': 'Y', 'CaseNum': 'case4', 'Interface': 'institutions', '用例描述': '', 'QuotoSituation': 'records0=&lt;Res,data.records[dict_list0]&gt;\ncase1_input=&lt;case1,Input,all&gt;', 'Input': 'headers=&lt;case1,headers,all&gt;', 'CaseExcept': '%records0%TWHMC[=]%case1_input%TWHMC\n%records0%CLRQ[=]]%case1_input%CLRQ\n%records0%TWHLX[=]%case1_input%TWHLX\n%records0%NC[=]%case1_input%NC\n%records0%FZR[=]&lt;case3,Input,FZR&gt;\n%records0%domains[DO=][{"value": "18", "label": "物业纠纷"},{"value": "02", "label": "邻里纠纷"},{"value": "03", "label": "房产宅基地纠纷"},{"value": "06", "label": "损害赔偿纠纷"},{"value": "05", "label": "生产经营纠纷"},{"value": "08", "label": "征地拆迁纠纷"}]\n%records0%location[=]{"province":{"label":"江苏省","value":"320000"},"city":{"label":"南京市","value":"320100"},"district":{"label":"雨花台区","value":"320114"},"detail":"雨花台街道人民调解委员会"}', 'project': 'Intelligent_mediation_web', 'result_table_name': 'institution', 'method': 'get', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/institution/institutions', 'Interface_description': '【机构端】查询机构', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：*********************************
+请求方式:get,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/institution/institutions
+测试输入:{}、{'token': '99746492-08f3-11e9-9a19-00043c99dd5c'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('%records0%TWHMC', '=', '张庆调委会1234567'), ('%records0%CLRQ', '=', '1991-08-07'), ('%records0%TWHLX', '=', '04'), ('%records0%NC', '=', 'dingxiaohui1234567890'), ('%records0%FZR', '=', 'dasfvgsdfg'), ('%records0%domains', 'DO=', [{'value': '18', 'label': '物业纠纷'}, {'value': '02', 'label': '邻里纠纷'}, {'value': '03', 'label': '房产宅基地纠纷'}, {'value': '06', 'label': '损害赔偿纠纷'}, {'value': '05', 'label': '生产经营纠纷'}, {'value': '08', 'label': '征地拆迁纠纷'}]), ('%records0%location', '=', {'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'district': {'label': '雨花台区', 'value': '320114'}, 'detail': '雨花台街道人民调解委员会'})]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'records': [{'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204001051', 'status': True, 'TWHMC': '张庆调委会1234567', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'SUQY': '320102', 'FZR': 'dasfvgsdfg', 'NC': 'dingxiaohui1234567890', '_id': '32010204001051', 'XXCJRQ': '2018-12-26 17:49:55.848935', 'domains': [{'label': '房产宅基地纠纷', 'value': '03'}, {'label': '生产经营纠纷', 'value': '05'}, {'label': '征地拆迁纠纷', 'value': '08'}, {'label': '物业纠纷', 'value': '18'}, {'label': '损害赔偿纠纷', 'value': '06'}, {'label': '邻里纠纷', 'value': '02'}], 'SYRQ': '2020-12-24 12:53:34', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市雨花台区雨花台街道人民调解委员会', 'location': {'district': {'label': '雨花台区', 'value': '320114'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '雨花台街道人民调解委员会'}, 'keywords': ' 庆 4 张庆调委会12 5 调 委 张庆调委会1234 3 张庆调 1234567 7 2 张庆调委会1 6 张庆调委会1234567 1 张 张庆调委 张庆 张庆调委会12345 张庆调委会123 张庆调委会 会 调委会 张庆调委会123456', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '21010106000914', 'status': True, 'CLRQ': '2018-11-26', 'TWHLX': '06', 'SUQY': '210101', 'FZR': '1', 'NC': '11111111111111111', 'location': {'district': {'label': '市辖区', 'value': '210101'}, 'province': {'label': '辽宁省', 'value': '210000'}, 'city': {'label': '沈阳市', 'value': '210100'}, 'detail': ''}, 'XXCJRQ': '2018-12-26 14:28:50.028840', 'domains': [{'label': '医疗纠纷', 'value': '16'}, {'label': '物业纠纷', 'value': '18'}], 'SYRQ': '2018-12-17', 'JZTJYRS': 0, 'LXDZ': '辽宁省沈阳市市辖区', '_id': '21010106000914', 'TWHMC': '11111', 'keywords': ' 1111 1 11 111 11111', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '21010105000913', 'status': True, 'CLRQ': '2018-12-17', 'TWHLX': '05', 'SUQY': '210101', 'FZR': '2312', 'NC': '222222222222222222222', 'location': {'district': {'label': '市辖区', 'value': '210101'}, 'province': {'label': '辽宁省', 'value': '210000'}, 'city': {'label': '沈阳市', 'value': '210100'}, 'detail': ''}, 'XXCJRQ': '2018-12-26 14:28:20.673595', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '邻里纠纷', 'value': '02'}], 'SYRQ': '2018-12-3', 'JZTJYRS': 0, 'LXDZ': '辽宁省沈阳市市辖区', '_id': '21010105000913', 'TWHMC': '222222', 'keywords': ' 22 2222 222222 2 222 22222', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '23010101000750', 'status': True, 'CLRQ': '2018-12-24', 'TWHLX': '01', 'SUQY': '230101', 'FZR': 'sdf', 'NC': '2131', 'location': {'district': {'label': '市辖区', 'value': '230101'}, 'province': {'label': '黑龙江省', 'value': '230000'}, 'city': {'label': '哈尔滨市', 'value': '230100'}, 'detail': ''}, 'XXCJRQ': '2018-12-24 15:53:02.262636', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '物业纠纷', 'value': '18'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'LXDH': '18260059218', 'SYRQ': '2018-12-17', 'JZTJYRS': 0, 'LXDZ': '黑龙江省哈尔滨市市辖区', '_id': '23010101000750', 'TWHMC': '121', 'keywords': '1  121 2 12', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204000684', 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'SUQY': '320102', 'TWHMC': '心心调委会', 'keywords': ' 心心调委 委 心心 心心调委会 心 心心调 调 会 调委会', 'domains': [{'label': '机动车交通事故责任纠纷', 'value': 9722}, {'label': '医疗纠纷', 'value': 9853}, {'label': '劳动争议', 'value': 9462}], 'NC': 'xxtwh', 'XXCJRQ': '2018-12-24 13:10:08.824096', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'SYRQ': '2018-12-24 13:30:34', 'JZTJYRS': 0, 'status': True, '_id': '32010204000684', 'FZR': '张庆', 'ZZTJYRS': 1}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204000682', 'status': True, 'NC': 'dingxiaohui12345678901222', 'TWHLX': '04', 'SUQY': '320102', 'FZR': '张庆', 'TWHMC': '张庆调委会', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'XXCJRQ': '2018-12-21 17:04:36.468827', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'keywords': ' 庆 张庆调委 委 张 调委会 张庆 会 调 张庆调 张庆调委会', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', '_id': '32010204000682', 'CLRQ': '1991-08-07', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204000681', 'status': True, 'NC': 'dingxiaohui12345678901', 'TWHLX': '04', 'SUQY': '320102', 'FZR': '张庆', 'TWHMC': '张庆调委会', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'XXCJRQ': '2018-12-21 16:52:24.871879', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'keywords': ' 庆 张庆调委 委 张 调委会 张庆 会 调 张庆调 张庆调委会', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', '_id': '32010204000681', 'CLRQ': '1991-08-07', 'ZZTJYRS': 0}, {'institutionInfo': {'on': 0, 'done': 0, 'un': 0}, 'TWHBM': '32010204000241', 'status': True, 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', 'TWHLX': '04', 'SUQY': '320102', 'CLRQ': '1991-08-07', 'NC': 'zqtwh', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'XXCJRQ': '2018-12-12 14:11:25.424796', 'domains': [{'label': '机动车交通事故责任纠纷', 'value': 9722}, {'label': '医疗纠纷', 'value': 9853}, {'label': '劳动争议', 'value': 9462}], 'keywords': ' 张庆调 调 张庆调委会 会 庆 张庆 张 调委会 委 张庆调委', 'FZR': '张庆', 'JZTJYRS': 0, 'TWHMC': '张庆调委会', '_id': '32010204000241', 'ZZTJYRS': 1}, {'institutionInfo': {'un': 13, 'done': 3, 'on': 2}, 'TWHBM': '32010105000013', 'status': True, 'TWHMC': '南京擎盾', 'TWHLX': '05', 'SUQY': '320101', 'CLRQ': '2018-11-28', 'NC': 'njqd', '_id': '32010105000013', 'XXCJRQ': '2018-11-30 14:16:20.615039', 'domains': [{'label': '山林土地纠纷', 'value': '07'}, {'label': '生产经营纠纷', 'value': '05'}, {'label': '其他劳动争议纠纷', 'value': '12'}, {'label': '物业纠纷', 'value': '18'}, {'label': '拖欠农民工工资纠纷', 'value': '11'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '损害赔偿纠纷', 'value': '06'}, {'label': '旅游纠纷', 'value': '13'}, {'label': '征地拆迁纠纷', 'value': '08'}, {'label': '婚姻家庭纠纷', 'value': '01'}, {'label': '合同纠纷', 'value': '04'}, {'label': '其他纠纷', 'value': '99'}, {'label': '房产宅基地纠纷', 'value': '03'}, {'label': '邻里纠纷', 'value': '02'}, {'label': '环境污染纠纷', 'value': '09'}, {'label': '电子商务纠纷', 'value': '14'}, {'label': '其他消费纠纷', 'value': '15'}, {'label': '道路交通事故纠纷', 'value': '17'}], 'keywords': ' 擎盾 南京擎盾 南京擎 南京 盾 南 京 擎', 'FZR': '姚瑶', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市雨花台区安德门大街', 'location': {'district': {'label': '雨花台区', 'value': '320101'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '安德门大街'}, 'ZZTJYRS': 4}, {'institutionInfo': {'un': 5, 'done': 0, 'on': 0}, 'TWHBM': '14040105000010', 'LXDZ': '山西省长治市襄垣县', 'CLRQ': '2010-1-29', 'TWHLX': '05', 'SUQY': '140401', 'TWHMC': '丁晓晖dingxiaohui2', 'NC': '丁晓晖dingxiaohui2', '_id': '14040105000010', 'XXCJRQ': '2018-11-29 12:35:43.598211', 'domains': [{'label': '山林土地纠纷', 'value': '07'}, {'label': '生产经营纠纷', 'value': '05'}, {'label': '其他劳动争议纠纷', 'value': '12'}, {'label': '物业纠纷', 'value': '18'}, {'label': '拖欠农民工工资纠纷', 'value': '11'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '损害赔偿纠纷', 'value': '06'}, {'label': '旅游纠纷', 'value': '13'}, {'label': '征地拆迁纠纷', 'value': '08'}, {'label': '婚姻家庭纠纷', 'value': '01'}, {'label': '合同纠纷', 'value': '04'}, {'label': '其他纠纷', 'value': '99'}, {'label': '房产宅基地纠纷', 'value': '03'}, {'label': '邻里纠纷', 'value': '02'}, {'label': '环境污染纠纷', 'value': '09'}, {'label': '电子商务纠纷', 'value': '14'}, {'label': '其他消费纠纷', 'value': '15'}, {'label': '道路交通事故纠纷', 'value': '17'}], 'keywords': ' 丁晓晖dingxiaohui2 晖 丁晓晖ding 丁晓晖din 丁晓晖dingxiaohui 丁晓晖dingxi n 丁晓晖dingx 丁晓晖dingxiaohu 丁晓晖d a 丁晓晖di x 丁晓晖dingxiao h dingxiaohui2 g 丁 2 丁晓晖dingxia u 丁晓晖dingxiaoh i d 晓 丁晓 o 丁晓晖', 'JZTJYRS': 0, 'status': True, 'location': {'district': {'label': '鼓楼区', 'value': '320101'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': ''}, 'FZR': '丁晓晖', 'ZZTJYRS': 6}], 'pager': {'page_num': 1, 'pages': [1, 2], 'total': 13, 'has_more': True, 'skip': 0, 'page': 1, 'enable': True, 'max_page': 2, 'page_size': 10}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('%records0%TWHMC', '=', '张庆调委会1234567')
+校验该段信息成功：('%records0%CLRQ', '=', '1991-08-07')
+校验该段信息成功：('%records0%TWHLX', '=', '04')
+校验该段信息成功：('%records0%NC', '=', 'dingxiaohui1234567890')
+校验该段信息成功：('%records0%FZR', '=', 'dasfvgsdfg')
+校验该段信息成功：('%records0%domains', 'DO=', [{'value': '18', 'label': '物业纠纷'}, {'value': '02', 'label': '邻里纠纷'}, {'value': '03', 'label': '房产宅基地纠纷'}, {'value': '06', 'label': '损害赔偿纠纷'}, {'value': '05', 'label': '生产经营纠纷'}, {'value': '08', 'label': '征地拆迁纠纷'}])
+校验该段信息成功：('%records0%location', '=', {'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'district': {'label': '雨花台区', 'value': '320114'}, 'detail': '雨花台街道人民调解委员会'})
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_5__机构端_调解委员会修改自身密码</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.5')" >
+        通过</a>
+
+    <div id='div_pt3.5' class="popup_window">
+        <pre>
+        pt3.5: {'Run': 'Y', 'CaseNum': 'case5', 'Interface': 'self_update', '用例描述': '', 'QuotoSituation': 'user_case3=&lt;user,case3,all,all,Undo&gt;\nRes_headers=%user_case3%Res_headers\ntoken=%Res_headers%Set-Cookie&amp;extract[=(.*?);]\nTWHBM=&lt;case2,Res,data.records.TWHBM[dict_list_dict/NC@dingxiaohui1234567890]&gt;\nold_password=&lt;case1,Input,MM&gt;', 'Input': 'headers={"token":%token%}\nTWHBM=&lt;case2,Res,data.records.TWHBM[dict_list0_dict]&gt;\npassword=123456abc\nold_password=%old_password%', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'institution', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/institution/self_update', 'Interface_description': '【机构端】调解委员会修改自身密码', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]密码修改成功']}
+**************************Start测试用例：*********************************
+{'Run': 'Y', 'CaseNum': 'case3', 'Interface': 'login', '用例描述': '用户类型03', 'QuotoSituation': '', 'Input': 'DLMC=dingxiaohui1234567890\nMM=123456\nLX=03', 'CaseExcept': '', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/login', 'Interface_description': '【用户端】用户登录', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：用户类型03*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/user/login
+测试输入:{'DLMC': 'dingxiaohui1234567890', 'MM': '123456', 'LX': '03'}、None、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200)]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'token': '99b7d1da-08f3-11e9-97d5-000000000130', 'userInfo': {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204001051', 'status': True, 'TWHMC': '张庆调委会1234567', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'SUQY': '320102', 'FZR': 'dasfvgsdfg', 'NC': 'dingxiaohui1234567890', '_id': '32010204001051', 'XXCJRQ': '2018-12-26 17:49:55.848935', 'domains': [{'label': '房产宅基地纠纷', 'value': '03'}, {'label': '生产经营纠纷', 'value': '05'}, {'label': '征地拆迁纠纷', 'value': '08'}, {'label': '物业纠纷', 'value': '18'}, {'label': '损害赔偿纠纷', 'value': '06'}, {'label': '邻里纠纷', 'value': '02'}], 'SYRQ': '2020-12-24 12:53:34', 'LX': '03', 'LXDZ': '江苏省南京市雨花台区雨花台街道人民调解委员会', 'location': {'district': {'label': '雨花台区', 'value': '320114'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '雨花台街道人民调解委员会'}, 'keywords': ' 庆 4 张庆调委会12 5 调 委 张庆调委会1234 3 张庆调 1234567 7 2 张庆调委会1 6 张庆调委会1234567 1 张 张庆调委 张庆 张庆调委会12345 张庆调委会123 张庆调委会 会 调委会 张庆调委会123456'}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+**************************PASS测试用例：用户类型03**********************************
+
+
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/institution/self_update
+测试输入:{'TWHBM': '32010204001051', 'password': '123456abc', 'old_password': '123456'}、{'token': '99b7d1da-08f3-11e9-97d5-000000000130'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', '=', '密码修改成功')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '密码修改成功'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', '=', '密码修改成功')
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_6__机构端_机构注销</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.6')" >
+        通过</a>
+
+    <div id='div_pt3.6' class="popup_window">
+        <pre>
+        pt3.6: {'Run': 'Y', 'CaseNum': 'case6', 'Interface': 'delete', '用例描述': '', 'QuotoSituation': '', 'Input': 'headers=&lt;case1,headers,all&gt;\nBM=&lt;case1,Input,ID&gt;\nTWHBM=&lt;case2,Res,data.records.TWHBM[dict_list0_dict]&gt;', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'institution', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/institution/delete', 'Interface_description': '【机构端】机构注销', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]注销成功']}
+**************************Start测试用例：*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/institution/delete
+测试输入:{'BM': 'aecefbf7982334a9901c2eb12a170f24', 'TWHBM': '32010204001051'}、{'token': '99746492-08f3-11e9-9a19-00043c99dd5c'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', '=', '注销成功')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '注销成功'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', '=', '注销成功')
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td>test_mediator1.TestCase</td>
+        <td>6</td>
+        <td>6</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c4',6)">详情</a></td>
+    </tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_1__机构端_机构创建</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        通过</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <pre>
+        pt4.1: {'Run': 'Y', 'CaseNum': 'case1', 'Module': 'institution', 'Interface': 'register', '用例描述': '', 'QuotoSituation': 'user_case4=&lt;user,case4,all,all,Undo&gt;\nRes_headers=%user_case4%Res_headers\ntoken=%Res_headers%Set-Cookie&amp;extract[=(.*?);]', 'Input': 'ID=aecefbf7982334a9901c2eb12a170f24\nNC=dingxiaohui1234567890\nMM=123456\nlocation=dumps{"province":{"label":"江苏省","value":"320000"},"city":{"label":"南京市","value":"320100"},"district":{"label":"玄武区","value":"320102"},"detail":"新街口街道人民调解委员会"}\ndomains=dumps[{"value": "16", "label": "医疗纠纷"},{"value": "01", "label": "婚姻家庭纠纷"},{"value": "17", "label": "道路交通事故纠纷"},{"value": "04", "label": "合同纠纷"}]\nFZR=张庆\nCLRQ=1991-08-07\nTWHLX=04\nTWHMC=张庆调委会1234567\nheaders={"token":%token%}', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'mediator', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/institution/register', 'Interface_description': '【机构端】机构创建', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]管理员创建调委会成功']}
+**************************Start测试用例：*********************************
+{'Run': 'Y', 'CaseNum': 'case4', 'Interface': 'login', '用例描述': '用户类型04', 'QuotoSituation': '', 'Input': 'DLMC=mm\nMM=123456\nLX=04', 'CaseExcept': 'data.userInfo.NC[=]&lt;DLMC&gt;\ndata.userInfo[key]MMFZD&amp;NC&amp;LXDH&amp;status&amp;XM&amp;XXCJRQ&amp;register_time&amp;LX&amp;BM&amp;keywords&amp;_id\ndata.userInfo.LX[=]&lt;LX&gt;', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/login', 'Interface_description': '【用户端】用户登录', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：用户类型04*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/user/login
+测试输入:{'DLMC': 'mm', 'MM': '123456', 'LX': '04'}、None、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data.userInfo.NC', '=', 'mm'), ('data.userInfo', 'key', ['MMFZD', 'NC', 'LXDH', 'status', 'XM', 'XXCJRQ', 'register_time', 'LX', 'BM', 'keywords', '_id']), ('data.userInfo.LX', '=', '04')]
+测试实际返回值：
+{'msg': '用户已在其他处登录,其他处登录过期！', 'code': 200, 'data': {'token': '99e15950-08f3-11e9-a27f-00043c99dd5c', 'userInfo': {'status': True, 'XM': '毛毛', 'NC': 'mm', 'BM': '1e030a60beea3b5086019992d701ef2e', 'XXCJRQ': '2018-11-27 18:37:54.481124', 'LXDH': 18196585820, 'LX': '04', 'MMFZD': 3, 'register_time': '2018-11-27 18:37:54.481124', '_id': '1e030a60beea3b5086019992d701ef2e', 'keywords': '毛  毛毛'}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data.userInfo.NC', '=', 'mm')
+校验该段信息成功：('data.userInfo', 'key', ['MMFZD', 'NC', 'LXDH', 'status', 'XM', 'XXCJRQ', 'register_time', 'LX', 'BM', 'keywords', '_id'])
+校验该段信息成功：('data.userInfo.LX', '=', '04')
+**************************PASS测试用例：用户类型04**********************************
+
+
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/institution/register
+测试输入:{'ID': 'aecefbf7982334a9901c2eb12a170f24', 'NC': 'dingxiaohui1234567890', 'MM': '123456', 'location': '{"province": {"label": "\\u6c5f\\u82cf\\u7701", "value": "320000"}, "city": {"label": "\\u5357\\u4eac\\u5e02", "value": "320100"}, "district": {"label": "\\u7384\\u6b66\\u533a", "value": "320102"}, "detail": "\\u65b0\\u8857\\u53e3\\u8857\\u9053\\u4eba\\u6c11\\u8c03\\u89e3\\u59d4\\u5458\\u4f1a"}', 'domains': '[{"value": "16", "label": "\\u533b\\u7597\\u7ea0\\u7eb7"}, {"value": "01", "label": "\\u5a5a\\u59fb\\u5bb6\\u5ead\\u7ea0\\u7eb7"}, {"value": "17", "label": "\\u9053\\u8def\\u4ea4\\u901a\\u4e8b\\u6545\\u7ea0\\u7eb7"}, {"value": "04", "label": "\\u5408\\u540c\\u7ea0\\u7eb7"}]', 'FZR': '张庆', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'TWHMC': '张庆调委会1234567'}、{'token': '99e15950-08f3-11e9-a27f-00043c99dd5c'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', '=', '管理员创建调委会成功')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '管理员创建调委会成功'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', '=', '管理员创建调委会成功')
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_2__机构端_查询机构</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.2')" >
+        通过</a>
+
+    <div id='div_pt4.2' class="popup_window">
+        <pre>
+        pt4.2: {'Run': 'Y', 'CaseNum': 'case2', 'Module': 'institution', 'Interface': 'institutions', '用例描述': '', 'QuotoSituation': 'case1_input=&lt;case1,Input,all&gt;\nNC=%case1_input%NC\nrecords=&lt;Res,data.records[dict_list/NC@%NC%]&gt;', 'Input': 'headers=&lt;case1,headers,all&gt;', 'CaseExcept': '%records%TWHMC[=]%case1_input%TWHMC\n%records%CLRQ[=]%case1_input%CLRQ\n%records%TWHLX[=]%case1_input%TWHLX\n%records%FZR[=]%case1_input%FZR\n%records%NC[=]%case1_input%NC\n%records%domains[DO=][{"value": "16", "label": "医疗纠纷"},{"value": "01", "label": "婚姻家庭纠纷"},{"value": "17", "label": "道路交通事故纠纷"},{"value": "04", "label": "合同纠纷"}]\n%records%location[=]{"province":{"label":"江苏省","value":"320000"},"city":{"label":"南京市","value":"320100"},"district":{"label":"玄武区","value":"320102"},"detail":"新街口街道人民调解委员会"}', 'project': 'Intelligent_mediation_web', 'result_table_name': 'mediator', 'method': 'get', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/institution/institutions', 'Interface_description': '【机构端】查询机构', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：*********************************
+请求方式:get,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/institution/institutions
+测试输入:{}、{'token': '99e15950-08f3-11e9-a27f-00043c99dd5c'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('%records%TWHMC', '=', '张庆调委会1234567'), ('%records%CLRQ', '=', '1991-08-07'), ('%records%TWHLX', '=', '04'), ('%records%FZR', '=', '张庆'), ('%records%NC', '=', 'dingxiaohui1234567890'), ('%records%domains', 'DO=', [{'value': '16', 'label': '医疗纠纷'}, {'value': '01', 'label': '婚姻家庭纠纷'}, {'value': '17', 'label': '道路交通事故纠纷'}, {'value': '04', 'label': '合同纠纷'}]), ('%records%location', '=', {'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'district': {'label': '玄武区', 'value': '320102'}, 'detail': '新街口街道人民调解委员会'})]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'records': [{'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204001052', 'status': True, 'TWHMC': '张庆调委会1234567', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'SUQY': '320102', 'FZR': '张庆', 'NC': 'dingxiaohui1234567890', '_id': '32010204001052', 'XXCJRQ': '2018-12-26 17:49:56.373897', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'SYRQ': '2018-12-26 17:49:56', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'keywords': ' 庆 4 张庆调委会12 5 调 委 张庆调委会1234 3 张庆调 1234567 7 2 张庆调委会1 6 张庆调委会1234567 1 张 张庆调委 张庆 张庆调委会12345 张庆调委会123 张庆调委会 会 调委会 张庆调委会123456', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '21010106000914', 'status': True, 'CLRQ': '2018-11-26', 'TWHLX': '06', 'SUQY': '210101', 'FZR': '1', 'NC': '11111111111111111', 'location': {'district': {'label': '市辖区', 'value': '210101'}, 'province': {'label': '辽宁省', 'value': '210000'}, 'city': {'label': '沈阳市', 'value': '210100'}, 'detail': ''}, 'XXCJRQ': '2018-12-26 14:28:50.028840', 'domains': [{'label': '医疗纠纷', 'value': '16'}, {'label': '物业纠纷', 'value': '18'}], 'SYRQ': '2018-12-17', 'JZTJYRS': 0, 'LXDZ': '辽宁省沈阳市市辖区', '_id': '21010106000914', 'TWHMC': '11111', 'keywords': ' 1111 1 11 111 11111', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '21010105000913', 'status': True, 'CLRQ': '2018-12-17', 'TWHLX': '05', 'SUQY': '210101', 'FZR': '2312', 'NC': '222222222222222222222', 'location': {'district': {'label': '市辖区', 'value': '210101'}, 'province': {'label': '辽宁省', 'value': '210000'}, 'city': {'label': '沈阳市', 'value': '210100'}, 'detail': ''}, 'XXCJRQ': '2018-12-26 14:28:20.673595', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '邻里纠纷', 'value': '02'}], 'SYRQ': '2018-12-3', 'JZTJYRS': 0, 'LXDZ': '辽宁省沈阳市市辖区', '_id': '21010105000913', 'TWHMC': '222222', 'keywords': ' 22 2222 222222 2 222 22222', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '23010101000750', 'status': True, 'CLRQ': '2018-12-24', 'TWHLX': '01', 'SUQY': '230101', 'FZR': 'sdf', 'NC': '2131', 'location': {'district': {'label': '市辖区', 'value': '230101'}, 'province': {'label': '黑龙江省', 'value': '230000'}, 'city': {'label': '哈尔滨市', 'value': '230100'}, 'detail': ''}, 'XXCJRQ': '2018-12-24 15:53:02.262636', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '物业纠纷', 'value': '18'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'LXDH': '18260059218', 'SYRQ': '2018-12-17', 'JZTJYRS': 0, 'LXDZ': '黑龙江省哈尔滨市市辖区', '_id': '23010101000750', 'TWHMC': '121', 'keywords': '1  121 2 12', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204000684', 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'SUQY': '320102', 'TWHMC': '心心调委会', 'keywords': ' 心心调委 委 心心 心心调委会 心 心心调 调 会 调委会', 'domains': [{'label': '机动车交通事故责任纠纷', 'value': 9722}, {'label': '医疗纠纷', 'value': 9853}, {'label': '劳动争议', 'value': 9462}], 'NC': 'xxtwh', 'XXCJRQ': '2018-12-24 13:10:08.824096', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'SYRQ': '2018-12-24 13:30:34', 'JZTJYRS': 0, 'status': True, '_id': '32010204000684', 'FZR': '张庆', 'ZZTJYRS': 1}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204000682', 'status': True, 'NC': 'dingxiaohui12345678901222', 'TWHLX': '04', 'SUQY': '320102', 'FZR': '张庆', 'TWHMC': '张庆调委会', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'XXCJRQ': '2018-12-21 17:04:36.468827', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'keywords': ' 庆 张庆调委 委 张 调委会 张庆 会 调 张庆调 张庆调委会', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', '_id': '32010204000682', 'CLRQ': '1991-08-07', 'ZZTJYRS': 0}, {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204000681', 'status': True, 'NC': 'dingxiaohui12345678901', 'TWHLX': '04', 'SUQY': '320102', 'FZR': '张庆', 'TWHMC': '张庆调委会', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'XXCJRQ': '2018-12-21 16:52:24.871879', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'keywords': ' 庆 张庆调委 委 张 调委会 张庆 会 调 张庆调 张庆调委会', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', '_id': '32010204000681', 'CLRQ': '1991-08-07', 'ZZTJYRS': 0}, {'institutionInfo': {'on': 0, 'done': 0, 'un': 0}, 'TWHBM': '32010204000241', 'status': True, 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', 'TWHLX': '04', 'SUQY': '320102', 'CLRQ': '1991-08-07', 'NC': 'zqtwh', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'XXCJRQ': '2018-12-12 14:11:25.424796', 'domains': [{'label': '机动车交通事故责任纠纷', 'value': 9722}, {'label': '医疗纠纷', 'value': 9853}, {'label': '劳动争议', 'value': 9462}], 'keywords': ' 张庆调 调 张庆调委会 会 庆 张庆 张 调委会 委 张庆调委', 'FZR': '张庆', 'JZTJYRS': 0, 'TWHMC': '张庆调委会', '_id': '32010204000241', 'ZZTJYRS': 1}, {'institutionInfo': {'un': 13, 'done': 3, 'on': 2}, 'TWHBM': '32010105000013', 'status': True, 'TWHMC': '南京擎盾', 'TWHLX': '05', 'SUQY': '320101', 'CLRQ': '2018-11-28', 'NC': 'njqd', '_id': '32010105000013', 'XXCJRQ': '2018-11-30 14:16:20.615039', 'domains': [{'label': '山林土地纠纷', 'value': '07'}, {'label': '生产经营纠纷', 'value': '05'}, {'label': '其他劳动争议纠纷', 'value': '12'}, {'label': '物业纠纷', 'value': '18'}, {'label': '拖欠农民工工资纠纷', 'value': '11'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '损害赔偿纠纷', 'value': '06'}, {'label': '旅游纠纷', 'value': '13'}, {'label': '征地拆迁纠纷', 'value': '08'}, {'label': '婚姻家庭纠纷', 'value': '01'}, {'label': '合同纠纷', 'value': '04'}, {'label': '其他纠纷', 'value': '99'}, {'label': '房产宅基地纠纷', 'value': '03'}, {'label': '邻里纠纷', 'value': '02'}, {'label': '环境污染纠纷', 'value': '09'}, {'label': '电子商务纠纷', 'value': '14'}, {'label': '其他消费纠纷', 'value': '15'}, {'label': '道路交通事故纠纷', 'value': '17'}], 'keywords': ' 擎盾 南京擎盾 南京擎 南京 盾 南 京 擎', 'FZR': '姚瑶', 'JZTJYRS': 0, 'LXDZ': '江苏省南京市雨花台区安德门大街', 'location': {'district': {'label': '雨花台区', 'value': '320101'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '安德门大街'}, 'ZZTJYRS': 4}, {'institutionInfo': {'un': 5, 'done': 0, 'on': 0}, 'TWHBM': '14040105000010', 'LXDZ': '山西省长治市襄垣县', 'CLRQ': '2010-1-29', 'TWHLX': '05', 'SUQY': '140401', 'TWHMC': '丁晓晖dingxiaohui2', 'NC': '丁晓晖dingxiaohui2', '_id': '14040105000010', 'XXCJRQ': '2018-11-29 12:35:43.598211', 'domains': [{'label': '山林土地纠纷', 'value': '07'}, {'label': '生产经营纠纷', 'value': '05'}, {'label': '其他劳动争议纠纷', 'value': '12'}, {'label': '物业纠纷', 'value': '18'}, {'label': '拖欠农民工工资纠纷', 'value': '11'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '损害赔偿纠纷', 'value': '06'}, {'label': '旅游纠纷', 'value': '13'}, {'label': '征地拆迁纠纷', 'value': '08'}, {'label': '婚姻家庭纠纷', 'value': '01'}, {'label': '合同纠纷', 'value': '04'}, {'label': '其他纠纷', 'value': '99'}, {'label': '房产宅基地纠纷', 'value': '03'}, {'label': '邻里纠纷', 'value': '02'}, {'label': '环境污染纠纷', 'value': '09'}, {'label': '电子商务纠纷', 'value': '14'}, {'label': '其他消费纠纷', 'value': '15'}, {'label': '道路交通事故纠纷', 'value': '17'}], 'keywords': ' 丁晓晖dingxiaohui2 晖 丁晓晖ding 丁晓晖din 丁晓晖dingxiaohui 丁晓晖dingxi n 丁晓晖dingx 丁晓晖dingxiaohu 丁晓晖d a 丁晓晖di x 丁晓晖dingxiao h dingxiaohui2 g 丁 2 丁晓晖dingxia u 丁晓晖dingxiaoh i d 晓 丁晓 o 丁晓晖', 'JZTJYRS': 0, 'status': True, 'location': {'district': {'label': '鼓楼区', 'value': '320101'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': ''}, 'FZR': '丁晓晖', 'ZZTJYRS': 6}], 'pager': {'page_num': 1, 'pages': [1, 2], 'total': 13, 'has_more': True, 'skip': 0, 'page': 1, 'enable': True, 'max_page': 2, 'page_size': 10}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('%records%TWHMC', '=', '张庆调委会1234567')
+校验该段信息成功：('%records%CLRQ', '=', '1991-08-07')
+校验该段信息成功：('%records%TWHLX', '=', '04')
+校验该段信息成功：('%records%FZR', '=', '张庆')
+校验该段信息成功：('%records%NC', '=', 'dingxiaohui1234567890')
+校验该段信息成功：('%records%domains', 'DO=', [{'value': '16', 'label': '医疗纠纷'}, {'value': '01', 'label': '婚姻家庭纠纷'}, {'value': '17', 'label': '道路交通事故纠纷'}, {'value': '04', 'label': '合同纠纷'}])
+校验该段信息成功：('%records%location', '=', {'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'district': {'label': '玄武区', 'value': '320102'}, 'detail': '新街口街道人民调解委员会'})
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_3__调解员端_调解员注册</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.3')" >
+        通过</a>
+
+    <div id='div_pt4.3' class="popup_window">
+        <pre>
+        pt4.3: {'Run': 'Y', 'CaseNum': 'case3', 'Module': 'mediator', 'Interface': 'register', '用例描述': '', 'QuotoSituation': 'user_case3=&lt;user,case3,all,all,Undo&gt;\nRes_headers=%user_case3%Res_headers\ntoken=%Res_headers%Set-Cookie&amp;extract[=(.*?);]', 'Input': 'headers={"token":%token%}\n_id=%user_case3%Res.data.userInfo._id\nNC=丁晓晖杨杰\nMM=123456\nlocation=dumps{"province":{"label":"江苏省","value":"320000"},"city":{"label":"南京市","value":"320100"},"district":{"label":"玄武区","value":"320102"},"detail":"新街口街道人民调解委员会"}\ndomains=dumps[{"value": "16", "label": "医疗纠纷"},{"value": "01", "label": "婚姻家庭纠纷"},{"value": "17", "label": "道路交通事故纠纷"},{"value": "04", "label": "合同纠纷"}]\nSFZHM=342626199108030867\nXM=丁晓晖杨杰\nXB=2\nMZ=01\nXL=10\nJBQTSF=05\nTWHZW=01\nZJZ=01\nSFZFGMFW=01\nXGGZZSCB=01\nSJ=18196585820\nCSFS=13\nZZMM=团员\nPYRQ=2018-08-03', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'mediator', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/mediator/register', 'Interface_description': '【调解员端】调解员注册', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]调解员创建成功']}
+**************************Start测试用例：*********************************
+{'Run': 'Y', 'CaseNum': 'case3', 'Interface': 'login', '用例描述': '用户类型03', 'QuotoSituation': '', 'Input': 'DLMC=dingxiaohui1234567890\nMM=123456\nLX=03', 'CaseExcept': '', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/login', 'Interface_description': '【用户端】用户登录', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：用户类型03*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/user/login
+测试输入:{'DLMC': 'dingxiaohui1234567890', 'MM': '123456', 'LX': '03'}、None、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200)]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'token': '9a0a681e-08f3-11e9-9848-00000000020f', 'userInfo': {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204001052', 'status': True, 'TWHMC': '张庆调委会1234567', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'SUQY': '320102', 'FZR': '张庆', 'NC': 'dingxiaohui1234567890', '_id': '32010204001052', 'XXCJRQ': '2018-12-26 17:49:56.373897', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'SYRQ': '2018-12-26 17:49:56', 'LX': '03', 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'keywords': ' 庆 4 张庆调委会12 5 调 委 张庆调委会1234 3 张庆调 1234567 7 2 张庆调委会1 6 张庆调委会1234567 1 张 张庆调委 张庆 张庆调委会12345 张庆调委会123 张庆调委会 会 调委会 张庆调委会123456'}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+**************************PASS测试用例：用户类型03**********************************
+
+
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/mediator/register
+测试输入:{'_id': '32010204001052', 'NC': '丁晓晖杨杰', 'MM': '123456', 'location': '{"province": {"label": "\\u6c5f\\u82cf\\u7701", "value": "320000"}, "city": {"label": "\\u5357\\u4eac\\u5e02", "value": "320100"}, "district": {"label": "\\u7384\\u6b66\\u533a", "value": "320102"}, "detail": "\\u65b0\\u8857\\u53e3\\u8857\\u9053\\u4eba\\u6c11\\u8c03\\u89e3\\u59d4\\u5458\\u4f1a"}', 'domains': '[{"value": "16", "label": "\\u533b\\u7597\\u7ea0\\u7eb7"}, {"value": "01", "label": "\\u5a5a\\u59fb\\u5bb6\\u5ead\\u7ea0\\u7eb7"}, {"value": "17", "label": "\\u9053\\u8def\\u4ea4\\u901a\\u4e8b\\u6545\\u7ea0\\u7eb7"}, {"value": "04", "label": "\\u5408\\u540c\\u7ea0\\u7eb7"}]', 'SFZHM': '342626199108030867', 'XM': '丁晓晖杨杰', 'XB': '2', 'MZ': '01', 'XL': '10', 'JBQTSF': '05', 'TWHZW': '01', 'ZJZ': '01', 'SFZFGMFW': '01', 'XGGZZSCB': '01', 'SJ': '18196585820', 'CSFS': '13', 'ZZMM': '团员', 'PYRQ': '2018-08-03'}、{'token': '9a0a681e-08f3-11e9-9848-00000000020f'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', '=', '调解员创建成功')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '调解员创建成功'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', '=', '调解员创建成功')
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_4__调解员端_调解员列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.4')" >
+        通过</a>
+
+    <div id='div_pt4.4' class="popup_window">
+        <pre>
+        pt4.4: {'Run': 'Y', 'CaseNum': 'case4', 'Module': 'mediator', 'Interface': 'mediators', '用例描述': '', 'QuotoSituation': 'case3_input=&lt;case3,Input,all&gt;\nNC=&lt;case3,Input,NC&gt;\nrecords=&lt;Res,data.records[dict_list/NC@%NC%]&gt;\nTWHBM=&lt;case2,QuotoSituation,records.TWHBM&gt;', 'Input': 'headers=&lt;case3,headers,all&gt;\nTWHBM=%TWHBM%\npage_number=int(1)', 'CaseExcept': '%records%XM[=]%case3_input%XM\n%records%NC[=]%case3_input%NC\n%records%SJ[=]%case3_input%SJ\n%records%ZZMM[=]%case3_input%ZZMM\n%records%location[=]{"province":{"label":"江苏省","value":"320000"},"city":{"label":"南京市","value":"320100"},"district":{"label":"玄武区","value":"320102"},"detail":"新街口街道人民调解委员会"}', 'project': 'Intelligent_mediation_web', 'result_table_name': 'mediator', 'method': 'get', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/mediator/mediators', 'Interface_description': '【调解员端】调解员列表', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data.records[dict_list,key]TJYBM&amp;status&amp;XM&amp;YGSWQK&amp;CSFS&amp;NC&amp;SJ&amp;XGGZZSCB&amp;TWHZW&amp;MZ&amp;TWHBM&amp;ZZMM&amp;XB&amp;register_time&amp;SFZFGMFW&amp;location&amp;SFZHM&amp;CSRMTJGZSNX&amp;is_constrained&amp;institutionInfo&amp;JBQTSF&amp;LXDZ&amp;PYRQ&amp;ZJZ&amp;XL&amp;domains&amp;_id&amp;XXCJRQ&amp;CSNY&amp;mediatorInfo&amp;keywords']}
+**************************Start测试用例：*********************************
+请求方式:get,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/mediator/mediators
+测试输入:{'TWHBM': '32010204001052', 'page_number': 1}、{'token': '9a0a681e-08f3-11e9-9848-00000000020f'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data.records', 'dict_list,key', ['TJYBM', 'status', 'XM', 'YGSWQK', 'CSFS', 'NC', 'SJ', 'XGGZZSCB', 'TWHZW', 'MZ', 'TWHBM', 'ZZMM', 'XB', 'register_time', 'SFZFGMFW', 'location', 'SFZHM', 'CSRMTJGZSNX', 'is_constrained', 'institutionInfo', 'JBQTSF', 'LXDZ', 'PYRQ', 'ZJZ', 'XL', 'domains', '_id', 'XXCJRQ', 'CSNY', 'mediatorInfo', 'keywords']), ('%records%XM', '=', '丁晓晖杨杰'), ('%records%NC', '=', '丁晓晖杨杰'), ('%records%SJ', '=', '18196585820'), ('%records%ZZMM', '=', '团员'), ('%records%location', '=', {'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'district': {'label': '玄武区', 'value': '320102'}, 'detail': '新街口街道人民调解委员会'})]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'records': [{'TJYBM': '320102Z20180340', 'status': True, 'XM': '丁晓晖杨杰', 'YGSWQK': '', 'CSFS': '13', 'NC': '丁晓晖杨杰', 'SJ': '18196585820', 'XGGZZSCB': '01', 'TWHZW': '01', 'MZ': '01', 'TWHBM': '32010204001052', 'ZZMM': '团员', 'XB': '2', 'register_time': '2018-12-26 17:49:56.633448', 'SFZFGMFW': '01', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'SFZHM': '342626199108030867', 'CSRMTJGZSNX': '2018', 'is_constrained': '01', 'institutionInfo': {'institutionInfo': {'un': 0, 'done': 0, 'on': 0}, 'TWHBM': '32010204001052', 'status': True, 'TWHMC': '张庆调委会1234567', 'CLRQ': '1991-08-07', 'TWHLX': '04', 'SUQY': '320102', 'FZR': '张庆', 'NC': 'dingxiaohui1234567890', '_id': '32010204001052', 'XXCJRQ': '2018-12-26 17:49:56.373897', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], 'SYRQ': '2018-12-26 17:49:56', 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', 'location': {'district': {'label': '玄武区', 'value': '320102'}, 'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'detail': '新街口街道人民调解委员会'}, 'keywords': ' 庆 4 张庆调委会12 5 调 委 张庆调委会1234 3 张庆调 1234567 7 2 张庆调委会1 6 张庆调委会1234567 1 张 张庆调委 张庆 张庆调委会12345 张庆调委会123 张庆调委会 会 调委会 张庆调委会123456'}, 'JBQTSF': '05', 'LXDZ': '江苏省南京市玄武区新街口街道人民调解委员会', 'PYRQ': '2018-08-03', 'ZJZ': '01', 'XL': '10', 'domains': [{'label': '合同纠纷', 'value': '04'}, {'label': '医疗纠纷', 'value': '16'}, {'label': '道路交通事故纠纷', 'value': '17'}, {'label': '婚姻家庭纠纷', 'value': '01'}], '_id': '320102Z20180340', 'XXCJRQ': '2018-12-26 17:49:56.633448', 'CSNY': '1991-08-03', 'mediatorInfo': {'un': 0, 'done': 0, 'on': 0}, 'keywords': ' 晓 杨杰 丁 丁晓晖杨杰 晖 丁晓 杨 丁晓晖 杰 丁晓晖杨'}], 'pager': {'page_num': 1, 'pages': [1], 'total': 1, 'has_more': False, 'skip': 0, 'page': 1, 'enable': True, 'max_page': 1, 'page_size': 10}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data.records', 'dict_list,key', ['TJYBM', 'status', 'XM', 'YGSWQK', 'CSFS', 'NC', 'SJ', 'XGGZZSCB', 'TWHZW', 'MZ', 'TWHBM', 'ZZMM', 'XB', 'register_time', 'SFZFGMFW', 'location', 'SFZHM', 'CSRMTJGZSNX', 'is_constrained', 'institutionInfo', 'JBQTSF', 'LXDZ', 'PYRQ', 'ZJZ', 'XL', 'domains', '_id', 'XXCJRQ', 'CSNY', 'mediatorInfo', 'keywords'])
+校验该段信息成功：('%records%XM', '=', '丁晓晖杨杰')
+校验该段信息成功：('%records%NC', '=', '丁晓晖杨杰')
+校验该段信息成功：('%records%SJ', '=', '18196585820')
+校验该段信息成功：('%records%ZZMM', '=', '团员')
+校验该段信息成功：('%records%location', '=', {'province': {'label': '江苏省', 'value': '320000'}, 'city': {'label': '南京市', 'value': '320100'}, 'district': {'label': '玄武区', 'value': '320102'}, 'detail': '新街口街道人民调解委员会'})
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_5__调解员端_删除调解员</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.5')" >
+        通过</a>
+
+    <div id='div_pt4.5' class="popup_window">
+        <pre>
+        pt4.5: {'Run': 'Y', 'CaseNum': 'case5', 'Module': 'mediator', 'Interface': 'delete', '用例描述': '', 'QuotoSituation': '', 'Input': 'headers=&lt;case3,headers,all&gt;\nTJYBM=&lt;case4,QuotoSituation,records.TJYBM&gt;', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'mediator', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/mediator/delete', 'Interface_description': '【调解员端】删除调解员', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]注销成功']}
+**************************Start测试用例：*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/mediator/delete
+测试输入:{'TJYBM': '320102Z20180340'}、{'token': '9a0a681e-08f3-11e9-9848-00000000020f'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', '=', '注销成功')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '注销成功'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', '=', '注销成功')
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_6__机构端_机构注销</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.6')" >
+        通过</a>
+
+    <div id='div_pt4.6' class="popup_window">
+        <pre>
+        pt4.6: {'Run': 'Y', 'CaseNum': 'case6', 'Module': 'institution', 'Interface': 'delete', '用例描述': '', 'QuotoSituation': 'TWHBM=&lt;case2,QuotoSituation,records.TWHBM&gt;', 'Input': 'headers=&lt;case1,headers,all&gt;\nBM=&lt;case1,Input,ID&gt;\nTWHBM=%TWHBM%', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'mediator', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/institution/delete', 'Interface_description': '【机构端】机构注销', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]注销成功']}
+**************************Start测试用例：*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/institution/delete
+测试输入:{'BM': 'aecefbf7982334a9901c2eb12a170f24', 'TWHBM': '32010204001052'}、{'token': '99e15950-08f3-11e9-a27f-00043c99dd5c'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', '=', '注销成功')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '注销成功'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', '=', '注销成功')
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td>test_user.TestCase</td>
+        <td>11</td>
+        <td>11</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c5',11)">详情</a></td>
+    </tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_01__用户端_用户登录_用户类型01</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        通过</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <pre>
+        pt5.1: {'Run': 'Y', 'CaseNum': 'case1', 'Interface': 'login', '用例描述': '用户类型01', 'QuotoSituation': '', 'Input': 'DLMC=18052063223\nMM=123456\nLX=01', 'CaseExcept': 'data.userInfo.DSRLXDH[=]&lt;DLMC&gt;\ndata.userInfo[key]DSRZJLX&amp;DSRLX&amp;DSRLXDH&amp;MMFZD&amp;LX&amp;DSRXM&amp;status&amp;DSRBM&amp;DZYX&amp;XXCJRQ&amp;XB&amp;ZP&amp;keywords&amp;_id&amp;DSRZJHM\ndata.userInfo.LX[=]&lt;LX&gt;', 'project': 'Intelligent_mediation_web', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/login', 'Interface_description': '【用户端】用户登录', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：用户类型01*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/user/login
+测试输入:{'DLMC': '18052063223', 'MM': '123456', 'LX': '01'}、None、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data.userInfo.DSRLXDH', '=', '18052063223'), ('data.userInfo', 'key', ['DSRZJLX', 'DSRLX', 'DSRLXDH', 'MMFZD', 'LX', 'DSRXM', 'status', 'DSRBM', 'DZYX', 'XXCJRQ', 'XB', 'ZP', 'keywords', '_id', 'DSRZJHM']), ('data.userInfo.LX', '=', '01')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'token': '9a36d9ca-08f3-11e9-9b36-000433fc9ff7', 'userInfo': {'DSRZJHM': '342626199108030867', 'DSRZJLX': '111', 'status': True, 'DSRBM': '435ead445da63f2694545de097f2731b', 'ZP': 'statics/user_heads/张庆的用户名/avatar.png', 'DSRXM': '张庆之姓名', '_id': '435ead445da63f2694545de097f2731b', 'XXCJRQ': '2018-11-30 10:18:41.400720', 'DSRLXDH': '18052063223', 'LX': '01', 'XB': 2, 'MMFZD': 1, 'DSRLX': '01', 'keywords': ' 张 姓 姓名 庆 之 名 张庆之姓名 张庆 张庆之姓 张庆之', 'DZYX': '3057704735@qq.com'}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data.userInfo.DSRLXDH', '=', '18052063223')
+校验该段信息成功：('data.userInfo', 'key', ['DSRZJLX', 'DSRLX', 'DSRLXDH', 'MMFZD', 'LX', 'DSRXM', 'status', 'DSRBM', 'DZYX', 'XXCJRQ', 'XB', 'ZP', 'keywords', '_id', 'DSRZJHM'])
+校验该段信息成功：('data.userInfo.LX', '=', '01')
+**************************PASS测试用例：用户类型01**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_02__用户端_用户登录_用户类型02</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
+        通过</a>
+
+    <div id='div_pt5.2' class="popup_window">
+        <pre>
+        pt5.2: {'Run': 'N', 'CaseNum': 'case2', 'Interface': 'login', '用例描述': '用户类型02', 'QuotoSituation': '', 'Input': 'DLMC=丁晓晖杨杰\nMM=123456\nLX=02', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/login', 'Interface_description': '【用户端】用户登录', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+skip and No Run
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_03__用户端_用户登录_用户类型03</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.3')" >
+        通过</a>
+
+    <div id='div_pt5.3' class="popup_window">
+        <pre>
+        pt5.3: {'Run': 'N', 'CaseNum': 'case3', 'Interface': 'login', '用例描述': '用户类型03', 'QuotoSituation': '', 'Input': 'DLMC=dingxiaohui1234567890\nMM=123456\nLX=03', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/login', 'Interface_description': '【用户端】用户登录', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+skip and No Run
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_04__用户端_用户登录_用户类型04</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.4')" >
+        通过</a>
+
+    <div id='div_pt5.4' class="popup_window">
+        <pre>
+        pt5.4: {'Run': 'Y', 'CaseNum': 'case4', 'Interface': 'login', '用例描述': '用户类型04', 'QuotoSituation': '', 'Input': 'DLMC=mm\nMM=123456\nLX=04', 'CaseExcept': 'data.userInfo.NC[=]&lt;DLMC&gt;\ndata.userInfo[key]MMFZD&amp;NC&amp;LXDH&amp;status&amp;XM&amp;XXCJRQ&amp;register_time&amp;LX&amp;BM&amp;keywords&amp;_id\ndata.userInfo.LX[=]&lt;LX&gt;', 'project': 'Intelligent_mediation_web', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/login', 'Interface_description': '【用户端】用户登录', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：用户类型04*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/user/login
+测试输入:{'DLMC': 'mm', 'MM': '123456', 'LX': '04'}、None、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data.userInfo.NC', '=', 'mm'), ('data.userInfo', 'key', ['MMFZD', 'NC', 'LXDH', 'status', 'XM', 'XXCJRQ', 'register_time', 'LX', 'BM', 'keywords', '_id']), ('data.userInfo.LX', '=', '04')]
+测试实际返回值：
+{'msg': '用户已在其他处登录,其他处登录过期！', 'code': 200, 'data': {'token': '9a47b2a2-08f3-11e9-9745-00043c99dd5c', 'userInfo': {'status': True, 'XM': '毛毛', 'NC': 'mm', 'BM': '1e030a60beea3b5086019992d701ef2e', 'XXCJRQ': '2018-11-27 18:37:54.481124', 'LXDH': 18196585820, 'LX': '04', 'MMFZD': 3, 'register_time': '2018-11-27 18:37:54.481124', '_id': '1e030a60beea3b5086019992d701ef2e', 'keywords': '毛  毛毛'}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data.userInfo.NC', '=', 'mm')
+校验该段信息成功：('data.userInfo', 'key', ['MMFZD', 'NC', 'LXDH', 'status', 'XM', 'XXCJRQ', 'register_time', 'LX', 'BM', 'keywords', '_id'])
+校验该段信息成功：('data.userInfo.LX', '=', '04')
+**************************PASS测试用例：用户类型04**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_05__用户端_检查token_用户类型01</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.5')" >
+        通过</a>
+
+    <div id='div_pt5.5' class="popup_window">
+        <pre>
+        pt5.5: {'Run': 'Y', 'CaseNum': 'case5', 'Interface': 'token_auth', '用例描述': '用户类型01', 'QuotoSituation': 'Res_headers=&lt;case1,Res_headers,all&gt;\ntoken=%Res_headers%Set-Cookie&amp;extract[=(.*?);]', 'Input': 'headers={"token":%token%}', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/token_auth', 'Interface_description': '【用户端】检查token', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：用户类型01*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/user/token_auth
+测试输入:{}、{'token': '9a36d9ca-08f3-11e9-9b36-000433fc9ff7'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200)]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'userInfo': {'DSRZJHM': '342626199108030867', 'DSRZJLX': '111', 'status': True, 'DSRBM': '435ead445da63f2694545de097f2731b', 'ZP': 'statics/user_heads/张庆的用户名/avatar.png', 'DSRXM': '张庆之姓名', 'NC': '张庆的用户名', '_id': '435ead445da63f2694545de097f2731b', 'XXCJRQ': '2018-11-30 10:18:41.400720', 'DSRLXDH': '18052063223', 'LX': '01', 'XB': 2, 'MMFZD': 1, 'DSRLX': '01', 'keywords': ' 张 姓 姓名 庆 之 名 张庆之姓名 张庆 张庆之姓 张庆之', 'DZYX': '3057704735@qq.com'}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+**************************PASS测试用例：用户类型01**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_06__用户端_检查token_用户类型04</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.6')" >
+        通过</a>
+
+    <div id='div_pt5.6' class="popup_window">
+        <pre>
+        pt5.6: {'Run': 'Y', 'CaseNum': 'case6', 'Interface': 'token_auth', '用例描述': '用户类型04', 'QuotoSituation': 'Res_headers=&lt;case4,Res_headers,all&gt;\ntoken=%Res_headers%Set-Cookie&amp;extract[=(.*?);]', 'Input': 'headers={"token":%token%}', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/token_auth', 'Interface_description': '【用户端】检查token', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)']}
+**************************Start测试用例：用户类型04*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/user/token_auth
+测试输入:{}、{'token': '9a47b2a2-08f3-11e9-9745-00043c99dd5c'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200)]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': {'userInfo': {'status': True, 'XM': '毛毛', 'MM': 'e10adc3949ba59abbe56e057f20f883e', 'NC': 'mm', 'BM': '1e030a60beea3b5086019992d701ef2e', 'XXCJRQ': '2018-11-27 18:37:54.481124', 'LXDH': 18196585820, 'LX': '04', 'MMFZD': 3, 'register_time': '2018-11-27 18:37:54.481124', '_id': '1e030a60beea3b5086019992d701ef2e', 'keywords': '毛  毛毛'}}}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+**************************PASS测试用例：用户类型04**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_07__用户端_修改性别_用户类型01</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.7')" >
+        通过</a>
+
+    <div id='div_pt5.7' class="popup_window">
+        <pre>
+        pt5.7: {'Run': 'Y', 'CaseNum': 'case7', 'Interface': 'info/update', '用例描述': '用户类型01', 'QuotoSituation': 'Res_headers=&lt;case1,Res_headers,all&gt;\nBM=&lt;case1,Res,data.userInfo.DSRBM&gt;\nXB=&lt;case1,Res,data.userInfo.XB,transfer[XB]&gt;\ntoken=%Res_headers%Set-Cookie&amp;extract[=(.*?);]', 'Input': 'headers={"token":%token%}\naction=int(7)\nBM=%BM%\nXB=%XB%', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/info/update', 'Interface_description': '【用户端】修改性别', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]信息更新成功！！！']}
+**************************Start测试用例：用户类型01*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/user/info/update
+测试输入:{'action': 7, 'BM': '435ead445da63f2694545de097f2731b', 'XB': '1'}、{'token': '9a36d9ca-08f3-11e9-9b36-000433fc9ff7'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', '=', '信息更新成功！！！')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '信息更新成功！！！'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', '=', '信息更新成功！！！')
+**************************PASS测试用例：用户类型01**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_08__用户端_用户退出_用户类型01</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.8')" >
+        通过</a>
+
+    <div id='div_pt5.8' class="popup_window">
+        <pre>
+        pt5.8: {'Run': 'Y', 'CaseNum': 'case8', 'Interface': 'exit', '用例描述': '用户类型01', 'QuotoSituation': 'Res_headers=&lt;case1,Res_headers,all&gt;\ntoken=%Res_headers%Set-Cookie&amp;extract[=(.*?);]', 'Input': 'headers={"token":%token%}', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/exit', 'Interface_description': '【用户端】用户退出', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]退出成功']}
+**************************Start测试用例：用户类型01*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/user/exit
+测试输入:{}、{'token': '9a36d9ca-08f3-11e9-9b36-000433fc9ff7'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', '=', '退出成功')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '退出成功'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', '=', '退出成功')
+**************************PASS测试用例：用户类型01**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_09__用户端_用户退出_用户类型02</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.9')" >
+        通过</a>
+
+    <div id='div_pt5.9' class="popup_window">
+        <pre>
+        pt5.9: {'Run': 'N', 'CaseNum': 'case9', 'Interface': 'exit', '用例描述': '用户类型02', 'QuotoSituation': 'Res_headers=&lt;case2,Res_headers,all&gt;\ntoken=%Res_headers%Set-Cookie&amp;extract[=(.*?);]', 'Input': 'headers={"token":%token%}', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/exit', 'Interface_description': '【用户端】用户退出', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]退出成功']}
+skip and No Run
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_10__用户端_用户退出_用户类型03</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.10')" >
+        通过</a>
+
+    <div id='div_pt5.10' class="popup_window">
+        <pre>
+        pt5.10: {'Run': 'N', 'CaseNum': 'case10', 'Interface': 'exit', '用例描述': '用户类型03', 'QuotoSituation': 'Res_headers=&lt;case3,Res_headers,all&gt;\ntoken=%Res_headers%Set-Cookie&amp;extract[=(.*?);]', 'Input': 'headers={"token":%token%}', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/exit', 'Interface_description': '【用户端】用户退出', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]退出成功']}
+skip and No Run
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_11__用户端_用户退出_用户类型04</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.11')" >
+        通过</a>
+
+    <div id='div_pt5.11' class="popup_window">
+        <pre>
+        pt5.11: {'Run': 'Y', 'CaseNum': 'case11', 'Interface': 'exit', '用例描述': '用户类型04', 'QuotoSituation': 'Res_headers=&lt;case4,Res_headers,all&gt;\ntoken=%Res_headers%Set-Cookie&amp;extract[=(.*?);]', 'Input': 'headers={"token":%token%}', 'CaseExcept': '', 'project': 'Intelligent_mediation_web', 'result_table_name': 'user', 'method': 'post', 'base_url': 'http://192.168.11.88:9980', 'Url': 'http://192.168.11.88:9980/intelligentmediation/itm/user/exit', 'Interface_description': '【用户端】用户退出', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[=]退出成功']}
+**************************Start测试用例：用户类型04*********************************
+请求方式:post,   请求地址：http://192.168.11.88:9980/intelligentmediation/itm/user/exit
+测试输入:{}、{'token': '9a47b2a2-08f3-11e9-9745-00043c99dd5c'}、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', '=', '退出成功')]
+测试实际返回值：
+{'msg': '返回成功', 'code': 200, 'data': '退出成功'}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', '=', '退出成功')
+**************************PASS测试用例：用户类型04**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>27</td>
+            <td>27</td>
+            <td>0</td>
+            <td>0</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:27, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:0, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>
