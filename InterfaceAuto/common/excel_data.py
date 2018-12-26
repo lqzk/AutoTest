@@ -81,7 +81,7 @@ class Excel_Data:
     #             raise SheetIsNullError("{} 为空",format(self.sheet))
     #     return self._data
 
-    def getColumnType(self, columnName):
+    def getSingleColumnType(self, columnName):
         columnType=None
 
         workbook = open_workbook(self.excel)
@@ -104,6 +104,44 @@ class Excel_Data:
                 columnData=ws.col_values(i)
                 columnType=list(set(columnData[1:]))
                 break
+
+        return columnType
+
+    def getDoubleColumnType(self, columnName1,columnName2):
+        columnType=[]
+        columnIndex1=None
+        columnIndex2=None
+
+        workbook = open_workbook(self.excel)
+
+        if type(self.sheet) not in [int, str]:
+            raise SheetTypeError("please pass in <type int> or <type str>, not {0} ", format(type(self.sheet)))
+        elif type(self.sheet) == int:
+            try:
+                ws = workbook.sheet_by_index(self.sheet)
+            except:
+                raise SheetNotFoundError("{0} 不存在", format(self.sheet))
+        else:
+            try:
+                ws = workbook.sheet_by_name(self.sheet)
+            except:
+                raise SheetNotFoundError("{0} 不存在", format(self.sheet))
+
+        for i in range(ws.ncols):
+            if ws.cell(0,i).value==columnName1:
+                columnIndex1= i
+            elif ws.cell(0,i).value==columnName2:
+                columnIndex2 = i
+        # else:
+        #     return Exception("确认表头是否正确：{0}、{1}".format(columnName1,columnName2))
+
+
+        for j in range(1,ws.nrows):
+            type1=ws.cell(j,columnIndex1).value
+            type2=ws.cell(j,columnIndex2).value
+            columnType.append((type1,type2))
+
+        columnType=list(set(columnType))
 
         return columnType
 

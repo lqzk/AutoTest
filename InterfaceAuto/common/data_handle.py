@@ -119,7 +119,7 @@ class DataHandle:
 
         if module != None:
             interface_list_info = {}
-            interface_list = project_case_data(project, module).getColumnType("Interface")
+            interface_list = project_case_data(project, module).getSingleColumnType("Interface")
             for interface in interface_list:
                 interface_info = self.obtain_interface_info(project, module, interface)
                 interface_list_info[interface] = interface_info
@@ -134,11 +134,16 @@ class DataHandle:
         else:
             data_list = project_case_data(project, table_name).data
             if table_index == None:
+                interface_list_info = {}
+                m_interface_list = project_case_data(project, table_name).getDoubleColumnType("Module","Interface")
+                for m_interface in m_interface_list:
+                    interface_info = self.obtain_interface_info(project, m_interface[0], m_interface[1])
+                    interface_list_info["{0}_{1}".format(m_interface[0], m_interface[1])] = interface_info
+
                 for data in data_list:
                     data["project"] = project
                     data["result_table_name"] = table_name
-                    interface_info = self.obtain_interface_info(project, data["Module"], data["Interface"])
-                    data.update(interface_info)
+                    data.update(interface_list_info["{0}_{1}".format( data["Module"], data["Interface"])])
                     case_list.append(data)
             else:
                 data=data_list[table_index-1]
@@ -338,6 +343,7 @@ class DataHandle:
                         i = int(re.search(r"case([0-9]*?)$", case_num).group(1))
                         if len(obtain_value_method)==5:
                             data_list=self.obtain_interface_cases(case_data["project"],table_name=case,table_index=i)
+                            data_list[-1]["Run"]="Y"
                             from InterfaceAuto.common.general_test import GeneralTest
                             GeneralTest().execute_case(data_list)
                             data=data_list[0]
@@ -346,10 +352,6 @@ class DataHandle:
 
                         if data.get(value_type):
                             quote_value = self.handle_string_obj(data[value_type])
-                        else:
-                            raise Exception("{0}中不存在不存在的key值：{1}".format(data,value_type))
-
-                        if data.get(value_type):
                             if value_key != "all":
                                 quote_value_type, quary_string = "default", value_key
                                 location_list = None
@@ -369,13 +371,17 @@ class DataHandle:
 
                                 quote_value = self.obtain_type_data(quary_string, quote_value_type, quote_value,
                                                                     location_list)
+                        elif value_type=="all":
+                            quote_value=data
                         else:
-                            raise Exception("不存在的获取值：{0}".format(value_type))
+                            raise Exception("{0}中不存在的key值：{1}".format(data,value_type))
 
 
 
                     if len(obtain_value_method) in [4,5]:
-                        if re.search("transfer\[(.*?)\]",handle_des):
+                        if handle_des=="Undo":
+                            pass
+                        elif re.search("transfer\[(.*?)\]",handle_des):
                             quote_value=self.transfer_obj(handle_des,quote_value)
                         elif re.search("extract\[(.*?)\]",handle_des):
                             extract_mode = re.search(r'\[(.*?)\]', handle_des).group(1)
@@ -405,13 +411,12 @@ class DataHandle:
             try:
                 quote_key_list = re.findall(r'\%(.*?)\%', quote_string)
 
-                if len(quote_key_list) == 1 and re.search(r'\%(.*?)\%[^\]\,]',quote_string):
+                if len(quote_key_list) == 1 and re.search(r'\%(.*?)\%[^\]\,\}]',quote_string):
                     quote_key = re.search(r'\%(.*?)\%', quote_string).group(1)
                     quote_value = JExtractor.extract(quote_key, quoto_situation_data)
 
-                    quote_string = re.search(r'\%(.*?)\%(.*?)$', quote_string).group(2)
-
-                    if quote_string != "":
+                    if re.search(r'\%(.*?)\%([a-zA-Z].*?)$', quote_string):
+                        quote_string = re.search(r'\%(.*?)\%(.*?)$', quote_string).group(2)
                         quote_string_list = quote_string.split("&")
                         if re.search(r'\[(.*?)\]', quote_string_list[0]):
                             quote_string_type = re.search(r'\[(.*?)\]', quote_string_list[0]).group(1)
@@ -421,11 +426,20 @@ class DataHandle:
 
                         quote_value = self.obtain_type_data(quote_string, quote_string_type, quote_value, location)
 
-                        if len(quote_string_list) == 2 and re.search(r"transfer\[(.*?)\]",quote_string_list[1]):
-                            quote_value=self.transfer_obj(quote_string_list[1], quote_value)
+                        if len(quote_string_list) == 2:
+                            handle_des=quote_string_list[1]
+                            if re.search(r"transfer\[(.*?)\]",handle_des):
+                                quote_value=self.transfer_obj(handle_des, quote_value)
+                            elif re.search("extract\[(.*?)\]",handle_des):
+                                extract_mode = re.search(r'\[(.*?)\]', handle_des).group(1)
+                                if re.search(extract_mode, quote_value):
+                                    quote_value = re.search(extract_mode, quote_value).group(1)
+                                else:
+                                    raise Exception("无法从{0}中按照方式{1}提取值".format(quote_value, extract_mode))
+                            else:
+                                raise Exception("不符合格式的后续处理方式：{0}".format(handle_des))
 
                     return quote_value
-
                 else:
                     for quote_key in quote_key_list:
                         quote_value = JExtractor.extract(quote_key, quoto_situation_data)
@@ -454,9 +468,13 @@ class DataHandle:
 
             quoto_situation_list = quoto_situation.strip().split("\n")
             for every_quoto_situation in quoto_situation_list:
-                parse_quoto_situation = every_quoto_situation.split("=")
-                quoto_situation_data_key = parse_quoto_situation[0]
-                quoto_situation_data_value = parse_quoto_situation[1]
+                # parse_quoto_situation = every_quoto_situation.split("=")
+                # quoto_situation_data_key = parse_quoto_situation[0]
+                # quoto_situation_data_value = parse_quoto_situation[1]
+
+                quoto_situation_data_key=re.search(r'(.*?)\=', every_quoto_situation).group(1)
+                quoto_situation_data_value = re.search(r'\=([^\}].*?)$', every_quoto_situation).group(1)
+
 
                 quoto_situation_data_value = DataHandle().obtain_quote_data(quoto_situation_data_value, table_result)
                 quoto_situation_data_value = DataHandle().obtain_QuotoSituation_data(quoto_situation_data,quoto_situation_data_value)
@@ -474,9 +492,8 @@ class DataHandle:
 
             input_list=input.strip().split("\n")
             for every_input in input_list:
-
                 input_data_key=re.search(r"^(.*?)\=",every_input).group(1)
-                input_data_value=re.search(r"\=(.*?)$",every_input).group(1)
+                input_data_value=re.search(r"\=([^\}].*?)$",every_input).group(1)
 
                 input_data_value = self.obtain_quote_data(input_data_value, table_result)
                 input_data_value=self.obtain_QuotoSituation_data(quoto_situation_data,input_data_value)

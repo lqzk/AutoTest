@@ -320,10 +320,24 @@
          "module_except": ["all[key]code,data,msg", "code[=]int(200)"],
          "login": {
             "method": "post",
-            "interface_except": ["data.userInfo.LX[=]<LX>"],
+            "interface_except": [],
             "interface_description": "用户登录"
+         },
+         "exit": {
+            "method": "post",
+            "interface_except": ["data[=]退出成功"],
+            "interface_description": "用户退出"
+         },
+         "token_auth": {
+            "method": "post",
+            "interface_except": [],
+            "interface_description": "检查token"
+         },
+         "info/update": {
+            "method": "post",
+            "interface_except": ["data[=]信息更新成功！！！"],
+            "interface_description": "修改性别"
          }
-
       },
       "institution" : {
          "module_description": "机构端",
@@ -343,6 +357,36 @@
             "method": "post",
             "interface_except": ["data[=]注销成功"],
             "interface_description": "机构注销"
+         },
+         "update": {
+            "method": "post",
+            "interface_except": [],
+            "interface_description": "管理员修改机构信息"
+         },
+         "self_update": {
+            "method": "post",
+            "interface_except": ["data[=]密码修改成功"],
+            "interface_description": "调解委员会修改自身密码"
+         }
+      },
+      "mediator" : {
+         "module_description": "调解员端",
+         "module_url": "/intelligentmediation/itm/mediator/",
+         "module_except": ["all[key]code,data,msg", "code[=]int(200)"],
+         "register": {
+            "method": "post",
+            "interface_except": ["data[=]调解员创建成功"],
+            "interface_description": "调解员注册"
+         },
+         "mediators": {
+            "method": "get",
+            "interface_except": ["data.records[dict_list,key]TJYBM&status&XM&YGSWQK&CSFS&NC&SJ&XGGZZSCB&TWHZW&MZ&TWHBM&ZZMM&XB&register_time&SFZFGMFW&location&SFZHM&CSRMTJGZSNX&is_constrained&institutionInfo&JBQTSF&LXDZ&PYRQ&ZJZ&XL&domains&_id&XXCJRQ&CSNY&mediatorInfo&keywords"],
+            "interface_description": "调解员列表"
+         },
+         "delete": {
+            "method": "post",
+            "interface_except": ["data[=]注销成功"],
+            "interface_description": "删除调解员"
          }
       }
    }

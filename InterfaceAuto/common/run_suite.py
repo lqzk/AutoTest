@@ -12,7 +12,6 @@ class RunSuite:
         # suite=unittest.defaultTestLoader.discover(project_case_path(project_name),pattern=pattern,top_level_dir=project_case_path(project_name))
 
         if not ordered:
-
             suite = unittest.TestSuite()
             discover = unittest.defaultTestLoader.discover(project_case_path(project_name), pattern=pattern,
                                                         top_level_dir=project_case_path(project_name))
