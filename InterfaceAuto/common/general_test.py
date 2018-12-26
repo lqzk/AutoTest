@@ -184,7 +184,8 @@ class GeneralTest(unittest.TestCase):
                 handle_files=case_data.get("files")
 
                 print("请求方式:{0},   请求地址：{1}".format(case_data["method"], handle_url))
-                print("测试输入:{0},   期望输出：{1}".format(case_data["Input"], handle_except_info))
+                print("测试输入:{0}、{1}、{2}".format(case_data["Input"], handle_headers,handle_files))
+                print("期望输出：{0}".format(handle_except_info))
                 Response=CallAPI().run(method=case_data["method"], url=handle_url, input=handle_input,headers=handle_headers,files=handle_files)
                 del case_data["handle_Input"]
 

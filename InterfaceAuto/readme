@@ -18,3 +18,7 @@ Intelligent_mediation接口说明地址：https://dispute.aegis-info.com/swagger
 type-->list,data
 contains
 len
+
+
+[修改ddt源码以适配本框架自动化报告]
+https://blog.csdn.net/aasdad1/article/details/82586531

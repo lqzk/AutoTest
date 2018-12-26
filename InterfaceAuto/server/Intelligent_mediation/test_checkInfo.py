@@ -1,5 +1,5 @@
 import unittest
-import ddt
+from InterfaceAuto.common import ddt
 from InterfaceAuto.common.data_handle import DataHandle,project_case_data
 from InterfaceAuto.common.general_test import GeneralTest
 project = "Intelligent_mediation"
@@ -20,6 +20,10 @@ class TestCase(unittest.TestCase):
 
     @ddt.data(*module_cases)
     def test_module_cases(self,case_data):
+        '''可用次数超限'''
+
+        '''{0}'''.format(case_data["Interface_description"])
+
         table_result.append(case_data)
         try:
             self.run.execute_case(table_result)
