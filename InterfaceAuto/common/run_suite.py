@@ -1,6 +1,7 @@
-import unittest
 import time
-from InterfaceAuto.common.data_handle import DataHandle,dir_report_path,project_case_path
+import unittest
+
+from InterfaceAuto.common.data_handle import DataHandle, dir_report_path, project_case_path
 from InterfaceAuto.common.email import Email
 
 
@@ -40,13 +41,13 @@ class RunSuite:
             report_path=dir_report_path+now+".html"
             print(report_path)
             with open(report_path,"wb") as f:
-                runner=HTMLTestRunner(stream=f,verbosity=2,title=u'自动化测试报告',
+                runner=HTMLTestRunner(stream=f,verbosity=2,title=u'{0}自动化测试报告'.format(project_name),
                             description=u'用例执行情况')
                 runner.run(suite)
 
             # 是否发邮件
             if send_email:
-                Email().send_email(DataHandle().obtain_email_config())
+                Email().send_email(DataHandle().obtain_email_config(project_name))
 
 
 

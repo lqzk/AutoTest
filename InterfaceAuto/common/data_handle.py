@@ -23,19 +23,22 @@ comparison_list_path=PATH("data\\comparison_list.json")
 
 
 class DataHandle:
-    def obtain_email_config(self):
+    def obtain_email_config(self,project_name=None):
         email_config_info={}
         suffix_config_file=os.path.splitext(email_config_path)[1]
+        key="email"
+        if project_name:
+            key="{0}_email".format(project_name)
         if suffix_config_file==".ini":
             import configparser
             email_config=configparser.ConfigParser()
             email_config.read(email_config_path,encoding="utf-8")
-            email_config_info["server"]=email_config.get("email","server")
-            email_config_info["sender"] = email_config.get("email", "sender")
-            email_config_info["password"] = email_config.get("email", "password")
-            email_config_info["receiver"] = eval(email_config.get("email", "receiver"))
-            email_config_info["title"] = email_config.get("email", "title")
-            email_config_info["message"] = email_config.get("email", "message")
+            email_config_info["server"]=email_config.get(key,"server")
+            email_config_info["sender"] = email_config.get(key, "sender")
+            email_config_info["password"] = email_config.get(key, "password")
+            email_config_info["receiver"] = eval(email_config.get(key, "receiver"))
+            email_config_info["title"] = email_config.get(key, "title")
+            email_config_info["message"] = email_config.get(key, "message")
             email_config_info["attachment_path"]=self.obtain_newest_report()
 
         elif suffix_config_file==".json":
