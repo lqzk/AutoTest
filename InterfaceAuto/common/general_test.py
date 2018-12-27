@@ -132,7 +132,7 @@ class GeneralTest(unittest.TestCase):
                 check_value= check_info[2]
 
                 check_des= DataHandle().obtain_quote_data(check_des, table_result)
-                check_des=DataHandle().obtain_QuotoSituation_data(quoto_situation,check_des)
+                check_des=DataHandle().obtain_QuotoSituation_data(case_data["project"],quoto_situation,check_des)
 
                 check_des_list=check_des.split(",")
                 location_list=None
@@ -147,13 +147,13 @@ class GeneralTest(unittest.TestCase):
                     raise Exception("check_info:{0},验证格式错误:{1}".format(check_info,check_des))
 
                 if re.search(r'\%(.*?)\%', quary_string):
-                    check_obj=DataHandle().obtain_QuotoSituation_data(quoto_situation,quary_string,check_obj_type,location_list)
+                    check_obj=DataHandle().obtain_QuotoSituation_data(case_data["project"],quoto_situation,quary_string,check_obj_type,location_list)
                 elif re.search(r'\<(.*?)\>', quary_string):
                     check_obj=DataHandle().obtain_quote_data(quary_string,table_result)
                 else:
                     check_obj = DataHandle().obtain_type_data(quary_string, check_obj_type, response, location_list)
 
-                check_value=DataHandle().obtain_QuotoSituation_data(quoto_situation,check_value)
+                check_value=DataHandle().obtain_QuotoSituation_data(case_data["project"],quoto_situation,check_value)
 
                 self.assert_result(check_obj, check_method, check_value)
 

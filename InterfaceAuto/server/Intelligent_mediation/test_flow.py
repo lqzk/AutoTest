@@ -6,25 +6,25 @@ project = "Intelligent_mediation"
 
 dispute_flow_table = "dispute_flow"
 dispute_flow_cases=DataHandle().obtain_interface_cases(project, table_name=dispute_flow_table)
-dispute_flow_case_result=project_case_data("{0}_result".format(project),dispute_flow_table)
+dispute_flow_case_result=project_case_data(project,"{0}_result".format(project),dispute_flow_table)
 dispute_flow_result=[]
 
 
 quick_dispute_flow_table = "quick_dispute_flow"
 quick_dispute_flow_cases=DataHandle().obtain_interface_cases(project, table_name=quick_dispute_flow_table)
-quick_dispute_flow_case_result=project_case_data("{0}_result".format(project),quick_dispute_flow_table)
+quick_dispute_flow_case_result=project_case_data(project,"{0}_result".format(project),quick_dispute_flow_table)
 quick_dispute_flow_result=[]
 
 
 written_dispute_flow_table = "written_dispute_flow"
 written_dispute_flow_cases=DataHandle().obtain_interface_cases(project, table_name=written_dispute_flow_table)
-written_dispute_flow_case_result=project_case_data("{0}_result".format(project),written_dispute_flow_table)
+written_dispute_flow_case_result=project_case_data(project,"{0}_result".format(project),written_dispute_flow_table)
 written_dispute_flow_result=[]
 
 
 record_flow_table = "record_flow"
 record_flow_cases=DataHandle().obtain_interface_cases(project, table_name=record_flow_table)
-record_flow_case_result=project_case_data("{0}_result".format(project),record_flow_table)
+record_flow_case_result=project_case_data(project,"{0}_result".format(project),record_flow_table)
 record_flow_result=[]
 
 

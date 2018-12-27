@@ -17,7 +17,7 @@ email_list=JsonHandle(PATH("data\\email_list.json")).jData
 project_case_path=lambda p:PATH("server\\{0}".format(p))
 
 
-project_case_data=lambda p,m:Excel_Data(PATH("data\\{0}.xlsx".format(p)),m)
+project_case_data=lambda p,f,m:Excel_Data(PATH("data\\{0}\\{1}.xlsx".format(p,f)),m)
 prefix_url_path=PATH("data\\interface_info.json")
 case_exeorder_path=PATH("data\\case_exeorder.xlsx")
 comparison_list_path=PATH("data\\comparison_list.json")
@@ -25,6 +25,7 @@ comparison_list_path=PATH("data\\comparison_list.json")
 
 
 class DataHandle:
+    
     def obtain_email_config(self,project_name=None):
         email_config_info={}
         suffix_config_file=os.path.splitext(email_config_path)[1]
@@ -137,23 +138,22 @@ class DataHandle:
 
         if module != None:
             interface_list_info = {}
-            interface_list = project_case_data(project, module).getSingleColumnType("Interface")
+            interface_list = project_case_data(project, project,module).getSingleColumnType("Interface")
             for interface in interface_list:
                 interface_info = self.obtain_interface_info(project, module, interface)
                 interface_list_info[interface] = interface_info
 
-            data_list = project_case_data(project, module).data
+            data_list = project_case_data(project,project,module).data
             for data in data_list:
                 data["project"] = project
                 data["result_table_name"] = module
                 data.update(interface_list_info[data["Interface"]])
                 case_list.append(data)
-
         else:
-            data_list = project_case_data(project, table_name).data
+            data_list = project_case_data(project, project,table_name).data
             if table_index == None:
                 interface_list_info = {}
-                m_interface_list = project_case_data(project, table_name).getDoubleColumnType("Module","Interface")
+                m_interface_list = project_case_data(project,project,table_name).getDoubleColumnType("Module","Interface")
                 for m_interface in m_interface_list:
                     interface_info = self.obtain_interface_info(project, m_interface[0], m_interface[1])
                     interface_list_info["{0}_{1}".format(m_interface[0], m_interface[1])] = interface_info
@@ -165,6 +165,7 @@ class DataHandle:
                     case_list.append(data)
             else:
                 data=data_list[table_index-1]
+                data["project"] = project
                 data["result_table_name"] = table_name
                 if data.get("Module")==None:
                     module=table_name
@@ -173,7 +174,6 @@ class DataHandle:
                 interface_info = self.obtain_interface_info(project, module, data["Interface"])
                 data.update(interface_info)
                 case_list.append(data)
-
         return case_list
 
     #将字符串类型数据转为应是的数据格式
@@ -269,13 +269,13 @@ class DataHandle:
 
             return quary_value
 
-    def transfer_obj(self,handle_des,transfer_value):
+    def transfer_obj(self,project,handle_des,transfer_value):
         if re.search(r'(.*?)\[', handle_des):
             handle_operation = re.search(r'(.*?)\[', handle_des).group(1)
             handle_mode = re.search(r'\[(.*?)\]', handle_des).group(1)
             if handle_operation == "transfer":
                 with open(comparison_list_path, "rb"):
-                    comparison_list_data = JsonHandle(comparison_list_path).jData
+                    comparison_list_data = JsonHandle(comparison_list_path).jData[project]
                 for key1, value1 in comparison_list_data.items():
                     if key1 == handle_mode:
                         for key2, value2 in value1.items():
@@ -338,7 +338,7 @@ class DataHandle:
                                     quote_value_type, location_des = quote_value_des[0], quote_value_des[1]
                                     if isinstance(location_des, str):
                                         location_list = location_des.split("@")
-                                        location_list[1] = self.obtain_QuotoSituation_data(case_data["QuotoSituation"],
+                                        location_list[1] = self.obtain_QuotoSituation_data(case_data["project"],case_data["QuotoSituation"],
                                                                                            location_list[1])
 
                             quote_value = self.obtain_type_data(quary_string, quote_value_type, res,
@@ -384,7 +384,7 @@ class DataHandle:
                                         quote_value_type, location_des = quote_value_des[0], quote_value_des[1]
                                         if isinstance(location_des, str):
                                             location_list = location_des.split("@")
-                                            location_list[1] = self.obtain_QuotoSituation_data(case_data["QuotoSituation"],
+                                            location_list[1] = self.obtain_QuotoSituation_data(case_data["project"],case_data["QuotoSituation"],
                                                                                                location_list[1])
 
                                 quote_value = self.obtain_type_data(quary_string, quote_value_type, quote_value,
@@ -400,7 +400,7 @@ class DataHandle:
                         if handle_des=="Undo":
                             pass
                         elif re.search("transfer\[(.*?)\]",handle_des):
-                            quote_value=self.transfer_obj(handle_des,quote_value)
+                            quote_value=self.transfer_obj(case_data["project"],handle_des,quote_value)
                         elif re.search("extract\[(.*?)\]",handle_des):
                             extract_mode = re.search(r'\[(.*?)\]', handle_des).group(1)
                             if re.search(extract_mode,quote_value):
@@ -423,7 +423,7 @@ class DataHandle:
         except Exception as e:
             raise Exception("从值:{0}获取引用值失败,error_info:{1}".format(quote_string_value,e))
 
-    def obtain_QuotoSituation_data(self,quoto_situation_data,quote_string,quote_string_type="default",location=None):
+    def obtain_QuotoSituation_data(self,project,quoto_situation_data,quote_string,quote_string_type="default",location=None):
 
         if isinstance(quote_string, str) and re.search(r'\%(.*?)\%', quote_string):
             try:
@@ -447,7 +447,7 @@ class DataHandle:
                         if len(quote_string_list) == 2:
                             handle_des=quote_string_list[1]
                             if re.search(r"transfer\[(.*?)\]",handle_des):
-                                quote_value=self.transfer_obj(handle_des, quote_value)
+                                quote_value=self.transfer_obj(project,handle_des, quote_value)
                             elif re.search("extract\[(.*?)\]",handle_des):
                                 extract_mode = re.search(r'\[(.*?)\]', handle_des).group(1)
                                 if re.search(extract_mode, quote_value):
@@ -495,7 +495,7 @@ class DataHandle:
 
 
                 quoto_situation_data_value = DataHandle().obtain_quote_data(quoto_situation_data_value, table_result)
-                quoto_situation_data_value = DataHandle().obtain_QuotoSituation_data(quoto_situation_data,quoto_situation_data_value)
+                quoto_situation_data_value = DataHandle().obtain_QuotoSituation_data(case_data["project"],quoto_situation_data,quoto_situation_data_value)
 
                 quoto_situation_data[quoto_situation_data_key] = quoto_situation_data_value
         case_data["QuotoSituation"] = quoto_situation_data
@@ -514,7 +514,7 @@ class DataHandle:
                 input_data_value=re.search(r"\=([^\}].*?)$",every_input).group(1)
 
                 input_data_value = self.obtain_quote_data(input_data_value, table_result)
-                input_data_value=self.obtain_QuotoSituation_data(quoto_situation_data,input_data_value)
+                input_data_value=self.obtain_QuotoSituation_data(case_data["project"],quoto_situation_data,input_data_value)
 
                 if isinstance(input_data_value, str):
                     input_data_value_list = input_data_value.split("+")
@@ -537,11 +537,15 @@ class DataHandle:
                             path_values = []
                             i = 1
                             for path_value in input_data_value:
+                                relative_path=re.search(r"data\\(.*?)$",path_value).group(1)
+                                path_value="data\\{0}\\{1}".format(case_data["project"],relative_path)
                                 filename = "test{0}{1}".format(i, re.search(r'\..*', path_value).group(0))
                                 path_values.append((input_data_key, (filename, open(PATH(path_value), "rb"))))
                                 i = i + 1
                                 case_data["files"]=path_values
                         else:
+                            relative_path = re.search(r"data\\(.*?)$", input_data_value).group(1)
+                            input_data_value = "data\\{0}\\{1}".format(case_data["project"], relative_path)
                             input_data_value = PATH(input_data_value)
                             filename = "test{0}".format(re.search(r'\..*', input_data_value).group(0))
                             handle_file_value = (filename, open(input_data_value, "rb"))
@@ -584,7 +588,7 @@ class DataHandle:
 
 
                 check_value=self.obtain_quote_data(check_value, table_result)
-                check_value=self.obtain_QuotoSituation_data(quoto_situation_data, check_value)
+                check_value=self.obtain_QuotoSituation_data(case_data["project"],quoto_situation_data, check_value)
 
                 if isinstance(check_value,str) and "+" in check_value:
                     check_value = check_value.split("+")

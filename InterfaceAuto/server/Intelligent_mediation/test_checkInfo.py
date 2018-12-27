@@ -5,7 +5,7 @@ from InterfaceAuto.common.general_test import GeneralTest
 project = "Intelligent_mediation"
 module = "checkInfo"
 module_cases=DataHandle().obtain_interface_cases(project, module)
-case_result=project_case_data("{0}_result".format(project),module)
+case_result=project_case_data(project,"{0}_result".format(project),module)
 table_result=[]
 
 
