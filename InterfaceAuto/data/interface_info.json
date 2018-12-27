@@ -3,6 +3,7 @@
       "base_description" : "智慧调解小程序项目",
       "base_url" : "https://dispute.aegis-info.com/",
       "base_except" : ["all[Ckey]code,data,msg"],
+      "base_leader":"",
       "mediate" : {
          "module_description" : "书面调解快速调解接口",
          "module_url" : "api/mediate/",
@@ -72,6 +73,7 @@
          "module_description" : "智能辅调接口",
          "module_url" : "api/intelligentHelper/",
          "module_except" : ["code[=]int(200)"],
+         "module_leader":"陈晶",
          "similarInfo" : {
             "method" : "get",
             "interface_except" : [],
@@ -163,10 +165,12 @@
          "module_description" : "语音识别",
          "module_url" : "api/informer/",
          "module_except" : ["code[=]int(200)"],
+         "module_leader":"",
          "audio" : {
             "method" : "post",
             "interface_except" : [],
-            "interface_description" : "语音识别"
+            "interface_description" : "语音识别",
+            "interface_leader":"周意"
          }
       },
       "message" : {
@@ -284,6 +288,7 @@
       "base_description" : "智慧调解平台项目",
       "base_url" : "http://192.168.11.88:9980",
       "base_except" : [],
+      "base_leader":"",
       "auth" : {
          "module_description" : "用户端",
          "module_url" : "/intelligentmediation/itm/auth/",
@@ -343,10 +348,12 @@
          "module_description": "机构端",
          "module_url": "/intelligentmediation/itm/institution/",
          "module_except": ["all[key]code,data,msg", "code[=]int(200)"],
+         "module_leader":"",
          "register": {
             "method": "post",
             "interface_except": ["data[=]管理员创建调委会成功"],
-            "interface_description": "机构创建"
+            "interface_description": "机构创建",
+            "interface_leader":""
          },
          "institutions": {
             "method": "get",

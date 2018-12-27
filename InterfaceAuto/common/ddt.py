@@ -138,10 +138,14 @@ def mk_test_name(name, value, index=0):
     if type(value) is dict:
         try:
             # value = value["Interface"]   #case_name作为value值
-            if not value["用例描述"] or value["用例描述"]=='':
+            if (not value.get("用例描述") or value["用例描述"]=='') and (not value.get("leader") or value["leader"]==''):
                 value = "{0}".format(value["Interface_description"])
+            elif value.get("leader") and not value["leader"]=='':
+                value = "{0}_leader:{1}".format(value["Interface_description"],value["leader"])
+            elif value.get("用例描述") and not value["用例描述"]=='':
+                value = "{0}_{1}".format(value["Interface_description"],value["用例描述"])
             else:
-                value = "{0}_{1}".format(value["Interface_description"], value["用例描述"])
+                value = "{0}_{1}_leader:{2}".format(value["Interface_description"], value["用例描述"],value["leader"])
         except:
             return "{0}_{1}".format(name, index)
 

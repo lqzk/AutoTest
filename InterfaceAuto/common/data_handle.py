@@ -13,6 +13,7 @@ JExtractor = JmespathExtractor()
 PATH=lambda P:os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)),P))
 dir_report_path=PATH("report\\")
 email_config_path=PATH("data\\email_config.ini")
+email_list=JsonHandle(PATH("data\\email_list.json")).jData
 project_case_path=lambda p:PATH("server\\{0}".format(p))
 
 
@@ -20,6 +21,7 @@ project_case_data=lambda p,m:Excel_Data(PATH("data\\{0}.xlsx".format(p)),m)
 prefix_url_path=PATH("data\\interface_info.json")
 case_exeorder_path=PATH("data\\case_exeorder.xlsx")
 comparison_list_path=PATH("data\\comparison_list.json")
+
 
 
 class DataHandle:
@@ -113,6 +115,19 @@ class DataHandle:
             interface_except.extend(module_info["module_except"])
             interface_except.extend(interface_info["interface_except"])
             handle_interface_info["Interface_except"] = interface_except
+
+            leader=[]
+            leader.append(project_info.get("base_leader"))
+            leader.append(module_info.get("module_leader"))
+            leader.append(interface_info.get("interface_leader"))
+            while None in leader:
+                leader.remove(None)
+            while "" in leader:
+                leader.remove("")
+            if not leader==[]:
+                handle_interface_info["leader"]=",".join(leader)
+            else:
+                handle_interface_info["leader"]=None
 
         return handle_interface_info
 
