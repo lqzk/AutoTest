@@ -73,7 +73,7 @@
          "module_description" : "智能辅调接口",
          "module_url" : "api/intelligentHelper/",
          "module_except" : ["code[=]int(200)"],
-         "module_leader":"陈晶",
+         "module_leader":"赵志宇",
          "similarInfo" : {
             "method" : "get",
             "interface_except" : [],
@@ -170,7 +170,7 @@
             "method" : "post",
             "interface_except" : [],
             "interface_description" : "语音识别",
-            "interface_leader":"周意"
+            "interface_leader":"孙艺博"
          }
       },
       "message" : {
