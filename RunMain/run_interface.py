@@ -1,13 +1,18 @@
 from InterfaceAuto.common.run_suite import RunSuite
-import time
+
 
 if __name__ == '__main__':
-    project_name = "police_wiki"
+    project_name = "Intelligent_mediation"
     RunSuite().run(project_name)
 
-    time.sleep(1)
+    import time
+    time.sleep(2)
 
-    project_name = "weather"
+    project_name = "Intelligent_mediation_web"
     RunSuite().run(project_name)
+
+
+
+
 
 
