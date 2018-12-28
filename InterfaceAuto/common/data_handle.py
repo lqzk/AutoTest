@@ -5,6 +5,7 @@ import json
 import re
 import glob
 import  time
+import copy
 from ast import literal_eval
 from InterfaceAuto.common.json_handle import JmespathExtractor
 JExtractor = JmespathExtractor()
@@ -194,8 +195,8 @@ class DataHandle:
                     obtain_value = json.loads(string_obj)
                 elif re.search(r'^\[(.*?)\]$', string_obj):
                     obtain_value = literal_eval(string_obj)
-                elif re.search(r'int\((.*?)\)', string_obj):
-                    string_int = re.search(r'int\((.*?)\)', string_obj).group(1)
+                elif re.search(r'int\(([0-9]*?)\)', string_obj):
+                    string_int = re.search(r'int\(([0-9]*?)\)', string_obj).group(1)
                     obtain_value = int(string_int)
                 elif re.search(r'double\((.*?)\)', string_obj):
                     string_int = re.search(r'double\((.*?)\)', string_obj).group(1)
@@ -208,66 +209,66 @@ class DataHandle:
         return string_obj
 
     # 获取格式解码后数据，按照获取字符串、规定的格式公式、获取值
-    def obtain_type_data(self, quary_string, quary_type_string, quary_value,location=None):
-        if quary_string=="all":
-            return quary_value
-        else:
-            quary_string_list = quary_string.split(".")
-
-            i = 0
-            for quary_value_type in quary_type_string.split("_"):
-                if re.search(r'dict([0-9]*?)$', quary_value_type):
-                    dict_number = re.search(r'dict([0-9]*?)$', quary_value_type).group(1)
-                    if dict_number == "":
-                        dict_number = 1
-                        quary_string = quary_string_list[i]
-                    else:
-                        dict_number = int(dict_number)
-                        quary_string = '.'.join(quary_string_list[i: i + dict_number])
-
-                    if isinstance(quary_value, list):
-                        for j in range(len(quary_value)):
-                            quary_value[j] = JExtractor.extract(quary_string, quary_value[j])
-                    elif isinstance(quary_value, dict):
-                        quary_value = JExtractor.extract(quary_string, quary_value)
-
-                    i = i + dict_number
-                elif re.search(r'list([0-9]*?)$', quary_value_type):
-                    list_number = re.search(r'list([0-9]*?)$', quary_value_type).group(1)
-                    if isinstance(quary_value, dict):
-                        quary_value = JExtractor.extract(quary_string_list[i], quary_value)
-                        if list_number == "":
-                            if location !=None:
-                                break_flag = False
-                                for dict_quary_value in quary_value:
-                                    for key, value in dict_quary_value.items():
-                                        if key == location[0] and value == location[1]:
-                                            quary_value = dict_quary_value
-                                            break_flag = True
-                                            break
-                                    if break_flag==True:
-                                        break
+    def obtain_type_data(self, quary_string, quary_type_string, quary_origin_value,location=None):
+        if isinstance(quary_origin_value,dict):
+            quary_value = copy.deepcopy(quary_origin_value)
+            if quary_string == "all":
+                return quary_value
+            else:
+                quary_string_list = quary_string.split(".")
+                i = 0
+                for quary_value_type in quary_type_string.split("_"):
+                    if re.search(r'dict([0-9]*?)$', quary_value_type):
+                        dict_number = re.search(r'dict([0-9]*?)$', quary_value_type).group(1)
+                        if dict_number == "":
+                            dict_number = 1
+                            quary_string = quary_string_list[i]
                         else:
-                            list_number = int(list_number)
-                            quary_value = quary_value[list_number]
+                            dict_number = int(dict_number)
+                            quary_string = '.'.join(quary_string_list[i: i + dict_number])
 
-                    elif isinstance(quary_value, list):
-                        for j in range(len(quary_value)):
+                        if isinstance(quary_value, list):
+                            for j in range(len(quary_value)):
+                                quary_value[j] = JExtractor.extract(quary_string, quary_value[j])
+                        elif isinstance(quary_value, dict):
+                            quary_value = JExtractor.extract(quary_string, quary_value)
+
+                        i = i + dict_number
+                    elif re.search(r'list([0-9]*?)$', quary_value_type):
+                        list_number = re.search(r'list([0-9]*?)$', quary_value_type).group(1)
+                        if isinstance(quary_value, dict):
+                            quary_value = JExtractor.extract(quary_string_list[i], quary_value)
                             if list_number == "":
-                                quary_value[j] = JExtractor.extract(quary_string_list[i], quary_value[j])
+                                if location != None:
+                                    break_flag = False
+                                    for dict_quary_value in quary_value:
+                                        for key, value in dict_quary_value.items():
+                                            if key == location[0] and value == location[1]:
+                                                quary_value = dict_quary_value
+                                                break_flag = True
+                                                break
+                                        if break_flag == True:
+                                            break
                             else:
                                 list_number = int(list_number)
-                                quary_value[j] = JExtractor.extract(quary_string_list[i], quary_value[j])[
-                                    list_number]
-                    i = i + 1
-                elif quary_value_type == "default":
-                    if len(quary_string_list)==1:
-                        quary_value=quary_value[quary_string]
-                    else:
-                        quary_string = '.'.join(quary_string_list)
-                        quary_value = JExtractor.extract(quary_string, quary_value)
+                                quary_value = quary_value[list_number]
 
-            return quary_value
+                        elif isinstance(quary_value, list):
+                            for j in range(len(quary_value)):
+                                if list_number == "":
+                                    quary_value[j] = JExtractor.extract(quary_string_list[i], quary_value[j])
+                                else:
+                                    list_number = int(list_number)
+                                    quary_value[j] = JExtractor.extract(quary_string_list[i], quary_value[j])[
+                                        list_number]
+                        i = i + 1
+                    elif quary_value_type == "default":
+                        if len(quary_string_list) == 1:
+                            quary_value = quary_value[quary_string]
+                        else:
+                            quary_string = '.'.join(quary_string_list)
+                            quary_value = JExtractor.extract(quary_string, quary_value)
+                return quary_value
 
     def transfer_obj(self,project,handle_des,transfer_value):
         if re.search(r'(.*?)\[', handle_des):
@@ -293,16 +294,13 @@ class DataHandle:
 
     # 获取引用的数据按照提供的引用信息
     def obtain_quote_data(self, quote_string_value,table_result):
-
-        case_data = table_result[-1]
-
         try:
-            case_num=None
-            quote_value=None
-            handle_des=None
-            case=None
-
             if isinstance(quote_string_value, str) and re.search(r'\<(.*?)\>', quote_string_value):
+                case_data = table_result[-1]
+                case_num = None
+                quote_value = None
+                handle_des = None
+                case = None
                 quote_string_list=re.findall(r'\<(.*?)\>', quote_string_value)
                 for quote_string in quote_string_list:
                     obtain_value_method =quote_string.split(",")
@@ -434,30 +432,33 @@ class DataHandle:
                     quote_value = JExtractor.extract(quote_key, quoto_situation_data)
 
                     if re.search(r'\%(.*?)\%([a-zA-Z].*?)$', quote_string):
-                        quote_string = re.search(r'\%(.*?)\%(.*?)$', quote_string).group(2)
-                        quote_string_list = quote_string.split("&")
-                        if re.search(r'\[(.*?)\]', quote_string_list[0]):
-                            quote_string_type = re.search(r'\[(.*?)\]', quote_string_list[0]).group(1)
-                            quote_string = re.search(r'(.*?)\[', quote_string_list[0]).group(1)
-                        else:
-                            quote_string = quote_string_list[0]
-
-                        quote_value = self.obtain_type_data(quote_string, quote_string_type, quote_value, location)
-
-                        if len(quote_string_list) == 2:
-                            handle_des=quote_string_list[1]
-                            if re.search(r"transfer\[(.*?)\]",handle_des):
-                                quote_value=self.transfer_obj(project,handle_des, quote_value)
-                            elif re.search("extract\[(.*?)\]",handle_des):
-                                extract_mode = re.search(r'\[(.*?)\]', handle_des).group(1)
-                                if re.search(extract_mode, quote_value):
-                                    quote_value = re.search(extract_mode, quote_value).group(1)
-                                else:
-                                    raise Exception("无法从{0}中按照方式{1}提取值".format(quote_value, extract_mode))
+                        if isinstance(quote_value,dict):
+                            quote_string = re.search(r'\%(.*?)\%(.*?)$', quote_string).group(2)
+                            quote_string_list = quote_string.split("&")
+                            if re.search(r'\[(.*?)\]', quote_string_list[0]):
+                                quote_string_type = re.search(r'\[(.*?)\]', quote_string_list[0]).group(1)
+                                quote_string = re.search(r'(.*?)\[', quote_string_list[0]).group(1)
                             else:
-                                raise Exception("不符合格式的后续处理方式：{0}".format(handle_des))
+                                quote_string = quote_string_list[0]
 
-                    return quote_value
+                            quote_value = self.obtain_type_data(quote_string, quote_string_type, quote_value,
+                                                                location)
+                            if len(quote_string_list) == 2:
+                                handle_des = quote_string_list[1]
+                                if re.search(r"transfer\[(.*?)\]", handle_des):
+                                    quote_value = self.transfer_obj(project, handle_des, quote_value)
+                                elif re.search("extract\[(.*?)\]", handle_des):
+                                    extract_mode = re.search(r'\[(.*?)\]', handle_des).group(1)
+                                    if re.search(extract_mode, quote_value):
+                                        quote_value = re.search(extract_mode, quote_value).group(1)
+                                    else:
+                                        raise Exception("无法提取值从{0}中按照方式:{1}".format(quote_value, extract_mode))
+                                else:
+                                    raise Exception("不符合格式的后续处理方式：{0}".format(handle_des))
+
+                        else:
+                            quote_value=quote_string
+                        return quote_value
                 else:
                     for quote_key in quote_key_list:
                         quote_value = JExtractor.extract(quote_key, quoto_situation_data)
@@ -486,16 +487,13 @@ class DataHandle:
 
             quoto_situation_list = quoto_situation.strip().split("\n")
             for every_quoto_situation in quoto_situation_list:
-                # parse_quoto_situation = every_quoto_situation.split("=")
-                # quoto_situation_data_key = parse_quoto_situation[0]
-                # quoto_situation_data_value = parse_quoto_situation[1]
 
                 quoto_situation_data_key=re.search(r'(.*?)\=', every_quoto_situation).group(1)
                 quoto_situation_data_value = re.search(r'\=([^\}].*?)$', every_quoto_situation).group(1)
 
 
-                quoto_situation_data_value = DataHandle().obtain_quote_data(quoto_situation_data_value, table_result)
-                quoto_situation_data_value = DataHandle().obtain_QuotoSituation_data(case_data["project"],quoto_situation_data,quoto_situation_data_value)
+                quoto_situation_data_value = self.obtain_quote_data(quoto_situation_data_value, table_result)
+                quoto_situation_data_value =self.obtain_QuotoSituation_data(case_data["project"],quoto_situation_data,quoto_situation_data_value)
 
                 quoto_situation_data[quoto_situation_data_key] = quoto_situation_data_value
         case_data["QuotoSituation"] = quoto_situation_data
@@ -611,8 +609,6 @@ class DataHandle:
 
                 except_info.append((obtain_obj_method, check_method, check_value))
         case_data["CaseExcept"]=except_info
-
-        table_result[-1]=case_data
 
         return table_result
 

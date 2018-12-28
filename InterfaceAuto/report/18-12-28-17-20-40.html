@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Risk_assess自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.9.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+    body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+    table       { font-size: 100%; }
+    pre         { white-space: pre-wrap;word-wrap: break-word; }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+    .heading {
+        margin-top: 0ex;
+        margin-bottom: 1ex;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 2ex;
+        margin-bottom: 3ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+    a.popup_link {
+    }
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .popup_window {
+        display: none;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        /*border: solid #627173 1px; */
+        padding: 10px;
+        /*background-color: #E6E6D6; */
+        font-family: "Lucida Console", "Courier New", Courier, monospace;
+        text-align: left;
+        font-size: 8pt;
+        /* width: 500px;*/
+    }
+
+    }
+    /* -- report ------------------------------------------------------------------------ */
+    #show_detail_line {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+    }
+    #result_table {
+        width: 99%;
+    }
+    #header_row {
+        font-weight: bold;
+        color: #303641;
+        background-color: #ebebeb;
+    }
+    #total_row  { font-weight: bold; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #6c6; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+
+
+    /* -- ending ---------------------------------------------------------------------- */
+    #ending {
+    }
+
+    #div_base {
+                position:absolute;
+                top:0%;
+                left:5%;
+                right:5%;
+                width: auto;
+                height: auto;
+                margin: -15px 0 0 0;
+    }
+</style>
+
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/echarts.common.min.js"></script>
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+
+    /* level - 0:Summary; 1:Failed; 2:All */
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level < 1) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level > 1) {
+                    tr.className = '';
+                }
+                else {
+                    tr.className = 'hiddenRow';
+                }
+            }
+        }
+    }
+
+
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById('div_'+tid).style.display = 'none'
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+
+
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        // alert(displayState)
+        if (displayState != 'block' ) {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+        else {
+            details_div.style.display = 'none'
+        }
+    }
+
+
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+
+    /* obsoleted by detail in <div>
+    function showOutput(id, name) {
+        var w = window.open("", //url
+                        name,
+                        "resizable,scrollbars,status,width=800,height=450");
+        d = w.document;
+        d.write("<pre>");
+        d.write(html_escape(output_list[id]));
+        d.write("\n");
+        d.write("<a href='javascript:window.close()'>close</a>\n");
+        d.write("</pre>\n");
+        d.close();
+    }
+    */
+    --></script>
+
+    <div id="div_base">
+        
+    <div class='page-header'>
+        <h1>Risk_assess自动化测试报告</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2018-12-28 17:20:40</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:00.328057</p>
+<p class='attribute'><strong>状态:</strong> 通过 7</p>
+
+    </div>
+    <div style="float: left;width:50%;"><p class='description'>用例执行情况</p></div>
+    <div id="chart" style="width:50%;height:400px;float:left;"></div>
+
+        
+    <div class="btn-group btn-group-sm">
+        <button class="btn btn-default" onclick='javascript:showCase(0)'>总结</button>
+        <button class="btn btn-default" onclick='javascript:showCase(1)'>失败</button>
+        <button class="btn btn-default" onclick='javascript:showCase(2)'>全部</button>
+    </div>
+    <p></p>
+    <table id='result_table' class="table table-bordered">
+        <colgroup>
+            <col align='left' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+            <col align='right' />
+        </colgroup>
+        <tr id='header_row'>
+            <td>测试套件/测试用例</td>
+            <td>总数</td>
+            <td>通过</td>
+            <td>失败</td>
+            <td>错误</td>
+            <td>查看</td>
+        </tr>
+        
+    <tr class='passClass'>
+        <td>test_android.TestCase</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c1',2)">详情</a></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_1__手机端_生成起诉状接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        通过</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <pre>
+        pt1.1: {'Run': 'Y', 'Interface': 'ZNYS_SSS_Handler', '用例描述': '', 'QuotoSituation': 'qid=c8be546a00283c679b401f52a7999632\nplaintiff_name=test1\nplaintiff_sex=男\nplaintiff_ethnic=汉族\nplaintiff_birth=1993-04-23\nplaintiff_ID_number=321201199304230222\nplaintiff_cellphone=18360863736\nplaintiff_address=江苏省\ndefendant_name=test2\ndefendant_sex=女\ndefendant_ethnic=汉族\ndefendant_birth=1994-04-23\ndefendant_ID_number=321201199404230225\ndefendant_cellphone=18360863738\ndefendant_address=上海市\nfacts_and_reason=经常加班\nclaims=支付加班工资\nplaintiff_info=&lt;Res,data.answer&gt;&amp;extract[原告：(.*?)。\\n被告：]\ndefendant_info=&lt;Res,data.answer&gt;&amp;extract[被告：(.*?)。\\n诉讼请求：]', 'Input': 'json_str=dumps{"type":0,"wttype":0,"plaintiff_name":"%plaintiff_name%","plaintiff_sex":"%plaintiff_sex%","plaintiff_ethnic":"%plaintiff_ethnic%","plaintiff_birth":"%plaintiff_birth%","plaintiff_ID_number":"%plaintiff_ID_number%","plaintiff_cellphone":"%plaintiff_cellphone%","plaintiff_address":"%plaintiff_address%","plaintiff_company_name":"","plaintiff_company_address":"","plaintiff_company_legal_representative":"","plaintiff_attorney_name":"","plaintiff_attorney_sex":"","plaintiff_attorney_company":"","plaintiff_attorney_address":"","plaintiff_lawyer_name":"","plaintiff_lawyer_office":"","plaintiff_lawyer_telephone_number":"","defendant_attorney_name":"","defendant_attorney_sex":"","defendant_attorney_ethnic":"","defendant_attorney_birth":"","defendant_attorney_ID_number":"","defendant_cellphone":"%defendant_cellphone%","defendant_attorney_address":"","defendant_lawyer_name":"","defendant_lawyer_office":"","defendant_lawyer_address":"","defendant_lawyer_telephone_number":"","defendant_name":"%defendant_name%","defendant_sex":"%defendant_sex%","defendant_ethnic":"%defendant_ethnic%","defendant_birth":"%defendant_birth%","defendant_ID_number":"%defendant_ID_number%","defendant_address":"%defendant_address%","defendant_company_name":"","defendant_company_address":"","defendant_company_legal_representative":"","facts_and_reason":"%facts_and_reason%","claims":"%claims%"}\nqid=%qid%', 'CaseExcept': '%plaintiff_info%[=]%plaintiff_name%，%plaintiff_sex%，%plaintiff_ethnic%，%plaintiff_cellphone%，%plaintiff_birth%，%plaintiff_ID_number%，%plaintiff_address%\n%defendant_info%[=]%defendant_name%，%defendant_sex%，%defendant_ethnic%，%defendant_cellphone%，%defendant_birth%，%defendant_ID_number%，%defendant_address%', 'project': 'Risk_assess', 'result_table_name': 'android', 'method': 'get', 'base_url': 'http://hngy.assess.aegis-info.com', 'Url': 'http://hngy.assess.aegis-info.com/intelligentpretrial/android/law_push/ZNYS_SSS_Handler', 'Interface_description': '【手机端】生成起诉状接口', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[key]answer'], 'leader': None}
+**************************Start测试用例：*********************************
+请求方式:get,   请求地址：http://hngy.assess.aegis-info.com/intelligentpretrial/android/law_push/ZNYS_SSS_Handler
+测试输入:{'json_str': '{"type": 0, "wttype": 0, "plaintiff_name": "test1", "plaintiff_sex": "\\u7537", "plaintiff_ethnic": "\\u6c49\\u65cf", "plaintiff_birth": "1993-04-23", "plaintiff_ID_number": "321201199304230222", "plaintiff_cellphone": "18360863736", "plaintiff_address": "\\u6c5f\\u82cf\\u7701", "plaintiff_company_name": "", "plaintiff_company_address": "", "plaintiff_company_legal_representative": "", "plaintiff_attorney_name": "", "plaintiff_attorney_sex": "", "plaintiff_attorney_company": "", "plaintiff_attorney_address": "", "plaintiff_lawyer_name": "", "plaintiff_lawyer_office": "", "plaintiff_lawyer_telephone_number": "", "defendant_attorney_name": "", "defendant_attorney_sex": "", "defendant_attorney_ethnic": "", "defendant_attorney_birth": "", "defendant_attorney_ID_number": "", "defendant_cellphone": "18360863738", "defendant_attorney_address": "", "defendant_lawyer_name": "", "defendant_lawyer_office": "", "defendant_lawyer_address": "", "defendant_lawyer_telephone_number": "", "defendant_name": "test2", "defendant_sex": "\\u5973", "defendant_ethnic": "\\u6c49\\u65cf", "defendant_birth": "1994-04-23", "defendant_ID_number": "321201199404230225", "defendant_address": "\\u4e0a\\u6d77\\u5e02", "defendant_company_name": "", "defendant_company_address": "", "defendant_company_legal_representative": "", "facts_and_reason": "\\u7ecf\\u5e38\\u52a0\\u73ed", "claims": "\\u652f\\u4ed8\\u52a0\\u73ed\\u5de5\\u8d44"}', 'qid': 'c8be546a00283c679b401f52a7999632'}、None、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', 'key', 'answer'), ('%plaintiff_info%', '=', 'test1，男，汉族，18360863736，1993-04-23，321201199304230222，江苏省'), ('%defendant_info%', '=', 'test2，女，汉族，18360863738，1994-04-23，321201199404230225，上海市')]
+测试实际返回值：
+{'msg': '返回成功', 'data': {'answer': '&lt;h3 style="text-align: center;"&gt;民事起诉状&lt;/h3&gt;\n原告：test1，男，汉族，18360863736，1993-04-23，321201199304230222，江苏省。\n被告：test2，女，汉族，18360863738，1994-04-23，321201199404230225，上海市。\n诉讼请求：\n\u3000\u30001、劳动者请求支付违法解除劳动合同的经济赔偿金；\n\u3000\u30002、劳动者请求支付逾期给付工资的赔偿金；\n\u3000\u30003、支付加班工资；\n\u3000\u30004、请求被告承担诉讼费。\n\n事实和理由：\n\u3000\u3000原告自X年X月X日到被告单位工作，从事   工作，每月工资   元，原告自入职后认真完成工作，但被告无故拖欠  个月的工资，经多次催讨后仍未支付。被告的行为违反了《中华人民共和国劳动合同法》第三十条以及《中华人民共和国劳动法》第五十条的规定。\n\u3000\u3000多次协商后未能妥善解决问题，案件已经经过劳动仲裁，但对仲裁结果不服。\n\u3000\u3000为了维护原告的合法权益，特向贵院提起诉讼，愿判如所请。\n\t经常加班\n\n\u3000\u3000此致\nXXXXXX人民法院\n\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000具状人：test1\n\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000日期：2018年12月28日'}, 'code': 200}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', 'key', 'answer')
+校验该段信息成功：('%plaintiff_info%', '=', 'test1，男，汉族，18360863736，1993-04-23，321201199304230222，江苏省')
+校验该段信息成功：('%defendant_info%', '=', 'test2，女，汉族，18360863738，1994-04-23，321201199404230225，上海市')
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_2__手机端_费用计算器接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <pre>
+        pt1.2: {'Run': 'Y', 'Interface': 'Unsigned_Contract_Handler', '用例描述': '', 'QuotoSituation': '', 'Input': 'qid=73252bbc7824a97f2a891244707e81ea\nstart=2016-1-1\nend=2018-8-12\nsalary=8000\ntime_of_award=2017-1-1\nlocation=江苏省-南京市-雨花台区', 'CaseExcept': 'data.money[=]double(95733.33)', 'project': 'Risk_assess', 'result_table_name': 'android', 'method': 'get', 'base_url': 'http://hngy.assess.aegis-info.com', 'Url': 'http://hngy.assess.aegis-info.com/intelligentpretrial/android/law_push/Unsigned_Contract_Handler', 'Interface_description': '【手机端】费用计算器接口', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[key]answer&amp;money'], 'leader': None}
+**************************Start测试用例：*********************************
+请求方式:get,   请求地址：http://hngy.assess.aegis-info.com/intelligentpretrial/android/law_push/Unsigned_Contract_Handler
+测试输入:{'qid': '73252bbc7824a97f2a891244707e81ea', 'start': '2016-1-1', 'end': '2018-8-12', 'salary': '8000', 'time_of_award': '2017-1-1', 'location': '江苏省-南京市-雨花台区'}、None、None
+期望输出：[('all', 'key', 'code,data,msg'), ('code', '=', 200), ('data', 'key', ['answer', 'money']), ('data.money', '=', 95733.33)]
+测试实际返回值：
+{'msg': '返回成功', 'data': {'answer': '    你是2016年1月1日到单位工作，截止2018年8月12日你还未签劳动合同且在该单位工作已满一年。按照《劳动合同法》第10条的规定，单位应当在你入职的一个月内与你签订劳动合同。但你工作满一个月了，单位也未和你签劳动合同，因此单位已经超过了签订劳动合同的法定时间。所以你可以根据《劳动合同法实施条例》第7条向公司主张&lt;b&gt;2016年1月2日至2016年12月31日&lt;/b&gt;这段期间的双倍工资。另外，自用工之日起满一年未签劳动合同，还视为单位自2016年12月31日起就与你订立了无固定期限劳动合同，若在工作中没有重大违法违纪行为，而单位将你辞退，则可以要求单位支付经济赔偿金。\n    但是根据《劳动争议调解仲裁法》第27条的规定，你需要在权利受到侵害之日起1年内主张你的两倍工资才有可能得到支持。也就是说你需要在&lt;b&gt;2017年12月31日&lt;/b&gt;之前向劳动仲裁委员会申请仲裁，一旦超过此时间段就难以得到支持。由于你在2017年1月1日提出仲裁申请，则要求2016年1月1日前的未签订劳动合同的两倍工资差额，明显已超过申请仲裁时效期间，故对主张的2016年1月1日前的两倍工资差额不予认可，仅支持2016年1月2日至2016年12月31日期间未签劳动合同的两倍工资差差额95733.33元。', 'money': 95733.33}, 'code': 200}
+校验该段信息成功：('all', 'key', 'code,data,msg')
+校验该段信息成功：('code', '=', 200)
+校验该段信息成功：('data', 'key', ['answer', 'money'])
+校验该段信息成功：('data.money', '=', 95733.33)
+**************************PASS测试用例：**********************************
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+    <tr class='passClass'>
+        <td>test_flow2.TestCase</td>
+        <td>5</td>
+        <td>5</td>
+        <td>0</td>
+        <td>0</td>
+        <td><a href="javascript:showClassDetail('c2',5)">详情</a></td>
+    </tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_1__页面端_获取案由下的专题接口_劳动争议案由</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        通过</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <pre>
+        pt2.1: {'Run': 'N', 'CaseNum': 'case1', 'Module': 'znys', 'Interface': 'subjects', '用例描述': '劳动争议案由', 'QuotoSituation': '', 'Input': 'cause_id=9462', 'CaseExcept': 'data.zh_name[list_dict,DO=]["确认劳动关系纠纷","追索劳动报酬纠纷","经济补偿金纠纷","未签劳动合同赔偿纠纷"]', 'project': 'Risk_assess', 'result_table_name': 'flow', 'method': 'get', 'base_url': 'http://hngy.assess.aegis-info.com', 'Url': 'http://hngy.assess.aegis-info.com/intelligentpretrial/znys/subjects', 'Interface_description': '【页面端】获取案由下的专题接口', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[list,key]description&amp;evidence&amp;is_online&amp;zh_name&amp;has_calculator&amp;id&amp;recommended_actions'], 'leader': None}
+skip and No Run
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_2__页面端_根据案由和专题查找第一个问题接口_劳动争议案由_追索劳动报酬纠纷</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        通过</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <pre>
+        pt2.2: {'Run': 'N', 'CaseNum': 'case2', 'Module': 'znys', 'Interface': 'first/question', '用例描述': '劳动争议案由-追索劳动报酬纠纷', 'QuotoSituation': '', 'Input': 'cause_id=&lt;case1,Input,cause_id&gt;\nsubject_id=97ff232df4bb3f16e522ab33e0df2d55', 'CaseExcept': 'data.temp_choice_tags.colloquial[dict_list_dict,DO=]["请求支付逾期给付工资的赔偿金","请求支付违法解除劳动合同的经济赔偿金","请求支付未订立劳动合同赔偿金","请求支付经济补偿金","请求解除双方劳动关系","请求补缴社保"]', 'project': 'Risk_assess', 'result_table_name': 'flow', 'method': 'post', 'base_url': 'http://hngy.assess.aegis-info.com', 'Url': 'http://hngy.assess.aegis-info.com/intelligentpretrial/znys/first/question', 'Interface_description': '【页面端】根据案由和专题查找第一个问题接口', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[key]question&amp;choice_type&amp;id&amp;temp_choice_tags', 'data.temp_choice_tags[dict_list,key]colloquial&amp;id&amp;document&amp;zh_name&amp;evidence'], 'leader': None}
+skip and No Run
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_3__页面端_获取下级问题接口__劳动争议案由_追索劳动报酬纠纷_均选择第一个</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
+        通过</a>
+
+    <div id='div_pt2.3' class="popup_window">
+        <pre>
+        pt2.3: {'Run': 'N', 'CaseNum': 'case3', 'Module': 'znys', 'Interface': 'next/question', '用例描述': '\n劳动争议案由-追索劳动报酬纠纷-均选择第一个', 'QuotoSituation': 'tag0=&lt;case2,Res,data.temp_choice_tags.id[dict_list0_dict]&gt;\ntag1=&lt;case2,Res,data.temp_choice_tags.id[dict_list1_dict]&gt;\ntags=dumps["%tag0%","%tag1%"]', 'Input': 'cause_id=&lt;case1,Input,cause_id&gt;\nsubject_id=&lt;case2,Input,subject_id&gt;\nanswers=[]\nqid=&lt;case2,Res,data.id&gt;\ntags=%tags%', 'CaseExcept': '', 'project': 'Risk_assess', 'result_table_name': 'flow', 'method': 'post', 'base_url': 'http://hngy.assess.aegis-info.com', 'Url': 'http://hngy.assess.aegis-info.com/intelligentpretrial/znys/next/question', 'Interface_description': '【页面端】获取下级问题接口', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[key]questions&amp;record_id', 'data.questions[dict_list,key]case_cause&amp;case_cause_id&amp;choice_tags&amp;choice_type&amp;choice_type_num&amp;create_date&amp;decide_tags&amp;id&amp;is_enable&amp;question&amp;subject&amp;subject_id&amp;temp_choice_tags&amp;write_date&amp;_id', 'data.questions.temp_choice_tags[dict_list_list,key]colloquial&amp;document&amp;evidence&amp;huchi&amp;id&amp;zh_name'], 'leader': None}
+skip and No Run
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_4__手机端_生成法律意见书接口</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.4')" >
+        通过</a>
+
+    <div id='div_pt2.4' class="popup_window">
+        <pre>
+        pt2.4: {'Run': 'N', 'CaseNum': 'case4', 'Module': 'android', 'Interface': 'Law_Comment', '用例描述': '', 'QuotoSituation': '', 'Input': 'qid=&lt;case3,Res,data.record_id&gt;', 'CaseExcept': '', 'project': 'Risk_assess', 'result_table_name': 'flow', 'method': 'get', 'base_url': 'http://hngy.assess.aegis-info.com', 'Url': 'http://hngy.assess.aegis-info.com/intelligentpretrial/android/law_push/Law_Comment', 'Interface_description': '【手机端】生成法律意见书接口', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[key]action_comment&amp;case&amp;law&amp;law_comment&amp;money', 'data.case[dict_list,key]content&amp;id&amp;title', 'data.law[dict_list,key]content&amp;id&amp;tag&amp;title'], 'leader': None}
+skip and No Run
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_module_cases_5__Java后台接口_费用统计_根据用户情节_推送类案的相关花费_</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.5')" >
+        通过</a>
+
+    <div id='div_pt2.5' class="popup_window">
+        <pre>
+        pt2.5: {'Run': 'N', 'CaseNum': 'case5', 'Module': 'api', 'Interface': 'cost', '用例描述': '', 'QuotoSituation': '', 'Input': 'qid=&lt;case3,Res,data.record_id&gt;', 'CaseExcept': '', 'project': 'Risk_assess', 'result_table_name': 'flow', 'method': 'get', 'base_url': 'http://hngy.assess.aegis-info.com', 'Url': 'http://hngy.assess.aegis-info.com/api/prejudge/cost', 'Interface_description': '【Java后台接口】费用统计(根据用户情节，推送类案的相关花费)', 'headers': None, 'Interface_except': ['all[key]code,data,msg', 'code[=]int(200)', 'data[key]map', 'data.map[dict_list,key]legalFare&amp;mediateTime&amp;trialTime&amp;mediateFare&amp;claimMoney&amp;mediateClaim&amp;resultMoney&amp;mediateResult'], 'leader': None}
+skip and No Run
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+        <tr id='total_row'>
+            <td>总计</td>
+            <td>7</td>
+            <td>7</td>
+            <td>0</td>
+            <td>0</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+        <div id='ending'>&nbsp;</div>
+        
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('chart'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title : {
+                text: '测试执行情况',
+                x:'center'
+            },
+            tooltip : {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['通过','失败','错误']
+            },
+            series : [
+                {
+                    name: '测试执行情况',
+                    type: 'pie',
+                    radius : '60%',
+                    center: ['50%', '60%'],
+                    data:[
+                        {value:7, name:'通过'},
+                        {value:0, name:'失败'},
+                        {value:0, name:'错误'}
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+    
+    </div>
+</body>
+</html>

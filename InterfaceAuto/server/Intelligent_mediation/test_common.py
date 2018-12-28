@@ -5,7 +5,6 @@ from InterfaceAuto.common.general_test import GeneralTest
 project = "Intelligent_mediation"
 module = "common"
 module_cases=DataHandle().obtain_interface_cases(project, module)
-case_result=project_case_data(project,"{0}_result".format(project),module)
 table_result=[]
 
 @ddt.ddt
@@ -21,13 +20,8 @@ class TestCase(unittest.TestCase):
     @ddt.data(*module_cases)
     def test_module_cases(self,case_data):
         table_result.append(case_data)
-        try:
-            self.run.execute_case(table_result)
-        except Exception as e:
-            raise Exception(e)
-        finally:
-            table_result[-1] = case_data
-            case_result.data=case_data
+        self.run.execute_case(table_result)
+
 
 
 if __name__ == '__main__':
