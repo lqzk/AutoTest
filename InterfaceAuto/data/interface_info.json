@@ -431,7 +431,12 @@
        "Unsigned_Contract_Handler": {
          "method": "get",
          "interface_except": ["data[key]answer&money"],
-         "interface_description": "费用计算器接口"
+         "interface_description": "费用计算器"
+       },
+       "lawapply": {
+         "method": "post",
+         "interface_except": ["data[key]filepath","data.filepath[mode]/static/yitiji/法律援助申请表_([0-9]*?).docx"],
+         "interface_description": "打印法律援助申请表"
        },
        "Law_Comment": {
          "method": "get",
@@ -452,6 +457,16 @@
          "method": "get",
          "interface_except": ["data[key]map","data.map[dict_list,key]legalFare&mediateTime&trialTime&mediateFare&claimMoney&mediateClaim&resultMoney&mediateResult"],
          "interface_description": "费用统计(根据用户情节，推送类案的相关花费)"
+       }
+     },
+     "docdispose": {
+       "module_description": "打印",
+       "module_url": "/intelligentpretrial/docdispose/",
+       "module_except": [],
+       "lawopinion": {
+         "method": "post",
+         "interface_except": ["data[key]filepath","data.filepath[mode]/static/znys/法律意见书_([0-9]*?).docx"],
+         "interface_description": "打印法律意见书"
        }
      }
    }

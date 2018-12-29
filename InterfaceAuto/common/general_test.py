@@ -57,7 +57,6 @@ class GeneralTest(unittest.TestCase):
                 else:
                     self.assertEqual(Counter(check_obj), Counter(check_value))
 
-
         elif check_method == "!=":
             self.assertNotEqual(check_value, check_obj)
 
@@ -106,7 +105,6 @@ class GeneralTest(unittest.TestCase):
                 for check_v in check_value:
                     self.assertIn(check_v, check_obj.keys())
 
-
         elif check_method == "type":
             if check_value == "list":
                 self.assertTrue(isinstance(check_obj, list))
@@ -115,7 +113,6 @@ class GeneralTest(unittest.TestCase):
 
         elif check_method == "mode":
             self.assertTrue(re.search(check_value,check_obj))
-
         else:
             raise Exception("不存在的校验方式：{0}".format(check_method))
 
