@@ -78,19 +78,25 @@ class GeneralTest(unittest.TestCase):
                                 self.assertEqual(Counter(check_value), Counter(every_check_ob.keys()))
                             except Exception as e:
                                 different = Counter(check_value) - Counter(every_check_ob.keys())
-                                raise Exception("丢失的key值：{0},error_info:{1}".format(list(different), e))
+                                if list(different)==[]:
+                                    different = Counter(every_check_ob.keys())-Counter(check_value)
+                                raise Exception("不同的key值：{0},error_info:{1}".format(list(different), e))
                     else:
                         try:
                             self.assertEqual(Counter(check_value), Counter(every_check_obj.keys()))
                         except Exception as e:
                             different = Counter(check_value) - Counter(every_check_obj.keys())
-                            raise Exception("丢失的key值：{0},error_info:{1}".format(list(different), e))
+                            if list(different) == []:
+                                different = Counter(every_check_obj.keys()) - Counter(check_value)
+                            raise Exception("不同的key值：{0},error_info:{1}".format(list(different), e))
             else:
                 try:
                     self.assertEqual(Counter(check_value), Counter(check_obj.keys()))
                 except Exception as e:
                     different = Counter(check_value) - Counter(check_obj.keys())
-                    raise Exception("丢失的key值：{0}".format(list(different), e))
+                    if list(different) == []:
+                        different = Counter(check_obj.keys()) - Counter(check_value)
+                    raise Exception("不同的key值：{0}".format(list(different), e))
 
         elif check_method == "Ckey":
             if isinstance(check_value, str):
@@ -176,10 +182,10 @@ class GeneralTest(unittest.TestCase):
     def execute_case(self,table_result):
 
         case_data=table_result[-1]
-        print(case_data)
         warnings.simplefilter("ignore", ResourceWarning)
 
         if case_data.get("Run")!="N":
+            print(case_data)
             print("**************************Start测试用例：{0}*********************************".format(case_data["用例描述"]))
 
             table_result = DataHandle().handle_case_data(table_result)
