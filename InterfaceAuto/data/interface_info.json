@@ -8,11 +8,12 @@
          "module_description" : "书面调解快速调解接口",
          "module_url" : "api/mediate/",
          "module_except" : ["code[=]int(200)"],
-         "module_leader":"",
+         "module_leader":"花蕾",
          "getCaseInfo" : {
             "method" : "get",
             "interface_except" : ["data.caseId[=]<caseId>"],
-            "interface_description" : "获取案件信息"
+            "interface_description" : "获取案件信息",
+            "interface_leader":""
          },
          "getFullCaseInfo" : {
             "method" : "get",
@@ -95,6 +96,7 @@
          "module_description" : "案件补录接口",
          "module_url" : "api/record/",
          "module_except" : [],
+         "module_leader":"孙艺博",
          "getUrl" : {
             "method" : "get",
             "interface_except" : [],
@@ -126,6 +128,7 @@
          "module_description" : "纠纷排查接口",
          "module_url" : "api/checkInfo/",
          "module_except" : ["code[=]int(200)"],
+         "module_leader":"张阳",
          "convertToQuickDispute" : {
             "method" : "get",
             "interface_except" : [],
@@ -163,21 +166,22 @@
          }
       },
       "informer" : {
-         "module_description" : "语音识别",
+         "module_description" : "线人接口",
          "module_url" : "api/informer/",
          "module_except" : ["code[=]int(200)"],
-         "module_leader":"",
+         "module_leader":"孙艺博",
          "audio" : {
             "method" : "post",
             "interface_except" : [],
             "interface_description" : "语音识别",
-            "interface_leader":"孙艺博"
+            "interface_leader":""
          }
       },
       "message" : {
-         "module_description" : "发送模板消息",
+         "module_description" : "通用的服务消息接口",
          "module_url" : "api/message/",
          "module_except" : ["code[=]int(200)"],
+         "module_leader":"周意",
          "send" : {
             "method" : "get",
             "interface_except" : [],
@@ -188,6 +192,7 @@
          "module_description" : "调解员接口",
          "module_url" : "api/mediator/",
          "module_except" : ["code[=]int(200)"],
+         "module_leader":"张阳",
          "getMediator" : {
             "method" : "get",
             "interface_except" : [],
@@ -208,6 +213,7 @@
          "module_description" : "调解委员会接口",
          "module_url" : "api/committee/",
          "module_except" : ["code[=]int(200)"],
+         "module_leader":"张阳",
          "query" : {
             "method" : "get",
             "interface_except" : [],
@@ -228,6 +234,7 @@
          "module_description" : "调解案件接口",
          "module_url" : "api/disputeCaseInfo/",
          "module_except" : ["code[=]int(200)"],
+         "module_leader":"赵志宇",
          "changeInputState" : {
             "method" : "get",
             "interface_except" : [],
@@ -266,22 +273,26 @@
          "idcard_upload" : {
             "method" : "post",
             "interface_except" : [],
-            "interface_description" : "身份证上传"
+            "interface_description" : "身份证上传",
+            "interface_leader":"周意"
          },
          "nationDictionary" : {
             "method" : "get",
             "interface_except" : [],
-            "interface_description" : "民族字典"
+            "interface_description" : "民族字典",
+            "interface_leader":"张阳"
          },
          "newIdentify" : {
             "method" : "get",
             "interface_except" : [],
-            "interface_description" : "新增主键ID"
+            "interface_description" : "新增主键ID",
+            "interface_leader":"张阳"
          },
          "sendSms" : {
             "method" : "get",
             "interface_except" : [],
-            "interface_description" : "发送短信"
+            "interface_description" : "发送短信",
+            "interface_leader":"张阳"
          }
       }
    },
