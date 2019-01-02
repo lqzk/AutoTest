@@ -21,11 +21,11 @@ class CallAPI:
 
 
 
-    def run(self,method, url, input=None,headers=None,files=None):
+    def run(self,method, url, input=None,headers=None,files=None,time_out=None):
         if method =="get":
-            response=requests.get(url,params=input,headers=headers)
+            response=requests.get(url,params=input,headers=headers,timeout=time_out)
         elif method =="post":
-            response = requests.post(url, data=input,headers=headers,files=files)
+            response = requests.post(url, data=input,headers=headers,files=files,timeout=time_out)
         elif method =="put":
             response = requests.put(url, data=input)
         elif method =="delete":

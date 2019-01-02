@@ -21,6 +21,17 @@ class GeneralTest(unittest.TestCase):
             else:
                 self.assertEqual(check_value, check_obj)
 
+        elif check_method == "<":
+            self.assertLess(check_obj, check_value)
+
+        elif check_method == "<=":
+            self.assertLessEqual(check_obj, check_value)
+
+        elif check_method == ">":
+            self.assertGreater(check_obj, check_value)
+
+        elif check_method == ">=":
+            self.assertGreaterEqual(check_obj, check_value)
 
         elif check_method == "C=":
             if isinstance(check_obj, dict) and isinstance(check_value, dict):
@@ -80,7 +91,9 @@ class GeneralTest(unittest.TestCase):
                                 different = Counter(check_value) - Counter(every_check_ob.keys())
                                 if list(different)==[]:
                                     different = Counter(every_check_ob.keys())-Counter(check_value)
-                                raise Exception("不同的key值：{0},error_info:{1}".format(list(different), e))
+                                    raise Exception("检查对象多出key值：{0},check_obj实际返回key值为:{1}".format(list(different), list(every_check_ob.keys())))
+                                else:
+                                    raise Exception("检查对象缺少key值：{0},check_obj实际返回key值为:{1}".format(list(different), list(every_check_ob.keys())))
                     else:
                         try:
                             self.assertEqual(Counter(check_value), Counter(every_check_obj.keys()))
@@ -88,7 +101,9 @@ class GeneralTest(unittest.TestCase):
                             different = Counter(check_value) - Counter(every_check_obj.keys())
                             if list(different) == []:
                                 different = Counter(every_check_obj.keys()) - Counter(check_value)
-                            raise Exception("不同的key值：{0},error_info:{1}".format(list(different), e))
+                                raise Exception("检查对象多出key值：{0},check_obj实际返回key值为:{1}".format(list(different), list(every_check_obj.keys())))
+                            else:
+                                raise Exception("检查对象缺少key值：{0},check_obj实际返回key值为:{1}".format(list(different), list(every_check_obj.keys())))
             else:
                 try:
                     self.assertEqual(Counter(check_value), Counter(check_obj.keys()))
@@ -96,7 +111,9 @@ class GeneralTest(unittest.TestCase):
                     different = Counter(check_value) - Counter(check_obj.keys())
                     if list(different) == []:
                         different = Counter(check_obj.keys()) - Counter(check_value)
-                    raise Exception("不同的key值：{0}".format(list(different), e))
+                        raise Exception("检查对象多出key值：{0},check_obj实际返回key值为:{1}".format(list(different),list(check_obj.keys())))
+                    else:
+                        raise Exception("检查对象缺少key值：{0},check_obj实际返回key值为:{1}".format(list(different),list(check_obj.keys())))
 
         elif check_method == "Ckey":
             if isinstance(check_value, str):
@@ -113,15 +130,17 @@ class GeneralTest(unittest.TestCase):
 
         elif check_method == "type":
             if check_value == "list":
-                self.assertTrue(isinstance(check_obj, list))
+                self.assertIsInstance(check_obj, list)
+                # self.assertTrue(isinstance(check_obj, list))
             elif check_value == "dict":
-                self.assertTrue(isinstance(check_obj, dict))
+                self.assertIsInstance(check_obj, dict)
+                # self.assertTrue(isinstance(check_obj, dict))
 
         elif check_method == "mode":
-            self.assertTrue(re.search(check_value,check_obj))
+            # self.assertTrue(re.search(check_value,check_obj))
+            self.assertRegex(check_obj,check_value)
         else:
             raise Exception("不存在的校验方式：{0}".format(check_method))
-
 
     def check_result(self,table_result,check_infos):
         case_data = table_result[-1]
@@ -178,14 +197,13 @@ class GeneralTest(unittest.TestCase):
             except Exception as e:
                 raise Exception("case_data：{0}\n\n\n验证check_info失败：{1}，error info：{2}\n".format(case_data,check_info,e))
 
-
     def execute_case(self,table_result):
 
         case_data=table_result[-1]
         warnings.simplefilter("ignore", ResourceWarning)
 
         if case_data.get("Run")!="N":
-            print(case_data)
+            # print(case_data)
             print("**************************Start测试用例：{0}*********************************".format(case_data["用例描述"]))
 
             table_result = DataHandle().handle_case_data(table_result)
@@ -195,18 +213,19 @@ class GeneralTest(unittest.TestCase):
             handle_url = case_data["Url"]
             handle_headers = case_data.get("headers")
             handle_files = case_data.get("files")
+            time_out=case_data.get("timeout")
 
             print("请求方式:{0},   请求地址：{1}".format(case_data["method"], handle_url))
             print("测试输入:{0}、{1}、{2}".format(case_data["Input"], handle_headers, handle_files))
             print("期望输出：{0}".format(handle_except_info))
             Response = CallAPI().run(method=case_data["method"], url=handle_url, input=handle_input,
-                                     headers=handle_headers, files=handle_files)
+                                     headers=handle_headers, files=handle_files,time_out=time_out)
             del case_data["handle_Input"]
 
             print("测试实际返回值：\n{0}".format(Response["res"]))
             case_data["Res"] = Response["res"]
             case_data["Res_headers"] = Response["Res_headers"]
-            case_data["Res_time(s)"] = Response["res_time"]
+            case_data["Res_time"] = Response["res_time"]
             case_data["status_code"] = Response["status_code"]
 
             self.check_result(table_result, handle_except_info)

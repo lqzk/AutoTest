@@ -104,6 +104,8 @@ class DataHandle:
             module_info=project_info[module]
             interface_info=module_info[interface]
 
+            handle_interface_info["timeout"]=project_info.get("base_timeout")
+
             handle_interface_info["method"]=interface_info.get('method')
             handle_interface_info["base_url"] = project_info["base_url"]
 
@@ -308,15 +310,12 @@ class DataHandle:
                     if len(obtain_value_method) == 1:
                         obtain_value = obtain_value_method[0]
 
-                        if obtain_value=="base_url":
-                            quote_value=case_data["base_url"]
-                        elif obtain_value=="status_code":
-                            quote_value = case_data["status_code"]
+                        if case_data.get(obtain_value):
+                            quote_value = case_data[obtain_value]
+                        elif case_data["Input"].get(obtain_value):
+                            quote_value = case_data["Input"][obtain_value]
                         else:
-                            if obtain_value in case_data["Input"].keys():
-                                quote_value = case_data["Input"][obtain_value]
-                            else:
-                                raise Exception("【{0}】【{1}】:无法找到Input对象：{2}".format(quote_string_value, quote_string, obtain_value))
+                            raise Exception("无法找到obtain_value：{0}".format(obtain_value))
 
                     elif len(obtain_value_method) == 2:
                         res=case_data.get("Res")
