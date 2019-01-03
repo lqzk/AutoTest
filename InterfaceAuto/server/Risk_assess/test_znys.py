@@ -9,6 +9,7 @@ table_result=[]
 
 @ddt.ddt
 class TestCase(unittest.TestCase):
+    '''数据关联，只需查看第一个错误接口'''
 
     def setUp(self):
         self.run=GeneralTest()

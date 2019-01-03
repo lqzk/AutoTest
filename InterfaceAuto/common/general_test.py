@@ -11,7 +11,6 @@ JExtractor = JmespathExtractor()
 class GeneralTest(unittest.TestCase):
 
     def assert_result(self,check_obj,check_method,check_value):
-
         if check_method == "=":
             if type(check_value)==type(check_obj):
                 self.assertEqual(check_value, check_obj)
@@ -82,6 +81,7 @@ class GeneralTest(unittest.TestCase):
                 check_value = check_value.split(",")
 
             if isinstance(check_obj,list) :
+                self.assertNotEqual(check_obj,[])
                 for every_check_obj in check_obj:
                     if isinstance(every_check_obj, list):
                         for every_check_ob in every_check_obj:
@@ -131,13 +131,10 @@ class GeneralTest(unittest.TestCase):
         elif check_method == "type":
             if check_value == "list":
                 self.assertIsInstance(check_obj, list)
-                # self.assertTrue(isinstance(check_obj, list))
             elif check_value == "dict":
                 self.assertIsInstance(check_obj, dict)
-                # self.assertTrue(isinstance(check_obj, dict))
 
         elif check_method == "mode":
-            # self.assertTrue(re.search(check_value,check_obj))
             self.assertRegex(check_obj,check_value)
         else:
             raise Exception("不存在的校验方式：{0}".format(check_method))
@@ -155,7 +152,6 @@ class GeneralTest(unittest.TestCase):
                     v=re.search(pattern,v).group(1)
                 quoto_situation[k] = v
             case_data["QuotoSituation"]=quoto_situation
-
 
         for check_info in check_infos:
             try:
@@ -187,14 +183,10 @@ class GeneralTest(unittest.TestCase):
 
                 check_value=DataHandle().obtain_QuotoSituation_data(case_data["project"],quoto_situation,check_value)
 
-                try:
-                    self.assert_result(check_obj, check_method, check_value)
-                    print("校验该段信息成功：{0}".format(check_info))
-                except Exception as e:
-                    print("校验该段信息失败：{0}".format(check_info))
-                    raise Exception("校验该段信息失败：{0}，error info：{1}\n".format(check_info, e))
-
+                self.assert_result(check_obj, check_method, check_value)
+                print("校验该段信息成功：{0}".format(check_info))
             except Exception as e:
+                print("校验该段信息失败：{0}，error info：{1}\n".format(check_info,e))
                 raise Exception("case_data：{0}\n\n\n验证check_info失败：{1}，error info：{2}\n".format(case_data,check_info,e))
 
     def execute_case(self,table_result):
@@ -228,6 +220,7 @@ class GeneralTest(unittest.TestCase):
             case_data["Res_time"] = Response["res_time"]
             case_data["status_code"] = Response["status_code"]
 
+            print("接口校验情况：")
             self.check_result(table_result, handle_except_info)
 
             print("**************************PASS测试用例：{0}**********************************\n\n".format(case_data.get("用例描述")))

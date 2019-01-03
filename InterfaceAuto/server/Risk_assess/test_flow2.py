@@ -12,7 +12,7 @@ table_result=[]
 
 @ddt.ddt
 class TestCase(unittest.TestCase):
-    '''验证业务流程，由于业务关联原因，发生错误只需查看第一个错误接口'''
+    '''数据关联，只需查看第一个错误接口'''
 
     def setUp(self):
         self.run=GeneralTest()

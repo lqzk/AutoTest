@@ -18,7 +18,7 @@ email_list=JsonHandle(PATH("data\\email_list.json")).jData
 project_case_path=lambda p:PATH("server\\{0}".format(p))
 
 
-project_case_data=lambda p,f,m:Excel_Data(PATH("data\\{0}\\{1}.xlsx".format(p,f)),m)
+project_case_data=lambda p,m:Excel_Data(PATH("server\\{0}\\{0}.xlsx".format(p)),m)
 prefix_url_path=PATH("data\\interface_info.json")
 case_exeorder_path=PATH("data\\case_exeorder.xlsx")
 comparison_list_path=PATH("data\\comparison_list.json")
@@ -141,22 +141,22 @@ class DataHandle:
 
         if module != None:
             interface_list_info = {}
-            interface_list = project_case_data(project, project,module).getSingleColumnType("Interface")
+            interface_list = project_case_data(project,module).getSingleColumnType("Interface")
             for interface in interface_list:
                 interface_info = self.obtain_interface_info(project, module, interface)
                 interface_list_info[interface] = interface_info
 
-            data_list = project_case_data(project,project,module).data
+            data_list = project_case_data(project,module).data
             for data in data_list:
                 data["project"] = project
                 data["result_table_name"] = module
                 data.update(interface_list_info[data["Interface"]])
                 case_list.append(data)
         else:
-            data_list = project_case_data(project, project,table_name).data
+            data_list = project_case_data(project,table_name).data
             if table_index == None:
                 interface_list_info = {}
-                m_interface_list = project_case_data(project,project,table_name).getDoubleColumnType("Module","Interface")
+                m_interface_list = project_case_data(project,table_name).getDoubleColumnType("Module","Interface")
                 for m_interface in m_interface_list:
                     interface_info = self.obtain_interface_info(project, m_interface[0], m_interface[1])
                     interface_list_info["{0}_{1}".format(m_interface[0], m_interface[1])] = interface_info

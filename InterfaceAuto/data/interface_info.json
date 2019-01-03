@@ -2,13 +2,13 @@
    "Template" : {
       "base_description" : "xx项目",
       "base_url" : "https://192.168.11.98:7012/",
-      "base_except" : [ "all[Ckey]code,data,msg" ],
+      "base_except" : [ "code[=]int(200)","all[Ckey]code,data,msg"],
       "base_leader" : "",
       "base_timeout":5,
       "xx" : {
          "module_description" : "判决结果",
          "module_url" : "api/decision_result/",
-         "module_except" : [ "code[=]int(200)" ],
+         "module_except" : [],
          "module_leader" : "",
          "xxx" : {
             "method" : "get",
@@ -23,7 +23,7 @@
       "base_url" : "https://dispute.aegis-info.com/",
       "base_except" : [ "all[Ckey]code,data,msg" ],
       "base_leader" : "",
-      "base_timeout":5,
+      "base_timeout":6,
       "mediate" : {
          "module_description" : "书面调解快速调解接口",
          "module_url" : "api/mediate/",
@@ -441,7 +441,7 @@
    "Risk_assess" : {
       "base_description" : "诉讼风险评估项目",
       "base_url" : "http://hngy.assess.aegis-info.com",
-      "base_except" : [ "all[key]code,data,msg","code[=]int(200)"],
+      "base_except" : [ "code[=]int(200)","all[key]code,data,msg"],
       "base_leader" : "",
       "base_timeout":130,
       "znys" : {
@@ -452,6 +452,7 @@
          "subjects" : {
             "method" : "get",
             "interface_except" : [
+               "data[!=][]",
                "data[list,key]description&evidence&is_online&zh_name&has_calculator&id&recommended_actions"
             ],
             "interface_description" : "获取案由下的专题接口"
@@ -459,6 +460,7 @@
          "first/question" : {
             "method" : "post",
             "interface_except" : [
+               "data[!=]{}",
                "data[key]question&choice_type&id&temp_choice_tags",
                "data.temp_choice_tags[dict_list,key]colloquial&id&document&zh_name&evidence"
             ],
@@ -504,11 +506,7 @@
          },
          "Law_Comment" : {
             "method" : "get",
-            "interface_except" : [
-               "data[key]action_comment&case&law&law_comment&money",
-               "data.case[dict_list,key]content&id&title",
-               "data.law[dict_list,key]content&id&tag&title"
-            ],
+            "interface_except" : ["data[!=]{}"],
             "interface_description" : "生成法律意见书接口"
          },
          "ZNYS_SSS_Handler" : {

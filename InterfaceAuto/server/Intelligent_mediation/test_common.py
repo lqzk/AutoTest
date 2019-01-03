@@ -1,6 +1,6 @@
 import unittest
 from InterfaceAuto.common import ddt
-from InterfaceAuto.common.data_handle import DataHandle,project_case_data
+from InterfaceAuto.common.data_handle import DataHandle
 from InterfaceAuto.common.general_test import GeneralTest
 project = "Intelligent_mediation"
 module = "common"
