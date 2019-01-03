@@ -441,13 +441,13 @@
    "Risk_assess" : {
       "base_description" : "诉讼风险评估项目",
       "base_url" : "http://hngy.assess.aegis-info.com",
-      "base_except" : [ "all[key]code,data,msg"],
+      "base_except" : [ "all[key]code,data,msg","code[=]int(200)"],
       "base_leader" : "",
       "base_timeout":130,
       "znys" : {
          "module_description" : "页面端",
          "module_url" : "/intelligentpretrial/znys/",
-         "module_except" : ["code[=]int(200)"],
+         "module_except" : [],
          "module_leader" : "周朋飞",
          "subjects" : {
             "method" : "get",
@@ -487,7 +487,7 @@
       "android" : {
          "module_description" : "手机端",
          "module_url" : "/intelligentpretrial/android/law_push/",
-         "module_except" : ["code[=]int(200)"],
+         "module_except" : [],
          "module_leader" : "周朋飞",
          "Unsigned_Contract_Handler" : {
             "method" : "get",
@@ -546,7 +546,7 @@
       "docdispose" : {
          "module_description" : "实体机器人端打印接口",
          "module_url" : "/intelligentpretrial/docdispose/",
-         "module_except" : ["code[=]int(200)"],
+         "module_except" : [],
          "module_leader" : "周朋飞",
          "lawopinion" : {
             "method" : "post",
@@ -588,14 +588,14 @@
          "module_leader" : "孙艺博",
          "similarCase" : {
             "method" : "get",
-            "interface_except" : ["code[=]int(0)","data[key]['cases', 'law', 'action', 'map']"],
+            "interface_except" : ["data[Ckey]['law']"],
             "interface_description" : "类案与法条(根据用户情节，推送类案与相关法条)"
          },
          "cost" : {
             "method" : "get",
             "interface_except" : [
                "data[key]map",
-               "data.map[dict_list,key]legalFare&mediateTime&trialTime&mediateFare&claimMoney&mediateClaim&resultMoney&mediateResult"
+               "data.map[dict_list,key]['mediateTime', 'trialTime', 'legalFare', 'docCount', 'mediateFare']"
             ],
             "interface_description" : "费用统计(根据用户情节，推送类案的相关花费)"
          }
