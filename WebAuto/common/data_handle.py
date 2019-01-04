@@ -11,14 +11,16 @@ PATH=lambda P:os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__fil
 dir_report_path=PATH("report\\")
 email_config_path=PATH("data\\email_config.ini")
 project_case_path=lambda p:PATH("project\\{0}\\case" .format(p))
-project_data_path=lambda p:PATH("data\\{0}.xlsx" .format(p))
 picture_path=PATH("picture\\" )
 
-project_info_path=PATH("data\\web.json")
+project_data =lambda p:JsonHandle(PATH("project\\{0}\\{0}.json".format(p))).jData
 case_exeorder_path=PATH("data\\case_exeorder.xlsx")
 driver_dir=PATH("drivers\\")
 
 project_case_data_path=lambda p,c:PATH("project\\{0}\\data\\{1}" .format(p,c))
+
+from InterfaceAuto.common.json_handle import JmespathExtractor
+JExtractor = JmespathExtractor()
 
 
 class DataHandle:
@@ -78,21 +80,6 @@ class DataHandle:
             break
         return import_statement
 
-    def obtain_project_info(self,project):
-        project_info = JsonHandle(project_info_path).jData[project]
-        launch_info={}
-        launch_info["driver"]=project_info["test_driver"]
-        launch_info["driver_types"]=project_info["driver_types"]
-
-        launch_info["test_version"]=project_info["test_version"]
-        version_info=project_info[launch_info["test_version"]]
-        launch_info["url"]=version_info[project_info["test_url"]]
-
-        account_info={}
-        account_info["username"]=version_info["username"]
-        account_info["password"]=version_info["password"]
-        return (launch_info,account_info)
-
     def timeData_handle(self,**kwargs):
         """
         时间参数处理
@@ -116,6 +103,17 @@ class DataHandle:
         result_data["start_time"]=start_time
         result_data["end_time"] = end_time
         return result_data
+
+def project_info(project_data,key):
+    test_environment = project_data["test_environment"]
+    if key == "AdminURL":
+        obtain_info = project_data[key][test_environment]
+    else:
+        obtain_info = JExtractor.extract(key, project_data)
+    return obtain_info
+
+
+
 
 
 

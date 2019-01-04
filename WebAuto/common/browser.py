@@ -22,21 +22,16 @@ class Browser(object):
 
 
 
-    def lanuch(self,project,url_suffix="",implicitly_wait=20):
+    def lanuch(self,browser_type,url,implicitly_wait=20):
         """
         打开浏览器和网址，设置全局时延，最大化窗口
         :param url:
         :param implicitly_wait:
         :return:
         """
-        self.project = project
-        self.project_info = DataHandle().obtain_project_info(self.project)
-
-        launch_info=self.project_info[0]
-        browser_type = launch_info["driver"]
-        if browser_type not in launch_info["driver_types"]:
-            raise UnSupportBrowserTypeError("不支持的浏览器类型{0}，目前仅支持{1}".format(browser_type,launch_info["driver_types"]))
-        url=launch_info["url"]+url_suffix
+        support_browser_type=["Phantomjs","Chrome","IE","Firefox","Chrome_headless"]
+        if browser_type not in support_browser_type:
+            raise UnSupportBrowserTypeError("不支持的浏览器类型{0}，目前仅支持{1}".format(browser_type,support_browser_type))
 
         if browser_type=="Phantomjs":
             # phantomjs：无需浏览器的 Web 测试、页面访问自动、屏幕捕获、网络监控

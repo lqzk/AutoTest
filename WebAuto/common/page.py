@@ -51,7 +51,6 @@ class Page(Browser):
             type = By.CLASS_NAME
         elif type=="css":
             type=By.CSS_SELECTOR
-
         return (type,loc[1])
 
     def is_enabled(self,*loc):
@@ -90,7 +89,6 @@ class Page(Browser):
                 time.sleep(2)
             finally:
                 self.find_element(*args).click()
-
 
 
     def clear(self,*args):

@@ -1,0 +1,127 @@
+{
+   "test_driver" :"Chrome_headless",
+   "test_environment" : "online",
+   "AdminURL" : {
+      "online" : "https://zhtj.aegis-info.com/admin/",
+      "local" : "https://192.168.11.158:8084/"
+   },
+   "User01" : {
+      "User1" : {
+         "Username" : "dxh",
+         "PassWord" : "123456"
+      },
+      "User2" : {
+         "Username" : "ZhangQing",
+         "PassWord" : "123456"
+      }
+   },
+   "User02" : {
+      "User1" : {
+         "MeditatorName" : "Meditator姚瑶Test111",
+         "Username" : "YaoYaoTest111",
+         "PassWord" : "123456",
+         "PassWordTest" : "123456abcdefg"
+      },
+      "User2" : {
+         "MeditatorName" : "Meditator姚瑶Test222",
+         "Username" : "YaoYaoTest222",
+         "Sex" : "女",
+         "WetherAllowed" : "否",
+         "IdNumber" : "320311199003202523",
+         "Nation" : "珞巴族",
+         "Education" : " 文盲或半文盲",
+         "OtherId" : " 人民陪审员",
+         "Career" : "调委会委员",
+         "CarrerType" : "专职",
+         "WeatherExperience" : "是",
+         "GovermentServer" : "是",
+         "PhoneNumber" : "13813874721",
+         "ContectNumber" : "02585472210",
+         "Email" : "850796215@qq.com",
+         "SelectWay" : "推选",
+         "PoliticalFace" : "群众（现称普通居民，与居民身份证相对应）",
+         "Mariage" : "未说明的婚姻状况",
+         "Identity" : "村（居）委会干部",
+         "Domains" : "医疗纠纷",
+         "PassWord" : "123456abc"
+      },
+      "User3" : {
+         "MeditatorName" : "Meditator姚瑶Test333",
+         "Username" : "YaoYaoTest333",
+         "Sex" : "女",
+         "WetherAllowed" : "否",
+         "IdNumber" : "320311199003202523",
+         "Nation" : "珞巴族",
+         "Education" : " 文盲或半文盲",
+         "OtherId" : " 人民陪审员",
+         "Career" : "调委会委员",
+         "CarrerType" : "专职",
+         "WeatherExperience" : "是",
+         "GovermentServer" : "是",
+         "PhoneNumber" : "13813874721",
+         "ContectNumber" : "02585472210",
+         "Email" : "850796215@qq.com",
+         "SelectWay" : "推选",
+         "PoliticalFace" : "群众（现称普通居民，与居民身份证相对应）",
+         "Mariage" : "未说明的婚姻状况",
+         "Identity" : "村（居）委会干部",
+         "Domains" : "其他纠纷",
+         "PassWord" : "ABCD123456"
+      }
+   },
+   "User03" : {
+      "User1" : {
+         "InstitutionName" : "杨杰Testing111",
+         "Username" : "YangJieTesting111",
+         "PassWord" : "123456",
+         "PassWordTest" : "123456abcdefg"
+      },
+      "User2" : {
+         "InstitutionName" : "杨杰Testing222",
+         "Username" : "YangJieTesting222",
+         "InstitutionType" : "居（社区）调委会",
+         "InstitutionDomain" : "医疗纠纷",
+         "InstitutionLeader" : "丁晓晖",
+         "PhoneNumber" : "13813874721",
+         "InstitutionAddrress" : {
+            "Province" : "江苏省",
+            "Street" : "天隆寺地铁站"
+         },
+         "PassWord" : "123456abc"
+      },
+      "User3" : {
+         "InstitutionName" : "杨杰Testing333",
+         "Username" : "YangJieTesting333",
+         "InstitutionType" : "居（社区）调委会",
+         "InstitutionDomain" : "物业纠纷",
+         "InstitutionLeader" : "辛江",
+         "PhoneNumber" : "13851717658",
+         "InstitutionAddrress" : {
+            "Province" : "江苏省",
+            "Street" : "软件大道地铁站"
+         },
+         "PassWord" : "abc123456"
+      }
+   },
+   "MediatorUser" : {
+      "Login" : {
+         "Username" : "??",
+         "PassWord" : "123456",
+         "Type":1
+      }
+   },
+   "InstitutionUser" : {
+      "Login" : {
+         "Username" : "??",
+         "PassWord" : "123456",
+         "Type":2
+      }
+   },
+   "SupperUser" : {
+      "Login" : {
+         "Username" : "mm",
+         "PassWord" : "123456",
+         "Type":3
+      }
+   }
+}
