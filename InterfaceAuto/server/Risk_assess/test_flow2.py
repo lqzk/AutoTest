@@ -28,10 +28,10 @@ class TestCase(unittest.TestCase):
             case_data["tags"] = []
             case_data["tags"].extend(json.loads(case_data["Input"]["tags"]))
             from InterfaceAuto.common.call_api import CallAPI
-            res_keys=list(table_result[-1]["Res"]["data"].keys())
-            while not res_keys==["record_id"]:
+            questions = JExtractor.extract("Res.data.questions", table_result[-1])
+            while not questions==[]:
                 input = table_result[-1]["Input"]
-                input["qid"] = JExtractor.extract("Res.data.questions", table_result[-1])[0]["id"]
+                input["qid"] = questions[0]["id"]
                 input["record_id"] = JExtractor.extract("Res.data.record_id", table_result[-1])
                 tag0=JExtractor.extract("Res.data.questions", table_result[-1])[0]["choice_tags"][0]
                 tag_list=[]
@@ -44,7 +44,7 @@ class TestCase(unittest.TestCase):
                 case_data["Res_headers"] = Response["Res_headers"]
                 case_data["Res_time(s)"] = Response["res_time"]
                 case_data["status_code"]=Response["status_code"]
-                res_keys = list(table_result[-1]["Res"]["data"].keys())
+                questions = JExtractor.extract("Res.data.questions", table_result[-1])
             print("最终值：{0}\n".format(case_data))
         else:
             self.run.execute_case(table_result)

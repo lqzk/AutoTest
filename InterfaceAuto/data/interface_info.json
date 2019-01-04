@@ -440,7 +440,7 @@
    },
    "Risk_assess" : {
       "base_description" : "诉讼风险评估项目",
-      "base_url" : "http://hngy.assess.aegis-info.com",
+      "base_url" : "http://192.168.11.128:9005",
       "base_except" : [ "code[=]int(200)","all[key]code,data,msg"],
       "base_leader" : "",
       "base_timeout":130,
@@ -469,19 +469,14 @@
          "next/question" : {
             "method" : "post",
             "interface_except" : [
-               "data[key]questions&record_id",
-               "data.questions[dict_list,key]case_cause&case_cause_id&choice_tags&choice_type&choice_type_num&create_date&decide_tags&id&is_enable&question&subject&subject_id&temp_choice_tags&write_date&_id",
-               "data.questions.temp_choice_tags[dict_list_list,key]colloquial&document&evidence&huchi&id&zh_name"
+               "data[key]questions&record_id"
             ],
             "interface_description" : "获取下级问题接口"
          },
          "choice_record" : {
             "method" : "get",
             "interface_except" : [
-               "data[key]legal_advice&description&temp_tags&choices&case_cause_id&case_cause&tags&subject_id&id&subject&evidence",
-               "data.temp_tags[dict_list,key]colloquial&id&document&zh_name&evidence",
-               "data.choices[dict_list,key]qid&choice_tags",
-               "data.choices.choice_tags[dict_list_list,key]colloquial&id&document&zh_name&evidence"
+               "data[key]['legal_advice', 'subject_id', 'case_cause_id', 'subject', 'temp_tags']"
             ],
             "interface_description" : "查询问卷记录接口"
          }
