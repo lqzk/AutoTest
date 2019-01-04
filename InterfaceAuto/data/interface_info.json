@@ -597,7 +597,7 @@
    "Intelligent_judgement" : {
       "base_description" : "同案不同判项目",
       "base_url" : "http://192.168.11.98:7012/",
-      "base_except" : [ "all[Ckey]code,data,msg", "code[=]int(0)" ,"<Res_time>[<=]int(5)"],
+      "base_except" : [ "all[Ckey]code,data,msg", "code[=]int(0)" ,"<Res_time>[<=]int(8)"],
       "base_leader" : "",
       "base_timeout":60,
       "decision_result" : {
@@ -671,7 +671,7 @@
          "adjust_regular" : {
             "method" : "get",
             "interface_except" : [
-               "data[key]regular_result&province"
+               "data[key]['regular_result', 'title', 'sequences', 'province']"
             ],
             "interface_description" : "调节量刑"
          }
