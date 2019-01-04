@@ -582,7 +582,7 @@
          "similarCase" : {
             "method" : "get",
             "interface_except" : ["data[Ckey]['law']"],
-            "interface_description" : "类案与法条(根据用户情节，推送类案与相关法条)"
+            "interface_description" : "类案与法条"
          },
          "cost" : {
             "method" : "get",
@@ -590,7 +590,7 @@
                "data[key]map",
                "data.map[dict_list,key]['mediateTime', 'trialTime', 'legalFare', 'docCount', 'mediateFare']"
             ],
-            "interface_description" : "费用统计(根据用户情节，推送类案的相关花费)"
+            "interface_description" : "费用统计"
          }
       }
    },
