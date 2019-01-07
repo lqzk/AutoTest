@@ -135,7 +135,13 @@ class GeneralTest(unittest.TestCase):
                 self.assertIsInstance(check_obj, dict)
 
         elif check_method == "mode":
-            self.assertRegex(check_obj,check_value)
+            if isinstance(check_obj,str):
+                self.assertRegex(check_obj,check_value)
+            elif isinstance(check_obj,list):
+                for check_ob in check_obj:
+                    self.assertRegex(check_ob, check_value)
+            else:
+                raise Exception("请检查check_obj的数据格式：{0}".format(check_obj))
         else:
             raise Exception("不存在的校验方式：{0}".format(check_method))
 

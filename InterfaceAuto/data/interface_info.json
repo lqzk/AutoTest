@@ -441,13 +441,13 @@
    "Risk_assess" : {
       "base_description" : "诉讼风险评估项目",
       "base_url" : "http://192.168.11.128:9005",
-      "base_except" : [ "code[=]int(200)","all[key]code,data,msg"],
+      "base_except" : [ "all[key]code,data,msg"],
       "base_leader" : "",
       "base_timeout":130,
       "znys" : {
          "module_description" : "页面端",
          "module_url" : "/intelligentpretrial/znys/",
-         "module_except" : [],
+         "module_except" : ["code[=]int(200)"],
          "module_leader" : "周朋飞",
          "subjects" : {
             "method" : "get",
@@ -484,7 +484,7 @@
       "android" : {
          "module_description" : "手机端",
          "module_url" : "/intelligentpretrial/android/law_push/",
-         "module_except" : [],
+         "module_except" : ["code[=]int(200)"],
          "module_leader" : "周朋飞",
          "Unsigned_Contract_Handler" : {
             "method" : "get",
@@ -504,9 +504,14 @@
             "interface_except" : ["data[!=]{}"],
             "interface_description" : "生成法律意见书接口"
          },
+         "selectclaim" : {
+            "method" : "get",
+            "interface_except" : ["data[!=][]"],
+            "interface_description" : "选择起诉"
+         },
          "ZNYS_SSS_Handler" : {
             "method" : "get",
-            "interface_except" : [ "data[key]answer" ],
+            "interface_except" : [ "data[key]answer","data.answer[!=]''"],
             "interface_description" : "生成起诉状接口"
          },
          "DownloadLawComment" : {
@@ -539,7 +544,7 @@
       "docdispose" : {
          "module_description" : "实体机器人端打印接口",
          "module_url" : "/intelligentpretrial/docdispose/",
-         "module_except" : [],
+         "module_except" : ["code[=]int(200)"],
          "module_leader" : "周朋飞",
          "lawopinion" : {
             "method" : "post",
@@ -581,12 +586,17 @@
          "module_leader" : "孙艺博",
          "similarCase" : {
             "method" : "get",
-            "interface_except" : ["data[Ckey]['law']"],
+            "interface_except" : ["code[=]int(200)","data[Ckey]['law']","data.law.title[dict_list_dict,mode]第(.*?)条"],
             "interface_description" : "类案与法条"
+         },
+         "search" : {
+            "method" : "get",
+            "interface_except" : ["code[=]int(0)","data[key]['caseInfoPlain']","data.caseInfoPlain[!=]{}","data.caseInfoPlain[Ckey]case_cause_name&case_number&court_name&decide_time&grade&id&new_paras&title&top_cause_name","data.caseInfoPlain.new_paras[dict2_list,!=][]"],
+            "interface_description" : "查找文书"
          },
          "cost" : {
             "method" : "get",
-            "interface_except" : [
+            "interface_except" : ["code[=]int(200)",
                "data[key]map",
                "data.map[dict_list,key]['mediateTime', 'trialTime', 'legalFare', 'docCount', 'mediateFare']"
             ],
