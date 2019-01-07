@@ -27,6 +27,7 @@ class AdminLoginPage(Page):
         else:
             raise Exception("不存在的登录类别：{0}".format(user_type))
         self.click(*self.login_button)
+        print("点击登录按钮")
 
 
 

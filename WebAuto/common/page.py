@@ -68,7 +68,7 @@ class Page(Browser):
         args = self.handle_element(args)
         return self.driver.find_elements(*args)
 
-    def wait_until(self,loc,method="presence",timeout=10,poll_frequency=0.02):
+    def wait_until(self,loc,method="presence",timeout=3,poll_frequency=0.02):
         wait=WebDriverWait(self.driver, timeout, poll_frequency)
         if method=="presence":
             wait.until(EC.presence_of_element_located(loc))

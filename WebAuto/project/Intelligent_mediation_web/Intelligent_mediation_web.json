@@ -1,11 +1,11 @@
 {
-   "test_driver" :"Chrome_headless",
+   "test_driver" :"Chrome",
    "test_environment" : "online",
    "AdminURL" : {
       "online" : "https://zhtj.aegis-info.com/admin/",
       "local" : "https://192.168.11.158:8084/"
    },
-   "User01" : {
+   "CommonUser" : {
       "User1" : {
          "Username" : "dxh",
          "PassWord" : "123456"
@@ -105,14 +105,14 @@
    },
    "MediatorUser" : {
       "Login" : {
-         "Username" : "??",
-         "PassWord" : "123456",
+         "Username" : "YaoYaoTest222",
+         "PassWord" : "123456abc",
          "Type":1
       }
    },
    "InstitutionUser" : {
       "Login" : {
-         "Username" : "??",
+         "Username" : "YangJieTesting111",
          "PassWord" : "123456",
          "Type":2
       }
@@ -122,6 +122,36 @@
          "Username" : "mm",
          "PassWord" : "123456",
          "Type":3
+      },
+      "Register1" : {
+         "InstitutionName" : "杨杰Testing222",
+         "Username" : "YangJieTesting222",
+         "InstitutionType" : "居（社区）调委会",
+         "InstitutionDomain" : "医疗纠纷",
+         "InstitutionLeader" : "丁晓晖",
+         "InstitutionCreateTime":"2018-01-01",
+         "PhoneNumber" : "13813874721",
+         "InstitutionAddrressProvince" :"江苏省",
+         "InstitutionAddrressCity" :"南京市",
+         "InstitutionAddrressArea" :"栖霞区",
+         "Street" : "天隆寺地铁站",
+         "PassWord" : "123456abc",
+         "InstitutionOverdueTime":"2021-01-04 17:52:12"
+      },
+      "Register2" : {
+         "InstitutionName" : "杨杰Testing333",
+         "Username" : "YangJieTesting333",
+         "InstitutionType" : "居（社区）调委会",
+         "InstitutionDomain" : "物业纠纷",
+         "InstitutionLeader" : "辛江",
+         "InstitutionCreateTime":"2018-01-01",
+         "PhoneNumber" : "13851717658",
+         "InstitutionAddrressProvince" :"江苏省",
+         "InstitutionAddrressCity" :"南京市",
+         "InstitutionAddrressArea" :"栖霞区",
+         "Street" : "软件大道地铁站",
+         "PassWord" : "abc123456",
+         "InstitutionOverdueTime":"2021-01-04 17:52:12"
       }
    }
 }
