@@ -6,7 +6,7 @@ from InterfaceAuto.common.json_handle import JmespathExtractor
 import json
 JExtractor = JmespathExtractor()
 project = "Risk_assess"
-module = "flow"
+module = "work_first_flow"
 module_cases=DataHandle().obtain_interface_cases(project, table_name=module)
 table_result=[]
 

@@ -149,7 +149,7 @@ class GeneralTest(unittest.TestCase):
         case_data = table_result[-1]
 
         quoto_situation = case_data["QuotoSituation"]
-        if quoto_situation != None:
+        if quoto_situation != None and quoto_situation!="":
             for k,v in quoto_situation.items():
                 v = DataHandle().obtain_quote_data(v, table_result)
                 v = DataHandle().handle_string_obj(v)

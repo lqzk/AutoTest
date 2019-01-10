@@ -426,7 +426,7 @@ class DataHandle:
             try:
                 quote_key_list = re.findall(r'\%(.*?)\%', quote_string)
 
-                if len(quote_key_list) == 1 and re.search(r'\%(.*?)\%[^\]\,\}]',quote_string):
+                if len(quote_key_list) == 1 and re.search(r'^\%(.*?)\%[^\]\,\}]',quote_string):
                     quote_key = re.search(r'\%(.*?)\%', quote_string).group(1)
                     quote_value = JExtractor.extract(quote_key, quoto_situation_data)
 
@@ -454,7 +454,6 @@ class DataHandle:
                                         raise Exception("无法提取值从{0}中按照方式:{1}".format(quote_value, extract_mode))
                                 else:
                                     raise Exception("不符合格式的后续处理方式：{0}".format(handle_des))
-
                         else:
                             quote_value=quote_string
                         return quote_value
@@ -470,7 +469,6 @@ class DataHandle:
                     return quote_string
             except Exception as e:
                 raise Exception("【获取引用值失败】引用数据：{0}，引用条件：{1}，引用类型：{2}\nerror_info:{3}".format(quoto_situation_data,quote_string,quote_string_type,e))
-
         return quote_string
 
     #加工单个接口用例的测试数据,主要是输入、预期数据的加工提取
@@ -479,23 +477,19 @@ class DataHandle:
 
         # 加工quoto_situation数据
         quoto_situation = case_data.get("QuotoSituation")
+        case_data["QuotoSituation"] = {}
         if quoto_situation==None or quoto_situation == "":
-            quoto_situation_data = None
+            case_data["QuotoSituation"] = None
         else:
-            quoto_situation_data = {}
-
             quoto_situation_list = quoto_situation.strip().split("\n")
             for every_quoto_situation in quoto_situation_list:
-
                 quoto_situation_data_key=re.search(r'(.*?)\=', every_quoto_situation).group(1)
                 quoto_situation_data_value = re.search(r'\=([^\}].*?)$', every_quoto_situation).group(1)
 
-
                 quoto_situation_data_value = self.obtain_quote_data(quoto_situation_data_value, table_result)
-                quoto_situation_data_value =self.obtain_QuotoSituation_data(case_data["project"],quoto_situation_data,quoto_situation_data_value)
+                quoto_situation_data_value =self.obtain_QuotoSituation_data(case_data["project"],case_data["QuotoSituation"],quoto_situation_data_value)
 
-                quoto_situation_data[quoto_situation_data_key] = quoto_situation_data_value
-        case_data["QuotoSituation"] = quoto_situation_data
+                case_data["QuotoSituation"][quoto_situation_data_key] = quoto_situation_data_value
 
         #加工Input数据
         input=case_data["Input"]
@@ -511,7 +505,7 @@ class DataHandle:
                 input_data_value=re.search(r"\=([^\}].*?)$",every_input).group(1)
 
                 input_data_value = self.obtain_quote_data(input_data_value, table_result)
-                input_data_value=self.obtain_QuotoSituation_data(case_data["project"],quoto_situation_data,input_data_value)
+                input_data_value=self.obtain_QuotoSituation_data(case_data["project"],case_data["QuotoSituation"],input_data_value)
 
                 if isinstance(input_data_value, str):
                     input_data_value_list = input_data_value.split("+")
@@ -585,7 +579,7 @@ class DataHandle:
 
 
                 check_value=self.obtain_quote_data(check_value, table_result)
-                check_value=self.obtain_QuotoSituation_data(case_data["project"],quoto_situation_data, check_value)
+                check_value=self.obtain_QuotoSituation_data(case_data["project"],case_data["QuotoSituation"], check_value)
 
                 if isinstance(check_value,str) and "+" in check_value:
                     check_value = check_value.split("+")
