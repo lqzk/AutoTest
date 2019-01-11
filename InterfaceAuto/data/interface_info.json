@@ -438,9 +438,9 @@
          }
       }
    },
-   "Risk_assess" : {
-      "base_description" : "诉讼风险评估项目",
-      "base_url" : "http://192.168.11.128:9005",
+   "Risk_assess_foreground" : {
+      "base_description" : "诉讼风险评估页面_南京中院",
+      "base_url" : "http://njzy.assess.aegis-info.com",
       "base_except" : [ "all[key]code,data,msg"],
       "base_leader" : "",
       "base_timeout":130,
@@ -590,6 +590,37 @@
             "interface_description" : "类案与法条"
          },
          "search" : {
+            "method" : "get",
+            "interface_except" : ["code[=]int(0)","data[key]['caseInfoPlain']","data.caseInfoPlain[!=]{}","data.caseInfoPlain[Ckey]case_cause_name&case_number&court_name&decide_time&grade&id&new_paras&title&top_cause_name","data.caseInfoPlain.new_paras[dict2_list,!=][]"],
+            "interface_description" : "查找文书"
+         },
+         "cost" : {
+            "method" : "get",
+            "interface_except" : ["code[=]int(200)",
+               "data[key]map",
+               "data.map[dict_list,key]['mediateTime', 'trialTime', 'legalFare', 'docCount', 'mediateFare']"
+            ],
+            "interface_description" : "费用统计"
+         }
+      }
+   },
+   "Risk_assess_backstage" : {
+      "base_description" : "诉讼风险评估后台管理平台",
+      "base_url" : "http://riskstc.aegis-info.com",
+      "base_except" : [ "all[key]code,data,msg"],
+      "base_leader" : "",
+      "base_timeout":130,
+      "forward" : {
+         "module_description" : "转发接口",
+         "module_url" : "/api/forward/",
+         "module_except" : [],
+         "module_leader" : "孙艺博",
+         "similarCase" : {
+            "method" : "get",
+            "interface_except" : ["code[=]int(200)","data[Ckey]['law']","data.law.title[dict_list_dict,mode]第(.*?)条"],
+            "interface_description" : "类案与法条"
+         },
+         "case" : {
             "method" : "get",
             "interface_except" : ["code[=]int(0)","data[key]['caseInfoPlain']","data.caseInfoPlain[!=]{}","data.caseInfoPlain[Ckey]case_cause_name&case_number&court_name&decide_time&grade&id&new_paras&title&top_cause_name","data.caseInfoPlain.new_paras[dict2_list,!=][]"],
             "interface_description" : "查找文书"

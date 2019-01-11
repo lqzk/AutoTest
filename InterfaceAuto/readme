@@ -10,6 +10,8 @@ weather接口说明地址：https://www.heweather.com/documents/api/s6
 police_wiki接口说明地址：http://192.168.11.166:8585/swagger-ui.html
 Intelligent_mediation接口说明地址：https://dispute.aegis-info.com/swagger-ui.html#/
 Risk_assess:由于索引及项目功能升级，智能预审类案接口更换，详见：http://casefindinges6.aegis-info.com/swagger-ui.html#/
+孙艺博的接口：http://riskstc.aegis-info.com/swagger-ui.html#/
+周朋飞的接口：http://192.168.11.88:8100/swagger?url=http://192.168.11.88:8100/IntelligentPretrial/docs/index.yml#/
 
 
 [关于数据校验的几种类型]

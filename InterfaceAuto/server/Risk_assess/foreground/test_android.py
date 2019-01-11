@@ -3,13 +3,13 @@ from InterfaceAuto.common import ddt
 from InterfaceAuto.common.data_handle import DataHandle
 from InterfaceAuto.common.general_test import GeneralTest
 project = "Risk_assess"
-module = "znys"
-module_cases=DataHandle().obtain_interface_cases(project, module)
+sun_project="Risk_assess_foreground"
+module = "android"
+module_cases=DataHandle().obtain_interface_cases(project, module,sun_project=sun_project)
 table_result=[]
 
 @ddt.ddt
 class TestCase(unittest.TestCase):
-    '''数据关联，只需查看第一个错误接口'''
 
     def setUp(self):
         self.run=GeneralTest()

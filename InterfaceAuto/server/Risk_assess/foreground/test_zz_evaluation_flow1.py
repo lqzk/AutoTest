@@ -6,13 +6,14 @@ from InterfaceAuto.common.json_handle import JmespathExtractor
 import json
 JExtractor = JmespathExtractor()
 project = "Risk_assess"
-module = "work_first_flow"
-module_cases=DataHandle().obtain_interface_cases(project, table_name=module)
+sun_project="Risk_assess_foreground"
+module = "追索劳动报酬1"
+module_cases=DataHandle().obtain_interface_cases(project, table_name=module,sun_project=sun_project)
 table_result=[]
 
 @ddt.ddt
 class TestCase(unittest.TestCase):
-    '''数据关联，只需查看第一个错误接口'''
+    '''【追索劳动报酬1】数据关联，只需查看第一个错误接口'''
 
     def setUp(self):
         self.run=GeneralTest()

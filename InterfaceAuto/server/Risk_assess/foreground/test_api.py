@@ -3,8 +3,9 @@ from InterfaceAuto.common import ddt
 from InterfaceAuto.common.data_handle import DataHandle
 from InterfaceAuto.common.general_test import GeneralTest
 project = "Risk_assess"
-module = "docdispose"
-module_cases=DataHandle().obtain_interface_cases(project, module)
+sun_project="Risk_assess_foreground"
+module = "api"
+module_cases=DataHandle().obtain_interface_cases(project, module,sun_project=sun_project)
 table_result=[]
 
 @ddt.ddt
