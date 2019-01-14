@@ -206,9 +206,9 @@ class GeneralTest(unittest.TestCase):
                 check_value=DataHandle().obtain_QuotoSituation_data(case_data["project"],quoto_situation,check_value)
 
                 self.assert_result(check_obj, check_method, check_value)
-                print("校验该段信息成功：{0}".format(check_info))
+                print("成功：{0}".format(check_info))
             except Exception as e:
-                print("校验该段信息失败：{0}，error info：{1}\n".format(check_info,e))
+                print("失败：{0}，error info：{1}\n".format(check_info,e))
                 raise Exception("case_data：{0}\n\n\n验证check_info失败：{1}，error info：{2}\n".format(case_data,check_info,e))
 
     def execute_case(self,table_result):

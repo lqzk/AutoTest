@@ -2,9 +2,9 @@
    "Template" : {
       "base_description" : "xx项目",
       "base_url" : "https://192.168.11.98:7012/",
-      "base_except" : [ "code[=]int(200)","all[Ckey]code,data,msg"],
+      "base_except" : [ "code[=]int(200)", "all[Ckey]code,data,msg" ],
       "base_leader" : "",
-      "base_timeout":5,
+      "base_timeout" : 5,
       "xx" : {
          "module_description" : "判决结果",
          "module_url" : "api/decision_result/",
@@ -23,7 +23,307 @@
       "base_url" : "https://dispute.aegis-info.com/",
       "base_except" : [ "all[Ckey]code,data,msg" ],
       "base_leader" : "",
-      "base_timeout":6,
+      "base_timeout" : 6,
+      "mediate" : {
+         "module_description" : "书面调解快速调解接口",
+         "module_url" : "api/mediate/",
+         "module_except" : [ "code[=]int(200)" ],
+         "module_leader" : "花蕾",
+         "getCaseInfo" : {
+            "method" : "get",
+            "interface_except" : [ "data.caseId[=]<caseId>" ],
+            "interface_description" : "获取案件信息",
+            "interface_leader" : ""
+         },
+         "getFullCaseInfo" : {
+            "method" : "get",
+            "interface_except" : [ "data.disputeCaseInfo.caseId[=]<caseId>" ],
+            "interface_description" : "获取完整案件信息"
+         },
+         "getParties" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "获取当事人信息"
+         },
+         "quick/saveCaseInfo" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "快速调解保存案件信息"
+         },
+         "quick/saveCompany" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "快速调解保存当事人信息(法人)"
+         },
+         "quick/saveNatural" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "快速调解保存当事人信息(自然人)"
+         },
+         "quick/saveResult" : {
+            "method" : "post",
+            "interface_except" : [ "data.caseId[=]<caseId>" ],
+            "interface_description" : "快速调解保存调解结果"
+         },
+         "uploadFile" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "调解结果附件上传"
+         },
+         "written/saveCaseInfo" : {
+            "method" : "post",
+            "interface_except" : [ "data[key]caseId" ],
+            "interface_description" : "书面调解保存案件信息"
+         },
+         "written/saveCompany" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "书面调解保存当事人信息(法人)"
+         },
+         "written/saveNatural" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "书面调解保存当事人信息(自然人)"
+         },
+         "written/saveResult" : {
+            "method" : "post",
+            "interface_except" : [ "data[key]caseId" ],
+            "interface_description" : "书面调解保存调解结果"
+         }
+      },
+      "intelligentHelper" : {
+         "module_description" : "智能辅调接口",
+         "module_url" : "api/intelligentHelper/",
+         "module_except" : [ "code[=]int(200)" ],
+         "module_leader" : "赵志宇",
+         "similarInfo" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "根据纠纷类型获取类案"
+         },
+         "similarLaw" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "根据纠纷类型获取法条"
+         },
+         "strategy" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "根据纠纷类型获取策略"
+         }
+      },
+      "record" : {
+         "module_description" : "案件补录接口",
+         "module_url" : "api/record/",
+         "module_except" : [],
+         "module_leader" : "孙艺博",
+         "getUrl" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "获取文档地址"
+         },
+         "photo" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "上传照片"
+         },
+         "recognize" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "上传调解协议书"
+         },
+         "save" : {
+            "method" : "post",
+            "headers" : {
+               "Content-Type" : "application/json"
+            },
+            "interface_except" : [],
+            "interface_description" : "补录信息提交"
+         },
+         "uploadSituation" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "上传情况"
+         }
+      },
+      "checkInfo" : {
+         "module_description" : "纠纷排查接口",
+         "module_url" : "api/checkInfo/",
+         "module_except" : [ "code[=]int(200)" ],
+         "module_leader" : "张阳",
+         "convertToQuickDispute" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "纠纷转快速调解"
+         },
+         "queryCountWithCase" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "纠纷排查统计并返回案例"
+         },
+         "queryForDetail" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "查询纠纷排查详情"
+         },
+         "queryForPage" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "查询纠纷排查信息(分页)"
+         },
+         "save" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "保存纠纷排查信息"
+         },
+         "update" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "更新纠纷排查信息"
+         },
+         "upload_attachment" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "纠纷排查附件上传"
+         }
+      },
+      "informer" : {
+         "module_description" : "线人接口",
+         "module_url" : "api/informer/",
+         "module_except" : [ "code[=]int(200)" ],
+         "module_leader" : "孙艺博",
+         "audio" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "语音识别",
+            "interface_leader" : ""
+         }
+      },
+      "message" : {
+         "module_description" : "通用的服务消息接口",
+         "module_url" : "api/message/",
+         "module_except" : [ "code[=]int(200)" ],
+         "module_leader" : "周意",
+         "send" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "发送模板消息"
+         }
+      },
+      "mediator" : {
+         "module_description" : "调解员接口",
+         "module_url" : "api/mediator/",
+         "module_except" : [ "code[=]int(200)" ],
+         "module_leader" : "张阳",
+         "getMediator" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "调解员检索"
+         },
+         "save" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "调解员保存"
+         },
+         "update" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "调解员更新"
+         }
+      },
+      "committee" : {
+         "module_description" : "调解委员会接口",
+         "module_url" : "api/committee/",
+         "module_except" : [ "code[=]int(200)" ],
+         "module_leader" : "张阳",
+         "query" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "调解委员会信息查询"
+         },
+         "save" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "调解委员会信息保存"
+         },
+         "update" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "调解委员会信息更新"
+         }
+      },
+      "disputeCaseInfo" : {
+         "module_description" : "调解案件接口",
+         "module_url" : "api/disputeCaseInfo/",
+         "module_except" : [ "code[=]int(200)" ],
+         "module_leader" : "赵志宇",
+         "changeInputState" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "案件补录状态更改接口"
+         },
+         "changeState" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "案件状态更改接口"
+         },
+         "getCaseDetail" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "案件详情"
+         },
+         "getCaseHandleCount" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "案件处理情况"
+         },
+         "getCaseInfoList" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "调解案件列表"
+         },
+         "getRoomId" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "获取房间号"
+         }
+      },
+      "common" : {
+         "module_description" : "通用接口",
+         "module_url" : "api/common/",
+         "module_except" : [ "code[=]int(200)" ],
+         "idcard_upload" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "身份证上传",
+            "interface_leader" : "周意"
+         },
+         "nationDictionary" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "民族字典",
+            "interface_leader" : "张阳"
+         },
+         "newIdentify" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "新增主键ID",
+            "interface_leader" : "张阳"
+         },
+         "sendSms" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "发送短信",
+            "interface_leader" : "张阳"
+         }
+      }
+   },
+   "Intelligent_mediation_test" : {
+      "base_description" : "智慧调解小程序测试",
+      "base_url" : "https://192.168.11.15:8383/",
+      "base_except" : [ "all[Ckey]code,data,msg" ],
+      "base_leader" : "",
+      "base_timeout" : 6,
       "mediate" : {
          "module_description" : "书面调解快速调解接口",
          "module_url" : "api/mediate/",
@@ -321,9 +621,9 @@
    "Intelligent_mediation_web" : {
       "base_description" : "智慧调解平台项目",
       "base_url" : "http://192.168.11.88:9980",
-      "base_except" : [ "<Res_time>[<=]int(5)"],
+      "base_except" : [ "<Res_time>[<=]int(5)" ],
       "base_leader" : "",
-      "base_timeout":5,
+      "base_timeout" : 5,
       "auth" : {
          "module_description" : "用户端",
          "module_url" : "/intelligentmediation/itm/auth/",
@@ -441,9 +741,9 @@
    "Risk_assess_foreground" : {
       "base_description" : "诉讼风险评估页面",
       "base_url" : "http://hfsfy.test.assess.aegis-info.com",
-      "base_except" : [ "code[=]int(200)" ,"all[key]code,data,msg"],
+      "base_except" : [ "code[=]int(200)", "all[key]code,data,msg" ],
       "base_leader" : "",
-      "base_timeout":130,
+      "base_timeout" : 130,
       "znys" : {
          "module_description" : "页面端",
          "module_url" : "/intelligentpretrial/znys/",
@@ -469,16 +769,21 @@
          "next/question" : {
             "method" : "post",
             "interface_except" : [
-               "data[key]questions&record_id"
+               "data[key]questions&record_id",
+               "data.questions[dict_list,key]id&decide_tags&case_cause&choice_tags&_id&choice_type&temp_choice_tags&subject_id&create_time&choice_type_num&document&question&write_time&is_first&subject&is_enable",
+               "data.questions.choice_tags[dict_list_list,key]weight&evidence&tag_id&zh_name&document&colloquial_description",
+               "data.questions.temp_choice_tags[dict_list_list,key]['id', 'document', 'zh_name', 'huchi', 'evidence', 'colloquial']"
             ],
-            "interface_description" : "获取下级问题接口"
+            "interface_description" : "获取下级问题"
          },
          "choice_record" : {
             "method" : "get",
             "interface_except" : [
-               "data[key]['legal_advice', 'subject_id', 'case_cause_id', 'subject', 'temp_tags']"
+               "data[key]['legal_advice', 'subject_id', 'case_cause_id', 'subject', 'temp_tags']",
+               "data.temp_tags[dict_list,key]choice_tags&qid",
+               "data.temp_tags.choice_tags[dict_list_list,key]['id', 'document', 'weight', 'zh_name', 'evidence', 'colloquial_description']"
             ],
-            "interface_description" : "查询问卷记录接口"
+            "interface_description" : "查询选项记录"
          }
       },
       "android" : {
@@ -488,7 +793,7 @@
          "module_leader" : "周朋飞",
          "Unsigned_Contract_Handler" : {
             "method" : "get",
-            "interface_except" : [ "data[key]answer&money" ],
+            "interface_except" : [ "data[key]answer&money", "data.answer[!=]''" ],
             "interface_description" : "费用计算器"
          },
          "lawapply" : {
@@ -501,18 +806,18 @@
          },
          "Law_Comment" : {
             "method" : "get",
-            "interface_except" : ["data[!=]{}"],
-            "interface_description" : "生成法律意见书接口"
+            "interface_except" : [ "data[key]money&action_comment", "data.action_comment[!=]''" ],
+            "interface_description" : "行动建议"
          },
          "selectclaim" : {
             "method" : "get",
-            "interface_except" : ["data[!=][]"],
-            "interface_description" : "选择起诉"
+            "interface_except" : [ "data[!=][]" ],
+            "interface_description" : "诉求选择"
          },
          "ZNYS_SSS_Handler" : {
             "method" : "get",
-            "interface_except" : [ "data[key]answer","data.answer[!=]''"],
-            "interface_description" : "生成起诉状接口"
+            "interface_except" : [ "data[key]answer", "data.answer[!=]''" ],
+            "interface_description" : "生成起诉状"
          },
          "DownloadLawComment" : {
             "method" : "post",
@@ -520,12 +825,12 @@
                "data[key]filepath",
                "data.filepath[mode]/static/lawcomment/法律意见书_([0-9]*?.[0-9]*?).docx"
             ],
-            "interface_description" : "法律意见书下载接口"
+            "interface_description" : "法律意见书下载"
          },
          "EmailLawComHandler" : {
             "method" : "post",
             "interface_except" : [],
-            "interface_description" : "法律意见书下载接口"
+            "interface_description" : "法律意见书下载"
          },
          "DownloadIndictment" : {
             "method" : "post",
@@ -533,7 +838,7 @@
                "data[key]filepath",
                "data.filepath[mode]/static/indictment/起诉状_([0-9]*?.[0-9]*?).docx"
             ],
-            "interface_description" : "下载起诉状接口"
+            "interface_description" : "下载起诉状"
          },
          "EmailIndictmentHandler" : {
             "method" : "post",
@@ -586,18 +891,35 @@
          "module_leader" : "孙艺博",
          "similarCase" : {
             "method" : "get",
-            "interface_except" : ["data[Ckey]['law']","data.law.title[dict_list_dict,mode]第(.*?)条"],
+            "interface_except" : [
+               "data[key]['action','cache','cases','law','map']",
+               "data.action[!=]''",
+               "data.cases[!=][]",
+               "data.cases[key]content&id&title",
+               "data.law[!=][]",
+               "data.law.title[dict_list_dict,mode]第(.*?)条"
+            ],
             "interface_description" : "类案与法条"
          },
          "search" : {
             "method" : "get",
-            "interface_except" : ["data[key]['caseInfoPlain']","data.caseInfoPlain[!=]{}","data.caseInfoPlain[Ckey]case_cause_name&case_number&court_name&decide_time&grade&id&new_paras&title&top_cause_name","data.caseInfoPlain.new_paras[dict2_list,!=][]"],
+            "interface_except" : [
+               "data[key]['caseInfoPlain']",
+               "data.caseInfoPlain[!=]{}",
+               "data.caseInfoPlain[key]case_cause_name&case_number&court_name&decide_time&grade&id&laws&new_paras&title&top_cause_name",
+               "data.caseInfoPlain.new_paras[dict2_list,!=][]",
+               "data.caseInfoPlain.laws[!=][]",
+               "data.caseInfoPlain.laws[dict2_list,key]['id', 'content', 'name', 'item']"
+            ],
             "interface_description" : "查找文书"
          },
          "cost" : {
             "method" : "get",
-            "interface_except" : ["data[key]map",
-               "data.map[dict_list,Ckey]['mediateTime', 'trialTime', 'legalFare', 'docCount', 'mediateFare']"
+            "interface_except" : [
+               "data[key]map",
+               "data.map[dict_list,key]claimMoney&docCount&legalFare&mediateClaim&mediateFare&mediateResult&mediateTime&resultMoney&trialTime",
+               "data.map.mediateTime[!=]0",
+               "data.map.legalFare[!=]''"
             ],
             "interface_description" : "费用统计"
          }
@@ -608,7 +930,7 @@
       "base_url" : "http://riskstc.aegis-info.com",
       "base_except" : [],
       "base_leader" : "",
-      "base_timeout":130,
+      "base_timeout" : 130,
       "forward" : {
          "module_description" : "转发接口",
          "module_url" : "/api/forward/",
@@ -616,27 +938,41 @@
          "module_leader" : "孙艺博",
          "similar" : {
             "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "类案与法条"
+            "interface_description" : "类案与法条",
+            "interface_except" : [
+               "data[key]['action','cache','cases','law','map']",
+               "data.cases[key]content&id&title",
+               "data.law[!=][]",
+               "data.law.title[dict_list_dict,mode]第(.*?)条"
+            ]
          },
          "case" : {
             "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "查找文书"
+            "interface_description" : "查找文书",
+            "interface_except" : [
+               "data[key]['caseInfoPlain']",
+               "data.caseInfoPlain[!=]{}",
+               "data.caseInfoPlain[key]case_cause_name&case_number&court_name&decide_time&grade&id&laws&new_paras&title&top_cause_name",
+               "data.caseInfoPlain.new_paras[dict2_list,!=][]",
+               "data.caseInfoPlain.laws[dict2_list,key]['id', 'content', 'name', 'item']"
+            ]
          },
          "cost" : {
             "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "费用统计"
+            "interface_description" : "费用统计",
+            "interface_except" : [
+               "data[key]map",
+               "data.map[dict_list,key]claimMoney&docCount&legalFare&mediateClaim&mediateFare&mediateResult&mediateTime&resultMoney&trialTime"
+            ]
          }
       }
    },
    "Intelligent_judgement" : {
       "base_description" : "同案不同判项目",
       "base_url" : "http://192.168.11.98:7012/",
-      "base_except" : [ "all[Ckey]code,data,msg", "code[=]int(0)" ,"<Res_time>[<=]int(8)"],
+      "base_except" : [ "all[Ckey]code,data,msg", "code[=]int(0)", "<Res_time>[<=]int(8)" ],
       "base_leader" : "",
-      "base_timeout":60,
+      "base_timeout" : 60,
       "decision_result" : {
          "module_description" : "判决结果",
          "module_url" : "api/decision_result/",
@@ -693,23 +1029,17 @@
          },
          "case_laws" : {
             "method" : "get",
-            "interface_except" : [
-               "data[key]laws&redBooks"
-            ],
+            "interface_except" : [ "data[key]laws&redBooks" ],
             "interface_description" : "法律适用"
          },
          "case_predict" : {
             "method" : "get",
-            "interface_except" : [
-               "data[key]regular_result&judgement_term&fine&province&probation_term"
-            ],
+            "interface_except" : [ "data[key]regular_result&judgement_term&fine&province&probation_term" ],
             "interface_description" : "量刑指导意见"
          },
          "adjust_regular" : {
             "method" : "get",
-            "interface_except" : [
-               "data[key]['regular_result', 'title', 'sequences', 'province']"
-            ],
+            "interface_except" : [ "data[key]['regular_result', 'title', 'sequences', 'province']" ],
             "interface_description" : "调节量刑"
          }
       },
