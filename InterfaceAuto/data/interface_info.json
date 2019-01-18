@@ -1054,5 +1054,90 @@
             "interface_description" : "标签编辑"
          }
       }
+   },
+   "File_handle_service" : {
+      "base_description" : "文书处理服务",
+      "base_url" : "http://casefindinges6.aegis-info.com/",
+      "base_except" : [],
+      "base_leader" : "",
+      "base_timeout" : 30,
+      "agent" : {
+         "module_description" : "律师接口",
+         "module_url" : "api/agent/",
+         "module_except" : [],
+         "module_leader" : "孙艺博",
+         "business_card" : {
+            "method" : "get",
+            "interface_except" : [ "code[=]int(200)", "all[key]code,data,msg","data[key]agentBusinessCard","data.agentBusinessCard[!=]{}","data.agentBusinessCard[key]['address', 'age', 'assessYear', 'avgCauseComplexity', 'avgComplexity', 'avgSubjectMoney', 'caseCauseCount', 'caseCausePercent', 'caseCount', 'caseLocations', 'caseOutProvinceLocations', 'causeWinRate', 'city', 'contactNumber', 'controlDebateAbility', 'degree', 'fax', 'focusCause', 'goodField', 'hasOutProvinceCase', 'id', 'imgLink', 'maxSubjectMoney', 'mostOftenGoCourt', 'name', 'oftenGoCourt', 'otherResult', 'percentCase', 'percentComplexity', 'percentControl', 'percentFocus', 'percentProfessional', 'postcode', 'practiceDays', 'practiceTime', 'practiceYears', 'professionalLevel', 'province', 'qualificationNumber', 'rank', 'rejectAll', 'sex', 'state', 'subjectMoneyCount', 'supportAll', 'supportPart', 'validDate', 'winRate', 'withdrawCase', 'workNumber', 'workType', 'workUnit', 'workUnitAddress', 'workUnitTel']"],
+            "interface_description" : "律师详情页(北京/天津共用)",
+            "interface_leader" : ""
+         },
+         "case_list" : {
+            "method" : "get",
+            "interface_except" : ["all[key]content,page,size,totalCount","content[!=]None","content[list,key]['id', 'title', 'court', 'caseNumber', 'description', 'decideTime', 'acceptTime', 'caseCause', 'topCause', 'complexity']"],
+            "interface_description" : "律师详情页案件列表(北京/天津共用)",
+            "interface_leader" : ""
+         },
+         "count" : {
+            "method" : "get",
+            "interface_except" : ["all[key]data","data[!=][]","data[key]name&value&id"],
+            "interface_description" : "律师按地区统计(天津接口)",
+            "interface_leader" : ""
+         },
+         "law_firm_detail" : {
+            "method" : "get",
+            "interface_except" : ["code[=]int(200)", "all[key]code,data,msg","data[key]lawFirm","data.lawFirm[!=]{}"],
+            "interface_description" : "律所详情(天津)",
+            "interface_leader" : ""
+         },
+         "law_firm_lawyer" : {
+            "method" : "get",
+            "interface_except" : ["all[key]['content', 'page', 'size', 'totalCount']","content[!=]None","content[key]['id', 'name', 'workNumber', 'firmName', 'workYear', 'imgLink', 'sex', 'caseCount', 'rank', 'goodField']"],
+            "interface_description" : "根据律所查律师_天津",
+            "interface_leader" : ""
+         },
+         "law_firm_search" : {
+            "method" : "get",
+            "interface_except" : ["all[key]['content', 'page', 'size', 'totalCount']","content[!=]None","content[key]['address', 'approveDate', 'assessYear', 'asset', 'city', 'cityId', 'count', 'creditNum', 'director', 'establishedTime', 'fax', 'goodArea', 'id', 'imageInfo', 'introduction', 'latitude', 'longitude', 'manager', 'membersNames', 'name', 'nature', 'organizationNum', 'outerQualification', 'postcode', 'province', 'provinceId', 'state', 'tel', 'url', 'validDate', 'workNumber']"],
+            "interface_description" : "律所检索(天津)",
+            "interface_leader" : ""
+         },
+         "list" : {
+            "method" : "get",
+            "interface_except" : ["all[key]['content', 'page', 'size', 'totalCount']","content[!=]None","content[key]['id', 'name', 'workNumber', 'firmName', 'workYear', 'imgLink', 'sex', 'caseCount', 'rank', 'goodField']"],
+            "interface_description" : "律师详情页(北京)",
+            "interface_leader" : ""
+         },
+         "list_v2" : {
+            "method" : "get",
+            "interface_except" : ["all[key]['content', 'page', 'size', 'totalCount']","content[!=]None","content[key]['id', 'name', 'workNumber', 'firmName', 'workYear', 'imgLink', 'sex', 'caseCount', 'rank', 'goodField']"],
+            "interface_description" : "天津法网律师查询改版",
+            "interface_leader" : ""
+         },
+         "recommend" : {
+            "method" : "get",
+            "interface_except" : ["all[key]['content', 'page', 'size', 'totalCount']","content[!=]None","content[key]['id', 'name', 'workNumber', 'firmName', 'workYear', 'imgLink', 'sex', 'caseCount', 'rank', 'goodField']"],
+            "interface_description" : "推荐律师（北京）",
+            "interface_leader" : ""
+         },
+         "search_name" : {
+            "method" : "get",
+            "interface_except" : ["code[=]int(200)", "all[key]code,data,msg","data[key]agentBusinessCard","data.agentBusinessCard[!=]{}"],
+            "interface_description" : "根据律师名字和律所名字来搜索（北京）",
+            "interface_leader" : ""
+         },
+         "search_tip" : {
+            "method" : "get",
+            "interface_except" : ["all[key]cities","cities[!=][]","cities[key]['key', 'value', 'type']","cities.key[list_dict,contains]<content>"],
+            "interface_description" : "搜索提示(天津)",
+            "interface_leader" : ""
+         },
+         "search_work_number" : {
+            "method" : "get",
+            "interface_except" : ["code[=]int(200)", "all[key]code,data,msg","data[key]agentBusinessCard","data.agentBusinessCard[!=]{}"],
+            "interface_description" : "根据律师执业证号（北京）",
+            "interface_leader" : ""
+         }
+      }
    }
 }

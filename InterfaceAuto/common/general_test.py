@@ -68,67 +68,71 @@ class GeneralTest(unittest.TestCase):
                     self.assertEqual(Counter(check_obj), Counter(check_value))
 
         elif check_method == "!=":
-            self.assertNotEqual(check_value, check_obj)
+            if check_value=='None':
+                self.assertNotEqual(None, check_obj)
+            else:
+                self.assertNotEqual(check_value, check_obj)
 
         elif check_method == "len":
             self.assertEqual(check_value, len(check_obj))
 
         elif check_method == "contains":
-            self.assertIn(check_value, check_obj)
+            if isinstance(check_obj, list):
+                for check_ob in check_obj:
+                    self.assertIn(check_value, check_ob)
+            else:
+                self.assertIn(check_value, check_obj)
 
         elif check_method == "key":
             if isinstance(check_value,str):
                 check_value = check_value.split(",")
 
-            if isinstance(check_obj,list) :
-                if check_obj==[]:
-                    pass
-                else:
-                    for every_check_obj in check_obj:
-                        if isinstance(every_check_obj, list):
-                            for every_check_ob in every_check_obj:
-                                try:
-                                    self.assertEqual(Counter(check_value), Counter(every_check_ob.keys()))
-                                except Exception as e:
-                                    different = Counter(check_value) - Counter(every_check_ob.keys())
-                                    if list(different) == []:
-                                        different = Counter(every_check_ob.keys()) - Counter(check_value)
-                                        raise Exception("检查对象多出key值：{0},check_obj实际返回key值为:{1}".format(list(different),
-                                                                                                       list(
-                                                                                                           every_check_ob.keys())))
-                                    else:
-                                        raise Exception("检查对象缺少key值：{0},check_obj实际返回key值为:{1}".format(list(different),
-                                                                                                       list(
-                                                                                                           every_check_ob.keys())))
-                        else:
+            if check_obj==[] or check_obj == {} or check_obj ==None:
+                pass
+            elif isinstance(check_obj,list) :
+                for every_check_obj in check_obj:
+                    if isinstance(every_check_obj, list):
+                        for every_check_ob in every_check_obj:
                             try:
-                                self.assertEqual(Counter(check_value), Counter(every_check_obj.keys()))
+                                self.assertEqual(Counter(check_value), Counter(every_check_ob.keys()))
                             except Exception as e:
-                                different = Counter(check_value) - Counter(every_check_obj.keys())
+                                different = Counter(check_value) - Counter(every_check_ob.keys())
                                 if list(different) == []:
-                                    different = Counter(every_check_obj.keys()) - Counter(check_value)
+                                    different = Counter(every_check_ob.keys()) - Counter(check_value)
                                     raise Exception("检查对象多出key值：{0},check_obj实际返回key值为:{1}".format(list(different),
                                                                                                    list(
-                                                                                                       every_check_obj.keys())))
+                                                                                                       every_check_ob.keys())))
                                 else:
                                     raise Exception("检查对象缺少key值：{0},check_obj实际返回key值为:{1}".format(list(different),
                                                                                                    list(
-                                                                                                       every_check_obj.keys())))
+                                                                                                       every_check_ob.keys())))
+                    else:
+                        try:
+                            self.assertEqual(Counter(check_value), Counter(every_check_obj.keys()))
+                        except Exception as e:
+                            different = Counter(check_value) - Counter(every_check_obj.keys())
+                            if list(different) == []:
+                                different = Counter(every_check_obj.keys()) - Counter(check_value)
+                                raise Exception("检查对象多出key值：{0},check_obj实际返回key值为:{1}".format(list(different),
+                                                                                               list(
+                                                                                                   every_check_obj.keys())))
+                            else:
+                                raise Exception("检查对象缺少key值：{0},check_obj实际返回key值为:{1}".format(list(different),
+                                                                                               list(
+                                                                                                   every_check_obj.keys())))
             else:
-                if check_obj == {}:
-                    pass
-                else:
-                    try:
-                        self.assertEqual(Counter(check_value), Counter(check_obj.keys()))
-                    except Exception as e:
-                        different = Counter(check_value) - Counter(check_obj.keys())
-                        if list(different) == []:
-                            different = Counter(check_obj.keys()) - Counter(check_value)
-                            raise Exception(
-                                "检查对象多出key值：{0},check_obj实际返回key值为:{1}".format(list(different), list(check_obj.keys())))
-                        else:
-                            raise Exception(
-                                "检查对象缺少key值：{0},check_obj实际返回key值为:{1}".format(list(different), list(check_obj.keys())))
+                try:
+                    self.assertEqual(Counter(check_value), Counter(check_obj.keys()))
+                except Exception as e:
+                    different = Counter(check_value) - Counter(check_obj.keys())
+                    if list(different) == []:
+                        different = Counter(check_obj.keys()) - Counter(check_value)
+                        raise Exception(
+                            "检查对象多出key值：{0},check_obj实际返回key值为:{1}".format(list(different), list(check_obj.keys())))
+                    else:
+                        raise Exception(
+                            "检查对象缺少key值：{0},check_obj实际返回key值为:{1}".format(list(different), list(check_obj.keys())))
+
 
 
         elif check_method == "Ckey":

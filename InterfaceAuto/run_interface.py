@@ -11,13 +11,16 @@ if __name__ == '__main__':
     #
     # # time.sleep(2)
 
-    project_name = "Risk_assess"
-    RunSuite().run(project_name)
+    # project_name = "Risk_assess"
+    # RunSuite().run(project_name)
     #
     # time.sleep(2)
     #
     # project_name = "Intelligent_judgement"
     # RunSuite().run(project_name)
+
+    project_name = "File_handle_service"
+    RunSuite().run(project_name)
 
 
 
