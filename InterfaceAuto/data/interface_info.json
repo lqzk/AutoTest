@@ -884,6 +884,48 @@
             "interface_description" : "打印起诉状"
          }
       },
+      "smsauth" : {
+         "module_description" : "手机验证码认证",
+         "module_url" : "/intelligentpretrial/smsauth/",
+         "module_except" : [],
+         "module_leader" : "周朋飞",
+         "userinfo" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "当前登录用户信息"
+         },
+         "register" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "注册"
+         },
+         "exists" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "检查用户是否存在"
+         },
+         "logout" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "退出登录"
+         },
+         "login" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "登录"
+         }
+      },
+      "checkcode" : {
+         "module_description" : "手机验证码认证",
+         "module_url" : "/intelligentpretrial/checkcode/",
+         "module_except" : [],
+         "module_leader" : "周朋飞",
+         "mobile/checkcode" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "获取手机验证码"
+         }
+      },
       "api" : {
          "module_description" : "通用Java后台接口",
          "module_url" : "/api/prejudge/",
@@ -923,7 +965,7 @@
             ],
             "interface_description" : "费用统计"
          }
-      }
+      },
    },
    "Risk_assess_backstage" : {
       "base_description" : "诉讼风险评估后台管理平台",
