@@ -1074,13 +1074,13 @@
          },
          "case_list" : {
             "method" : "get",
-            "interface_except" : ["all[key]content,page,size,totalCount","content[!=]None","content[list,key]['id', 'title', 'court', 'caseNumber', 'description', 'decideTime', 'acceptTime', 'caseCause', 'topCause', 'complexity']"],
+            "interface_except" : ["all[key]content,page,size,totalCount","content[list,key]['id', 'title', 'court', 'caseNumber', 'description', 'decideTime', 'acceptTime', 'caseCause', 'topCause', 'complexity']"],
             "interface_description" : "律师详情页案件列表(北京/天津共用)",
             "interface_leader" : ""
          },
          "count" : {
             "method" : "get",
-            "interface_except" : ["all[key]data","data[!=][]","data[key]name&value&id"],
+            "interface_except" : ["all[key]['data', 'msg', 'code']","data[!=][]","data[key]name&value&id"],
             "interface_description" : "律师按地区统计(天津接口)",
             "interface_leader" : ""
          },
