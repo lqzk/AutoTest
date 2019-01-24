@@ -965,7 +965,7 @@
             ],
             "interface_description" : "费用统计"
          }
-      },
+      }
    },
    "Risk_assess_backstage" : {
       "base_description" : "诉讼风险评估后台管理平台",
