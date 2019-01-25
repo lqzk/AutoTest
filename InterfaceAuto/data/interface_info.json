@@ -1102,7 +1102,7 @@
       "base_url" : "http://casefindinges6.aegis-info.com/",
       "base_except" : [],
       "base_leader" : "",
-      "base_timeout" : 30,
+      "base_timeout" : 10,
       "agent" : {
          "module_description" : "律师接口",
          "module_url" : "api/agent/",
@@ -1178,6 +1178,93 @@
             "method" : "get",
             "interface_except" : ["code[=]int(200)", "all[key]code,data,msg","data[key]agentBusinessCard","data.agentBusinessCard[!=]{}"],
             "interface_description" : "根据律师执业证号（北京）",
+            "interface_leader" : ""
+         }
+      },
+      "common" : {
+         "module_description" : "通用数据接口",
+         "module_url" : "api/common/",
+         "module_except" : ["all[!=][]","all[key]name&value"],
+         "module_leader" : "孙艺博",
+         "cause" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "获取案由",
+            "interface_leader" : ""
+         },
+         "city" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "获取市",
+            "interface_leader" : ""
+         },
+         "court" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "获取法院",
+            "interface_leader" : ""
+         },
+         "province" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "获取案由",
+            "interface_leader" : ""
+         },
+         "town" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "获取县",
+            "interface_leader" : ""
+         }
+      },
+      "hide_names" : {
+         "module_description" : "文书接口（隐名）",
+         "module_url" : "api/hide_names/",
+         "module_except" : [],
+         "module_leader" : "孙艺博",
+         "mediate" : {
+            "method" : "post",
+            "interface_except" : [],
+            "interface_description" : "调解书隐名处理",
+            "interface_leader" : ""
+         },
+         "use" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "隐名处理",
+            "interface_leader" : ""
+         }
+      },
+      "excel" : {
+         "module_description" : "案件权重接口（Excel",
+         "module_url" : "/api/excel/",
+         "module_except" : ["<status_code>[=]int(200)"],
+         "module_leader" : "孙艺博",
+         "causeWeight" : {
+            "method" : "get",
+            "interface_except" : [],
+            "interface_description" : "案由系数Excel",
+            "interface_leader" : ""
+         }
+      },
+      "prejudge" : {
+         "module_description" : "数据报告接口（智能预审）",
+         "module_url" : "api/prejudge/",
+         "module_except" : [],
+         "module_leader" : "孙艺博",
+         "cost" : {
+            "method" : "get",
+            "interface_except" : ["code[=]int(200)", "all[key]code,data,msg","data[key]map", "data.map[dict_list,key]claimMoney&docCount&legalFare&mediateClaim&mediateFare&mediateResult&mediateTime&resultMoney&trialTime"],
+            "interface_description" : "费用统计",
+            "interface_leader" : ""
+         },
+         "similarCase" : {
+            "method" : "get",
+            "interface_except" : ["code[=]int(200)", "all[key]code,data,msg","data[key]['action','cache','cases','law','map']",
+               "data.cases[key]content&id&title",
+               "data.law[!=][]",
+               "data.law.title[dict_list_dict,mode]第(.*?)条"],
+            "interface_description" : "类案与法条",
             "interface_leader" : ""
          }
       }
