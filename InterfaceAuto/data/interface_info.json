@@ -1102,7 +1102,7 @@
       "base_url" : "http://casefindinges6.aegis-info.com/",
       "base_except" : [],
       "base_leader" : "",
-      "base_timeout" : 10,
+      "base_timeout" : 30,
       "agent" : {
          "module_description" : "律师接口",
          "module_url" : "api/agent/",
