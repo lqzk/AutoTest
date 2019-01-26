@@ -753,7 +753,7 @@
             "method" : "get",
             "interface_except" : [
                "data[!=][]",
-               "data[list,key]description&evidence&is_online&zh_name&has_calculator&id&recommended_actions"
+               "data[list,key]['has_calculator', 'is_online', 'evidence', 'recommended_actions', 'is_repet', 'id', 'description', 'zh_name']"
             ],
             "interface_description" : "获取案由下的专题接口"
          },
