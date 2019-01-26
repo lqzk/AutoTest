@@ -416,9 +416,7 @@ class DataHandle:
                             quote_string_value = quote_string_value.replace("<{0}>".format(quote_string),"'{0}'".format(quote_value))
                         else:
                             quote_string_value=quote_string_value.replace("<{0}>".format(quote_string),str(quote_value))
-
             return quote_string_value
-
         except Exception as e:
             raise Exception("从值:{0}获取引用值失败,error_info:{1}".format(quote_string_value,e))
 
