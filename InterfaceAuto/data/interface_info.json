@@ -20,7 +20,7 @@
    },
    "Intelligent_mediation" : {
       "base_description" : "智慧调解小程序项目",
-      "base_url" : "https://dispute.aegis-info.com/",
+      "base_url" : "https://t-dispute.aegis-info.com/",
       "base_except" : [ "all[Ckey]code,data,msg" ],
       "base_leader" : "",
       "base_timeout" : 6,
@@ -31,43 +31,43 @@
          "module_leader" : "花蕾",
          "getCaseInfo" : {
             "method" : "get",
-            "interface_except" : [ "data.caseId[=]<caseId>" ],
+            "interface_except" : [ "data[key]['acceptDate', 'applicantIds', 'audio', 'caseId', 'caseNo', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'picture', 'protocolContent', 'protocolDate', 'remark', 'respondentIds', 'state', 'type', 'video']","data.caseId[=]<caseId>" ],
             "interface_description" : "获取案件信息",
             "interface_leader" : ""
          },
          "getFullCaseInfo" : {
             "method" : "get",
-            "interface_except" : [ "data.disputeCaseInfo.caseId[=]<caseId>" ],
+            "interface_except" : [  "data[Ckey]['disputeCaseInfo']","data.disputeCaseInfo.caseId[=]<caseId>" ],
             "interface_description" : "获取完整案件信息"
          },
          "getParties" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]11"],
             "interface_description" : "获取当事人信息"
          },
          "quick/saveCaseInfo" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['caseId']"],
             "interface_description" : "快速调解保存案件信息"
          },
          "quick/saveCompany" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[!=]''"],
             "interface_description" : "快速调解保存当事人信息(法人)"
          },
          "quick/saveNatural" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[!=]''"],
             "interface_description" : "快速调解保存当事人信息(自然人)"
          },
          "quick/saveResult" : {
             "method" : "post",
-            "interface_except" : [ "data.caseId[=]<caseId>" ],
+            "interface_except" : ["data[key]['caseId']", "data.caseId[=]<caseId>" ],
             "interface_description" : "快速调解保存调解结果"
          },
          "uploadFile" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['picture']"],
             "interface_description" : "调解结果附件上传"
          },
          "written/saveCaseInfo" : {
@@ -77,12 +77,12 @@
          },
          "written/saveCompany" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[!=]''"],
             "interface_description" : "书面调解保存当事人信息(法人)"
          },
          "written/saveNatural" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[!=]''"],
             "interface_description" : "书面调解保存当事人信息(自然人)"
          },
          "written/saveResult" : {
@@ -98,17 +98,17 @@
          "module_leader" : "赵志宇",
          "similarInfo" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['id', 'paras']"],
             "interface_description" : "根据纠纷类型获取类案"
          },
          "similarLaw" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['content', 'id', 'item', 'name']"],
             "interface_description" : "根据纠纷类型获取法条"
          },
          "strategy" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['content', 'pageable', 'totalElements', 'last', 'totalPages', 'first', 'sort', 'numberOfElements', 'size', 'number', 'empty']"],
             "interface_description" : "根据纠纷类型获取策略"
          }
       },
@@ -119,17 +119,17 @@
          "module_leader" : "孙艺博",
          "getUrl" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['caseId', 'mediationAgreement', 'mediationApply', 'mediationConfirm', 'mediationDescription', 'mediationEvicence', 'mediationRecord', 'mediationRegister', 'mediationReturnVisit', 'mediationSearchRecord']"],
             "interface_description" : "获取文档地址"
          },
          "photo" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['caseId', 'mediationAgreement', 'mediationApply', 'mediationConfirm', 'mediationDescription', 'mediationEvicence', 'mediationRecord', 'mediationRegister', 'mediationReturnVisit', 'mediationSearchRecord']"],
             "interface_description" : "上传照片"
          },
          "recognize" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['applicantList', 'disputeCaseInfo', 'pathList', 'respondentList']"],
             "interface_description" : "上传调解协议书"
          },
          "save" : {
@@ -137,12 +137,12 @@
             "headers" : {
                "Content-Type" : "application/json"
             },
-            "interface_except" : [],
+            "interface_except" : ["data[=]<form.caseId>"],
             "interface_description" : "补录信息提交"
          },
          "uploadSituation" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['caseId', 'mediationAgreement', 'mediationApply', 'mediationConfirm', 'mediationDescription', 'mediationEvicence', 'mediationRecord', 'mediationRegister', 'mediationReturnVisit', 'mediationSearchRecord']"],
             "interface_description" : "上传情况"
          }
       },
@@ -153,37 +153,42 @@
          "module_leader" : "张阳",
          "convertToQuickDispute" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]11"],
             "interface_description" : "纠纷转快速调解"
          },
          "queryCountWithCase" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['complexCase', 'importantCase', 'caseID', 'total']"],
             "interface_description" : "纠纷排查统计并返回案例"
+         },
+         "queryForCaseCount" : {
+            "method" : "get",
+            "interface_except" : ["data[key]supplement&checked&hasMediate"],
+            "interface_description" : "查询已排查、已调解、补录数量"
          },
          "queryForDetail" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['audio', 'audioList', 'caseId', 'checkAddress', 'checkCondition', 'checkContent', 'checkPerson', 'checkPersonName', 'checkStatus', 'checkTime', 'committeeId', 'infoSource', 'infoSourceDesc', 'isCallPolice', 'lat', 'lng', 'mobile', 'picture', 'pictureList', 'timeLine', 'vedio', 'vedioList', 'warningGrade', 'warningGradeDesc']"],
             "interface_description" : "查询纠纷排查详情"
          },
          "queryForPage" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['audio', 'audioList', 'caseId', 'checkAddress', 'checkCondition', 'checkContent', 'checkPerson', 'checkPersonName', 'checkStatus', 'checkTime', 'committeeId', 'infoSource', 'infoSourceDesc', 'isCallPolice', 'lat', 'lng', 'mobile', 'picture', 'pictureList', 'timeLine', 'vedio', 'vedioList', 'warningGrade', 'warningGradeDesc']"],
             "interface_description" : "查询纠纷排查信息(分页)"
          },
          "save" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]11"],
             "interface_description" : "保存纠纷排查信息"
          },
          "update" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]11"],
             "interface_description" : "更新纠纷排查信息"
          },
          "upload_attachment" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[!=][]"],
             "interface_description" : "纠纷排查附件上传"
          }
       },
@@ -194,7 +199,7 @@
          "module_leader" : "孙艺博",
          "audio" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['path', 'sentence']"],
             "interface_description" : "语音识别",
             "interface_leader" : ""
          }
@@ -206,7 +211,7 @@
          "module_leader" : "周意",
          "send" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]11"],
             "interface_description" : "发送模板消息"
          }
       },
@@ -217,17 +222,22 @@
          "module_leader" : "张阳",
          "getMediator" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['appearance', 'birth', 'committeeID', 'committeePosition', 'education', 'generateType', 'identityID', 'injured', 'introduction', 'isExperienced', 'isHire', 'isPartTime', 'location', 'marriageStatus', 'mediationID', 'meditorID', 'mobile', 'name', 'nation', 'otherRule', 'phone', 'photo', 'position', 'profession', 'qualification', 'sex', 'workUnit', 'workYear', 'email']"],
             "interface_description" : "调解员检索"
+         },
+         "mediatorInfo" : {
+            "method" : "get",
+            "interface_except" : ["data[key]['institutionInfo', 'userInfo']"],
+            "interface_description" : "H5页面获取调解员信息"
          },
          "save" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]11"],
             "interface_description" : "调解员保存"
          },
          "update" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]11"],
             "interface_description" : "调解员更新"
          }
       },
@@ -238,17 +248,17 @@
          "module_leader" : "张阳",
          "query" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['address', 'area', 'chargePerson', 'collectTime', 'committeeId', 'committeeName', 'committeePic', 'committeeType', 'createTime', 'email', 'faxNumber', 'fullMediatorCount', 'hzCommitteeType', 'partMediatorCount', 'phone', 'postCode', 'remark']"],
             "interface_description" : "调解委员会信息查询"
          },
          "save" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]11"],
             "interface_description" : "调解委员会信息保存"
          },
          "update" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]11"],
             "interface_description" : "调解委员会信息更新"
          }
       },
@@ -259,32 +269,37 @@
          "module_leader" : "赵志宇",
          "changeInputState" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[=]修改成功"],
             "interface_description" : "案件补录状态更改接口"
          },
          "changeState" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[=]修改成功"],
             "interface_description" : "案件状态更改接口"
          },
          "getCaseDetail" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['acceptDate', 'applicantIds', 'audio', 'caseId', 'caseNo', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'picture', 'protocolContent', 'protocolDate', 'remark', 'respondentIds', 'state', 'type', 'video']"],
             "interface_description" : "案件详情"
          },
          "getCaseHandleCount" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['mediatorCount', 'supplyCount', 'checkCount']"],
             "interface_description" : "案件处理情况"
          },
          "getCaseInfoList" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['acceptDate', 'applicantIds', 'audio', 'caseId', 'caseNo', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'picture', 'protocolContent', 'protocolDate', 'remark', 'respondentIds', 'state', 'type', 'video', 'docAll', 'docCount']"],
+            "interface_description" : "调解案件列表"
+         },
+         "getCaseList" : {
+            "method" : "get",
+            "interface_except" : ["data[key]['acceptDate', 'applicantIds', 'audio', 'caseId', 'caseNo', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'picture', 'protocolContent', 'protocolDate', 'remark', 'respondentIds', 'state', 'type', 'video', 'docAll', 'docCount']"],
             "interface_description" : "调解案件列表"
          },
          "getRoomId" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['caseId', 'roomId']"],
             "interface_description" : "获取房间号"
          }
       },
@@ -294,325 +309,25 @@
          "module_except" : [ "code[=]int(200)" ],
          "idcard_upload" : {
             "method" : "post",
-            "interface_except" : [],
+            "interface_except" : ["data[key]['address', 'age', 'birthDay', 'id', 'name', 'nation', 'paths', 'sex', 'sexData']"],
             "interface_description" : "身份证上传",
             "interface_leader" : "周意"
          },
          "nationDictionary" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[!=][]"],
             "interface_description" : "民族字典",
             "interface_leader" : "张阳"
          },
          "newIdentify" : {
             "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]11"],
             "interface_description" : "新增主键ID",
             "interface_leader" : "张阳"
          },
          "sendSms" : {
             "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "发送短信",
-            "interface_leader" : "张阳"
-         }
-      }
-   },
-   "Intelligent_mediation_test" : {
-      "base_description" : "智慧调解小程序测试",
-      "base_url" : "https://192.168.11.15:8383/",
-      "base_except" : [ "all[Ckey]code,data,msg" ],
-      "base_leader" : "",
-      "base_timeout" : 6,
-      "mediate" : {
-         "module_description" : "书面调解快速调解接口",
-         "module_url" : "api/mediate/",
-         "module_except" : [ "code[=]int(200)" ],
-         "module_leader" : "花蕾",
-         "getCaseInfo" : {
-            "method" : "get",
-            "interface_except" : [ "data.caseId[=]<caseId>" ],
-            "interface_description" : "获取案件信息",
-            "interface_leader" : ""
-         },
-         "getFullCaseInfo" : {
-            "method" : "get",
-            "interface_except" : [ "data.disputeCaseInfo.caseId[=]<caseId>" ],
-            "interface_description" : "获取完整案件信息"
-         },
-         "getParties" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "获取当事人信息"
-         },
-         "quick/saveCaseInfo" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "快速调解保存案件信息"
-         },
-         "quick/saveCompany" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "快速调解保存当事人信息(法人)"
-         },
-         "quick/saveNatural" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "快速调解保存当事人信息(自然人)"
-         },
-         "quick/saveResult" : {
-            "method" : "post",
-            "interface_except" : [ "data.caseId[=]<caseId>" ],
-            "interface_description" : "快速调解保存调解结果"
-         },
-         "uploadFile" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "调解结果附件上传"
-         },
-         "written/saveCaseInfo" : {
-            "method" : "post",
-            "interface_except" : [ "data[key]caseId" ],
-            "interface_description" : "书面调解保存案件信息"
-         },
-         "written/saveCompany" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "书面调解保存当事人信息(法人)"
-         },
-         "written/saveNatural" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "书面调解保存当事人信息(自然人)"
-         },
-         "written/saveResult" : {
-            "method" : "post",
-            "interface_except" : [ "data[key]caseId" ],
-            "interface_description" : "书面调解保存调解结果"
-         }
-      },
-      "intelligentHelper" : {
-         "module_description" : "智能辅调接口",
-         "module_url" : "api/intelligentHelper/",
-         "module_except" : [ "code[=]int(200)" ],
-         "module_leader" : "赵志宇",
-         "similarInfo" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "根据纠纷类型获取类案"
-         },
-         "similarLaw" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "根据纠纷类型获取法条"
-         },
-         "strategy" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "根据纠纷类型获取策略"
-         }
-      },
-      "record" : {
-         "module_description" : "案件补录接口",
-         "module_url" : "api/record/",
-         "module_except" : [],
-         "module_leader" : "孙艺博",
-         "getUrl" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "获取文档地址"
-         },
-         "photo" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "上传照片"
-         },
-         "recognize" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "上传调解协议书"
-         },
-         "save" : {
-            "method" : "post",
-            "headers" : {
-               "Content-Type" : "application/json"
-            },
-            "interface_except" : [],
-            "interface_description" : "补录信息提交"
-         },
-         "uploadSituation" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "上传情况"
-         }
-      },
-      "checkInfo" : {
-         "module_description" : "纠纷排查接口",
-         "module_url" : "api/checkInfo/",
-         "module_except" : [ "code[=]int(200)" ],
-         "module_leader" : "张阳",
-         "convertToQuickDispute" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "纠纷转快速调解"
-         },
-         "queryCountWithCase" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "纠纷排查统计并返回案例"
-         },
-         "queryForDetail" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "查询纠纷排查详情"
-         },
-         "queryForPage" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "查询纠纷排查信息(分页)"
-         },
-         "save" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "保存纠纷排查信息"
-         },
-         "update" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "更新纠纷排查信息"
-         },
-         "upload_attachment" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "纠纷排查附件上传"
-         }
-      },
-      "informer" : {
-         "module_description" : "线人接口",
-         "module_url" : "api/informer/",
-         "module_except" : [ "code[=]int(200)" ],
-         "module_leader" : "孙艺博",
-         "audio" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "语音识别",
-            "interface_leader" : ""
-         }
-      },
-      "message" : {
-         "module_description" : "通用的服务消息接口",
-         "module_url" : "api/message/",
-         "module_except" : [ "code[=]int(200)" ],
-         "module_leader" : "周意",
-         "send" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "发送模板消息"
-         }
-      },
-      "mediator" : {
-         "module_description" : "调解员接口",
-         "module_url" : "api/mediator/",
-         "module_except" : [ "code[=]int(200)" ],
-         "module_leader" : "张阳",
-         "getMediator" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "调解员检索"
-         },
-         "save" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "调解员保存"
-         },
-         "update" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "调解员更新"
-         }
-      },
-      "committee" : {
-         "module_description" : "调解委员会接口",
-         "module_url" : "api/committee/",
-         "module_except" : [ "code[=]int(200)" ],
-         "module_leader" : "张阳",
-         "query" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "调解委员会信息查询"
-         },
-         "save" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "调解委员会信息保存"
-         },
-         "update" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "调解委员会信息更新"
-         }
-      },
-      "disputeCaseInfo" : {
-         "module_description" : "调解案件接口",
-         "module_url" : "api/disputeCaseInfo/",
-         "module_except" : [ "code[=]int(200)" ],
-         "module_leader" : "赵志宇",
-         "changeInputState" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "案件补录状态更改接口"
-         },
-         "changeState" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "案件状态更改接口"
-         },
-         "getCaseDetail" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "案件详情"
-         },
-         "getCaseHandleCount" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "案件处理情况"
-         },
-         "getCaseInfoList" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "调解案件列表"
-         },
-         "getRoomId" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "获取房间号"
-         }
-      },
-      "common" : {
-         "module_description" : "通用接口",
-         "module_url" : "api/common/",
-         "module_except" : [ "code[=]int(200)" ],
-         "idcard_upload" : {
-            "method" : "post",
-            "interface_except" : [],
-            "interface_description" : "身份证上传",
-            "interface_leader" : "周意"
-         },
-         "nationDictionary" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "民族字典",
-            "interface_leader" : "张阳"
-         },
-         "newIdentify" : {
-            "method" : "get",
-            "interface_except" : [],
-            "interface_description" : "新增主键ID",
-            "interface_leader" : "张阳"
-         },
-         "sendSms" : {
-            "method" : "get",
-            "interface_except" : [],
+            "interface_except" : ["data[key]11"],
             "interface_description" : "发送短信",
             "interface_leader" : "张阳"
          }

@@ -13,7 +13,6 @@ quick_dispute_flow_table = "quick_dispute_flow"
 quick_dispute_flow_cases=DataHandle().obtain_interface_cases(project, table_name=quick_dispute_flow_table)
 quick_dispute_flow_result=[]
 
-
 written_dispute_flow_table = "written_dispute_flow"
 written_dispute_flow_cases=DataHandle().obtain_interface_cases(project, table_name=written_dispute_flow_table)
 written_dispute_flow_result=[]

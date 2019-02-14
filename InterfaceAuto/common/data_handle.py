@@ -312,10 +312,10 @@ class DataHandle:
                     if len(obtain_value_method) == 1:
                         obtain_value = obtain_value_method[0]
 
-                        if case_data.get(obtain_value):
-                            quote_value = case_data[obtain_value]
-                        elif case_data["Input"].get(obtain_value):
-                            quote_value = case_data["Input"][obtain_value]
+                        if JExtractor.extract(obtain_value,case_data):
+                            quote_value = JExtractor.extract(obtain_value,case_data)
+                        elif JExtractor.extract(obtain_value,case_data["Input"]):
+                            quote_value =JExtractor.extract(obtain_value,case_data["Input"])
                         else:
                             raise Exception("无法找到obtain_value：{0}".format(obtain_value))
 
