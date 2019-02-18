@@ -455,7 +455,7 @@
    },
    "Risk_assess_foreground" : {
       "base_description" : "ËßËÏ·çÏÕÆÀ¹ÀÒ³Ãæ",
-      "base_url" : "http://hfsfy.test.assess.aegis-info.com",
+      "base_url" : "https://qingdun.assess.aegis-info.com",
       "base_except" : [ "code[=]int(200)", "all[key]code,data,msg" ],
       "base_leader" : "",
       "base_timeout" : 130,
