@@ -487,7 +487,7 @@
                "data[key]questions&record_id",
                "data.questions[dict_list,key]id&decide_tags&case_cause&choice_tags&_id&choice_type&temp_choice_tags&subject_id&create_time&choice_type_num&document&question&write_time&is_first&subject&is_enable",
                "data.questions.choice_tags[dict_list_list,key]weight&evidence&tag_id&zh_name&document&colloquial_description",
-               "data.questions.temp_choice_tags[dict_list_list,key]['id', 'document', 'zh_name', 'huchi', 'evidence', 'colloquial']"
+               "data.questions.temp_choice_tags[dict_list_list,key]['evidence', 'calculator_type', 'id', 'colloquial', 'document', 'huchi', 'zh_name']"
             ],
             "interface_description" : "获取下级问题"
          },
@@ -589,14 +589,6 @@
                "data.filepath[mode]/static/picture/诉调流程_([0-9]*?.[0-9]*?).docx"
             ],
             "interface_description" : "打印诉调流程"
-         },
-         "indictment" : {
-            "method" : "post",
-            "interface_except" : [
-               "data[key]filepath",
-               "data.filepath[mode]/static/indictment/起诉状_([0-9]*?.[0-9]*?).docx"
-            ],
-            "interface_description" : "打印起诉状"
          }
       },
       "smsauth" : {
