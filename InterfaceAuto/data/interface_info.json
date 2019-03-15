@@ -31,7 +31,7 @@
          "module_leader" : "花蕾",
          "getCaseInfo" : {
             "method" : "get",
-            "interface_except" : [ "data[key]['acceptDate', 'applicantIds', 'audio', 'caseId', 'caseNo', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'picture', 'protocolContent', 'protocolDate', 'remark', 'respondentIds', 'state', 'type', 'video']","data.caseId[=]<caseId>" ],
+            "interface_except" : [ "data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video']","data.caseId[=]<caseId>" ],
             "interface_description" : "获取案件信息",
             "interface_leader" : ""
          },
@@ -116,7 +116,7 @@
          "module_description" : "案件补录接口",
          "module_url" : "api/record/",
          "module_except" : [],
-         "module_leader" : "孙艺博",
+         "module_leader" : "赖斌",
          "getUrl" : {
             "method" : "get",
             "interface_except" : ["data[key]['caseId', 'mediationAgreement', 'mediationApply', 'mediationConfirm', 'mediationDescription', 'mediationEvicence', 'mediationRecord', 'mediationRegister', 'mediationReturnVisit', 'mediationSearchRecord']"],
@@ -196,7 +196,7 @@
          "module_description" : "线人接口",
          "module_url" : "api/informer/",
          "module_except" : [ "code[=]int(200)" ],
-         "module_leader" : "孙艺博",
+         "module_leader" : "赖斌",
          "audio" : {
             "method" : "post",
             "interface_except" : ["data[key]['path', 'sentence']"],
@@ -222,7 +222,7 @@
          "module_leader" : "张阳",
          "getMediator" : {
             "method" : "get",
-            "interface_except" : ["data[key]['appearance', 'birth', 'committeeID', 'committeePosition', 'education', 'generateType', 'identityID', 'injured', 'introduction', 'isExperienced', 'isHire', 'isPartTime', 'location', 'marriageStatus', 'mediationID', 'meditorID', 'mobile', 'name', 'nation', 'otherRule', 'phone', 'photo', 'position', 'profession', 'qualification', 'sex', 'workUnit', 'workYear', 'email']"],
+            "interface_except" : ["data[key]['appearance', 'birth', 'committeeID', 'committeePosition', 'education', 'fingerprint', 'generateType', 'identityID', 'injured', 'introduction', 'isExperienced', 'isHire', 'isPartTime', 'location', 'marriageStatus', 'mediationID', 'meditorID', 'mobile', 'name', 'nation', 'otherRule', 'phone', 'photo', 'position', 'profession', 'qualification', 'sex', 'sign', 'workUnit', 'workYear', 'email']"],
             "interface_description" : "调解员检索"
          },
          "mediatorInfo" : {
@@ -279,7 +279,7 @@
          },
          "getCaseDetail" : {
             "method" : "get",
-            "interface_except" : ["data[key]['acceptDate', 'applicantIds', 'audio', 'caseId', 'caseNo', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'picture', 'protocolContent', 'protocolDate', 'remark', 'respondentIds', 'state', 'type', 'video']"],
+            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video']"],
             "interface_description" : "案件详情"
          },
          "getCaseHandleCount" : {
@@ -289,12 +289,12 @@
          },
          "getCaseInfoList" : {
             "method" : "get",
-            "interface_except" : ["data[key]['acceptDate', 'applicantIds', 'audio', 'caseId', 'caseNo', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'picture', 'protocolContent', 'protocolDate', 'remark', 'respondentIds', 'state', 'type', 'video', 'docAll', 'docCount']"],
+            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video', 'docAll', 'docCount', 'mediatorFingerprint', 'mediatorSign', 'recordFingerprint', 'recordSign']"],
             "interface_description" : "调解案件列表"
          },
          "getCaseList" : {
             "method" : "get",
-            "interface_except" : ["data[key]['acceptDate', 'applicantIds', 'audio', 'caseId', 'caseNo', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'picture', 'protocolContent', 'protocolDate', 'remark', 'respondentIds', 'state', 'type', 'video', 'docAll', 'docCount']"],
+            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video', 'docAll', 'docCount', 'mediatorFingerprint', 'mediatorSign', 'recordFingerprint', 'recordSign']"],
             "interface_description" : "调解案件列表"
          },
          "getRoomId" : {
@@ -637,7 +637,7 @@
          "module_description" : "通用Java后台接口",
          "module_url" : "/api/prejudge/",
          "module_except" : [],
-         "module_leader" : "孙艺博",
+         "module_leader" : "赖斌",
          "similarCase" : {
             "method" : "get",
             "interface_except" : [
@@ -684,7 +684,7 @@
          "module_description" : "转发接口",
          "module_url" : "/api/forward/",
          "module_except" : [],
-         "module_leader" : "孙艺博",
+         "module_leader" : "赖斌",
          "similar" : {
             "method" : "get",
             "interface_description" : "类案与法条",
@@ -814,7 +814,7 @@
          "module_description" : "律师接口",
          "module_url" : "api/agent/",
          "module_except" : [],
-         "module_leader" : "孙艺博",
+         "module_leader" : "赖斌",
          "business_card" : {
             "method" : "get",
             "interface_except" : [ "code[=]int(200)", "all[key]code,data,msg","data[key]agentBusinessCard","data.agentBusinessCard[!=]{}","data.agentBusinessCard[key]['address', 'age', 'assessYear', 'avgCauseComplexity', 'avgComplexity', 'avgSubjectMoney', 'caseCauseCount', 'caseCausePercent', 'caseCount', 'caseLocations', 'caseOutProvinceLocations', 'causeWinRate', 'city', 'contactNumber', 'controlDebateAbility', 'degree', 'fax', 'focusCause', 'goodField', 'hasOutProvinceCase', 'id', 'imgLink', 'maxSubjectMoney', 'mostOftenGoCourt', 'name', 'oftenGoCourt', 'otherResult', 'percentCase', 'percentComplexity', 'percentControl', 'percentFocus', 'percentProfessional', 'postcode', 'practiceDays', 'practiceTime', 'practiceYears', 'professionalLevel', 'province', 'qualificationNumber', 'rank', 'rejectAll', 'sex', 'state', 'subjectMoneyCount', 'supportAll', 'supportPart', 'validDate', 'winRate', 'withdrawCase', 'workNumber', 'workType', 'workUnit', 'workUnitAddress', 'workUnitTel']"],
@@ -892,7 +892,7 @@
          "module_description" : "通用数据接口",
          "module_url" : "api/common/",
          "module_except" : ["all[!=][]","all[key]name&value"],
-         "module_leader" : "孙艺博",
+         "module_leader" : "赖斌",
          "cause" : {
             "method" : "get",
             "interface_except" : [],
@@ -928,7 +928,7 @@
          "module_description" : "文书接口（隐名）",
          "module_url" : "api/hide_names/",
          "module_except" : [],
-         "module_leader" : "孙艺博",
+         "module_leader" : "赖斌",
          "mediate" : {
             "method" : "post",
             "interface_except" : [],
@@ -946,7 +946,7 @@
          "module_description" : "案件权重接口（Excel",
          "module_url" : "/api/excel/",
          "module_except" : ["<status_code>[=]int(200)"],
-         "module_leader" : "孙艺博",
+         "module_leader" : "赖斌",
          "causeWeight" : {
             "method" : "get",
             "interface_except" : [],
@@ -958,7 +958,7 @@
          "module_description" : "数据报告接口（智能预审）",
          "module_url" : "api/prejudge/",
          "module_except" : [],
-         "module_leader" : "孙艺博",
+         "module_leader" : "赖斌",
          "cost" : {
             "method" : "get",
             "interface_except" : ["code[=]int(200)", "all[key]code,data,msg","data[key]map", "data.map[dict_list,key]claimMoney&docCount&legalFare&mediateClaim&mediateFare&mediateResult&mediateTime&resultMoney&trialTime"],
