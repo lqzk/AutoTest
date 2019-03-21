@@ -168,17 +168,17 @@
          },
          "queryForDetail" : {
             "method" : "get",
-            "interface_except" : ["data[key]['audio', 'audioList', 'caseId', 'checkAddress', 'checkCondition', 'checkContent', 'checkPerson', 'checkPersonName', 'checkStatus', 'checkTime', 'committeeId', 'infoSource', 'infoSourceDesc', 'isCallPolice', 'lat', 'lng', 'mobile', 'picture', 'pictureList', 'timeLine', 'vedio', 'vedioList', 'warningGrade', 'warningGradeDesc']"],
+            "interface_except" : ["data[key]['audio', 'audioList', 'caseId', 'checkAddress', 'checkCondition', 'checkContent', 'checkPerson', 'checkPersonName', 'checkStatus', 'checkTime', 'committeeId', 'committeeName', 'infoSource', 'infoSourceDesc', 'isCallPolice', 'lat', 'lng', 'mobile', 'picture', 'pictureList', 'timeLine', 'vedio', 'vedioList', 'warningGrade', 'warningGradeDesc']"],
             "interface_description" : "查询纠纷排查详情"
          },
          "queryForPage" : {
             "method" : "get",
-            "interface_except" : ["data[key]['audio', 'audioList', 'caseId', 'checkAddress', 'checkCondition', 'checkContent', 'checkPerson', 'checkPersonName', 'checkStatus', 'checkTime', 'committeeId', 'infoSource', 'infoSourceDesc', 'isCallPolice', 'lat', 'lng', 'mobile', 'picture', 'pictureList', 'timeLine', 'vedio', 'vedioList', 'warningGrade', 'warningGradeDesc']"],
+            "interface_except" : ["data[key]['audio', 'audioList', 'caseId', 'checkAddress', 'checkCondition', 'checkContent', 'checkPerson', 'checkPersonName', 'checkStatus', 'checkTime', 'committeeId', 'committeeName', 'infoSource', 'infoSourceDesc', 'isCallPolice', 'lat', 'lng', 'mobile', 'picture', 'pictureList', 'timeLine', 'vedio', 'vedioList', 'warningGrade', 'warningGradeDesc']"],
             "interface_description" : "查询纠纷排查信息(分页)"
          },
          "save" : {
             "method" : "post",
-            "interface_except" : ["data[key]11"],
+            "interface_except" : ["data[key]['committeeId', 'committeeName']"],
             "interface_description" : "保存纠纷排查信息"
          },
          "update" : {
