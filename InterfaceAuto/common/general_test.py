@@ -46,6 +46,8 @@ class GeneralTest(unittest.TestCase):
                                 break
             elif isinstance(check_obj, list):
                 self.assertIn(check_value,check_obj)
+            else:
+                raise Exception("无法采用此方式校验")
 
         elif check_method == "DO=":
             self.assertEqual(type(check_obj),type(check_value))
@@ -132,8 +134,6 @@ class GeneralTest(unittest.TestCase):
                     else:
                         raise Exception(
                             "检查对象缺少key值：{0},check_obj实际返回key值为:{1}".format(list(different), list(check_obj.keys())))
-
-
 
         elif check_method == "Ckey":
             if isinstance(check_value, str):
