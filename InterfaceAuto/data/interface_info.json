@@ -31,7 +31,7 @@
          "module_leader" : "花蕾",
          "getCaseInfo" : {
             "method" : "get",
-            "interface_except" : [ "data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video']","data.caseId[=]<caseId>" ],
+            "interface_except" : [ "data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeDateStr', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video']","data.caseId[=]<caseId>" ],
             "interface_description" : "获取案件信息",
             "interface_leader" : ""
          },
@@ -279,7 +279,7 @@
          },
          "getCaseDetail" : {
             "method" : "get",
-            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video']"],
+            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeDateStr', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video']"],
             "interface_description" : "案件详情"
          },
          "getCaseHandleCount" : {
@@ -289,12 +289,12 @@
          },
          "getCaseInfoList" : {
             "method" : "get",
-            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video', 'docAll', 'docCount', 'mediatorFingerprint', 'mediatorSign', 'recordFingerprint', 'recordSign']"],
+            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeDateStr', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video', 'docAll', 'docCount', 'mediatorFingerprint', 'mediatorSign', 'recordFingerprint', 'recordSign', 'committeeName']"],
             "interface_description" : "调解案件列表"
          },
          "getCaseList" : {
             "method" : "get",
-            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video', 'docAll', 'docCount', 'mediatorFingerprint', 'mediatorSign', 'recordFingerprint', 'recordSign']"],
+            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeDateStr', 'disputeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'type', 'video', 'docAll', 'docCount', 'mediatorFingerprint', 'mediatorSign', 'recordFingerprint', 'recordSign', 'committeeName']"],
             "interface_description" : "调解案件列表"
          },
          "getRoomId" : {
@@ -972,6 +972,49 @@
                "data.law[!=][]",
                "data.law.title[dict_list_dict,mode]第(.*?)条"],
             "interface_description" : "类案与法条",
+            "interface_leader" : ""
+         }
+      }
+   },
+   "Fa_xuan_yun" : {
+      "base_description" : "上海法宣云系统",
+      "base_url" : "https://test.shlpcloud.aegis-info.com/",
+      "base_except" : [ "code[=]int(200)", "all[Ckey]code,data,msg" ],
+      "base_leader" : "",
+      "base_timeout" : 5,
+      "task" : {
+         "module_description" : "任务",
+         "module_url" : "api/task/",
+         "module_except" : [],
+         "module_leader" : "",
+         "change_state" : {
+            "method" : "get",
+            "interface_except" : [ "" ],
+            "interface_description" : "更改任务状态",
+            "interface_leader" : ""
+         },
+         "get_by_indicators" : {
+            "method" : "get",
+            "interface_except" : [ "" ],
+            "interface_description" : "指标下探列表-任务项",
+            "interface_leader" : ""
+         },
+        "get_by_indicators_v2" : {
+            "method" : "get",
+            "interface_except" : [ "" ],
+            "interface_description" : "指标下探列表-指标项",
+            "interface_leader" : ""
+         },
+         "get_by_indicators_v3" : {
+            "method" : "get",
+            "interface_except" : [ "" ],
+            "interface_description" : "市级领导-近期任务",
+            "interface_leader" : ""
+         },
+         "get_by_indicators_v4" : {
+            "method" : "get",
+            "interface_except" : [ "" ],
+            "interface_description" : "市级领导-近期任务",
             "interface_leader" : ""
          }
       }
