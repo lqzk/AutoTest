@@ -3,9 +3,11 @@ import unittest
 import re
 from InterfaceAuto.common.data_handle import DataHandle, dir_report_path, project_case_path,email_list
 from InterfaceAuto.common.email import Email
+from tomorrow.tomorrow import threads
 
 
 class RunSuite:
+
     def create_suite(self,project_name,ordered=False,pattern='test*.py'):
         # 导入该项目下全部测试用例模块
         # import_statement = DataHandle().obtain_import_cases_statement(project_name)
@@ -25,10 +27,12 @@ class RunSuite:
                 suite.addTest(eval(case))
         return suite
 
+# @threads(3)
     def run(self,project_name,pattern='test*.py',ordered=False,html_report=True,send_email=False):
-
-        #创建测试用例
-        suite=self.create_suite(project_name=project_name,ordered=ordered,pattern=pattern)
+        # 创建测试用例
+        print("run", project_name)
+        suite = self.create_suite(project_name=project_name, ordered=ordered, pattern=pattern)
+        print("create_suite", project_name)
 
         #生成测试报告并运行测试用例
         if not html_report:
@@ -62,6 +66,7 @@ class RunSuite:
                     for each_leader in send_email_list:
                         email_config["receiver"].append(email_list[each_leader])
                     Email().send_email(email_config)
+
 
 
 
