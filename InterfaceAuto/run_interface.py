@@ -1,26 +1,24 @@
 from InterfaceAuto.common.run_suite import RunSuite
-import time
+from InterfaceAuto.common.treadpool import ThreadPool
 
 if __name__ == '__main__':
-    # project_name = "Intelligent_mediation"
-    # RunSuite().run(project_name)
-    # # time.sleep(2)
-    #
-    # project_name = "Intelligent_mediation_web"
-    # RunSuite().run(project_name)
-    #
-    # # time.sleep(2)
 
-    project_name = "Risk_assess"
-    RunSuite().run(project_name)
-    #
-    # time.sleep(2)
-    #
-    # project_name = "Intelligent_judgement"
-    # RunSuite().run(project_name)
+    # my_pool=ThreadPool(RunSuite().run,3,["Risk_assess"])
+    # my_pool.pool()
 
-    # project_name = "File_handle_service"
-    # RunSuite().run(project_name)
+    # all_project_list=["Intelligent_mediation","Intelligent_mediation_web","Risk_assess","Intelligent_judgement",'File_handle_service']
+    # project_list=["Intelligent_mediation","Risk_assess"]
+    # for project in project_list:
+    #     print("S")
+    #     RunSuite().run(project)
+    #     print("E")
+
+    # project_list = ["Risk_assess"]
+    # [RunSuite().run(project) for project in project_list]
+
+    RunSuite().run("Intelligent_mediation")
+
+
 
 
 
