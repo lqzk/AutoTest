@@ -10,6 +10,7 @@ import time,datetime
 PATH=lambda P:os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)),P))
 dir_report_path=PATH("report\\")
 email_config_path=PATH("data\\email_config.ini")
+email_list=JsonHandle(PATH("data\\email_list.json")).jData
 project_case_path=lambda p:PATH("project\\{0}\\case" .format(p))
 picture_path=PATH("picture\\" )
 
