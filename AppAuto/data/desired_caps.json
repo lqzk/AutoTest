@@ -1,5 +1,18 @@
 {
-   "Phone" : {
+   "desired_caps" :
+           {
+                'platformName': 'Android',
+                'platformVersion':'4.4.2',
+                'deviceName': '127.0.0.1:6200',
+                'appPackage': 'com.tencent.mm',
+                'appActivity': '.ui.LauncherUI',
+                'automationName': 'Uiautomator2',
+                'unicodeKeyboard': True,
+                'resetKeyboard': True,
+                'noReset': True,
+                'chromeOptions': {'androidProcess': 'com.tencent.mm:tools'}
+                }
+   {
       "Huawei" : {
          "platformName" : "Android",
          "platformVersion" : "8.0.0",

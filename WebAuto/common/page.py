@@ -84,13 +84,13 @@ class Page(Browser):
         try:
             self.find_element(*args).click()
         except Exception:
-            ele=self.find_element(*args)
-            self.execute_script("arguments[0].scrollIntoView()",ele)
-            ele.click()
-
-
-
-
+            try:
+                ele = self.find_element(*args)
+                self.execute_script("arguments[0].scrollIntoView()", ele)
+                ele.click()
+            except Exception:
+                self.sleep(3)
+                self.find_element(*args).click()
 
 
     def clear(self,*args):

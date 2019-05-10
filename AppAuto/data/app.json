@@ -1,11 +1,11 @@
 {
    "weixin" : {
-      "Phone" : "Android Emulator",
+      "Phone" : "Night God Simulator",
       "App" : "WeiXin",
       "Login_account" : "cj"
    },
-   "faxuanyun" : {
-      "Phone" : "Android Emulator",
+   "xiaofa" : {
+      "Phone" : "Night God Simulator",
       "App" : "WeiXin",
       "Login_account" : "cj"
    }
