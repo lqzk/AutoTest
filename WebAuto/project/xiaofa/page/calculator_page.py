@@ -24,17 +24,16 @@ class CalculatorPage(MainPage):
             self.click(*two_select_condition(v))
 
 
-
     def set_calculator_data(self,data):
         print("确认免责声明")
-        self.sleep(1)
+        self.sleep(0.5)
         self.click(*self.ensure_button)
         print("设置情节")
         self.set_select_condition(data["select_condition"])
         self.set_numerical_condition(data["numerical_condition"])
         print("点击计算按钮")
         self.click(*self.calculator_button)
-        self.sleep(1)
+        self.sleep(0.5)
 
     def check_calculator_result(self,type,data):
         self.set_calculator_data(data)
@@ -49,7 +48,6 @@ class CalculatorPage(MainPage):
             results_ele = self.find_elements(*self.answer)
             for each_answer_ele in results_ele:
                 result.append(float(each_answer_ele.text.split("元")[0]))
-            print(result)
             print("【工伤赔偿】计算结果：赔偿费用 {0}元，伤残津贴 {1}元".format(result[0], result[1]))
             if result[0]<0 or result[1]<0:
                 raise Exception("【工伤赔偿】计算结果错误：为负数")
