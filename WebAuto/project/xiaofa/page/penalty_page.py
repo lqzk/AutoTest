@@ -39,7 +39,6 @@ class PenaltyPage(MainPage):
         self.set_click_plot(data["click_plot"])
         print("点击预测按钮")
         self.click(*self.forecast_button)
-        self.sleep(2)
         print("【page】跳转到量刑结果页面")
 
 
@@ -50,7 +49,7 @@ class PenaltyResultPage(PenaltyPage):
     criminal_guidance_column=("xpath", "//li[contains(text(),'量刑指导')]")
 
     def obtain_criminal_publish_result(self):
-        self.sleep(0.5)
+        self.sleep(1)
         self.click(*self.criminal_publish_column)
 
         predict_sentence = ("xpath", "//*[contains(text(),'预测刑期:')]/parent::*/p[2]")
