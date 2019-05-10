@@ -10,7 +10,6 @@ class RunSuite:
         import_statement = DataHandle().obtain_import_cases_statement(project_name)
         exec(import_statement)
 
-
         if not ordered:
             suite=unittest.defaultTestLoader.discover(project_case_path(project_name),pattern=pattern,top_level_dir=project_case_path(project_name))
         else:
@@ -21,8 +20,6 @@ class RunSuite:
         return suite
 
     def run(self,project_name,pattern='test*.py',ordered=False,html_report=True,send_email=False):
-
-
         #创建测试用例
         suite=self.create_suite(project_name=project_name,ordered=ordered,pattern=pattern)
 

@@ -21,9 +21,11 @@ class Page(Browser):
             super(Page,self).__init__()
 
 
-    def execute_script(self,js):
-        print(js)
-        return self.driver.execute_script(script=js)
+    def execute_script(self,js,*args):
+        return self.driver.execute_script(js,*args)
+
+    def get_window_size(self):
+        return self.driver.get_window_size()
 
     def getscreen(self,screen_name):
         now_time=time.strftime("%Y-%m-%d %H-%M-%S",time.localtime())
@@ -82,13 +84,13 @@ class Page(Browser):
         try:
             self.find_element(*args).click()
         except Exception:
-            try:
-                self.find_element(*(By.CSS_SELECTOR, "loading"))
-                self.wait_until(args, "not_load")
-            except Exception:
-                time.sleep(2)
-            finally:
-                self.find_element(*args).click()
+            ele=self.find_element(*args)
+            self.execute_script("arguments[0].scrollIntoView()",ele)
+            ele.click()
+
+
+
+
 
 
     def clear(self,*args):
@@ -124,11 +126,10 @@ class Page(Browser):
 
     def forword(self):
         self.driver.forward()
-        print("Click forward on current page.")
 
     def back(self):
         self.driver.back()
-        print("Click back on current page.")
+
 
     def type(self, content, *args):
         self.find_element(*args).send_keys(content)

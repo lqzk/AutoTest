@@ -61,7 +61,7 @@ class Browser(object):
         # self.driver.refresh()
         # self.driver.get(url)
         # print(self.driver.get_cookies())
-        print('web自动化测试网址：' + url)
+        print('自动化测试网址：' + url)
         return self
 
 
