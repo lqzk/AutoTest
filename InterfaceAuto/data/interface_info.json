@@ -20,7 +20,7 @@
    },
    "Intelligent_mediation" : {
       "base_description" : "智慧调解小程序项目",
-      "base_url" : "https://dispute.aegis-info.com/",
+      "base_url" : "https://t-dispute.aegis-info.com/",
       "base_except" : [ "all[Ckey]code,data,msg" ],
       "base_leader" : "",
       "base_timeout" : 6,

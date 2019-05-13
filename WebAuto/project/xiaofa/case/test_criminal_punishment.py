@@ -32,7 +32,7 @@ class Criminal_Punlishment(unittest.TestCase):
         self.page=PenaltyPage(self.page)
         self.page.set_penalty_data(case_data)
         self.page=PenaltyResultPage(self.page)
-        self.page.check_penaltyResult()
+        self.page.check_penaltyResult(case_data)
 
     @ddt.data(*guyihsanghai_data)
     def test_guyihsanghai(self, case_data):
@@ -40,7 +40,7 @@ class Criminal_Punlishment(unittest.TestCase):
         self.page = PenaltyPage(self.page)
         self.page.set_penalty_data(case_data)
         self.page = PenaltyResultPage(self.page)
-        self.page.check_penaltyResult()
+        self.page.check_penaltyResult(case_data)
 
     @ddt.data(*daoqie_data)
     def test_daoqie(self, case_data):
@@ -48,7 +48,7 @@ class Criminal_Punlishment(unittest.TestCase):
         self.page = PenaltyPage(self.page)
         self.page.set_penalty_data(case_data)
         self.page = PenaltyResultPage(self.page)
-        self.page.check_penaltyResult()
+        self.page.check_penaltyResult(case_data)
 
     @ddt.data(*weixianjiashi_data)
     def test_weixianjiashi(self, case_data):
@@ -56,7 +56,7 @@ class Criminal_Punlishment(unittest.TestCase):
         self.page = PenaltyPage(self.page)
         self.page.set_penalty_data(case_data)
         self.page = PenaltyResultPage(self.page)
-        self.page.check_penaltyResult()
+        self.page.check_penaltyResult(case_data)
 
     @ddt.data(*qiaozhalesuo_data)
     def test_qiaozahlesuo(self, case_data):
@@ -64,7 +64,7 @@ class Criminal_Punlishment(unittest.TestCase):
         self.page = PenaltyPage(self.page)
         self.page.set_penalty_data(case_data)
         self.page = PenaltyResultPage(self.page)
-        self.page.check_penaltyResult()
+        self.page.check_penaltyResult(case_data)
 
     @ddt.data(*qiangjie_data)
     def test_qiangjie(self, case_data):
@@ -72,7 +72,7 @@ class Criminal_Punlishment(unittest.TestCase):
         self.page = PenaltyPage(self.page)
         self.page.set_penalty_data(case_data)
         self.page = PenaltyResultPage(self.page)
-        self.page.check_penaltyResult()
+        self.page.check_penaltyResult(case_data)
 
     @ddt.data(*feifajujin_data)
     def test_feifajujin(self, case_data):
@@ -80,7 +80,7 @@ class Criminal_Punlishment(unittest.TestCase):
         self.page = PenaltyPage(self.page)
         self.page.set_penalty_data(case_data)
         self.page = PenaltyResultPage(self.page)
-        self.page.check_penaltyResult()
+        self.page.check_penaltyResult(case_data)
 
     @ddt.data(*qiangduo_data)
     def test_qiangduo(self, case_data):
@@ -88,7 +88,7 @@ class Criminal_Punlishment(unittest.TestCase):
         self.page = PenaltyPage(self.page)
         self.page.set_penalty_data(case_data)
         self.page = PenaltyResultPage(self.page)
-        self.page.check_penaltyResult()
+        self.page.check_penaltyResult(case_data)
 
 
 if __name__ == '__main__':

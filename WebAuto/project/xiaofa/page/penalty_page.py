@@ -9,6 +9,7 @@ class PenaltyPage(MainPage):
         numerical_plot=lambda n:("xpath","//*[contains(text(),'"+n+"')]/parent::*//div/input")
         for k, v in numerical_plot_data.items():
             print("{0}:{1}".format(k, v))
+            self.clear(*numerical_plot(k))
             self.type(v,*numerical_plot(k))
 
     def set_select_plot(self,select_plot_data):
@@ -26,8 +27,9 @@ class PenaltyPage(MainPage):
         click_plot=lambda n:("xpath","//*[contains(text(),'"+n+"')]")
         for k, v in click_plot_data.items():
             print("{0}:{1}".format(k, v))
-            for each_v in v:
-                self.click(*click_plot(each_v))
+            if not v==[]:
+                for each_v in v:
+                    self.click(*click_plot(each_v))
 
     def set_penalty_data(self,data):
         print("确认免责声明")
@@ -89,6 +91,14 @@ class PenaltyResultPage(PenaltyPage):
         print("量刑起点:{0}\n基准刑:{1}\n宣告刑:{2}".format(start_sentence,base_santence,declare_sentence))
         return start_sentence,base_santence,declare_sentence
 
+    def obtain_except_criminal_publish_result(self,data):
+        ec_data=data["except_value"]
+        ec_sentence=ec_data["预测刑期"]
+        ec_fine=ec_data["预测罚金"]
+        ec_probation=ec_data["预测缓刑"]
+        ec_sentence_range=ec_data["量刑范围"]
+        return ec_sentence,ec_fine,ec_probation,ec_sentence_range
+
     def extract_date(self,string):
         year, month, day = 0, 0, 0
         if re.search(u"(\d*)年", string): year = int(re.search(u"(\d*)年", string).group(1))
@@ -99,8 +109,12 @@ class PenaltyResultPage(PenaltyPage):
         if re.search(u"(\d*)天", string): day = int(re.search(u"(\d*)天", string).group(1))
         return year, month, day
 
-    def check_criminal_publish_result(self):
+    def check_criminal_publish_result(self,data):
         sentence_content,fine_content,probation_content,sentence_range_content=self.obtain_criminal_publish_result()
+        if data.get("except_value"):
+            ec_sentence,ec_fine,ec_probation,ec_sentence_range=self.obtain_except_criminal_publish_result(data)
+            if not sentence_range_content== ec_sentence_range:
+                raise Exception("预测数据异常：与期望输出不一致（预测量刑范围：{0} ,实际量刑范围：{1}）".format(ec_sentence_range,sentence_range_content))
 
         if sentence_content=="--" and not probation_content =="--":
             raise Exception("缓刑数据异常：没有刑期，就不应该有缓刑")
@@ -122,8 +136,8 @@ class PenaltyResultPage(PenaltyPage):
             declare_sentence.split("～")[1]) == self.extract_date(sentence_range_content.split("~")[1])):
             raise Exception("数据异常：量刑范围与宣告刑期不一致（{0} ！= {1}）".format(sentence_range_content, declare_sentence))
 
-    def check_penaltyResult(self):
-        self.check_criminal_publish_result()
+    def check_penaltyResult(self,data):
+        self.check_criminal_publish_result(data)
         self.obtain_similiar_case()
         self.obtain_similiar_law()
 
