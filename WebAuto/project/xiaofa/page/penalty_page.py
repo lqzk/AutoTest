@@ -25,11 +25,11 @@ class PenaltyPage(MainPage):
 
     def set_click_plot(self,click_plot_data):
         click_plot=lambda n:("xpath","//*[contains(text(),'"+n+"')]")
-        for k, v in click_plot_data.items():
-            print("{0}:{1}".format(k, v))
-            if not v==[]:
-                for each_v in v:
-                    self.click(*click_plot(each_v))
+        if not click_plot_data==[]:
+            print("要素补充:{0}".format(click_plot_data))
+            for each_v in click_plot_data:
+                self.click(*click_plot(each_v))
+
 
     def set_penalty_data(self,data):
         print("确认免责声明")
@@ -74,13 +74,24 @@ class PenaltyResultPage(PenaltyPage):
 
     def obtain_similiar_case(self):
         self.click(*self.similiar_case_column)
-        case_list=("css", "div.penalty-result-page.scroll-div")
-        self.is_displayed(*case_list)
+        # case_list=("css", "div.penalty-result-page.scroll-div")
+        # self.is_displayed(*case_list)
+        case_list=("css", "div.el-card__body")
+        try:
+         self.find_elements(*case_list)
+        except Exception:
+            raise Exception("相似案例数据异常：找不到案例")
+
 
     def obtain_similiar_law(self):
         self.click(*self.similiar_law_column)
-        law_list=("css", "div.penalty-result-page.scroll-div")
-        self.is_displayed(*law_list)
+        # law_list=("css", "div.penalty-result-page.scroll-div")
+        # self.is_displayed(*law_list)
+        law_list=("css", "div.el-card__body")
+        try:
+         self.find_elements(*law_list)
+        except Exception:
+            raise Exception("相关法条数据异常：找不到法条")
 
     def obtain_criminal_guidance(self):
         self.click(*self.criminal_guidance_column)
