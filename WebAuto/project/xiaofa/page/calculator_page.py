@@ -1,5 +1,4 @@
 from WebAuto.project.xiaofa.page.main_page import MainPage
-import re
 
 class CalculatorPage(MainPage):
     calculator_button=("xpath","//*[contains(text(),'计算结果')]")
@@ -16,9 +15,7 @@ class CalculatorPage(MainPage):
         select_condition=lambda select:("xpath","//label[contains(text(),'"+select+"')]/parent::*/div/div/div/input")
         for k, v in select_condition_data.items():
             print("{0}:{1}".format(k, v))
-            self.sleep(0.5)
             self.click(*select_condition(k))
-            self.sleep(0.5)
             two_select_condition=lambda select:("xpath","//span[contains(text(),'"+select+"')]")
             self.find_element(*two_select_condition(v))
             self.click(*two_select_condition(v))
@@ -26,14 +23,14 @@ class CalculatorPage(MainPage):
 
     def set_calculator_data(self,data):
         print("确认免责声明")
-        self.sleep(0.5)
+        self.sleep(0.1)
         self.click(*self.ensure_button)
         print("设置情节")
         self.set_select_condition(data["select_condition"])
         self.set_numerical_condition(data["numerical_condition"])
         print("点击计算按钮")
         self.click(*self.calculator_button)
-        self.sleep(0.5)
+        self.sleep(0.1)
 
     def check_calculator_result(self,type,data):
         self.set_calculator_data(data)
