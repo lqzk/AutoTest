@@ -119,12 +119,12 @@
          "module_leader" : "赖斌",
          "getUrl" : {
             "method" : "get",
-            "interface_except" : ["data[key]['caseId', 'mediationAgreement', 'mediationApply', 'mediationConfirm', 'mediationDescription', 'mediationEvicence', 'mediationRecord', 'mediationRegister', 'mediationReturnVisit', 'mediationSearchRecord']"],
+            "interface_except" : ["data[key]['caseId', 'mediationAgreement', 'mediationApply', 'mediationConfirm', 'mediationDescription', 'mediationEvidence', 'mediationRecord', 'mediationRegister', 'mediationReturnVisit', 'mediationSearchRecord']"],
             "interface_description" : "获取文档地址"
          },
          "photo" : {
             "method" : "post",
-            "interface_except" : ["data[key]['caseId', 'mediationAgreement', 'mediationApply', 'mediationConfirm', 'mediationDescription', 'mediationEvicence', 'mediationRecord', 'mediationRegister', 'mediationReturnVisit', 'mediationSearchRecord']"],
+            "interface_except" : ["data[key]['caseId', 'mediationAgreement', 'mediationApply', 'mediationConfirm', 'mediationDescription', 'mediationEvidence', 'mediationRecord', 'mediationRegister', 'mediationReturnVisit', 'mediationSearchRecord']"],
             "interface_description" : "上传照片"
          },
          "recognize" : {
@@ -142,7 +142,7 @@
          },
          "uploadSituation" : {
             "method" : "post",
-            "interface_except" : ["data[key]['caseId', 'mediationAgreement', 'mediationApply', 'mediationConfirm', 'mediationDescription', 'mediationEvicence', 'mediationRecord', 'mediationRegister', 'mediationReturnVisit', 'mediationSearchRecord']"],
+            "interface_except" : ["data[key]['caseId', 'mediationAgreement', 'mediationApply', 'mediationConfirm', 'mediationDescription', 'mediationEvidence', 'mediationRecord', 'mediationRegister', 'mediationReturnVisit', 'mediationSearchRecord']"],
             "interface_description" : "上传情况"
          }
       },
@@ -279,7 +279,7 @@
          },
          "getCaseDetail" : {
             "method" : "get",
-            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseCount', 'caseFrom', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'delete', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeDateStr', 'disputeType', 'distributeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'rejectReason', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'refuseReason', 'type', 'video', 'year']"],
+            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseCount', 'caseFrom', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'delete', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeDateStr', 'disputeType', 'distributeType', 'implementCondition', 'implementType', 'input', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'rejectReason', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'refuseReason', 'type', 'video', 'year']"],
             "interface_description" : "案件详情"
          },
          "getCaseHandleCount" : {
@@ -289,7 +289,7 @@
          },
          "getCaseInfoList" : {
             "method" : "get",
-            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseCount', 'caseFrom', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'delete', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeDateStr', 'disputeType', 'distributeType', 'implementCondition', 'implementType', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'rejectReason', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'refuseReason', 'type', 'video', 'year', 'docAll', 'docCount', 'mediatorFingerprint', 'mediatorSign', 'recordFingerprint', 'recordSign', 'committeeName', 'timeStr']"],
+            "interface_except" : ["data[key]['acceptDate', 'appeal', 'applicantIds', 'appointment', 'audio', 'caseCount', 'caseFrom', 'caseId', 'caseNo', 'casePlatform', 'casePrediction', 'caseSource', 'committeeId', 'companyOrAddress', 'createTime', 'delete', 'difficultyLevel', 'disputeAddress', 'disputeContent', 'disputeDate', 'disputeDateStr', 'disputeType', 'distributeType', 'implementCondition', 'implementType', 'input', 'inputState', 'involvedMoney', 'isSatisfied', 'lastUpdateTime', 'mediateAddress', 'mediateDate', 'mediationId', 'mediationResult', 'mediatorId', 'mediateWay', 'picture', 'protocolContent', 'protocolDate', 'rejectReason', 'relatedCheckId', 'remark', 'respondentIds', 'state', 'refuseReason', 'type', 'video', 'year', 'docAll', 'docCount', 'mediatorFingerprint', 'mediatorSign', 'recordFingerprint', 'recordSign', 'committeeName', 'timeStr']"],
             "interface_description" : "调解案件列表"
          },
          "getCaseList" : {
