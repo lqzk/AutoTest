@@ -7,7 +7,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from socket import error,gaierror
 import logging.config
-from AppAuto.common.data_handle import PATH
 # logging.config.fileConfig(PATH("data\\log_config.ini"))
 # mylogger=logging.getLogger("main")
 

@@ -52,7 +52,11 @@ class PenaltyResultPage(PenaltyPage):
 
     def obtain_criminal_publish_result(self):
         self.sleep(1)
-        self.click(*self.criminal_publish_column)
+        try:
+            self.click(*self.criminal_publish_column)
+        except Exception:
+            self.sleep(5)
+            self.click(*self.criminal_publish_column)
 
         predict_sentence = ("xpath", "//*[contains(text(),'预测刑期:')]/parent::*/p[2]")
         predict_sentence_content=self.text(*predict_sentence)
@@ -81,6 +85,7 @@ class PenaltyResultPage(PenaltyPage):
          self.find_elements(*case_list)
         except Exception:
             raise Exception("相似案例数据异常：找不到案例")
+
 
 
     def obtain_similiar_law(self):

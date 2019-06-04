@@ -6,7 +6,9 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from socket import error,gaierror
-
+# import logging.config
+# logging.config.fileConfig(PATH("data\\log_config.ini"))
+# mylogger=logging.getLogger("main")
 
 class Email:
     def _attach_file(self,att_file,msg):
